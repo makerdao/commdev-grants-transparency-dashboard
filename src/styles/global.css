@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'GT America';
+  font-weight: 400;
+  src: url('/static/GT-America-Standard-Regular.woff2') format('woff2'),
+       url('/static/GT-America-Standard-Regular.ttf')  format('truetype'),
+       url('/static/GT-America-Standard-Regular.otf')  format('opentype'),
+}
+
+@font-face {
+  font-family: 'GT America';
+  font-weight: 700;
+  src: url('/static/GT-America-Standard-Bold.woff2') format('woff2'),
+       url('/static/GT-America-Standard-Bold.ttf')  format('truetype'),
+       url('/static/GT-America-Standard-Bold.otf')  format('opentype'),
+}
+
+  * {
+    font-family: 'GT America', system-ui, sans-serif;
+  }
+
+body {
+  margin: 0px;
+}
+
+h1 h2 {
+  font-weight: 700;
+}
+
+h3, h4, h5, h6, p {
+  font-weight: 400;
+}
