@@ -3,8 +3,8 @@
     "name": "SoapBubbleFactory",
     "description": "Making the world a more colorful place!",
     "link": "github.com/soapsoapsoap/forAll",
-    "status": "prototype",
-    "type": "governance",
+    "status": "Prototype",
+    "type": "Governance",
     "location": "USA",
     "active": true,
     "funds": {
@@ -16,8 +16,8 @@
     "name": "Flying Carpets",
     "description": "Breaking down boarders with style and comfort",
     "link": "github.com/theDjinni/magicThreads101",
-    "status": "beta",
-    "type": "governance",
+    "status": "BETA",
+    "type": "Governance",
     "location": "Persia",
     "active": true,
     "funds": {

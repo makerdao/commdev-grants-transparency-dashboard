@@ -13,6 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "ajv": "^6.10.0",
     "gatsby": "^2.8.6",
     "gatsby-plugin-styled-components": "^3.0.7",
     "react": "^16.8.6",

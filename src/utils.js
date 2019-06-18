@@ -1,4 +1,32 @@
 import rawData from '../static/projectData.json'
+var Ajv = require('ajv')
+var ajv = new Ajv({allErrors: true})
+
+var ProjectType = {
+  "properties": {
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "link": { "type": "string" },
+    "location": { "type": "string" },
+    "active": { "type": "boolean"},
+    "type": { "type": "string", "enum": ["Governance", "DeFi", "Payroll"]},
+    "status": { "type": "string", "enum": ["Pre-Launch", "Prototype", "BETA", "Live", "Inactive"]}
+  }
+};
+
+var validate = ajv.compile(ProjectType);
+function test(json) {
+  for (let p of json) {
+    var valid = validate(p)
+    if (!valid) {
+      console.log(ajv.errorsText(validate.errors))
+      let error = "invalid JSON for project: " + p.name
+      throw error
+    }
+  }
+}
+
+test(rawData)
 
 const getTotalAwardedMoney = () => {
   console.log('data', rawData)
