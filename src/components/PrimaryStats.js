@@ -17,12 +17,12 @@ align-items: center;
 background: hsla(255,255,255,0.4);
 `
 
-const StatsNumber = styled('h1')`
-font-size: 4rem;
+const StatsNumber = styled('h2')`
+
 `
 
 
-const StatsTitle = styled.h3`
+const StatsTitle = styled.h6`
 `
 
 
