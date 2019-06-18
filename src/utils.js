@@ -7,25 +7,47 @@ const getTotalAwardedMoney = () => {
   return totalSum
 }
 
-export const getAppsSubmitted = () => {
+const getAppsSubmitted = () => {
   return rawData.length
 }
 
-export const getAppsAccepted = () => {
+const getAppsAccepted = () => {
   let tmp = rawData.filter(project => project.funds.awarded).length
   console.log('tmp ', tmp )
   return tmp
 }
 
-export const getNofCountries = () => {
+const getNofCountries = () => {
   let countries = rawData.filter(p => p.location)
   let distinctCountries = new Set(countries)
   return distinctCountries.size
+}
+
+const getNofProjectType = (type) => {
+  return rawData.filter(p => p.type === type).length
+}
+
+
+const getNofProjectStatus = (status) => {
+  return rawData.filter(p => p.status === status).length
 }
 
 export const data = {
   "totalMoney": getTotalAwardedMoney(),
   "appsSubmitted": getAppsSubmitted(),
   "appsAccepted": getAppsAccepted(),
-  "nCountries": getNofCountries()
+  "nCountries": getNofCountries(),
+  "NofProjectType": {
+    "governance": getNofProjectType('governance'),
+    "defi": getNofProjectType('defi'),
+    "fiatRamps": getNofProjectType('fiatRamps'),
+    "payroll": getNofProjectType('payroll')
+  },
+  "NofProjectStatus": {
+    "prelaunch": getNofProjectStatus('prelaunch'),
+    "prototype": getNofProjectStatus('prototype'),
+    "beta": getNofProjectStatus('beta'),
+    "live": getNofProjectStatus('live'),
+    "inactive": getNofProjectStatus('inactive')
+  }
 }
