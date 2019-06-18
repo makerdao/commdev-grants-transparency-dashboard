@@ -21,6 +21,8 @@ const GeographyObject = styled.div`
 
 export default () => (
   <GeographyContainer>
-
+    <GeographyObject>
+      Geography Section is a WIP.
+    </GeographyObject>
   </GeographyContainer>
 );

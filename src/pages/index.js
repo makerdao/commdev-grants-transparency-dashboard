@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Header from "../components/Header"
 import PrimaryStats from "../components/PrimaryStats"
 import ProjectStatus from "../components/ProjectStatus.js"
+import GeoRep from "../components/GeoRep.js"
 
 
 const ProjectsWrapper = styled.section`
@@ -23,21 +24,15 @@ const ProjectsWrapper = styled.section`
 
 export default () => (
   <React.Fragment>
-
     <Header />
-
 
     <PrimaryStats />
 
     <ProjectsWrapper>
 
       <ProjectStatus />
-      <GeographyContainer>
-        <GeographyObject>
-          United States
-          China
-        </GeographyObject>
-      </GeographyContainer>
+
+      <GeoRep />
 
     </ProjectsWrapper>
   </React.Fragment>
