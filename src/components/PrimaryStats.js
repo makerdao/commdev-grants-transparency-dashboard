@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-
+import {data} from "../utils.js"
 
 const StatsWrapper = styled.section`
 display: grid;
@@ -29,16 +29,16 @@ const StatsTitle = styled.h6`
 export default () => (
   <StatsWrapper>
     <StatsContainer>
-      <StatsNumber>491</StatsNumber>
+      <StatsNumber>{data.appsSubmitted.toString()}</StatsNumber>
       <StatsTitle>Grant Applications Submitted</StatsTitle>
     </StatsContainer>
     <StatsContainer>
-      <StatsNumber>491</StatsNumber>
-      <StatsTitle>Grant Applications Submitted</StatsTitle>
+      <StatsNumber>{data.appsAccepted}</StatsNumber>
+      <StatsTitle>Grant Applications Accepted</StatsTitle>
     </StatsContainer>
     <StatsContainer>
-      <StatsNumber>491</StatsNumber>
-      <StatsTitle>Grant Applications Submitted</StatsTitle>
+      <StatsNumber>{data.nCountries}</StatsNumber>
+      <StatsTitle>Countries Represented</StatsTitle>
     </StatsContainer>
     <StatsContainer>
       <StatsNumber>491</StatsNumber>
