@@ -26,7 +26,7 @@ const ProjectStatusObject = styled.div`
   font-size: 2rem;
 `
 
-const ProjectObjectText = styled.h4`
+const ProjectObjectText = styled.h6`
   font-size: 1.25rem;
 `
 
