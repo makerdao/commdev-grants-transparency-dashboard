@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import Header from "../components/Header"
 import PrimaryStats from "../components/PrimaryStats"
-import ProjectStatus from "../components/ProjectStatus.js"
-import GeoRep from "../components/GeoRep.js"
+import ProjectStatus from "../components/ProjectStatus"
+import GeoRep from "../components/GeoRep"
 
 
 const ProjectsWrapper = styled.section`

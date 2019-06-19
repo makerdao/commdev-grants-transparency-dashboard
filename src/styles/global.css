@@ -16,6 +16,7 @@
 
   * {
     font-family: 'GT America', system-ui, sans-serif;
+    color: #444;
   }
 
 body {
@@ -25,6 +26,8 @@ body {
 
 h1, h2, h3, h4, h5, h6, p {
   font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* Type Scale */
