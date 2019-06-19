@@ -4,6 +4,8 @@ import Header from "../components/Header"
 import PrimaryStats from "../components/PrimaryStats"
 import ProjectStatus from "../components/ProjectStatus"
 import GeoRep from "../components/GeoRep"
+import ProjectCard from "../components/ProjectCards"
+
 
 
 const ProjectsWrapper = styled.section`
@@ -33,6 +35,8 @@ export default () => (
       <ProjectStatus />
 
       <GeoRep />
+
+      <ProjectCard />
 
     </ProjectsWrapper>
   </React.Fragment>
