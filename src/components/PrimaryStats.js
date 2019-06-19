@@ -17,7 +17,7 @@ align-items: center;
 background: hsla(255,255,255,0.4);
 `
 
-const StatsNumber = styled('h2')`
+const StatsNumber = styled.h2`
 
 `
 
