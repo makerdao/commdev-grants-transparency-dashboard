@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Title from "../components/Title.js"
 
 
 // Geographic Representation
@@ -20,6 +19,10 @@ const GeographyObject = styled.div`
   font-size: 2rem;
 `
 
+const CountryTitle = styled.h5`
+color: #231536;
+`
+
 const CountryListContainer = styled.ul`
   font-size: 1.25rem;
   list-style: none;
@@ -35,14 +38,14 @@ const CountryListItem = styled.li`
 export default () => (
   <GeographyContainer>
     <GeographyObject>
-      <Title>North America</Title>
+      <CountryTitle>North America</CountryTitle>
         <CountryListContainer>
           <CountryListItem>United States</CountryListItem>
           <CountryListItem>Canada</CountryListItem>
         </CountryListContainer>
     </GeographyObject>
     <GeographyObject>
-      <Title>Africa</Title>
+      <CountryTitle>Africa</CountryTitle>
       <CountryListContainer>
         <CountryListItem>Nigeria</CountryListItem>
         <CountryListItem>South Africa</CountryListItem>
@@ -52,7 +55,7 @@ export default () => (
       </CountryListContainer>
     </GeographyObject>
     <GeographyObject>
-      <Title>Europe</Title>
+      <CountryTitle>Europe</CountryTitle>
       <CountryListContainer>
         <CountryListItem>Nigeria</CountryListItem>
         <CountryListItem>South Africa</CountryListItem>
@@ -62,7 +65,7 @@ export default () => (
       </CountryListContainer>
     </GeographyObject>
     <GeographyObject>
-      <Title>Asia</Title>
+      <CountryTitle>Asia</CountryTitle>
       <CountryListContainer>
         <CountryListItem>Nigeria</CountryListItem>
         <CountryListItem>South Africa</CountryListItem>
@@ -72,7 +75,7 @@ export default () => (
       </CountryListContainer>
     </GeographyObject>
     <GeographyObject>
-      <Title>Oceania</Title>
+      <CountryTitle>Oceania</CountryTitle>
       <CountryListContainer>
         <CountryListItem>Nigeria</CountryListItem>
         <CountryListItem>South Africa</CountryListItem>
