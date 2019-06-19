@@ -4,6 +4,7 @@ import Header from "../components/Header"
 import PrimaryStats from "../components/PrimaryStats"
 import ProjectStatus from "../components/ProjectStatus"
 import GeoRep from "../components/GeoRep"
+import ProjectCategories from "../components/ProjectCategories"
 import ProjectCard from "../components/ProjectCards"
 
 
@@ -35,6 +36,8 @@ export default () => (
       <ProjectStatus />
 
       <GeoRep />
+
+      <ProjectCategories />
 
       <ProjectCard />
 
