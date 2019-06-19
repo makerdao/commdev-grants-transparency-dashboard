@@ -55,3 +55,8 @@ h5 {
 h6 {
   font-size: 1.25rem;
 }
+
+p {
+  font-size: 1.25rem;
+  margin:0px
+}
