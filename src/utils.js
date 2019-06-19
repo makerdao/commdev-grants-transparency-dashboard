@@ -6,12 +6,17 @@ var ProjectType = {
   "properties": {
     "name": { "type": "string" },
     "description": { "type": "string" },
-    "link": { "type": "string" },
+    "learnmoreLink": { "type": "string" },
+    "github": { "type": "string" },
+    "twitter": { "type": "string" },
+    "reddit": { "type": "string" },
+    "discord": { "type": "string" },
     "location": { "type": "string" },
     "active": { "type": "boolean"},
     "type": { "type": "string", "enum": ["Governance", "DeFi", "Payroll"]},
     "status": { "type": "string", "enum": ["Pre-Launch", "Prototype", "BETA", "Live", "Inactive"]}
-  }
+  },
+  "required": ["name", "description", "learnMoreLink", "location", "type", "status"]
 };
 
 var validate = ajv.compile(ProjectType);

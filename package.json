@@ -21,6 +21,7 @@
     "styled-components": "^4.3.1"
   },
   "devDependencies": {
+    "ajv": "^6.10.0",
     "prettier": "^1.18.2",
     "tailwind.macro": "^0.5.10",
     "tailwindcss": "^1.0.4"
