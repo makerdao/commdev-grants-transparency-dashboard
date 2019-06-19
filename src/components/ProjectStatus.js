@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import {data} from "../utils.js"
 
 
 const ProjectsStatusWrapper = styled.div`
@@ -43,35 +44,35 @@ export default () => (
   <ProjectsStatusWrapper>
     <ProjectStatusContainer>
       <ProjectStatusObject>
-        <ProjectObjectText>54</ProjectObjectText>
+        <ProjectObjectText>{data.NofProjectStatus.prelaunch}</ProjectObjectText>
         <ProjectCircle></ProjectCircle>
         <ProjectObjectText>PRE-LAUNCH</ProjectObjectText>
       </ProjectStatusObject>
     </ProjectStatusContainer>
     <ProjectStatusContainer>
       <ProjectStatusObject>
-        <ProjectObjectText>19</ProjectObjectText>
+        <ProjectObjectText>{data.NofProjectStatus.prototype}</ProjectObjectText>
         <ProjectCircle></ProjectCircle>
         <ProjectObjectText>PROTOTYPE</ProjectObjectText>
       </ProjectStatusObject>
     </ProjectStatusContainer>
     <ProjectStatusContainer>
       <ProjectStatusObject>
-        <ProjectObjectText>12</ProjectObjectText>
+        <ProjectObjectText>{data.NofProjectStatus.beta}</ProjectObjectText>
         <ProjectCircle></ProjectCircle>
         <ProjectObjectText>BETA</ProjectObjectText>
       </ProjectStatusObject>
     </ProjectStatusContainer>
     <ProjectStatusContainer>
       <ProjectStatusObject>
-        <ProjectObjectText>6</ProjectObjectText>
+        <ProjectObjectText>{data.NofProjectStatus.live}</ProjectObjectText>
         <ProjectCircle></ProjectCircle>
         <ProjectObjectText>LIVE</ProjectObjectText>
       </ProjectStatusObject>
     </ProjectStatusContainer>
     <ProjectStatusContainer>
       <ProjectStatusObject>
-        <ProjectObjectText>4</ProjectObjectText>
+        <ProjectObjectText>{data.NofProjectStatus.inactive}</ProjectObjectText>
         <ProjectCircle></ProjectCircle>
         <ProjectObjectText>INACTIVE</ProjectObjectText>
       </ProjectStatusObject>
