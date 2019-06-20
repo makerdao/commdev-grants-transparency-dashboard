@@ -8,7 +8,7 @@ display: grid;
 grid-template-columns: repeat(auto-fit, 160px);
 grid-gap: 2rem;
 justify-content: space-around;
-padding: 4rem 0rem 4rem 0rem;
+padding: 6rem 0rem 6rem 0rem;
 `
 
 

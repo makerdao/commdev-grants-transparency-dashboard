@@ -10,7 +10,7 @@ const GeographyContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, 240px);
   justify-content: center;
-  min-height: 50vh;
+  padding: 6rem 0rem 6rem 0rem;
 `
 
 const GeographyObject = styled.div`
