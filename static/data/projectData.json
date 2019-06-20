@@ -9,7 +9,8 @@
     "discord": "github.com/theDjinni/magicThreads101",
     "status": "Prototype",
     "type": "Governance",
-    "location": {"country": "USA", "region": "North America"},
+    "location": "USA",
+    "region": "North America",
     "active": true,
     "funds": {
       "awarded": true,
@@ -26,7 +27,8 @@
     "discord": "github.com/theDjinni/magicThreads101",
     "status": "BETA",
     "type": "Governance",
-    "location": {"country": "Egypt", "region": "Africa"},
+    "location": "Egypt",
+    "region": "Africa",
     "active": true,
     "funds": {
       "awarded": false,

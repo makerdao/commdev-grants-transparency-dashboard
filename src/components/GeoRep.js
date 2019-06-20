@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import {region} from '../../static/data/dataformat.js'
+import {data} from "../utils.js"
 
 
 // Geographic Representation
@@ -37,52 +39,19 @@ const CountryListItem = styled.li`
 
 export default () => (
   <GeographyContainer>
-    <GeographyObject>
-      <CountryTitle>North America</CountryTitle>
-        <CountryListContainer>
-          <CountryListItem>United States</CountryListItem>
-          <CountryListItem>Canada</CountryListItem>
-        </CountryListContainer>
-    </GeographyObject>
-    <GeographyObject>
-      <CountryTitle>Africa</CountryTitle>
-      <CountryListContainer>
-        <CountryListItem>Nigeria</CountryListItem>
-        <CountryListItem>South Africa</CountryListItem>
-        <CountryListItem>Kenya</CountryListItem>
-        <CountryListItem>Ethiopia</CountryListItem>
-        <CountryListItem>Cameroon</CountryListItem>
-      </CountryListContainer>
-    </GeographyObject>
-    <GeographyObject>
-      <CountryTitle>Europe</CountryTitle>
-      <CountryListContainer>
-        <CountryListItem>Nigeria</CountryListItem>
-        <CountryListItem>South Africa</CountryListItem>
-        <CountryListItem>Kenya</CountryListItem>
-        <CountryListItem>Ethiopia</CountryListItem>
-        <CountryListItem>Cameroon</CountryListItem>
-      </CountryListContainer>
-    </GeographyObject>
-    <GeographyObject>
-      <CountryTitle>Asia</CountryTitle>
-      <CountryListContainer>
-        <CountryListItem>Nigeria</CountryListItem>
-        <CountryListItem>South Africa</CountryListItem>
-        <CountryListItem>Kenya</CountryListItem>
-        <CountryListItem>Ethiopia</CountryListItem>
-        <CountryListItem>Cameroon</CountryListItem>
-      </CountryListContainer>
-    </GeographyObject>
-    <GeographyObject>
-      <CountryTitle>Oceania</CountryTitle>
-      <CountryListContainer>
-        <CountryListItem>Nigeria</CountryListItem>
-        <CountryListItem>South Africa</CountryListItem>
-        <CountryListItem>Kenya</CountryListItem>
-        <CountryListItem>Ethiopia</CountryListItem>
-        <CountryListItem>Cameroon</CountryListItem>
-      </CountryListContainer>
-    </GeographyObject>
+    {
+      Object.values(region).map( reg => (
+        <GeographyObject key={reg}>
+          <CountryTitle>{reg}</CountryTitle>
+          <CountryListContainer>
+            {
+              Object.values(data.countriesByRegion[reg]).map( country => (
+                <CountryListItem key={country}>{country}</CountryListItem>
+              ))
+            }
+          </CountryListContainer>
+        </GeographyObject>
+      ))
+    }
   </GeographyContainer>
 );

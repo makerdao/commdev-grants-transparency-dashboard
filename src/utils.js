@@ -1,5 +1,5 @@
 import rawData from '../static/data/projectData.json'
-import {pStatus, pType} from '../static/data/dataformat.js'
+import {pStatus, pType, region} from '../static/data/dataformat.js'
 
 const getTotalAwardedMoney = () => {
   let totalSum = 0
@@ -54,6 +54,19 @@ for (let type of Object.values(pType)) {
   typeDistribution[type] = (getNofProjectType(type) / (nOfProjects)) * 100
 }
 
+// create list of countries by region
+const getCountriesOfRegion = (region) => {
+  let pByRegion = rawData.filter(p => p.region === region)
+  return pByRegion.length === 0 ? [] : pByRegion.map(p => p.location)
+}
+
+var countriesByRegion = {}
+for (let reg of Object.values(region)) {
+  countriesByRegion[reg] = getCountriesOfRegion(reg)
+}
+// console.log('countriesByRegion ', countriesByRegion )
+
+
 export const data = {
   "totalMoney": getTotalAwardedMoney(),
   "appsSubmitted": getAppsSubmitted(),
@@ -61,7 +74,8 @@ export const data = {
   "nCountries": getNofCountries(),
   "NofProjectType": typeDistributionList.reduce(mergeObjects),
   "NofProjectStatus":statusDistributionList.reduce(mergeObjects),
-  "typeDistribution": typeDistribution
+  typeDistribution,
+  countriesByRegion
 }
 
 console.log('processed data', data)
