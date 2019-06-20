@@ -1,14 +1,22 @@
 import rawData from '../static/data/projectData.json'
+import financeData from '../static/data/secretProjectData.json'
 import {pStatus, pType, region} from '../static/data/dataformat.js'
+import {differenceInDays, endOfToday} from 'date-fns'
 
 const getTotalAwardedMoney = () => {
   let totalSum = 0
-  rawData.filter(project => project.funds.awarded).map(project => totalSum += project.funds.amount)
+  financeData.map(project => totalSum += project.awarded)
+  return totalSum
+}
+
+const getTotalDispersedMoney = () => {
+  let totalSum = 0
+  financeData.map(project => totalSum += project.dispersed)
   return totalSum
 }
 
 const getAcceptedProjects = () => {
-  return rawData.filter(project => project.funds.awarded)
+  return rawData.filter(project => project.accepted)
 }
 
 const getAppsSubmitted = () => {
@@ -19,23 +27,26 @@ const getNofAcceptedProjects = () => {
   return getAcceptedProjects().length
 }
 
+const averageAwardedMoney = Math.floor(getTotalAwardedMoney() / getNofAcceptedProjects())
+console.log('averageAwardedMoney ', averageAwardedMoney )
+
 const getNofCountries = () => {
-  let countries = rawData.filter(p => p.location)
+  let countries = getAcceptedProjects().filter(p => p.location)
   let distinctCountries = new Set(countries)
   return distinctCountries.size
 }
 
 // REFACTOR: those next two could be fused together
-// counts the number of projects which have a given value in a certain field, either all or just the accepted ones
-const getNofProjectField = (field, value, all=false) => {
-  return rawData.filter(p => p[field] === value && (all || p.funds.awarded)).length
+// counts the number of projects which have a given value in a certain field
+const getNofProjectField = (field, value) => {
+  return getAcceptedProjects().filter(p => p[field] === value).length
 }
 // console.log('getNofProjectField ', getNofProjectField('status', 'BETA', true))
 
 // Creating stats of how many projects there are of each type and status:
 // REFACTOR maybe instead of doing map and reduce this can be done in one step?
 let statusDistributionList = Object.values(pStatus).map( p => {
-  return {[p]: getNofProjectField('status', p, false)};
+  return {[p]: getNofProjectField('status', p)};
 })
 
 let typeDistributionList = Object.values(pType).map( p => {
@@ -50,12 +61,12 @@ const mergeObjects = (acc, currentValue) => Object.assign(acc, currentValue)
 var nOfProjects = getNofAcceptedProjects()
 let typeDistribution = {}
 for (let type of Object.values(pType)) {
-  typeDistribution[type] = (getNofProjectField('type', type, false) / (nOfProjects)) * 100
+  typeDistribution[type] = (getNofProjectField('type', type) / (nOfProjects)) * 100
 }
 
 // create list of countries by region
 const getCountriesOfRegion = (region) => {
-  let pByRegion = rawData.filter(p => p.region === region)
+  let pByRegion = getAcceptedProjects().filter(p => p.region === region)
   return pByRegion.length === 0 ? [] : pByRegion.map(p => p.location)
 }
 
@@ -70,14 +81,35 @@ function formatNumber(num) {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
+// total completed milestones
+const getTotalCompletedMilestones = () => {
+  let ms = 0
+  financeData.map(project => ms += project.milestones.completed)
+  return ms
+}
+
+const getMilestonesLast30Days = () => {
+  let ms = 0
+  financeData.filter(project => project.milestones.last30days && (ms += project.milestones.last30days))
+  return ms
+}
+console.log('getMilestonesLast30Days', getMilestonesLast30Days())
+
 export const data = {
   "acceptedProjects": getAcceptedProjects(),
-  "totalMoney": formatNumber(getTotalAwardedMoney()),
+  "totalMoneyAwarded": formatNumber(getTotalAwardedMoney()),
+  "totalMoneyDispersed": formatNumber(getTotalDispersedMoney()),
+  "averageAwardedMoney": formatNumber(averageAwardedMoney),
   "appsSubmitted": getAppsSubmitted(),
   "appsAccepted": getNofAcceptedProjects(),
   "nCountries": getNofCountries(),
   "NofProjectType": typeDistributionList.reduce(mergeObjects),
   "NofProjectStatus":statusDistributionList.reduce(mergeObjects),
+  "milestones": {
+    "total": getTotalCompletedMilestones(),
+    "last30days": getMilestonesLast30Days()
+  },
+  "currentlyActive": getNofProjectField('active', true),
   typeDistribution,
   countriesByRegion
 }
