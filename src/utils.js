@@ -8,7 +8,7 @@ const getTotalAwardedMoney = () => {
 }
 
 const getAcceptedProjects = () => {
-  return rawData.filter(project => project.funds.awarded)
+  return rawData.filter(project => project.awarded)
 }
 
 const getAppsSubmitted = () => {
@@ -20,22 +20,22 @@ const getNofAcceptedProjects = () => {
 }
 
 const getNofCountries = () => {
-  let countries = rawData.filter(p => p.location)
+  let countries = getAcceptedProjects().filter(p => p.location)
   let distinctCountries = new Set(countries)
   return distinctCountries.size
 }
 
 // REFACTOR: those next two could be fused together
-// counts the number of projects which have a given value in a certain field, either all or just the accepted ones
-const getNofProjectField = (field, value, all=false) => {
-  return rawData.filter(p => p[field] === value && (all || p.funds.awarded)).length
+// counts the number of projects which have a given value in a certain field
+const getNofProjectField = (field, value) => {
+  return getAcceptedProjects().filter(p => p[field] === value).length
 }
 // console.log('getNofProjectField ', getNofProjectField('status', 'BETA', true))
 
 // Creating stats of how many projects there are of each type and status:
 // REFACTOR maybe instead of doing map and reduce this can be done in one step?
 let statusDistributionList = Object.values(pStatus).map( p => {
-  return {[p]: getNofProjectField('status', p, false)};
+  return {[p]: getNofProjectField('status', p)};
 })
 
 let typeDistributionList = Object.values(pType).map( p => {
@@ -50,12 +50,12 @@ const mergeObjects = (acc, currentValue) => Object.assign(acc, currentValue)
 var nOfProjects = getNofAcceptedProjects()
 let typeDistribution = {}
 for (let type of Object.values(pType)) {
-  typeDistribution[type] = (getNofProjectField('type', type, false) / (nOfProjects)) * 100
+  typeDistribution[type] = (getNofProjectField('type', type) / (nOfProjects)) * 100
 }
 
 // create list of countries by region
 const getCountriesOfRegion = (region) => {
-  let pByRegion = rawData.filter(p => p.region === region)
+  let pByRegion = getAcceptedProjects().filter(p => p.region === region)
   return pByRegion.length === 0 ? [] : pByRegion.map(p => p.location)
 }
 

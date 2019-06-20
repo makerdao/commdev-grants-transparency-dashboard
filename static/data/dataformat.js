@@ -25,6 +25,22 @@ const region = {
   "oceania": "Oceania"
 }
 
+const Finances = {
+  "name": { "type": "string" },
+  "awarded": {"type": "number"},
+  "dispersed": {"type": "number"},
+  "milestones": {
+    "type": "object",
+    "properties": {
+      "total": {"type": "number"},
+      "completed": {"type": "number"},
+      "lastCompleted": {"type": "date-time"}
+    },
+    "required": ["total", "completed"]
+  },
+  "required": ["awarded", "name", "dispersed", "milestones"] // potential TODO enfore dispersed < awarded
+}
+
 // json-SCHEMA defintion that entries have to conform with
 const Project = {
   "properties": {
@@ -40,16 +56,9 @@ const Project = {
     "active": { "type": "boolean"},
     "type": { "type": "string", "enum": [...Object.values(pType)]},
     "status": { "type": "string", "enum": [...Object.values(pStatus)]},
-    "funds": {
-      "type": "object",
-      "properties": {
-        "awarded": {"type": "boolean"},
-        "amount": {"type": "integer"}
-      },
-      "required": ["awarded", "amount"]
-    }
+    "accepted": {"type": "boolean"},
   },
-  "required": ["name", "description", "learnMoreLink", "active", "location", "region", "type", "status", "funds"]
+  "required": ["name", "description", "learnMoreLink", "active", "location", "region", "type", "status", "accepted"]
 };
 
-module.exports = {pStatus, pType, region, Project};
+module.exports = {pStatus, pType, region, Project, Finances};

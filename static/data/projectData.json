@@ -12,10 +12,7 @@
     "location": "USA",
     "region": "North America",
     "active": true,
-    "funds": {
-      "awarded": true,
-      "amount": 200000
-    }
+    "accepted": true
   },
   {
     "name": "Flying Carpets",
@@ -30,10 +27,7 @@
     "location": "Egypt",
     "region": "Africa",
     "active": true,
-    "funds": {
-      "awarded": true,
-      "amount": 1000
-    }
+    "accepted": true
   },
   {
     "name": "Killer Drones",
@@ -48,10 +42,6 @@
     "location": "Germany",
     "region": "Europe",
     "active": false,
-    "funds": {
-      "awarded": false,
-      "amount": 0
-    }
+    "accepted": true
   }
-
 ]
