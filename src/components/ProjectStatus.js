@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import StatusCircle from "../components/StatusCircle"
 import {data} from "../utils.js"
 import {pStatus} from '../../static/data/dataformat.js'
 
@@ -31,13 +32,6 @@ const ProjectObjectText = styled.h6`
   font-size: 1.25rem;
 `
 
-const ProjectCircle = styled.span`
-  display: inline-block;
-  width: 5.25rem;
-  height: 5.25rem;
-  background: #1AAB9B;
-  border-radius: 100px;
-`
 
 export default () => (
   <ProjectsStatusWrapper>
@@ -46,7 +40,7 @@ export default () => (
       <ProjectStatusContainer key={status.toString()}>
         <ProjectStatusObject>
           <ProjectObjectText>{data.NofProjectStatus[status]}</ProjectObjectText>
-          <ProjectCircle></ProjectCircle>
+          <StatusCircle />
           <ProjectObjectText>{status}</ProjectObjectText>
         </ProjectStatusObject>
       </ProjectStatusContainer>
