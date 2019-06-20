@@ -31,8 +31,16 @@ const Project = {
     "active": { "type": "boolean"},
     "type": { "type": "string", "enum": [...Object.values(pType)]},
     "status": { "type": "string", "enum": [...Object.values(pStatus)]},
+    "funds": {
+      "type": "object",
+      "properties": {
+        "awarded": {"type": "boolean"},
+        "amount": {"type": "integer"}
+      },
+      "required": ["awarded", "amount"]
+    }
   },
-  "required": ["name", "description", "learnMoreLink", "active", "location", "type", "status"]
+  "required": ["name", "description", "learnMoreLink", "active", "location", "type", "status", "funds"]
 };
 
 module.exports = {pStatus, pType, Project};
