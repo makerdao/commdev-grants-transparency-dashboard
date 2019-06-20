@@ -7,13 +7,16 @@ const getTotalAwardedMoney = () => {
   return totalSum
 }
 
+const getAcceptedProjects = () => {
+  return rawData.filter(project => project.funds.awarded)
+}
+
 const getAppsSubmitted = () => {
   return rawData.length
 }
 
-const getAppsAccepted = () => {
-  let tmp = rawData.filter(project => project.funds.awarded).length
-  return tmp
+const getNofAcceptedProjects = () => {
+  return getAcceptedProjects().length
 }
 
 const getNofCountries = () => {
@@ -23,23 +26,20 @@ const getNofCountries = () => {
 }
 
 // REFACTOR: those next two could be fused together
-// return number of projects of a given type (string), either all or just the accepted ones
-const getNofProjectType = (type) => {
-  return rawData.filter(p => p.type === type).length
+// counts the number of projects which have a given value in a certain field, either all or just the accepted ones
+const getNofProjectField = (field, value, all=false) => {
+  return rawData.filter(p => p[field] === value && (all || p.funds.awarded)).length
 }
-
-// return number of projects of a given type (string), either all or just the accepted ones
-const getNofProjectStatus = (status) => {
-  return rawData.filter(p => p.status === status).length
-}
+// console.log('getNofProjectField ', getNofProjectField('status', 'BETA', true))
 
 // Creating stats of how many projects there are of each type and status:
 // REFACTOR maybe instead of doing map and reduce this can be done in one step?
 let statusDistributionList = Object.values(pStatus).map( p => {
-  return {[p]: getNofProjectStatus(p)};
+  return {[p]: getNofProjectField('status', p, false)};
 })
+
 let typeDistributionList = Object.values(pType).map( p => {
-  return {[p]: getNofProjectType(p)};
+  return {[p]: getNofProjectField('type', p)};
 })
 
 // reduce function to merge lists into one handy object with status/types as keys
@@ -47,11 +47,10 @@ const mergeObjects = (acc, currentValue) => Object.assign(acc, currentValue)
 // let td = typeDistributionList.reduce(mergeObjects)
 
 // get distribution of projectTypes as percentages
-// TODO all porject or just accepted ones
-var nOfProjects = getAppsSubmitted()
+var nOfProjects = getNofAcceptedProjects()
 let typeDistribution = {}
 for (let type of Object.values(pType)) {
-  typeDistribution[type] = (getNofProjectType(type) / (nOfProjects)) * 100
+  typeDistribution[type] = (getNofProjectField('type', type, false) / (nOfProjects)) * 100
 }
 
 // create list of countries by region
@@ -66,11 +65,16 @@ for (let reg of Object.values(region)) {
 }
 // console.log('countriesByRegion ', countriesByRegion )
 
+// function to insert comma as separators every 3 digits
+function formatNumber(num) {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
 
 export const data = {
-  "totalMoney": getTotalAwardedMoney(),
+  "acceptedProjects": getAcceptedProjects(),
+  "totalMoney": formatNumber(getTotalAwardedMoney()),
   "appsSubmitted": getAppsSubmitted(),
-  "appsAccepted": getAppsAccepted(),
+  "appsAccepted": getNofAcceptedProjects(),
   "nCountries": getNofCountries(),
   "NofProjectType": typeDistributionList.reduce(mergeObjects),
   "NofProjectStatus":statusDistributionList.reduce(mergeObjects),

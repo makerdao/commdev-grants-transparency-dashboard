@@ -1,6 +1,6 @@
 [
   {
-    "name": "SoapBubbleFactory",
+    "name": "Soap Bubble Factory",
     "description": "Making the world a more colorful place!",
     "learnMoreLink": "github.com/theDjinni/magicThreads101",
     "github": "github.com/theDjinni/magicThreads101",
@@ -14,7 +14,7 @@
     "active": true,
     "funds": {
       "awarded": true,
-      "amount": 1000000
+      "amount": 200000
     }
   },
   {
@@ -26,13 +26,32 @@
     "reddit": "github.com/theDjinni/magicThreads101",
     "discord": "github.com/theDjinni/magicThreads101",
     "status": "BETA",
-    "type": "Governance",
+    "type": "Fiat Ramps",
     "location": "Egypt",
     "region": "Africa",
     "active": true,
     "funds": {
-      "awarded": false,
+      "awarded": true,
       "amount": 1000
     }
+  },
+  {
+    "name": "Killer Drones",
+    "description": "Killer drones for everyone!!!",
+    "learnMoreLink": "github.com/hitman/kd",
+    "github": "github.com/hitman/kd",
+    "twitter": "github.com/hitman/kd",
+    "reddit": "github.com/hitman/kd",
+    "discord": "github.com/hitman/kd",
+    "status": "Inactive",
+    "type": "Enterprise",
+    "location": "Germany",
+    "region": "Europe",
+    "active": false,
+    "funds": {
+      "awarded": false,
+      "amount": 0
+    }
   }
+
 ]
