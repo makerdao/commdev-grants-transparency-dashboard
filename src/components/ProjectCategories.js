@@ -45,14 +45,14 @@ export default () => (
   <ProjectCategoriesWrapper>
     {
       Object.values(pType).map( type => (
-        <ProjectCategoryContainer>
-        <ProjectCategoryChart />
-        <ProjectCategoryNumber>
-        {data.typeDistribution[type]}%
+        <ProjectCategoryContainer key={type.toString()}>
+          <ProjectCategoryChart />
+          <ProjectCategoryNumber>
+            {data.typeDistribution[type]}%
           </ProjectCategoryNumber>
-        <ProjectCategoryLabel>
-        {type}
-        </ProjectCategoryLabel>
+          <ProjectCategoryLabel>
+            {type}
+          </ProjectCategoryLabel>
         </ProjectCategoryContainer>
       ))
     }
