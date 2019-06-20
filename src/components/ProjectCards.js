@@ -3,6 +3,7 @@ import styled from "styled-components"
 import {data} from "../utils.js"
 
 
+
 const ProjectCardWrapper = styled.section`
 display: grid;
 grid-template-columns: repeat(auto-fit, 300px);
@@ -24,7 +25,7 @@ background: hsla(255,255,255,0.4);
 `
 
 
-const ProjectTitle = styled.h5`
+const ProjectTitle = styled.h6`
 grid-column: 1 / -1;
 grid-row: 1;
 color: #231536;
@@ -50,13 +51,14 @@ color: #aaa;
 overflow: hidden;
 `
 
-const ButtonLearnMore = styled.button`
+const ButtonLearnMore = styled.a`
 grid-column: 1 / 3;
 grid-row: 4;
 border: 1px solid #231536;
 border-radius: 0.125rem;
 padding: 0.875rem 1.5rem 0.875rem 1.5rem;
 font-size: 1rem;
+text-align: center;
 background: none;
 `
 
@@ -70,7 +72,7 @@ export default () => (
           <ProjectTitle>{project.name}</ProjectTitle>
           <ProjectStatus>{project.status}</ProjectStatus>
         <ProjectDescription>{project.description}</ProjectDescription>
-        <ButtonLearnMore>{project.learnmoreLink}</ButtonLearnMore>
+        <ButtonLearnMore href={project.learnmoreLink} target="_blank" rel="noopener noreferrer"> Learn More</ButtonLearnMore>
       </ProjectCard>
     ))
   }
