@@ -6,6 +6,7 @@ import ProjectStatus from "../components/ProjectStatus"
 import GeoRep from "../components/GeoRep"
 import ProjectCategories from "../components/ProjectCategories"
 import ProjectCard from "../components/ProjectCards"
+import Footer from "../components/Footer"
 
 
 
@@ -42,5 +43,7 @@ export default () => (
       <ProjectCard />
 
     </ProjectsWrapper>
+
+    <Footer />
   </React.Fragment>
 )
