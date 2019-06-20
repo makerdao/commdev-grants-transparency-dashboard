@@ -42,6 +42,6 @@
     "location": "Germany",
     "region": "Europe",
     "active": false,
-    "accepted": true
+    "accepted": false
   }
 ]

@@ -34,7 +34,7 @@ const Finances = {
     "properties": {
       "total": {"type": "number"},
       "completed": {"type": "number"},
-      "lastCompleted": {"type": "date-time"}
+      "last30days": {"type": "number"}
     },
     "required": ["total", "completed"]
   },

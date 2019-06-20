@@ -1,14 +1,22 @@
 import rawData from '../static/data/projectData.json'
+import financeData from '../static/data/secretProjectData.json'
 import {pStatus, pType, region} from '../static/data/dataformat.js'
+import {differenceInDays, endOfToday} from 'date-fns'
 
 const getTotalAwardedMoney = () => {
   let totalSum = 0
-  rawData.filter(project => project.funds.awarded).map(project => totalSum += project.funds.amount)
+  financeData.map(project => totalSum += project.awarded)
+  return totalSum
+}
+
+const getTotalDispersedMoney = () => {
+  let totalSum = 0
+  financeData.map(project => totalSum += project.dispersed)
   return totalSum
 }
 
 const getAcceptedProjects = () => {
-  return rawData.filter(project => project.awarded)
+  return rawData.filter(project => project.accepted)
 }
 
 const getAppsSubmitted = () => {
@@ -18,6 +26,9 @@ const getAppsSubmitted = () => {
 const getNofAcceptedProjects = () => {
   return getAcceptedProjects().length
 }
+
+const averageAwardedMoney = Math.floor(getTotalAwardedMoney() / getNofAcceptedProjects())
+console.log('averageAwardedMoney ', averageAwardedMoney )
 
 const getNofCountries = () => {
   let countries = getAcceptedProjects().filter(p => p.location)
@@ -70,14 +81,35 @@ function formatNumber(num) {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
+// total completed milestones
+const getTotalCompletedMilestones = () => {
+  let ms = 0
+  financeData.map(project => ms += project.milestones.completed)
+  return ms
+}
+
+const getMilestonesLast30Days = () => {
+  let ms = 0
+  financeData.filter(project => project.milestones.last30days && (ms += project.milestones.last30days))
+  return ms
+}
+console.log('getMilestonesLast30Days', getMilestonesLast30Days())
+
 export const data = {
   "acceptedProjects": getAcceptedProjects(),
-  "totalMoney": formatNumber(getTotalAwardedMoney()),
+  "totalMoneyAwarded": formatNumber(getTotalAwardedMoney()),
+  "totalMoneyDispersed": formatNumber(getTotalDispersedMoney()),
+  "averageAwardedMoney": formatNumber(averageAwardedMoney),
   "appsSubmitted": getAppsSubmitted(),
   "appsAccepted": getNofAcceptedProjects(),
   "nCountries": getNofCountries(),
   "NofProjectType": typeDistributionList.reduce(mergeObjects),
   "NofProjectStatus":statusDistributionList.reduce(mergeObjects),
+  "milestones": {
+    "total": getTotalCompletedMilestones(),
+    "last30days": getMilestonesLast30Days()
+  },
+  "currentlyActive": getNofProjectField('active', true),
   typeDistribution,
   countriesByRegion
 }

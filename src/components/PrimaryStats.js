@@ -41,28 +41,28 @@ export default () => (
       <StatsTitle>Countries Represented</StatsTitle>
     </StatsContainer>
     <StatsContainer>
-      <StatsNumber>491</StatsNumber>
-      <StatsTitle>Grant Applications Submitted</StatsTitle>
+      <StatsNumber>${data.totalMoneyAwarded}</StatsNumber>
+      <StatsTitle>Funds Awarded</StatsTitle>
     </StatsContainer>
     <StatsContainer>
-      <StatsNumber>491</StatsNumber>
-      <StatsTitle>Grant Applications Submitted</StatsTitle>
+      <StatsNumber>${data.totalMoneyDispersed}</StatsNumber>
+      <StatsTitle>Funds Dispersed</StatsTitle>
     </StatsContainer>
     <StatsContainer>
-      <StatsNumber>491</StatsNumber>
-      <StatsTitle>Grant Applications Submitted</StatsTitle>
+      <StatsNumber>${data.averageAwardedMoney}</StatsNumber>
+      <StatsTitle>Average Awarded</StatsTitle>
     </StatsContainer>
     <StatsContainer>
-      <StatsNumber>491</StatsNumber>
-      <StatsTitle>Grant Applications Submitted</StatsTitle>
+      <StatsNumber>{data.milestones.total}</StatsNumber>
+      <StatsTitle>Milestontes completed</StatsTitle>
     </StatsContainer>
     <StatsContainer>
-      <StatsNumber>491</StatsNumber>
-      <StatsTitle>Grant Applications Submitted</StatsTitle>
+      <StatsNumber>{data.milestones.last30days}</StatsNumber>
+      <StatsTitle>Milestones completed (30 days)</StatsTitle>
     </StatsContainer>
     <StatsContainer>
-      <StatsNumber>491</StatsNumber>
-      <StatsTitle>Grant Applications Submitted</StatsTitle>
+      <StatsNumber>{data.currentlyActive}</StatsNumber>
+      <StatsTitle>Currently active projects</StatsTitle>
     </StatsContainer>
   </StatsWrapper>
 );
