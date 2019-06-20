@@ -2,7 +2,7 @@
 const pStatus = {
   "prelaunch": "Pre-Launch",
   "Prototype": "Prototype",
-  "beta": "BETA",
+  "beta": "Beta",
   "live": "Live",
   "inactive": "Inactive"
 }
