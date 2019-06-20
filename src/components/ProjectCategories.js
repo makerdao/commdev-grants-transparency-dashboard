@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-
+import {data} from "../utils.js"
+import {pType} from '../../static/data/dataformat.js'
 
 const ProjectCategoriesWrapper = styled.section`
 display: grid;
@@ -42,69 +43,19 @@ text-transform: uppercase;
 
 export default () => (
   <ProjectCategoriesWrapper>
-      <ProjectCategoryContainer>
+    {
+      Object.values(pType).map( type => (
+        <ProjectCategoryContainer>
         <ProjectCategoryChart />
         <ProjectCategoryNumber>
-        25%
-        </ProjectCategoryNumber>
+        {data.typeDistribution[type]}%
+          </ProjectCategoryNumber>
         <ProjectCategoryLabel>
-          DEFI
+        {type}
         </ProjectCategoryLabel>
-      </ProjectCategoryContainer>
-      <ProjectCategoryContainer>
-        <ProjectCategoryChart />
-        <ProjectCategoryNumber>
-        12%
-        </ProjectCategoryNumber>
-        <ProjectCategoryLabel>
-          Governance
-        </ProjectCategoryLabel>
-      </ProjectCategoryContainer>
-  <ProjectCategoryContainer>
-    <ProjectCategoryChart />
-    <ProjectCategoryNumber>
-    18%
-    </ProjectCategoryNumber>
-    <ProjectCategoryLabel>
-      Fiat Ramps
-    </ProjectCategoryLabel>
-  </ProjectCategoryContainer>
-  <ProjectCategoryContainer>
-    <ProjectCategoryChart />
-    <ProjectCategoryNumber>
-    4%
-    </ProjectCategoryNumber>
-    <ProjectCategoryLabel>
-      Payroll
-    </ProjectCategoryLabel>
-  </ProjectCategoryContainer>
-  <ProjectCategoryContainer>
-    <ProjectCategoryChart />
-    <ProjectCategoryNumber>
-    10%
-    </ProjectCategoryNumber>
-    <ProjectCategoryLabel>
-      CDP MGMT
-    </ProjectCategoryLabel>
-  </ProjectCategoryContainer>
-  <ProjectCategoryContainer>
-    <ProjectCategoryChart />
-    <ProjectCategoryNumber>
-    20%
-    </ProjectCategoryNumber>
-    <ProjectCategoryLabel>
-      Enterprise
-    </ProjectCategoryLabel>
-  </ProjectCategoryContainer>
-  <ProjectCategoryContainer>
-    <ProjectCategoryChart />
-    <ProjectCategoryNumber>
-    9%
-    </ProjectCategoryNumber>
-    <ProjectCategoryLabel>
-      Analytics
-    </ProjectCategoryLabel>
-  </ProjectCategoryContainer>
+        </ProjectCategoryContainer>
+      ))
+    }
   </ProjectCategoriesWrapper>
 
 );

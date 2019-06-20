@@ -23,10 +23,12 @@ const getNofCountries = () => {
 }
 
 // REFACTOR: those next two could be fused together
+// return number of projects of a given type (string), either all or just the accepted ones
 const getNofProjectType = (type) => {
   return rawData.filter(p => p.type === type).length
 }
 
+// return number of projects of a given type (string), either all or just the accepted ones
 const getNofProjectStatus = (status) => {
   return rawData.filter(p => p.status === status).length
 }
@@ -44,13 +46,22 @@ let typeDistributionList = Object.values(pType).map( p => {
 const mergeObjects = (acc, currentValue) => Object.assign(acc, currentValue)
 // let td = typeDistributionList.reduce(mergeObjects)
 
+// get distribution of projectTypes as percentages
+// TODO all porject or just accepted ones
+var nOfProjects = getAppsSubmitted()
+let typeDistribution = {}
+for (let type of Object.values(pType)) {
+  typeDistribution[type] = (getNofProjectType(type) / (nOfProjects)) * 100
+}
+
 export const data = {
   "totalMoney": getTotalAwardedMoney(),
   "appsSubmitted": getAppsSubmitted(),
   "appsAccepted": getAppsAccepted(),
   "nCountries": getNofCountries(),
   "NofProjectType": typeDistributionList.reduce(mergeObjects),
-  "NofProjectStatus":statusDistributionList.reduce(mergeObjects)
+  "NofProjectStatus":statusDistributionList.reduce(mergeObjects),
+  "typeDistribution": typeDistribution
 }
 
 console.log('processed data', data)
