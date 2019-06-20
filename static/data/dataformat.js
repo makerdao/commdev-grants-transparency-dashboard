@@ -17,6 +17,14 @@ const pType = {
   "analytics": "Analytics"
 }
 
+const region = {
+  "northamerica": "North America",
+  "africa": "Africa",
+  "europe": "Europe",
+  "asia": "Asia",
+  "oceania": "Oceania"
+}
+
 // json-SCHEMA defintion that entries have to conform with
 const Project = {
   "properties": {
@@ -28,11 +36,12 @@ const Project = {
     "reddit": { "type": "string" },
     "discord": { "type": "string" },
     "location": { "type": "string" },
+    "region": {"type": "string", "enum": [...Object.values(region)]},
     "active": { "type": "boolean"},
     "type": { "type": "string", "enum": [...Object.values(pType)]},
     "status": { "type": "string", "enum": [...Object.values(pStatus)]},
   },
-  "required": ["name", "description", "learnMoreLink", "active", "location", "type", "status"]
+  "required": ["name", "description", "learnMoreLink", "active", "location", "region", "type", "status"]
 };
 
-module.exports = {pStatus, pType, Project};
+module.exports = {pStatus, pType, region, Project};
