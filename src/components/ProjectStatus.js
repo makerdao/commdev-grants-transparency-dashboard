@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import {data} from "../utils.js"
-
+import {pStatus} from '../../static/data/dataformat.js'
 
 const ProjectsStatusWrapper = styled.div`
   grid-column: 1 / -1;
@@ -39,40 +39,39 @@ const ProjectCircle = styled.span`
   border-radius: 100px;
 `
 
-
 export default () => (
   <ProjectsStatusWrapper>
     <ProjectStatusContainer>
       <ProjectStatusObject>
-        <ProjectObjectText>{data.NofProjectStatus.prelaunch}</ProjectObjectText>
+        <ProjectObjectText>{data.NofProjectStatus[pStatus.prelaunch]}</ProjectObjectText>
         <ProjectCircle></ProjectCircle>
         <ProjectObjectText>PRE-LAUNCH</ProjectObjectText>
       </ProjectStatusObject>
     </ProjectStatusContainer>
     <ProjectStatusContainer>
       <ProjectStatusObject>
-        <ProjectObjectText>{data.NofProjectStatus.prototype}</ProjectObjectText>
+        <ProjectObjectText>{data.NofProjectStatus[pStatus.prelaunch]}</ProjectObjectText>
         <ProjectCircle></ProjectCircle>
         <ProjectObjectText>PROTOTYPE</ProjectObjectText>
       </ProjectStatusObject>
     </ProjectStatusContainer>
     <ProjectStatusContainer>
       <ProjectStatusObject>
-        <ProjectObjectText>{data.NofProjectStatus.beta}</ProjectObjectText>
+        <ProjectObjectText>{data.NofProjectStatus[pStatus.beta]}</ProjectObjectText>
         <ProjectCircle></ProjectCircle>
         <ProjectObjectText>BETA</ProjectObjectText>
       </ProjectStatusObject>
     </ProjectStatusContainer>
     <ProjectStatusContainer>
       <ProjectStatusObject>
-        <ProjectObjectText>{data.NofProjectStatus.live}</ProjectObjectText>
+        <ProjectObjectText>{data.NofProjectStatus[pStatus.live]}</ProjectObjectText>
         <ProjectCircle></ProjectCircle>
         <ProjectObjectText>LIVE</ProjectObjectText>
       </ProjectStatusObject>
     </ProjectStatusContainer>
     <ProjectStatusContainer>
       <ProjectStatusObject>
-        <ProjectObjectText>{data.NofProjectStatus.inactive}</ProjectObjectText>
+        <ProjectObjectText>{data.NofProjectStatus[pStatus.inactive]}</ProjectObjectText>
         <ProjectCircle></ProjectCircle>
         <ProjectObjectText>INACTIVE</ProjectObjectText>
       </ProjectStatusObject>
