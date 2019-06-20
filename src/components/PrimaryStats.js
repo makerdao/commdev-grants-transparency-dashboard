@@ -7,6 +7,7 @@ display: grid;
 grid-template-columns: repeat(auto-fit, 300px);
 grid-gap: 5rem;
 justify-content: space-around;
+padding: 6rem 0rem 6rem 0rem;
 `
 
 const StatsContainer = styled.div`
