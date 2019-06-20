@@ -7,13 +7,16 @@ const getTotalAwardedMoney = () => {
   return totalSum
 }
 
+const getAcceptedProjects = () => {
+  return rawData.filter(project => project.funds.awarded)
+}
+
 const getAppsSubmitted = () => {
   return rawData.length
 }
 
-const getAppsAccepted = () => {
-  let tmp = rawData.filter(project => project.funds.awarded).length
-  return tmp
+const getNofAcceptedProjects = () => {
+  return getAcceptedProjects().length
 }
 
 const getNofCountries = () => {
@@ -44,8 +47,7 @@ const mergeObjects = (acc, currentValue) => Object.assign(acc, currentValue)
 // let td = typeDistributionList.reduce(mergeObjects)
 
 // get distribution of projectTypes as percentages
-// TODO all porject or just accepted ones
-var nOfProjects = getAppsAccepted()
+var nOfProjects = getNofAcceptedProjects()
 let typeDistribution = {}
 for (let type of Object.values(pType)) {
   typeDistribution[type] = (getNofProjectField('type', type, false) / (nOfProjects)) * 100
@@ -63,12 +65,16 @@ for (let reg of Object.values(region)) {
 }
 // console.log('countriesByRegion ', countriesByRegion )
 
+// function to insert comma as separators every 3 digits
+function formatNumber(num) {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
 
 export const data = {
-  "acceptedProjects": rawData.filter(p => p.funds.awarded),
-  "totalMoney": getTotalAwardedMoney(),
+  "acceptedProjects": getAcceptedProjects(),
+  "totalMoney": formatNumber(getTotalAwardedMoney()),
   "appsSubmitted": getAppsSubmitted(),
-  "appsAccepted": getAppsAccepted(),
+  "appsAccepted": getNofAcceptedProjects(),
   "nCountries": getNofCountries(),
   "NofProjectType": typeDistributionList.reduce(mergeObjects),
   "NofProjectStatus":statusDistributionList.reduce(mergeObjects),
