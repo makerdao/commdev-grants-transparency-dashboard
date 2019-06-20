@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import {data} from "../utils.js"
 
 
 const ProjectCardWrapper = styled.section`
@@ -51,14 +52,20 @@ background: none;
 
 
 export default () => (
-<ProjectCardWrapper>
-    <ProjectCard>
-      <ProjectCardTop>
-        <ProjectTitle>Argent</ProjectTitle>
-        <ProjectStatus>Prototype</ProjectStatus>
+  <div>
+  {
+    Object.values(data.acceptedProjects).map( project => (
+      <ProjectCardWrapper key={project.name}>
+        <ProjectCard>
+          <ProjectCardTop>
+            <ProjectTitle>{project.name}</ProjectTitle>
+            <ProjectStatus>{project.status}</ProjectStatus>
       </ProjectCardTop>
-        <ProjectDescription>A consumer friendly wallet with DAI integration.</ProjectDescription>
-        <ButtonLearnMore>Learn More</ButtonLearnMore>
+          <ProjectDescription>{project.description}</ProjectDescription>
+          <ButtonLearnMore>{project.learnmoreLink}</ButtonLearnMore>
     </ProjectCard>
-</ProjectCardWrapper>
+      </ProjectCardWrapper>
+    ))
+  }
+  </div>
 );

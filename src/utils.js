@@ -52,6 +52,7 @@ for (let type of Object.values(pType)) {
 }
 
 export const data = {
+  "acceptedProjects": rawData.filter(p => p.funds.awarded),
   "totalMoney": getTotalAwardedMoney(),
   "appsSubmitted": getAppsSubmitted(),
   "appsAccepted": getAppsAccepted(),
