@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import {data} from "../utils.js"
+import {statusPieData} from "../utils.js"
 import {pType} from '../../static/data/dataformat.js'
+import {Pie} from 'react-chartjs-2'
 
 const ProjectCategoriesWrapper = styled.section`
 display: grid;
@@ -39,23 +40,11 @@ margin:0;
 text-transform: uppercase;
 `
 
-
-
 export default () => (
-  <ProjectCategoriesWrapper>
-    {
-      Object.values(pType).map( type => (
-        <ProjectCategoryContainer key={type.toString()}>
-          <ProjectCategoryChart />
-          <ProjectCategoryNumber>
-            {data.typeDistribution[type]}%
-          </ProjectCategoryNumber>
-          <ProjectCategoryLabel>
-            {type}
-          </ProjectCategoryLabel>
-        </ProjectCategoryContainer>
-      ))
-    }
-  </ProjectCategoriesWrapper>
-
+  <Pie
+    data={statusPieData}
+    /* width={100} */
+    /* height={50} */
+    /* options={{ maintainAspectRatio: false }} */
+  />
 );
