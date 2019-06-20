@@ -25,12 +25,30 @@
     "reddit": "github.com/theDjinni/magicThreads101",
     "discord": "github.com/theDjinni/magicThreads101",
     "status": "BETA",
-    "type": "Governance",
+    "type": "Fiat Ramps",
     "location": "Persia",
     "active": true,
     "funds": {
-      "awarded": false,
+      "awarded": true,
       "amount": 1000
     }
+  },
+  {
+    "name": "Killer Drones",
+    "description": "Killer drones for everyone!!!",
+    "learnMoreLink": "github.com/hitman/kd",
+    "github": "github.com/hitman/kd",
+    "twitter": "github.com/hitman/kd",
+    "reddit": "github.com/hitman/kd",
+    "discord": "github.com/hitman/kd",
+    "status": "Inactive",
+    "type": "Enterprise",
+    "location": "Germany",
+    "active": false,
+    "funds": {
+      "awarded": false,
+      "amount": 1000000
+    }
   }
+
 ]
