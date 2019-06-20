@@ -1,10 +1,10 @@
-var rawData = require('../static/data/projectData.json')
-import {Project} from '../static/data/dataformat.js'
+var rawData = require('../../static/data/projectData.json')
+var dataFormat = require('../../static/data/dataformat.js')
 
 var Ajv = require('ajv')
 var ajv = new Ajv({allErrors: true})
 
-var validate = ajv.compile(Project);
+var validate = ajv.compile(dataFormat.Project);
 
 // test expecting a list of projectTypes
 function test(json) {
@@ -13,13 +13,13 @@ function test(json) {
     process.stdout.write('Validating project ' +  p.name  + '...')
     if (!valid) {
       let error = "invalid JSON for project: " + p.name + ': '
-      console.log( error + ajv.errorsText(validate.errors))
+      console.log('\x1b[31m%s\x1b[0m', 'error')
+      console.log(error,  ajv.errorsText(validate.errors))
       throw error
       return -1
     }
-    console.log('OK')
+    console.log('\x1b[32m%s\x1b[0m', 'OK');
   }
-  // console.log('JsonData is OK.')
 }
 
 test(rawData)
