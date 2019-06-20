@@ -52,20 +52,18 @@ background: none;
 
 
 export default () => (
-  <div>
+  <ProjectCardWrapper >
   {
     Object.values(data.acceptedProjects).map( project => (
-      <ProjectCardWrapper key={project.name}>
-        <ProjectCard>
-          <ProjectCardTop>
-            <ProjectTitle>{project.name}</ProjectTitle>
-            <ProjectStatus>{project.status}</ProjectStatus>
-      </ProjectCardTop>
-          <ProjectDescription>{project.description}</ProjectDescription>
-          <ButtonLearnMore>{project.learnmoreLink}</ButtonLearnMore>
-    </ProjectCard>
-      </ProjectCardWrapper>
+      <ProjectCard key={project.name}>
+        <ProjectCardTop>
+          <ProjectTitle>{project.name}</ProjectTitle>
+          <ProjectStatus>{project.status}</ProjectStatus>
+        </ProjectCardTop>
+        <ProjectDescription>{project.description}</ProjectDescription>
+        <ButtonLearnMore>{project.learnmoreLink}</ButtonLearnMore>
+      </ProjectCard>
     ))
   }
-  </div>
+  </ProjectCardWrapper>
 );
