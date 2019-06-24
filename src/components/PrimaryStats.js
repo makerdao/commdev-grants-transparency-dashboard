@@ -55,15 +55,15 @@ export default () => (
     </StatsContainer>
     <StatsContainer>
       <StatsNumber>{data.milestones.total}</StatsNumber>
-      <StatsTitle>Milestontes completed</StatsTitle>
+      <StatsTitle>Milestones Completed</StatsTitle>
     </StatsContainer>
     <StatsContainer>
       <StatsNumber>{data.milestones.last30days}</StatsNumber>
-      <StatsTitle>Milestones completed (30 days)</StatsTitle>
+      <StatsTitle>Milestones Completed (30 days)</StatsTitle>
     </StatsContainer>
     <StatsContainer>
       <StatsNumber>{data.currentlyActive}</StatsNumber>
-      <StatsTitle>Currently active projects</StatsTitle>
+      <StatsTitle>Active Projects</StatsTitle>
     </StatsContainer>
   </StatsWrapper>
 );
