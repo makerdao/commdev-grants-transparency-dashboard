@@ -30,6 +30,7 @@ const ProjectStatusObject = styled.div`
 
 const ProjectObjectText = styled.h6`
   font-size: 1.25rem;
+  color: #231536;
 `
 
 
