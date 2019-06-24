@@ -29,14 +29,11 @@ background-color: #1AAB9B;
 
 const ProjectCategoryNumber = styled.h6`
 color: #231536;
-margin:1rem;
 text-transform: uppercase;
 `
 
 const ProjectCategoryLabel = styled.h6`
-color: #aaa;
-margin:0;
-text-transform: uppercase;
+color: #231536;
 `
 
 
@@ -46,10 +43,10 @@ export default () => (
     {
       Object.values(pType).map( type => (
         <ProjectCategoryContainer key={type.toString()}>
-          <ProjectCategoryChart />
           <ProjectCategoryNumber>
             {data.typeDistribution[type]}%
           </ProjectCategoryNumber>
+          <ProjectCategoryChart />
           <ProjectCategoryLabel>
             {type}
           </ProjectCategoryLabel>
