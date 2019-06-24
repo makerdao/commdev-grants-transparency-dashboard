@@ -7,7 +7,6 @@ const IntroWrapper = styled.section`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  background: linear-gradient(180deg, rgba(182, 237, 231, 0.38) 0%, rgba(253, 193, 52, 0) 100%);
   justify-items: center;
 `;
 
