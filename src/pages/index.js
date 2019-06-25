@@ -8,24 +8,24 @@ import ProjectCategories from "../components/ProjectCategories"
 import ProjectCard from "../components/ProjectCards"
 import Footer from "../components/Footer"
 
-const StatsWrapper = styled.section`
+const TopWrapper = styled.section`
 background: linear-gradient(180deg, rgba(182, 237, 231, 0.38) 50%, rgba(253, 193, 52, 0) 100%);
 `
 
 
-const ProjectsWrapper = styled.section`
+const BottomWrapper = styled.section`
   background: #F6F8F9;
   padding: 48px;
   `
 
 export default () => (
   <React.Fragment>
-    <StatsWrapper>
+    <TopWrapper>
       <Header />
 
       <PrimaryStats />
-    </StatsWrapper>
-    <ProjectsWrapper>
+    </TopWrapper>
+    <BottomWrapper>
 
       <ProjectStatus />
 
@@ -35,7 +35,7 @@ export default () => (
 
       <ProjectCard />
 
-    </ProjectsWrapper>
+    </BottomWrapper>
 
     <Footer />
   </React.Fragment>
