@@ -1,51 +1,63 @@
 import React from "react"
 import styled from "styled-components"
-import StatusCircle from "../components/StatusCircle"
-import {data} from "../utils.js"
+import {data, pieData} from "../utils.js"
 import {pStatus} from '../../static/data/dataformat.js'
+import {Pie} from 'react-chartjs-2'
+import Chart from "chart.js";
+Chart.defaults.global.legend.display = false;
 
-const ProjectsStatusWrapper = styled.div`
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
-  grid-gap: 2rem;
-  justify-content: center;
-  background: #F6F8F9;
+const ProjectStatusWrapper = styled.section`
+display: grid;
+grid-template-columns: repeat(auto-fit, 160px);
+grid-gap: 2rem;
+justify-content: space-around;
+padding: 6rem 0rem 6rem 0rem;
 `
-
 
 const ProjectStatusContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
-  justify-items: center;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+background: hsla(255,255,255,0.4);
 `
 
-const ProjectStatusObject = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-items: around;
-  align-items: center;
-  font-size: 2rem;
+const ProjectStatusChart = styled.div`
+width: 48px;
+height: 48px;
+border-radius: 100px;
+background-color: #1AAB9B;
 `
 
-const ProjectObjectText = styled.h6`
-  font-size: 1.25rem;
-  color: #231536;
+const ProjectStatusNumber = styled.h6`
+color: #231536;
+margin:1rem;
+text-transform: uppercase;
 `
 
+const ProjectStatusLabel = styled.h6`
+color: #aaa;
+margin:0;
+text-transform: uppercase;
+`
 
 export default () => (
-  <ProjectsStatusWrapper>
+  <ProjectStatusWrapper>
   {
     Object.values(pStatus).map( status => (
       <ProjectStatusContainer key={status.toString()}>
-        <ProjectStatusObject>
-          <ProjectObjectText>{data.NofProjectStatus[status]}</ProjectObjectText>
-          <StatusCircle />
-          <ProjectObjectText>{status}</ProjectObjectText>
-        </ProjectStatusObject>
+          <ProjectStatusNumber>{data.NofProjectStatus[status]}</ProjectStatusNumber>
+        <ProjectStatusChart>
+          <Pie
+            data={pieData('status', status)}
+            width={100}
+            height={50}
+            options = {{ maintainAspectRatio: false }}
+          />
+        </ProjectStatusChart>
+          <ProjectStatusLabel>{status}</ProjectStatusLabel>
       </ProjectStatusContainer>
     ))
   }
-  </ProjectsStatusWrapper>
+  </ProjectStatusWrapper>
 );

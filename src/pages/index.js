@@ -16,18 +16,7 @@ background: linear-gradient(180deg, rgba(182, 237, 231, 0.38) 50%, rgba(253, 193
 const ProjectsWrapper = styled.section`
   background: #F6F8F9;
   padding: 48px;
-  `;
-
-
-
-
-
-// const StatAverageAwarded = ({ number }) => {
-//   return   <StatsContainer>
-//       <StatsNumber>{number}</StatsNumber>
-//       <StatsTitle>Grant Applications Submitted</StatsTitle>
-//     </StatsContainer>
-// }
+  `
 
 export default () => (
   <React.Fragment>
