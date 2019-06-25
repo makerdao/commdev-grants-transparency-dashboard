@@ -51,8 +51,8 @@ export default (props) => (
         <ProjectCategoryChart >
         <Pie
           data={pieData('type', type)}
-          width={100}
-          height={50}
+          /* width={100} */
+          /* height={50} */
           options = {{ maintainAspectRatio: false }}
         />
         </ProjectCategoryChart>

@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import StatusCircle from "../components/StatusCircle"
 import {data, pieData} from "../utils.js"
 import {pStatus} from '../../static/data/dataformat.js'
 import {Pie} from 'react-chartjs-2'
