@@ -60,6 +60,7 @@ padding: 0.875rem 1.5rem 0.875rem 1.5rem;
 font-size: 1rem;
 text-align: center;
 background: none;
+text-decoration: none;
 `
 
 
