@@ -45,20 +45,4 @@ const Project = {
   "required": ["name", "description", "learnMoreLink", "active", "location", "region", "type", "status", "accepted"]
 };
 
-// const Finances = {
-//   "name": { "type": "string" },
-//   "awarded": {"type": "number"},
-//   "dispersed": {"type": "number"},
-//   "milestones": {
-//     "type": "object",
-//     "properties": {
-//       "total": {"type": "number"},
-//       "completed": {"type": "number"},
-//       "last30days": {"type": "number"}
-//     },
-//     "required": ["total", "completed"]
-//   },
-//   "required": ["awarded", "name", "dispersed", "milestones"] // potential TODO enfore dispersed < awarded
-// }
-
-module.exports = {pStatus, pType, region, Project, /*Finances*/};
+module.exports = {pStatus, pType, region, Project};
