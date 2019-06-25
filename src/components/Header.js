@@ -22,7 +22,7 @@ const IntroHeader = styled.h1`
   grid-column: 1 / -1;
   grid-row: 2;
   color: #444;
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-align: center;
   font-weight: 400;
 `
