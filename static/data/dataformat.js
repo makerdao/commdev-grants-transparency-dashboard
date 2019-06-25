@@ -25,22 +25,6 @@ const region = {
   "oceania": "Oceania"
 }
 
-const Finances = {
-  "name": { "type": "string" },
-  "awarded": {"type": "number"},
-  "dispersed": {"type": "number"},
-  "milestones": {
-    "type": "object",
-    "properties": {
-      "total": {"type": "number"},
-      "completed": {"type": "number"},
-      "last30days": {"type": "number"}
-    },
-    "required": ["total", "completed"]
-  },
-  "required": ["awarded", "name", "dispersed", "milestones"] // potential TODO enfore dispersed < awarded
-}
-
 // json-SCHEMA defintion that entries have to conform with
 const Project = {
   "properties": {
@@ -61,4 +45,20 @@ const Project = {
   "required": ["name", "description", "learnMoreLink", "active", "location", "region", "type", "status", "accepted"]
 };
 
-module.exports = {pStatus, pType, region, Project, Finances};
+// const Finances = {
+//   "name": { "type": "string" },
+//   "awarded": {"type": "number"},
+//   "dispersed": {"type": "number"},
+//   "milestones": {
+//     "type": "object",
+//     "properties": {
+//       "total": {"type": "number"},
+//       "completed": {"type": "number"},
+//       "last30days": {"type": "number"}
+//     },
+//     "required": ["total", "completed"]
+//   },
+//   "required": ["awarded", "name", "dispersed", "milestones"] // potential TODO enfore dispersed < awarded
+// }
+
+module.exports = {pStatus, pType, region, Project, /*Finances*/};
