@@ -72,7 +72,7 @@ export default () => (
           <ProjectTitle>{project.name}</ProjectTitle>
           <ProjectStatus>{project.status}</ProjectStatus>
         <ProjectDescription>{project.description}</ProjectDescription>
-        <ButtonLearnMore href={project.learnmoreLink} target="_blank" rel="noopener noreferrer"> Learn More</ButtonLearnMore>
+        <ButtonLearnMore href={project.learnMoreLink} target="_blank" rel="noopener noreferrer"> Learn More</ButtonLearnMore>
       </ProjectCard>
     ))
   }

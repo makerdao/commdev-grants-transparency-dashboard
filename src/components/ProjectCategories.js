@@ -41,6 +41,7 @@ color: #aaa;
 margin:0;
 text-transform: uppercase;
 `
+
 //categoryPieData(type)}
 export default (props) => (
   <ProjectCategoriesWrapper>

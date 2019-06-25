@@ -125,7 +125,7 @@ export const pieData = (field, value) => {
       data,
       backgroundColor: [
         '#1BBBAA', // category-color
-        '#dddddd', // other
+        '#dddddd', // other TODO set to white once border is thicker
       ]
     }],
     // These labels appear in the legend and in the tooltips when hovering different arcs

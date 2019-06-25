@@ -13,18 +13,7 @@ import Footer from "../components/Footer"
 const ProjectsWrapper = styled.section`
   background: #F6F8F9;
   padding: 48px;
-  `;
-
-
-
-
-
-// const StatAverageAwarded = ({ number }) => {
-//   return   <StatsContainer>
-//       <StatsNumber>{number}</StatsNumber>
-//       <StatsTitle>Grant Applications Submitted</StatsTitle>
-//     </StatsContainer>
-// }
+  `
 
 export default () => (
   <React.Fragment>
