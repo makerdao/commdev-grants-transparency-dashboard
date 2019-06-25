@@ -31,13 +31,11 @@ background-color: #1AAB9B;
 
 const ProjectStatusNumber = styled.h6`
 color: #231536;
-margin:1rem;
 text-transform: uppercase;
 `
 
 const ProjectStatusLabel = styled.h6`
-color: #aaa;
-margin:0;
+color: #231536;
 text-transform: uppercase;
 `
 
