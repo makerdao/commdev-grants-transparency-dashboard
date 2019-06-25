@@ -1,17 +1,13 @@
 import React from "react"
 import styled from "styled-components"
+import {SectionWrapper} from "../components/SectionWrapper.js"
+import {SectionTitle} from "../components/SectionTitle.js"
 import {region} from '../../static/data/dataformat.js'
 import {data} from "../utils.js"
 
 
 // Geographic Representation
 
-const GeographyContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 240px);
-  justify-content: center;
-  padding: 6rem 0rem 6rem 0rem;
-`
 
 const GeographyObject = styled.div`
   display: flex;
@@ -38,7 +34,8 @@ const CountryListItem = styled.li`
 
 
 export default () => (
-  <GeographyContainer>
+  <SectionWrapper>
+    <SectionTitle>Countries Represented</SectionTitle>
     {
       Object.values(region).map( reg => (
         <GeographyObject key={reg}>
@@ -53,5 +50,5 @@ export default () => (
         </GeographyObject>
       ))
     }
-  </GeographyContainer>
+  </SectionWrapper>
 );

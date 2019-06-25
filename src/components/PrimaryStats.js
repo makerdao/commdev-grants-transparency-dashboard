@@ -4,8 +4,9 @@ import {data} from "../utils.js"
 
 const StatsWrapper = styled.section`
 display: grid;
-grid-template-columns: repeat(auto-fit, 300px);
-grid-gap: 5rem;
+grid-template-columns: repeat(auto-fit, 360px);
+grid-column-gap: 3rem;
+grid-row-gap: 8rem;
 justify-content: space-around;
 padding: 6rem 0rem 6rem 0rem;
 `

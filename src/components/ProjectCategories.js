@@ -1,18 +1,12 @@
 import React from "react"
 import styled from "styled-components"
+import {SectionWrapper} from "../components/SectionWrapper.js"
+import {SectionTitle} from "../components/SectionTitle.js"
 import {data, pieData} from "../utils.js"
 import {pType} from '../../static/data/dataformat.js'
 import {Pie} from 'react-chartjs-2'
 import Chart from "chart.js";
 Chart.defaults.global.legend.display = false;
-
-const ProjectCategoriesWrapper = styled.section`
-display: grid;
-grid-template-columns: repeat(auto-fit, 160px);
-grid-gap: 2rem;
-justify-content: space-around;
-padding: 6rem 0rem 6rem 0rem;
-`
 
 
 const ProjectCategoryContainer = styled.div`
@@ -41,7 +35,8 @@ color: #231536;
 
 //categoryPieData(type)}
 export default (props) => (
-  <ProjectCategoriesWrapper>
+  <SectionWrapper small>
+    <SectionTitle>Projects By Category</SectionTitle>
     {
       Object.values(pType).map( type => (
         <ProjectCategoryContainer key={type.toString()}>
@@ -58,5 +53,5 @@ export default (props) => (
         </ProjectCategoryContainer>
       ))
   }
-  </ProjectCategoriesWrapper>
+  </SectionWrapper>
 );

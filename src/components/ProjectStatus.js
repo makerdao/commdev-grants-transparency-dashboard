@@ -1,18 +1,13 @@
 import React from "react"
 import styled from "styled-components"
+import {SectionWrapper} from "../components/SectionWrapper.js"
+import {SectionTitle} from "../components/SectionTitle.js"
 import {data, pieData} from "../utils.js"
 import {pStatus} from '../../static/data/dataformat.js'
 import {Pie} from 'react-chartjs-2'
 import Chart from "chart.js";
 Chart.defaults.global.legend.display = false;
 
-const ProjectStatusWrapper = styled.section`
-display: grid;
-grid-template-columns: repeat(auto-fit, 160px);
-grid-gap: 2rem;
-justify-content: space-around;
-padding: 6rem 0rem 6rem 0rem;
-`
 
 const ProjectStatusContainer = styled.div`
 display: flex;
@@ -37,8 +32,10 @@ const ProjectStatusLabel = styled.h6`
 color: #231536;
 `
 
+
 export default () => (
-  <ProjectStatusWrapper>
+  <SectionWrapper>
+  <SectionTitle>Project Status</SectionTitle>
   {
     Object.values(pStatus).map( status => (
       <ProjectStatusContainer key={status.toString()}>
@@ -55,5 +52,5 @@ export default () => (
       </ProjectStatusContainer>
     ))
   }
-  </ProjectStatusWrapper>
-);
+  </SectionWrapper>
+)

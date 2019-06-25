@@ -26,11 +26,8 @@ export default () => (
       <PrimaryStats />
     </TopWrapper>
     <BottomWrapper>
-
       <ProjectStatus />
-
       <GeoRep />
-
       <ProjectCategories />
 
       <ProjectCard />
