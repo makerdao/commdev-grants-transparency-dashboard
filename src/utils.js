@@ -57,7 +57,13 @@ const mergeObjects = (acc, currentValue) => Object.assign(acc, currentValue)
 // let td = typeDistributionList.reduce(mergeObjects)
 
 // get distribution of projectTypes as percentages
-let typeDistribution = Object.values(pType).map(t => getNofProjectField('type', t))
+// get distribution of projectTypes as percentages
+var nOfProjects = getNofAcceptedProjects()
+let typeDistribution = {}
+for (let type of Object.values(pType)) {
+  typeDistribution[type] = (getNofProjectField('type', type) / (nOfProjects)) * 100
+}
+// let typeDistribution = Object.values(pType).map(t => getNofProjectField('type', t))
 
 // create list of countries by region
 const getCountriesOfRegion = (region) => {
@@ -111,21 +117,20 @@ export const data = {
 
 console.log('processed data', data)
 
-export const statusPieData = {
-  datasets: [{
-    data: typeDistribution,
-    backgroundColor: [
-      '#1BBBAA',
-      '#1AAB9B',
-      '#1AABAA',
-      '#1AAB9B',
-      '#1AAB9B',
-      '#1AAB9B',
-      '#1AAB9B'
-    ]
-  }],
-  // These labels appear in the legend and in the tooltips when hovering different arcs
-  labels: Object.values(pType)
+export const pieData = (field, value) => {
+  let nOfValue = getNofProjectField(field, value)
+  let data = [nOfValue, getNofAcceptedProjects() - nOfValue]
+  return {
+    datasets: [{
+      data,
+      backgroundColor: [
+        '#1BBBAA', // category-color
+        '#dddddd', // other
+      ]
+    }],
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [value, 'Other']
+  }
 };
 
 

@@ -1,8 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import {statusPieData} from "../utils.js"
+import {data, pieData} from "../utils.js"
 import {pType} from '../../static/data/dataformat.js'
 import {Pie} from 'react-chartjs-2'
+import Chart from "chart.js";
+Chart.defaults.global.legend.display = false;
 
 const ProjectCategoriesWrapper = styled.section`
 display: grid;
@@ -39,12 +41,24 @@ color: #aaa;
 margin:0;
 text-transform: uppercase;
 `
-
-export default () => (
-  <Pie
-    data={statusPieData}
-    /* width={100} */
-    /* height={50} */
-    /* options={{ maintainAspectRatio: false }} */
-  />
+//categoryPieData(type)}
+export default (props) => (
+  <ProjectCategoriesWrapper>
+    {
+      Object.values(pType).map( type => (
+        <ProjectCategoryContainer key={type.toString()}>
+        <ProjectCategoryChart >
+        <Pie
+          data={pieData('type', type)}
+          width={100}
+          height={50}
+          options = {{ maintainAspectRatio: false }}
+        />
+        </ProjectCategoryChart>
+        <ProjectCategoryNumber>{data.typeDistribution[type]}%</ProjectCategoryNumber>
+          <ProjectCategoryLabel>{type}</ProjectCategoryLabel>
+        </ProjectCategoryContainer>
+      ))
+  }
+  </ProjectCategoriesWrapper>
 );
