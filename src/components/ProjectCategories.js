@@ -32,14 +32,11 @@ background-color: #1AAB9B;
 
 const ProjectCategoryNumber = styled.h6`
 color: #231536;
-margin:1rem;
 text-transform: uppercase;
 `
 
 const ProjectCategoryLabel = styled.h6`
-color: #aaa;
-margin:0;
-text-transform: uppercase;
+color: #231536;
 `
 
 //categoryPieData(type)}
@@ -48,16 +45,16 @@ export default (props) => (
     {
       Object.values(pType).map( type => (
         <ProjectCategoryContainer key={type.toString()}>
-        <ProjectCategoryChart >
-        <Pie
-          data={pieData('type', type)}
-          /* width={100} */
-          /* height={50} */
-          options = {{ maintainAspectRatio: false }}
-        />
-        </ProjectCategoryChart>
-        <ProjectCategoryNumber>{data.typeDistribution[type]}%</ProjectCategoryNumber>
-          <ProjectCategoryLabel>{type}</ProjectCategoryLabel>
+          <ProjectCategoryChart >
+            <Pie
+              data={pieData('type', type)}
+                /* width={100} */
+                /* height={50} */
+                options = {{ maintainAspectRatio: false }}
+             />
+          </ProjectCategoryChart>
+           <ProjectCategoryNumber>{data.typeDistribution[type]}%</ProjectCategoryNumber>
+           <ProjectCategoryLabel>{type}</ProjectCategoryLabel>
         </ProjectCategoryContainer>
       ))
   }

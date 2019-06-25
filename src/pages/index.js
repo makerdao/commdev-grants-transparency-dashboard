@@ -8,6 +8,9 @@ import ProjectCategories from "../components/ProjectCategories"
 import ProjectCard from "../components/ProjectCards"
 import Footer from "../components/Footer"
 
+const StatsWrapper = styled.section`
+background: linear-gradient(180deg, rgba(182, 237, 231, 0.38) 50%, rgba(253, 193, 52, 0) 100%);
+`
 
 
 const ProjectsWrapper = styled.section`
@@ -17,10 +20,11 @@ const ProjectsWrapper = styled.section`
 
 export default () => (
   <React.Fragment>
-    <Header />
+    <StatsWrapper>
+      <Header />
 
-    <PrimaryStats />
-
+      <PrimaryStats />
+    </StatsWrapper>
     <ProjectsWrapper>
 
       <ProjectStatus />

@@ -14,7 +14,6 @@ justify-content: space-around;
 padding: 6rem 0rem 6rem 0rem;
 `
 
-
 const ProjectStatusContainer = styled.div`
 display: flex;
 flex-direction: column;
