@@ -3,6 +3,7 @@ import styled from "styled-components"
 import {data} from "../utils.js"
 
 
+
 const ProjectCardWrapper = styled.section`
 display: grid;
 grid-template-columns: repeat(auto-fit, 300px);
@@ -13,39 +14,51 @@ justify-content: space-around;
 
 
 const ProjectCard = styled.div`
-display: flex;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 5fr 1fr;
 width: 300px;
-height: 300px;
+height: 240px;
 flex-direction: column;
-justify-content: space-between;
 align-items: flex-start;
 background: hsla(255,255,255,0.4);
 `
 
-const ProjectCardTop = styled.div`
-`
 
-const ProjectTitle = styled.h5`
+const ProjectTitle = styled.h6`
+grid-column: 1 / -1;
+grid-row: 1;
 color: #231536;
 margin:0;
 text-transform: uppercase;
+text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
 `
 
 const ProjectStatus = styled.h6`
+grid-column: 1 / -1;
+grid-row: 2;
 color: #ccc;
 margin-top: 1rem;
 `
 
 
 const ProjectDescription = styled.p`
+grid-column: 1 / -1;
+grid-row: 3;
 color: #aaa;
+overflow: hidden;
 `
 
-const ButtonLearnMore = styled.button`
+const ButtonLearnMore = styled.a`
+grid-column: 1 / 3;
+grid-row: 4;
 border: 1px solid #231536;
 border-radius: 0.125rem;
 padding: 0.875rem 1.5rem 0.875rem 1.5rem;
 font-size: 1rem;
+text-align: center;
 background: none;
 `
 
@@ -56,12 +69,10 @@ export default () => (
   {
     Object.values(data.acceptedProjects).map( project => (
       <ProjectCard key={project.name}>
-        <ProjectCardTop>
           <ProjectTitle>{project.name}</ProjectTitle>
           <ProjectStatus>{project.status}</ProjectStatus>
-        </ProjectCardTop>
         <ProjectDescription>{project.description}</ProjectDescription>
-        <ButtonLearnMore>{project.learnmoreLink}</ButtonLearnMore>
+        <ButtonLearnMore href={project.learnmoreLink} target="_blank" rel="noopener noreferrer"> Learn More</ButtonLearnMore>
       </ProjectCard>
     ))
   }
