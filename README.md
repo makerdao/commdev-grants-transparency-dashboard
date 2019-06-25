@@ -21,13 +21,15 @@ TODO
 
 ### Feeding data into the site
 
-Public Data ('name', 'type', 'status',...) for accepted and submitted projects is entered into ```/static/data/projectData.json```.
+Public Data (*name*, *type*, *status*,...) for accepted and submitted projects is entered into ```/static/data/projectData.json```.
 
-Secret Data ('awarded money', 'milestones',....) is entered into ```/static/data/secretProjectData```.
+The format for that file is specified in a JSON-SCHEMA in ```/static/data/dataformat.js```  and compliance is checked in the integration pipeline and can be tested manually by running:
 
-The format for both types of data is specified in a JSON-SCHEMA in ```/static/data/dataformat.js``` . The compliance of the files is checked in the integration pipeline and can be tested manually by running:
+> npm run test
 
-> $ npm run test
+Data that is based on secret informa*ion (*awarded money*, *dispersed money, *milestones*,....) is entered into ```/static/data/publicFinanceData.json```. 
+(An approach to automate the generation of that file from a list of project-based information can be found on branch *backupFinanceDataValidation*).
+
 
 
 
