@@ -24,7 +24,7 @@ const StatsNumber = styled.h3`
 `
 
 
-const StatsTitle = styled.h6`
+const StatsTitle = styled.h5`
 `
 
 
