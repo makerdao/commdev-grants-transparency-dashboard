@@ -18,6 +18,11 @@ const BottomWrapper = styled.section`
   padding: 48px;
   `
 
+const PageSectionTitle = styled.h4`
+color: #1AAB9B;
+text-align: center;
+`
+
 export default () => (
   <React.Fragment>
     <TopWrapper>
@@ -26,6 +31,7 @@ export default () => (
       <PrimaryStats />
     </TopWrapper>
     <BottomWrapper>
+      <PageSectionTitle>Explore our funded projects</PageSectionTitle>
       <ProjectStatus />
       <GeoRep />
       <ProjectCategories />
