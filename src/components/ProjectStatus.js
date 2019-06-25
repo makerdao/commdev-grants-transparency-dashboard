@@ -30,13 +30,11 @@ background-color: #1AAB9B;
 `
 
 const ProjectStatusNumber = styled.h6`
-color: #231536;
-text-transform: uppercase;
+color: #444;
 `
 
 const ProjectStatusLabel = styled.h6`
 color: #231536;
-text-transform: uppercase;
 `
 
 export default () => (
