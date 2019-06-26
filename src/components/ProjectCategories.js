@@ -34,7 +34,12 @@ text-transform: uppercase;
 `
 
 const ProjectCategorySelector = styled.button`
+padding: 0.5rem 0.875rem 0.5rem 0.875rem;
 color: #231536;
+font-size: 1.25rem;
+border: 1px solid #ddd;
+border-radius: 2px;
+background: none;
 `
 
 //categoryPieData(type)}
