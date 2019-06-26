@@ -50,10 +50,13 @@ for (let type of Object.values(pType)) {
 }
 // let typeDistribution = Object.values(pType).map(t => getNofProjectField('type', t))
 
-// create list of countries by region
+
+const distinct = (value, index, self) => {
+  return self.indexOf(value) === index;
+}
+// create list of distinct countries by region
 const getCountriesOfRegion = (region) => {
-  let pByRegion = getAcceptedProjects().filter(p => p.region === region)
-  return pByRegion.length === 0 ? [] : pByRegion.map(p => p.location)
+  return getAcceptedProjects().filter(p => p.region === region).map(p => p.location).filter(distinct)
 }
 
 var countriesByRegion = {}

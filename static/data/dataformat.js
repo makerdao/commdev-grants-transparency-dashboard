@@ -19,6 +19,7 @@ const pType = {
 
 const region = {
   "northamerica": "North America",
+  "southamerica": "South America",
   "africa": "Africa",
   "europe": "Europe",
   "asia": "Asia",
