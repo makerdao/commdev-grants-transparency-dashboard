@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Header from "../components/Header"
 import PrimaryStats from "../components/PrimaryStats"
 import ProjectStatus from "../components/ProjectStatus"
-import GeoRep from "../components/GeoRep"
+import ProjectCountries from "../components/ProjectCountries"
 import {ProjectCategories} from "../components/ProjectCategories"
 import Footer from "../components/Footer"
 
@@ -34,7 +34,7 @@ export default () => (
     <BottomWrapper>
       <PageSectionTitle>Explore our funded projects</PageSectionTitle>
       <ProjectStatus />
-      <GeoRep />
+      <ProjectCountries />
       <ProjectCategories />
 
       {/* <ProjectCard /> */}
