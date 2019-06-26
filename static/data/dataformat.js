@@ -14,7 +14,6 @@ const pType = {
   "fiatramps": "Fiat Ramps",
   "cdpmgmt": "CDP MGMT",
   "enterprise": "Enterprise",
-  "analytics": "Analytics"
 }
 
 const region = {
