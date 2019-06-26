@@ -98,7 +98,7 @@ export const pieData = (field, value) => {
   let displayData =  {
     datasets: [{
       data,
-      backgroundColor: nOfValue > 0 ? ['#1BBBAA', '#fff'] : ['#fff']
+      backgroundColor: nOfValue > 0 ? ['#1BBBAA', '#F6F8F9'] : ['#F6F8F9']
     }]
   }
   if (value === 'Inactive') {

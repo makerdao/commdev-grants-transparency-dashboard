@@ -9,7 +9,7 @@ import Chart from "chart.js";
 Chart.defaults.global.legend.display = false;
 Chart.defaults.global.tooltips.enabled = false;
 Chart.defaults.global.elements.arc.borderColor = '#1AAB9B';
-Chart.defaults.global.elements.arc.backgroundColor = '#FFFFFF';
+Chart.defaults.global.elements.arc.backgroundColor = '#F6F8F9';
 Chart.defaults.global.elements.arc.borderWidth = 1;
 Chart.defaults.pie.hover.mode = "none";
 Chart.defaults.pie.hover.mode = "none";
