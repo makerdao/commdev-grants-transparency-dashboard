@@ -19,6 +19,7 @@ flex-direction: column;
 justify-content: space-between;
 align-items: center;
 background: hsla(255,255,255,0.4);
+overflow-y: scroll;
 `
 
 const ProjectCategoryChart = styled.div`
@@ -54,6 +55,7 @@ export class ProjectCategories extends Component {
     let categories = ['all']
     categories = categories.concat(Object.values(pType))
     return (
+      <React.Fragment>
       <SectionWrapper small>
         <SectionTitle>Projects By Category</SectionTitle>
         {
@@ -70,8 +72,10 @@ export class ProjectCategories extends Component {
             </ProjectCategoryContainer>
           ))
         }
+        </SectionWrapper>
         <ProjectCards displayType={this.state.displayType}/>
-      </SectionWrapper>
+        </React.Fragment>
+
     )
   }
 }
