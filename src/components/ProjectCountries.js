@@ -4,6 +4,15 @@ import {SectionWrapper} from "../components/SectionWrapper.js"
 import {SectionTitle} from "../components/SectionTitle.js"
 import {region} from '../../static/data/dataformat.js'
 import {data} from "../utils.js"
+import imgAfrica from "../img/africa.svg"
+import imgAsia from "../img/asia.svg"
+import imgEurope from "../img/europe.svg"
+import imgNorthAmerica from "../img/northamerica.svg"
+import imgOceania from "../img/oceania.svg"
+import imgSouthAmerica from "../img/southamerica.svg"
+
+
+
 
 
 // Geographic Representation
@@ -32,6 +41,11 @@ const CountryListItem = styled.li`
 
 `
 
+const imgCountry = styled.img`
+width: 80px;
+height: auto;
+`
+
 
 export default () => (
   <SectionWrapper>
@@ -39,6 +53,7 @@ export default () => (
     {
       Object.values(region).map( reg => (
         <GeographyObject key={reg}>
+        <img width={"120px"} src={imgAfrica} alt="Africa" />
           <CountryTitle>{reg}</CountryTitle>
           <CountryListContainer>
             {
