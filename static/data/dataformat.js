@@ -38,12 +38,11 @@ const Project = {
     "discord": { "type": "string" },
     "location": { "type": "string" },
     "region": {"type": "string", "enum": [...Object.values(region)]},
-    "active": { "type": "boolean"},
     "type": { "type": "string", "enum": [...Object.values(pType)]},
     "status": { "type": "string", "enum": [...Object.values(pStatus)]},
     "accepted": {"type": "boolean"},
   },
-  "required": ["name", "description", "learnMoreLink", "active", "location", "region", "type", "status", "accepted"]
+  "required": ["name", "description", "learnMoreLink", "location", "region", "type", "status", "accepted"]
 };
 
 module.exports = {pStatus, pType, region, Project};

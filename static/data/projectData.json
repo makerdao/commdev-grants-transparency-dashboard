@@ -11,7 +11,6 @@
     "type": "Governance",
     "location": "USA",
     "region": "North America",
-    "active": true,
     "accepted": true
   },
   {
@@ -26,7 +25,6 @@
     "type": "Fiat Ramps",
     "location": "Egypt",
     "region": "Africa",
-    "active": true,
     "accepted": true
   },
   {
@@ -37,11 +35,10 @@
     "twitter": "github.com/theDjinni/magicThreads101",
     "reddit": "github.com/theDjinni/magicThreads101",
     "discord": "github.com/theDjinni/magicThreads101",
-    "status": "Beta",
+    "status": "Inactive",
     "type": "Fiat Ramps",
     "location": "Egypt",
     "region": "Africa",
-    "active": true,
     "accepted": true
   },
   {
@@ -56,7 +53,6 @@
     "type": "DeFi",
     "location": "Canada",
     "region": "North America",
-    "active": true,
     "accepted": true
   },
   {
@@ -71,7 +67,6 @@
     "type": "Fiat Ramps",
     "location": "Brazil",
     "region": "South America",
-    "active": true,
     "accepted": true
   },
   {
@@ -86,7 +81,6 @@
     "type": "Enterprise",
     "location": "Germany",
     "region": "Europe",
-    "active": false,
     "accepted": false
   }
 ]

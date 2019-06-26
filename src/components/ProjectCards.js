@@ -5,7 +5,6 @@ import {data} from "../utils.js"
 
 
 
-
 const ProjectCardWrapper = styled.section`
 display: grid;
 grid-template-columns: repeat(auto-fit, 300px);
@@ -17,7 +16,7 @@ padding: 4rem 0rem 4rem 0rem;
 
 
 const ProjectCard = styled.div`
-display: grid;
+display: ${props => props.hide ? 'none' : 'grid'};
 grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-template-rows: 1fr 2fr 1fr 1fr;
 width: 300px;
@@ -87,12 +86,13 @@ text-decoration: none;
 
 
 
-export default () => (
-  <ProjectCardWrapper >
+export default (props) => (
+  <ProjectCardWrapper disp={props.disp}>
   <SectionTitle>Project Index</SectionTitle>
   {
     Object.values(data.acceptedProjects).map( project => (
-      <ProjectCard key={project.name}>
+      // <ProjectCard key={project.name} hide={!props.showAll && project.type !== props.displayType}>
+      <ProjectCard key={project.name} hide={props.displayType !== 'all' && props.displayType !== project.type}>
           <ProjectTitle>{project.name}</ProjectTitle>
           <ProjectDescription>{project.description}</ProjectDescription>
           <ProjectStatus>{project.status}</ProjectStatus>

@@ -4,8 +4,7 @@ import Header from "../components/Header"
 import PrimaryStats from "../components/PrimaryStats"
 import ProjectStatus from "../components/ProjectStatus"
 import GeoRep from "../components/GeoRep"
-import ProjectCategories from "../components/ProjectCategories"
-import ProjectCard from "../components/ProjectCards"
+import {ProjectCategories} from "../components/ProjectCategories"
 import Footer from "../components/Footer"
 
 const TopWrapper = styled.section`
@@ -36,7 +35,7 @@ export default () => (
       <GeoRep />
       <ProjectCategories />
 
-      <ProjectCard />
+      {/* <ProjectCard /> */}
 
     </BottomWrapper>
 
