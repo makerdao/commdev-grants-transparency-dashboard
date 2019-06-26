@@ -24,7 +24,7 @@ margin: 2rem 0rem 2rem 0rem;
 flex-direction: column;
 align-items: flex-start;
 background: hsla(255,255,255,0.4);
-border: 1px solid #aaa;
+border: 1px solid #ddd;
 padding: 1rem 1rem 0.15rem 1rem;
 `
 
