@@ -11,7 +11,6 @@ grid-template-columns: repeat(auto-fit, 300px);
 justify-items: space-around;
 grid-gap: 4rem;
 justify-content: space-around;
-padding: 4rem 0rem 4rem 0rem;
 `
 
 
@@ -88,7 +87,6 @@ text-decoration: none;
 
 export default (props) => (
   <ProjectCardWrapper disp={props.disp}>
-  <SectionTitle>Project Index</SectionTitle>
   {
     Object.values(data.acceptedProjects).map( project => (
       // <ProjectCard key={project.name} hide={!props.showAll && project.type !== props.displayType}>
