@@ -74,7 +74,7 @@ export class ProjectCategories extends Component {
     return (
       <React.Fragment>
       <SectionWrapper small>
-        <SectionTitle>Projects By Category</SectionTitle>
+        <SectionTitle>Explore our funded projects</SectionTitle>
         {
           categories.map( type => (
             <ProjectCategoryContainer key={type.toString()}>
