@@ -93,7 +93,7 @@ console.log('processed data', data)
 export const pieData = (field, value) => {
   let nOfValue = getNofProjectField(field, value)
   let data
-  if (value === 'all') data = [0]
+  if (value === 'All') data = [0]
   else data = nOfValue > 0 ? [nOfValue, getNofAcceptedProjects() - nOfValue] : [1]
   let displayData =  {
     datasets: [{
@@ -107,5 +107,3 @@ export const pieData = (field, value) => {
   }
   return displayData
 }
-
-

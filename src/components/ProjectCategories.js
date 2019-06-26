@@ -56,7 +56,7 @@ export class ProjectCategories extends Component {
   }
 
   render () {
-    let categories = ['all']
+    let categories = ['All']
     categories = categories.concat(Object.values(pType))
     return (
       <React.Fragment>
@@ -71,7 +71,7 @@ export class ProjectCategories extends Component {
                   options = {{ maintainAspectRatio: false }}
                 />
               </ProjectCategoryChart>
-              <ProjectCategoryNumber>{type === 'all' ? data.appsAccepted : data.typeDistribution[type]}</ProjectCategoryNumber>
+              <ProjectCategoryNumber>{type === 'All' ? data.appsAccepted : data.typeDistribution[type]}</ProjectCategoryNumber>
               <ProjectCategorySelector onClick={this.setType.bind(this)} id={type}> {type} </ProjectCategorySelector>
             </ProjectCategoryContainer>
           ))
