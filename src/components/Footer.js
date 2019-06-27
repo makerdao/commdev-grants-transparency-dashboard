@@ -75,6 +75,7 @@ justify-content: center;
 align-items: center;
 justify-self: flex-start;
 border: 1px solid #ddd;
+padding-top: 2rem;
 `
 
 const ButtonContainer = styled.div`
