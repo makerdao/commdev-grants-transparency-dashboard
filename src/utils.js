@@ -43,10 +43,9 @@ const mergeObjects = (acc, currentValue) => Object.assign(acc, currentValue)
 
 // get distribution of projectTypes as percentages
 // get distribution of projectTypes as percentages
-var nOfProjects = getNofAcceptedProjects()
 let typeDistribution = {}
 for (let type of Object.values(pType)) {
-  typeDistribution[type] = (getNofProjectField('type', type) / (nOfProjects)) * 100
+  typeDistribution[type] = (getNofProjectField('type', type)) // / (nOfProjects)) * 100
 }
 // let typeDistribution = Object.values(pType).map(t => getNofProjectField('type', t))
 
@@ -67,7 +66,7 @@ for (let reg of Object.values(region)) {
 
 // function to insert comma as separators every 3 digits
 function formatNumber(num) {
-  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  return Math.round(num).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
 export const data = {
@@ -93,18 +92,19 @@ console.log('processed data', data)
 
 export const pieData = (field, value) => {
   let nOfValue = getNofProjectField(field, value)
-  let data = [nOfValue, getNofAcceptedProjects() - nOfValue]
-  return {
+  let data
+  if (value === 'All') data = [0]
+  else data = nOfValue > 0 ? [nOfValue, getNofAcceptedProjects() - nOfValue] : [1]
+  let displayData =  {
     datasets: [{
       data,
-      backgroundColor: [
-        '#1BBBAA', // category-color
-        '#dddddd', // other TODO set to white once border is thicker
-      ]
-    }],
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [value, 'Other']
+      backgroundColor: nOfValue > 0 ? ['#1BBBAA', '#F6F8F9'] : ['#F6F8F9'],
+      borderColor: ['#1AA9BB']
+    }]
   }
-};
-
-
+  if (value === 'Inactive') {
+    displayData.datasets[0].borderColor = ['#FF0000', '#FF0000']
+    displayData.datasets[0].backgroundColor = ['#FF0000']
+  }
+  return displayData
+}

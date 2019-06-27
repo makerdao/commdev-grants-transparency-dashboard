@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import {SectionTitle} from "../components/SectionTitle.js"
-import {data} from "../utils.js"
-
 
 
 
@@ -12,12 +10,11 @@ grid-template-columns: repeat(auto-fit, 300px);
 justify-items: space-around;
 grid-gap: 4rem;
 justify-content: space-around;
-padding: 4rem 0rem 4rem 0rem;
 `
 
 
 const ProjectCard = styled.div`
-display: grid;
+display: ${props => props.hide ? 'none' : 'grid'};
 grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-template-rows: 1fr 2fr 1fr 1fr;
 width: 300px;
@@ -26,7 +23,7 @@ margin: 2rem 0rem 2rem 0rem;
 flex-direction: column;
 align-items: flex-start;
 background: hsla(255,255,255,0.4);
-border: 1px solid #aaa;
+border: 1px solid #ddd;
 padding: 1rem 1rem 0.15rem 1rem;
 `
 
@@ -41,12 +38,11 @@ overflow: hidden;
 white-space: nowrap;
 `
 
-const Row = styled.div`
-grid-column: 1 / -1;
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-
-`
+// const Row = styled.div`
+// grid-column: 1 / -1;
+// display: grid;
+// grid-template-columns: repeat(2, 1fr);
+// `
 
 const ProjectStatus = styled.h6`
 grid-column: 1 / 2;
@@ -55,12 +51,11 @@ color: #444;
 text-transform: uppercase;
 `
 
-const ProjectCategory = styled.h6`
-grid-column: 1 / 3;
-grid-row: 3;
-color: #444;
-`
-
+// const ProjectCategory = styled.h6`
+// grid-column: 1 / 3;
+// grid-row: 3;
+// color: #444;
+// `
 
 const ProjectDescription = styled.p`
 grid-column: 1 / -1;
@@ -85,21 +80,21 @@ background: none;
 text-decoration: none;
 `
 
+export default (props) => {
+  return (
+    <ProjectCardWrapper disp={props.disp}>
+      <SectionTitle>Project Index</SectionTitle>
+      {
+        props.selectedProjects.map( (project, index) => (
+          <ProjectCard key={project.name} hide={index > props.projectsToShow - 1}>
+            <ProjectTitle>{project.name}</ProjectTitle>
+            <ProjectDescription>{project.description}</ProjectDescription>
+            <ProjectStatus>{project.status}</ProjectStatus>
 
-
-export default () => (
-  <ProjectCardWrapper >
-  <SectionTitle>Project Index</SectionTitle>
-  {
-    Object.values(data.acceptedProjects).map( project => (
-      <ProjectCard key={project.name}>
-          <ProjectTitle>{project.name}</ProjectTitle>
-          <ProjectDescription>{project.description}</ProjectDescription>
-          <ProjectStatus>{project.status}</ProjectStatus>
-
-          <ButtonLearnMore href={project.learnMoreLink} target="_blank" rel="noopener noreferrer"> Learn More</ButtonLearnMore>
-      </ProjectCard>
-    ))
-  }
-  </ProjectCardWrapper>
-);
+            <ButtonLearnMore href={project.learnMoreLink} target="_blank" rel="noopener noreferrer"> Learn More</ButtonLearnMore>
+          </ProjectCard>
+        ))
+      }
+    </ProjectCardWrapper>
+  )
+};

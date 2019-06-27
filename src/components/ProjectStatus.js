@@ -7,7 +7,11 @@ import {pStatus} from '../../static/data/dataformat.js'
 import {Pie} from 'react-chartjs-2'
 import Chart from "chart.js";
 Chart.defaults.global.legend.display = false;
-
+Chart.defaults.global.tooltips.enabled = false;
+Chart.defaults.global.elements.arc.borderColor = '#1AAB9B';
+Chart.defaults.global.elements.arc.backgroundColor = '#F6F8F9';
+Chart.defaults.global.elements.arc.borderWidth = 1;
+Chart.defaults.pie.hover.mode = "none";
 
 const ProjectStatusContainer = styled.div`
 display: flex;
@@ -45,7 +49,10 @@ export default () => (
             data={pieData('status', status)}
             width={100}
             height={50}
-            options = {{ maintainAspectRatio: false }}
+            options = {{
+              maintainAspectRatio: false,
+              /* color: '#fff' */
+            }}
           />
         </ProjectStatusChart>
           <ProjectStatusLabel>{status}</ProjectStatusLabel>

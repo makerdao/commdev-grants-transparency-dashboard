@@ -6,7 +6,7 @@ import {data} from "../utils.js"
 const IntroWrapper = styled.section`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 120px repeat(2, 1fr);
   justify-items: center;
 `;
 
@@ -15,7 +15,7 @@ const LogoMaker = styled.img`
   height: 64px;
   grid-column: 1 / -1;
   grid-row: 1;
-  align-self: flex-end;
+  align-self: center;
 `
 
 const IntroHeader = styled.h1`
