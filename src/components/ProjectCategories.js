@@ -35,7 +35,7 @@ color: #444;
 text-transform: uppercase;
 `
 
-const ProjectCategorySelector = styled.button`
+const PrimaryButton = styled.button`
 padding: 0.5rem 0.875rem 0.5rem 0.875rem;
 color: #231536;
 font-size: 1.25rem;
@@ -56,8 +56,23 @@ outline: none;
 }
 
 `
-const SeeMoreButton = styled.button`
-color: ${props => props.disabled ? '#aaa' : '#231536'}; // TODO add style here alex
+
+const SeeMoreButtonContainer = styled.div`
+display: flex;
+justify-content: center;
+margin: 1.5rem;
+`
+
+const SeeMoreButton = styled(PrimaryButton)`
+opacity: ${props => props.disabled ? '0.2' : '1'};
+justify-self: center;
+font-size: 1.5rem;
+padding: 1.25rem;
+
+:hover {
+cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+transform: ${props => props.disabled ? 'translateY(0%);' : 'translateY(10%);'};
+}
 `
 
 //categoryPieData(type)}
@@ -112,7 +127,7 @@ export class ProjectCategories extends Component {
                 : null
               }
               <ProjectCategoryNumber>{type === 'All' ? data.appsAccepted : data.typeDistribution[type]}</ProjectCategoryNumber>
-              <ProjectCategorySelector onClick={this.setType.bind(this)} id={type} active={type===this.state.displayType}> {type} </ProjectCategorySelector>
+              <PrimaryButton onClick={this.setType.bind(this)} id={type} active={type===this.state.displayType}> {type} </PrimaryButton>
             </ProjectCategoryContainer>
           ))
         }
@@ -120,14 +135,16 @@ export class ProjectCategories extends Component {
         <ProjectCards
           selectedProjects={this.state.projectsForSelectedCategory}
           displayType={this.state.displayType}
-          projectsToShow={this.state.projectsToShow}/>
-        <SeeMoreButton
-          disabled={this.state.projectsToShow >= this.state.projectsForSelectedCategory.length}
-          onClick={this.seeMore.bind(this)}>
-          more
-        </SeeMoreButton>
+          projectsToShow={this.state.projectsToShow}>
+        </ProjectCards>
+        <SeeMoreButtonContainer>
+          <SeeMoreButton
+            disabled={this.state.projectsToShow >= this.state.projectsForSelectedCategory.length}
+            onClick={this.seeMore.bind(this)}>
+            View More
+          </SeeMoreButton>
+        </SeeMoreButtonContainer>
         </React.Fragment>
     )
   }
 }
-
