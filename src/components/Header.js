@@ -27,21 +27,24 @@ const IntroHeader = styled.h1`
   font-weight: 400;
 `
 
-const IntroContent = styled.h3`
+const IntroHeaderHighlight = styled.span`
+color: #179b8c;
+`
+
+const IntroContent = styled.h5`
   grid-column 1 / -1;
   grid-row: 3;
   color: #333;
-  font-size: 1.5rem;
   font-weight: 400rem;
   text-align: center;
-  max-width: 60rem;
+  max-width: 720px;
   line-height: 140%;
 `
 
 export default () => (
 <IntroWrapper>
   <LogoMaker src={'makerlogo.svg'} alt="Logo"></LogoMaker>
-  <IntroHeader>We've awarded ${data.totalMoneyAwarded} since February 2018</IntroHeader>
+  <IntroHeader>We've awarded <IntroHeaderHighlight>${data.totalMoneyAwarded}</IntroHeaderHighlight> since February 2018</IntroHeader>
   <IntroContent>MakerDAO’s Core Community Development Initiative funds teams creating infrastructure and applications within the Maker ecosystem.</IntroContent>
 </IntroWrapper>
 );
