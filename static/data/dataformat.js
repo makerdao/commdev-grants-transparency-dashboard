@@ -8,12 +8,12 @@ const pStatus = {
 }
 
 const pType = {
-  "governance": "Governance",
-  "defi": "DeFi",
-  "payroll": "Payroll",
-  "fiatramps": "Fiat Ramps",
-  "cdpmgmt": "CDP MGMT",
-  "enterprise": "Enterprise",
+  "hold": "Hold Dai",
+  "spend": "Spend Dai",
+  "watch": "Watch Dai",
+  "use": "Use Dai",
+  "learn": "Learn",
+  "cdpmgmt": "CDP",
 }
 
 const region = {
