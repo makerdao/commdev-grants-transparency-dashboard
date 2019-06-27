@@ -83,7 +83,6 @@ text-decoration: none;
 export default (props) => {
   return (
     <ProjectCardWrapper disp={props.disp}>
-      <SectionTitle>Project Index</SectionTitle>
       {
         props.selectedProjects.map( (project, index) => (
           <ProjectCard key={project.name} hide={index > props.projectsToShow - 1}>
