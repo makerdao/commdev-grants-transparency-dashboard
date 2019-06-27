@@ -8,7 +8,8 @@ import {ProjectCategories} from "../components/ProjectCategories"
 import Footer from "../components/Footer"
 
 const TopWrapper = styled.section`
-background: linear-gradient(180deg, rgba(182, 237, 231, 0.38) 50%, rgba(253, 193, 52, 0) 100%);
+background: linear-gradient(180deg, rgba(182, 237, 231, 0.38) 0%, rgba(253, 193, 52, 0.15) 100%);
+/* background: linear-gradient(180deg, rgba(182, 237, 231, 0.38) 50%, rgba(253, 193, 52, 0) 100%); */
 width: 100%;
 `
 
