@@ -11,14 +11,6 @@ import Chart from "chart.js";
 // import h from 'react-hyperscript'
 Chart.defaults.global.legend.display = false;
 Chart.defaults.global.tooltips.enabled = false;
-Chart.defaults.global.elements.arc.borderColor = '#1AAB9B';
-Chart.defaults.global.elements.arc.backgroundColor = '#FFFFFF';
-Chart.defaults.global.elements.arc.borderWidth = 1;
-Chart.defaults.pie.hover.mode = "none";
-Chart.defaults.pie.hover.mode = "none";
-Chart.defaults.global.plugins.showLines = false;
-console.log('global ptions', Chart.defaults.global)
-// console.log('pie ptions', Chart.defaults.pie)
 
 
 
@@ -75,14 +67,20 @@ export class ProjectCategories extends Component {
     this.cardsPerPage = 4
     this.state = {
       displayType: 'All',
-      projectsToShow: this.cardsPerPage
+      projectsToShow: this.cardsPerPage,
+      projectsForSelectedCategory: data.acceptedProjects
     }
   }
 
   setType (e) {
+    let desiredType = e.target.id
+    let nextProjectsForSelectedCategory = desiredType === 'All' ?
+        data.acceptedProjects
+        : data.acceptedProjects.filter(p => p.type === desiredType)
     this.setState({
-      displayType: e.target.id,
-      projectsToShow: this.cardsPerPage
+      displayType: desiredType,
+      projectsToShow: this.cardsPerPage,
+      projectsForSelectedCategory: nextProjectsForSelectedCategory
     })
   }
 
@@ -95,9 +93,6 @@ export class ProjectCategories extends Component {
   render () {
     let categories = ['All']
     categories = categories.concat(Object.values(pType))
-    let projectsForSelectedCategory = this.state.displayType === 'All' ?
-      data.acceptedProjects
-      : data.acceptedProjects.filter(p => p.type === this.state.displayType)
 
     return (
       <React.Fragment>
@@ -119,11 +114,11 @@ export class ProjectCategories extends Component {
         }
         </SectionWrapper>
         <ProjectCards
-          selectedProjects={projectsForSelectedCategory}
+          selectedProjects={this.state.projectsForSelectedCategory}
           displayType={this.state.displayType}
           projectsToShow={this.state.projectsToShow}/>
         <SeeMoreButton
-          disabled={this.state.projectsToShow >= projectsForSelectedCategory.length}
+          disabled={this.state.projectsToShow >= this.state.projectsForSelectedCategory.length}
           onClick={this.seeMore.bind(this)}>
           more
         </SeeMoreButton>

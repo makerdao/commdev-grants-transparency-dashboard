@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import {SectionTitle} from "../components/SectionTitle.js"
-import {data} from "../utils.js"
 
 
 
@@ -39,12 +38,11 @@ overflow: hidden;
 white-space: nowrap;
 `
 
-const Row = styled.div`
-grid-column: 1 / -1;
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-
-`
+// const Row = styled.div`
+// grid-column: 1 / -1;
+// display: grid;
+// grid-template-columns: repeat(2, 1fr);
+// `
 
 const ProjectStatus = styled.h6`
 grid-column: 1 / 2;
@@ -53,12 +51,11 @@ color: #444;
 text-transform: uppercase;
 `
 
-const ProjectCategory = styled.h6`
-grid-column: 1 / 3;
-grid-row: 3;
-color: #444;
-`
-
+// const ProjectCategory = styled.h6`
+// grid-column: 1 / 3;
+// grid-row: 3;
+// color: #444;
+// `
 
 const ProjectDescription = styled.p`
 grid-column: 1 / -1;
@@ -84,9 +81,6 @@ text-decoration: none;
 `
 
 export default (props) => {
-  console.log('props', props)
-  // let projectsToDisplay
-
   return (
     <ProjectCardWrapper disp={props.disp}>
       <SectionTitle>Project Index</SectionTitle>
@@ -104,4 +98,3 @@ export default (props) => {
     </ProjectCardWrapper>
   )
 };
-//<ProjectCard key={project.name} hide={props.displayType !== 'All' && props.displayType !== project.type && Number(index) > Number(props.pageNumber * 1)}>

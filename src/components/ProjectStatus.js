@@ -12,9 +12,6 @@ Chart.defaults.global.elements.arc.borderColor = '#1AAB9B';
 Chart.defaults.global.elements.arc.backgroundColor = '#F6F8F9';
 Chart.defaults.global.elements.arc.borderWidth = 1;
 Chart.defaults.pie.hover.mode = "none";
-Chart.defaults.pie.hover.mode = "none";
-Chart.defaults.global.plugins.showLines = false;
-console.log('ptions', Chart.defaults.global)
 
 const ProjectStatusContainer = styled.div`
 display: flex;

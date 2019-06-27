@@ -13,10 +13,15 @@ import imgSouthAmerica from "../img/southamerica.svg"
 
 
 
-
-
 // Geographic Representation
-
+const continentImages = {
+  [region.asia]: imgAsia,
+  [region.europe]: imgEurope,
+  [region.northamerica]: imgNorthAmerica,
+  [region.southamerica]: imgSouthAmerica,
+  [region.oceania]: imgOceania,
+  [region.africa]: imgAfrica,
+}
 
 const GeographyObject = styled.div`
   display: flex;
@@ -41,10 +46,10 @@ const CountryListItem = styled.li`
 
 `
 
-const imgCountry = styled.img`
-width: 80px;
-height: auto;
-`
+// const imgCountry = styled.img`
+// width: 80px;
+// height: auto;
+// `
 
 
 export default () => (
@@ -53,7 +58,7 @@ export default () => (
     {
       Object.values(region).map( reg => (
         <GeographyObject key={reg}>
-        <img width={"120px"} src={imgAfrica} alt="Africa" />
+          <img width={"120px"} src={continentImages[reg]} alt={reg} />
           <CountryTitle>{reg}</CountryTitle>
           <CountryListContainer>
             {

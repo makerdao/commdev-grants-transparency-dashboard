@@ -19,14 +19,14 @@ font-weight: 300;
 color: #1AAB9B;
 `
 
-const FooterCardContainer = styled.div`
-grid-column: 1 / -1;
-grid-gap: 3rem;
-display: grid;
-grid-template-columns: repeat(auto-fit, 360px);
-justify-content: center;
-padding: 6rem 0rem 6rem 0rem;
-`
+// const FooterCardContainer = styled.div`
+// grid-column: 1 / -1;
+// grid-gap: 3rem;
+// display: grid;
+// grid-template-columns: repeat(auto-fit, 360px);
+// justify-content: center;
+// padding: 6rem 0rem 6rem 0rem;
+// `
 
 const FooterCardCTA = styled.div`
 display: grid;
