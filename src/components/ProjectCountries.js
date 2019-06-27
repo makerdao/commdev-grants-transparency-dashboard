@@ -23,27 +23,34 @@ const continentImages = {
   [region.africa]: imgAfrica,
 }
 
-const GeographyObject = styled.div`
+const GeographyObject = styled.ul`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-items: around;
   align-items: start;
   font-size: 2rem;
+  align-content: center;
+  justify-content:center;
 `
 
-const CountryTitle = styled.h5`
-color: #231536;
-`
+// const CountryTitle = styled.h5`
+// color: #231536;
+// `
 
 const CountryListContainer = styled.ul`
+  display: flex;
+  width: 100%;
   font-size: 1.25rem;
   list-style: none;
   padding-left: 0px;
   line-height: 160%;
+  padding: 0px;
+  flex-flow: wrap column;
+  max-height: 160px;
 `
 
 const CountryListItem = styled.li`
-
+justify-content: left;
 `
 
 // const imgCountry = styled.img`
@@ -58,8 +65,7 @@ export default () => (
     {
       Object.values(region).map( reg => (
         <GeographyObject key={reg}>
-          <img width={"120px"} src={continentImages[reg]} alt={reg} />
-          <CountryTitle>{reg}</CountryTitle>
+          <img width={"160px"} src={continentImages[reg]} alt={reg} />
           <CountryListContainer>
             {
               Object.values(data.countriesByRegion[reg]).map( country => (
