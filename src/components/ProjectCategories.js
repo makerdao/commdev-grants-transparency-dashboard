@@ -8,10 +8,9 @@ import {data, pieData} from "../utils.js"
 import {pType} from '../../static/data/dataformat.js'
 import {Pie} from 'react-chartjs-2'
 import Chart from "chart.js";
-// import h from 'react-hyperscript'
+
 Chart.defaults.global.legend.display = false;
 Chart.defaults.global.tooltips.enabled = false;
-
 
 
 
@@ -22,8 +21,9 @@ justify-content: space-between;
 align-items: center;
 background: hsla(255,255,255,0.4);
 `
-
+//${props => props.disp ? 'flex' : 'none'};
 const ProjectCategoryChart = styled.div`
+display: flex;
 width: 48px;
 height: 48px;
 border-radius: 100px;
@@ -101,12 +101,16 @@ export class ProjectCategories extends Component {
         {
           categories.map( type => (
             <ProjectCategoryContainer key={type.toString()}>
-              <ProjectCategoryChart >
-                <Pie
-                  data={pieData('type', type)}
-                  options = {{ maintainAspectRatio: false }}
-                />
-              </ProjectCategoryChart>
+              {
+                type===this.state.displayType ?
+                  (<ProjectCategoryChart >
+                      <Pie
+                        data={pieData('type', type)}
+                        options = {{ maintainAspectRatio: false }}
+                      />
+                   </ProjectCategoryChart>)
+                : null
+              }
               <ProjectCategoryNumber>{type === 'All' ? data.appsAccepted : data.typeDistribution[type]}</ProjectCategoryNumber>
               <ProjectCategorySelector onClick={this.setType.bind(this)} id={type} active={type===this.state.displayType}> {type} </ProjectCategorySelector>
             </ProjectCategoryContainer>
