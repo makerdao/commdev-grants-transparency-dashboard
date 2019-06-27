@@ -2,6 +2,7 @@ import React from 'react'
 import { Component } from 'react'
 import styled from "styled-components"
 import {SectionWrapper} from "../components/SectionWrapper.js"
+import {PrimaryButton} from "../components/PrimaryButton.js"
 import ProjectCards from "../components/ProjectCards"
 import {SectionTitle} from "../components/SectionTitle.js"
 import {data, pieData} from "../utils.js"
@@ -13,13 +14,24 @@ Chart.defaults.global.legend.display = false;
 Chart.defaults.global.tooltips.enabled = false;
 
 
+const ProjectCategoryList = styled.ul`
+grid-column: 1 / -1;
+display: flex;
+flex-direction: flex-row;
+list-style: none;
+justify-content: space-between;
+flex-wrap: nowrap;
+overflow-x: scroll;
+padding: 2rem 0rem 2rem 0rem;
+`
 
-const ProjectCategoryContainer = styled.div`
+const ProjectCategoryContainer = styled.li`
 display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: center;
 background: hsla(255,255,255,0.4);
+margin: 0rem 0.5rem 0rem 0.5rem;
 `
 //${props => props.disp ? 'flex' : 'none'};
 const ProjectCategoryChart = styled.div`
@@ -35,32 +47,15 @@ color: #444;
 text-transform: uppercase;
 `
 
-const PrimaryButton = styled.button`
-padding: 0.5rem 0.875rem 0.5rem 0.875rem;
-color: #231536;
-font-size: 1.25rem;
-border: 1px solid #ddd;
-border-radius: 2px;
-background: ${props => props.active ? '#B6EDE7' : 'none'};
-transition: 0.2s ease-in-out;
-outline: none;
-
-:hover {
-  cursor: pointer;
-  transform:translateY(-10%);
-}
-
-:active {
-  background: #B6EDE7;
-  border: 1px solid #B6EDE7;
-}
-
-`
 
 const SeeMoreButtonContainer = styled.div`
 display: flex;
 justify-content: center;
 margin: 1.5rem;
+`
+
+const ProjectCategoryButton = styled(PrimaryButton)`
+min-width: 120px;
 `
 
 const SeeMoreButton = styled(PrimaryButton)`
@@ -113,24 +108,26 @@ export class ProjectCategories extends Component {
       <React.Fragment>
       <SectionWrapper small>
         <SectionTitle>Explore our funded projects</SectionTitle>
-        {
-          categories.map( type => (
-            <ProjectCategoryContainer key={type.toString()}>
-              {
-                type===this.state.displayType ?
-                  (<ProjectCategoryChart >
-                      <Pie
-                        data={pieData('type', type)}
-                        options = {{ maintainAspectRatio: false }}
-                      />
-                   </ProjectCategoryChart>)
-                : null
-              }
-              <ProjectCategoryNumber>{type === 'All' ? data.appsAccepted : data.typeDistribution[type]}</ProjectCategoryNumber>
-              <PrimaryButton onClick={this.setType.bind(this)} id={type} active={type===this.state.displayType}> {type} </PrimaryButton>
-            </ProjectCategoryContainer>
-          ))
-        }
+          <ProjectCategoryList>
+          {
+            categories.map( type => (
+              <ProjectCategoryContainer key={type.toString()}>
+                {
+                  type===this.state.displayType ?
+                    (<ProjectCategoryChart >
+                        <Pie
+                          data={pieData('type', type)}
+                          options = {{ maintainAspectRatio: false }}
+                        />
+                     </ProjectCategoryChart>)
+                  : null
+                }
+                <ProjectCategoryNumber>{type === 'All' ? data.appsAccepted : data.typeDistribution[type]}</ProjectCategoryNumber>
+                <ProjectCategoryButton onClick={this.setType.bind(this)} id={type} active={type===this.state.displayType}> {type} </ProjectCategoryButton>
+              </ProjectCategoryContainer>
+            ))
+          }
+          </ProjectCategoryList>
         </SectionWrapper>
         <ProjectCards
           selectedProjects={this.state.projectsForSelectedCategory}
