@@ -83,21 +83,25 @@ background: none;
 text-decoration: none;
 `
 
+export default (props) => {
+  console.log('props', props)
+  // let projectsToDisplay
 
+  return (
+    <ProjectCardWrapper disp={props.disp}>
+      <SectionTitle>Project Index</SectionTitle>
+      {
+        props.selectedProjects.map( (project, index) => (
+          <ProjectCard key={project.name} hide={index > props.projectsToShow - 1}>
+            <ProjectTitle>{project.name}</ProjectTitle>
+            <ProjectDescription>{project.description}</ProjectDescription>
+            <ProjectStatus>{project.status}</ProjectStatus>
 
-export default (props) => (
-  <ProjectCardWrapper disp={props.disp}>
-  {
-    Object.values(data.acceptedProjects).map( project => (
-      // <ProjectCard key={project.name} hide={!props.showAll && project.type !== props.displayType}>
-      <ProjectCard key={project.name} hide={props.displayType !== 'all' && props.displayType !== project.type}>
-          <ProjectTitle>{project.name}</ProjectTitle>
-          <ProjectDescription>{project.description}</ProjectDescription>
-          <ProjectStatus>{project.status}</ProjectStatus>
-
-          <ButtonLearnMore href={project.learnMoreLink} target="_blank" rel="noopener noreferrer"> Learn More</ButtonLearnMore>
-      </ProjectCard>
-    ))
-  }
-  </ProjectCardWrapper>
-);
+            <ButtonLearnMore href={project.learnMoreLink} target="_blank" rel="noopener noreferrer"> Learn More</ButtonLearnMore>
+          </ProjectCard>
+        ))
+      }
+    </ProjectCardWrapper>
+  )
+};
+//<ProjectCard key={project.name} hide={props.displayType !== 'All' && props.displayType !== project.type && Number(index) > Number(props.pageNumber * 1)}>

@@ -16,7 +16,6 @@ Chart.defaults.pie.hover.mode = "none";
 Chart.defaults.global.plugins.showLines = false;
 console.log('ptions', Chart.defaults.global)
 
-
 const ProjectStatusContainer = styled.div`
 display: flex;
 flex-direction: column;

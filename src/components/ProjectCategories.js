@@ -11,6 +11,16 @@ import Chart from "chart.js";
 // import h from 'react-hyperscript'
 Chart.defaults.global.legend.display = false;
 Chart.defaults.global.tooltips.enabled = false;
+Chart.defaults.global.elements.arc.borderColor = '#1AAB9B';
+Chart.defaults.global.elements.arc.backgroundColor = '#FFFFFF';
+Chart.defaults.global.elements.arc.borderWidth = 1;
+Chart.defaults.pie.hover.mode = "none";
+Chart.defaults.pie.hover.mode = "none";
+Chart.defaults.global.plugins.showLines = false;
+console.log('global ptions', Chart.defaults.global)
+// console.log('pie ptions', Chart.defaults.pie)
+
+
 
 
 const ProjectCategoryContainer = styled.div`
@@ -39,7 +49,7 @@ color: #231536;
 font-size: 1.25rem;
 border: 1px solid #ddd;
 border-radius: 2px;
-background: none;
+background: ${props => props.active ? '#B6EDE7' : 'none'};
 transition: 0.2s ease-in-out;
 outline: none;
 
@@ -54,23 +64,41 @@ outline: none;
 }
 
 `
+const SeeMoreButton = styled.button`
+color: ${props => props.disabled ? '#aaa' : '#231536'}; // TODO add style here alex
+`
 
 //categoryPieData(type)}
 export class ProjectCategories extends Component {
   constructor (props) {
     super(props)
-    this.state = {displayType: 'all'}
+    this.cardsPerPage = 4
+    this.state = {
+      displayType: 'All',
+      projectsToShow: this.cardsPerPage
+    }
   }
 
   setType (e) {
     this.setState({
-      displayType: e.target.id
+      displayType: e.target.id,
+      projectsToShow: this.cardsPerPage
+    })
+  }
+
+  seeMore (e) {
+    this.setState({
+      projectsToShow: this.state.projectsToShow + this.cardsPerPage
     })
   }
 
   render () {
     let categories = ['All']
     categories = categories.concat(Object.values(pType))
+    let projectsForSelectedCategory = this.state.displayType === 'All' ?
+      data.acceptedProjects
+      : data.acceptedProjects.filter(p => p.type === this.state.displayType)
+
     return (
       <React.Fragment>
       <SectionWrapper small>
@@ -85,14 +113,22 @@ export class ProjectCategories extends Component {
                 />
               </ProjectCategoryChart>
               <ProjectCategoryNumber>{type === 'All' ? data.appsAccepted : data.typeDistribution[type]}</ProjectCategoryNumber>
-              <ProjectCategorySelector onClick={this.setType.bind(this)} id={type}> {type} </ProjectCategorySelector>
+              <ProjectCategorySelector onClick={this.setType.bind(this)} id={type} active={type===this.state.displayType}> {type} </ProjectCategorySelector>
             </ProjectCategoryContainer>
           ))
         }
         </SectionWrapper>
-        <ProjectCards displayType={this.state.displayType}/>
+        <ProjectCards
+          selectedProjects={projectsForSelectedCategory}
+          displayType={this.state.displayType}
+          projectsToShow={this.state.projectsToShow}/>
+        <SeeMoreButton
+          disabled={this.state.projectsToShow >= projectsForSelectedCategory.length}
+          onClick={this.seeMore.bind(this)}>
+          more
+        </SeeMoreButton>
         </React.Fragment>
-
     )
   }
 }
+
