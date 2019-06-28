@@ -21,7 +21,7 @@ flex-direction: flex-row;
 list-style: none;
 justify-content: space-between;
 flex-wrap: nowrap;
-overflow-x: scroll;
+overflow-x: auto;
 padding: 2rem 0rem 2rem 0rem;
 `
 
@@ -40,6 +40,7 @@ width: 48px;
 height: 48px;
 border-radius: 100px;
 background-color: #1AAB9B;
+opacity: ${props => props.selected ? 1 : 0}
 `
 
 const ProjectCategoryNumber = styled.h6`
@@ -114,13 +115,14 @@ export class ProjectCategories extends Component {
               <ProjectCategoryContainer key={type.toString()}>
                 {
                   type===this.state.displayType ?
-                    (<ProjectCategoryChart >
+                    // in order for the animation to be seen upon selecting a filter, this object has to be drawn anew
+                    (<ProjectCategoryChart selected={true}>
                         <Pie
                           data={pieData('type', type)}
                           options = {{ maintainAspectRatio: false }}
                         />
                      </ProjectCategoryChart>)
-                  : null
+                    : <ProjectCategoryChart selected={false}></ProjectCategoryChart >
                 }
                 <ProjectCategoryNumber>{type === 'All' ? data.appsAccepted : data.typeDistribution[type]}</ProjectCategoryNumber>
                 <ProjectCategoryButton onClick={this.setType.bind(this)} id={type} active={type===this.state.displayType}> {type} </ProjectCategoryButton>
