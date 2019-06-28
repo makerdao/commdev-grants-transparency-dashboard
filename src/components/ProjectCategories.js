@@ -60,14 +60,14 @@ min-width: 120px;
 `
 
 const SeeMoreButton = styled(PrimaryButton)`
-opacity: ${props => props.disabled ? '0.2' : '1'};
+opacity: 1;
 justify-self: center;
 font-size: 1.5rem;
 padding: 1.25rem;
 
 :hover {
-cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
-transform: ${props => props.disabled ? 'translateY(0%);' : 'translateY(10%);'};
+cursor: pointer;
+transform: translateY(10%);
 }
 `
 
@@ -136,13 +136,16 @@ export class ProjectCategories extends Component {
           displayType={this.state.displayType}
           projectsToShow={this.state.projectsToShow}>
         </ProjectCards>
-        <SeeMoreButtonContainer>
-          <SeeMoreButton
-            disabled={this.state.projectsToShow >= this.state.projectsForSelectedCategory.length}
-            onClick={this.seeMore.bind(this)}>
-            View More
-          </SeeMoreButton>
-        </SeeMoreButtonContainer>
+            {
+              this.state.projectsToShow < this.state.projectsForSelectedCategory.length ? 
+                (<SeeMoreButtonContainer>
+                   <SeeMoreButton
+                    onClick={this.seeMore.bind(this)}>
+                    View More
+                  </SeeMoreButton>
+                 </SeeMoreButtonContainer>)
+                : null
+            }
         </React.Fragment>
     )
   }
