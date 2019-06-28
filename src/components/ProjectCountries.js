@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import {SectionWrapper} from "../components/SectionWrapper.js"
 import {SectionTitle} from "../components/SectionTitle.js"
+import PrimaryStatObject from "../components/PrimaryStatObject.js"
 import {region} from '../../static/data/dataformat.js'
 import {data} from "../utils.js"
 import imgAfrica from "../img/africa.svg"
@@ -23,9 +24,16 @@ const continentImages = {
   [region.africa]: imgAfrica,
 }
 
-
-
 const CountryListContainer = styled.ul`
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
+  font-size: 2rem;
+  justify-content: space-around;
+  padding: 0;
+`
+
+const CountryListObject = styled.li`
   display: flex;
   flex-direction: row;
   justify-items: around;
@@ -33,10 +41,11 @@ const CountryListContainer = styled.ul`
   font-size: 2rem;
   align-content: center;
   justify-content:center;
+  margin: 0rem 2rem 0rem 2rem;
 `
 
 
-const CountryObjectContainer = styled.ul`
+const CountryList = styled.ul`
   display: flex;
   width: 100%;
   font-size: 1.25rem;
@@ -57,21 +66,23 @@ justify-content: left;
 
 export default () => (
   <SectionWrapper>
-    <SectionTitle>Countries Represented</SectionTitle>
+      <CountryListContainer>
+      <PrimaryStatObject number={data.nCountries} description="Countries Represented" />
     {
       // Only display regions that have countries in them.
       Object.values(region).filter(reg => data.countriesByRegion[reg].length > 0).map( reg => (
-        <CountryListContainer key={reg}>
+        <CountryListObject key={reg}>
           <img width={"160px"} src={continentImages[reg]} alt={reg} />
-          <CountryObjectContainer>
+          <CountryList>
             {
               Object.values(data.countriesByRegion[reg]).map( country => (
                 <CountryListItem key={country}>{country}</CountryListItem>
               ))
             }
-          </CountryObjectContainer>
-        </CountryListContainer>
+          </CountryList>
+        </CountryListObject>
       ))
     }
+    </CountryListContainer>
   </SectionWrapper>
 );
