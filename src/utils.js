@@ -15,7 +15,7 @@ const getNofAcceptedProjects = () => {
 }
 
 const getNofCountries = () => {
-  let countries = getAcceptedProjects().filter(p => p.location)
+  let countries = getAcceptedProjects().map(p => p.location)
   let distinctCountries = new Set(countries)
   return distinctCountries.size
 }
