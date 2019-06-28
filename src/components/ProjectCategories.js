@@ -57,6 +57,8 @@ margin: 1.5rem;
 
 const ProjectCategoryButton = styled(PrimaryButton)`
 min-width: 120px;
+border: ${props => props.active ? '1px solid #B6EDE7' : '1px solid #ddd'};
+background: ${props => props.active ? '#B6EDE7' : 'none'};
 `
 
 const ViewMoreButton = styled(PrimaryButton)`
