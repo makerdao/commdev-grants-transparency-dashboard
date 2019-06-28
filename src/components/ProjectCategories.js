@@ -49,7 +49,7 @@ text-transform: uppercase;
 `
 
 
-const SeeMoreButtonContainer = styled.div`
+const ViewMoreButtonContainer = styled.div`
 display: flex;
 justify-content: center;
 margin: 1.5rem;
@@ -59,11 +59,14 @@ const ProjectCategoryButton = styled(PrimaryButton)`
 min-width: 120px;
 `
 
-const SeeMoreButton = styled(PrimaryButton)`
+const ViewMoreButton = styled(PrimaryButton)`
 opacity: 1;
 justify-self: center;
 font-size: 1.5rem;
 padding: 1.25rem;
+border: 1px solid #1AAB9B;
+color: #1AAB9B;
+border-radius: 2px;
 
 :hover {
 cursor: pointer;
@@ -137,13 +140,13 @@ export class ProjectCategories extends Component {
           projectsToShow={this.state.projectsToShow}>
         </ProjectCards>
             {
-              this.state.projectsToShow < this.state.projectsForSelectedCategory.length ? 
-                (<SeeMoreButtonContainer>
-                   <SeeMoreButton
+              this.state.projectsToShow < this.state.projectsForSelectedCategory.length ?
+                (<ViewMoreButtonContainer>
+                   <ViewMoreButton
                     onClick={this.seeMore.bind(this)}>
                     View More
-                  </SeeMoreButton>
-                 </SeeMoreButtonContainer>)
+                  </ViewMoreButton>
+                 </ViewMoreButtonContainer>)
                 : null
             }
         </React.Fragment>
