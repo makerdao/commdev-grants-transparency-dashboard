@@ -113,7 +113,6 @@ export class ProjectCategories extends Component {
     return (
       <React.Fragment>
       <SectionWrapper small>
-        <SectionTitle>Explore our funded projects</SectionTitle>
           <ProjectCategoryList>
           {
             categories.map( type => (
