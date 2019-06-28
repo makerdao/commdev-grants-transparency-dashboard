@@ -23,6 +23,8 @@ const continentImages = {
   [region.africa]: imgAfrica,
 }
 
+
+
 const CountryListContainer = styled.ul`
   display: flex;
   flex-direction: row;
@@ -57,7 +59,8 @@ export default () => (
   <SectionWrapper>
     <SectionTitle>Countries Represented</SectionTitle>
     {
-      Object.values(region).map( reg => (
+      // Only display regions that have countries in them.
+      Object.values(region).filter(reg => data.countriesByRegion[reg].length > 0).map( reg => (
         <CountryListContainer key={reg}>
           <img width={"160px"} src={continentImages[reg]} alt={reg} />
           <CountryObjectContainer>

@@ -15,11 +15,11 @@ const getNofAcceptedProjects = () => {
 }
 
 const getNofCountries = () => {
-  let countries = getAcceptedProjects().filter(p => p.location)
+  let countries = getAcceptedProjects().map(p => p.location)
   let distinctCountries = new Set(countries)
+  console.log('countries ', countries )
   return distinctCountries.size
 }
-
 // REFACTOR: those next two could be fused together
 // counts the number of projects which have a given value in a certain field
 const getNofProjectField = (field, value) => {
