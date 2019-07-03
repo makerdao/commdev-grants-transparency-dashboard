@@ -25,11 +25,13 @@ const continentImages = {
 }
 
 const CountryListContainer = styled.ul`
-  grid-column: 1 / -1;
+  grid-column: 2 / -1;
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   font-size: 2rem;
-  justify-content: space-around;
   padding: 0;
 `
 
@@ -65,9 +67,7 @@ justify-content: left;
 
 
 export default () => (
-  <SectionWrapper>
       <CountryListContainer>
-      <PrimaryStatObject number={data.nCountries} description="Countries Represented" />
     {
       // Only display regions that have countries in them.
       Object.values(region).filter(reg => data.countriesByRegion[reg].length > 0).map( reg => (
@@ -84,5 +84,4 @@ export default () => (
       ))
     }
     </CountryListContainer>
-  </SectionWrapper>
 );

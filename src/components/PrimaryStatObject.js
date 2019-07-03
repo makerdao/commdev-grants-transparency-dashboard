@@ -10,7 +10,7 @@ width: 300px;
 `
 
 const StatsNumber = styled.h3`
-
+color: #179b8c;
 `
 
 

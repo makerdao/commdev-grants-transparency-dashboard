@@ -33,7 +33,6 @@ export default () => (
     </TopWrapper>
     <BottomWrapper>
       <PageSectionTitle>Explore our funded projects</PageSectionTitle>
-      <ProjectCountries />
       <ProjectCategories />
 
       {/* <ProjectCard /> */}
