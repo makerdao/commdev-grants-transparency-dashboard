@@ -29,12 +29,10 @@ export default () => (
   <React.Fragment>
     <TopWrapper>
       <Header />
-
       <PrimaryStats />
     </TopWrapper>
     <BottomWrapper>
       <PageSectionTitle>Explore our funded projects</PageSectionTitle>
-      <ProjectStatus />
       <ProjectCountries />
       <ProjectCategories />
 

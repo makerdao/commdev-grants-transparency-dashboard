@@ -6,6 +6,7 @@ display: flex;
 flex-direction: column;
 justify-items: center;
 align-items: center;
+width: 300px;
 `
 
 const StatsNumber = styled.h3`
