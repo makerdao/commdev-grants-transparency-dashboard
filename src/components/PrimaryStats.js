@@ -3,7 +3,13 @@ import styled from "styled-components"
 import PrimaryStatObject from "../components/PrimaryStatObject.js"
 import ProjectStatus from "../components/ProjectStatus.js"
 import ProjectCountries from "../components/ProjectCountries.js"
-import {data} from "../utils.js"
+import {data, doughnutData} from "../utils.js"
+import {Doughnut} from 'react-chartjs-2'
+import Chart from "chart.js";
+
+Chart.defaults.doughnut.cutoutPercentage = 80;
+Chart.defaults.doughnut.hover.mode = 'off';
+console.log('options:', Chart.defaults.doughnut)
 
 const StatsWrapper = styled.section`
 display: grid;
@@ -31,7 +37,12 @@ export default () => (
     <PrimaryStatObject number={data.totalMoneyDispersed} description="Funds Dispersed" />
     <PrimaryStatObject number={data.averageAwardedMoney} description="Average Awarded" />
     <PrimaryStatObject number={data.appsSubmitted} description="Grant Applications Submitted" />
-    <PrimaryStatObject number={data.appsAccepted} description="Grant Applications Accepted" />
+    <Doughnut
+      data={doughnutData}
+      /* options = {{ maintainAspectRatio: false }} */ // not 100% sure what this does, you might need for your styling to take effect
+    />
+
+  <PrimaryStatObject number={data.appsAccepted} description="Grant Applications Accepted" />
     <ProjectStatusWrapper>
       <PrimaryStatObject number={data.currentlyActive} description="Active Projects" />
       <ProjectStatus />

@@ -1,8 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import {SectionWrapper} from "../components/SectionWrapper.js"
-import {SectionTitle} from "../components/SectionTitle.js"
-import PrimaryStatObject from "../components/PrimaryStatObject.js"
 import {data, pieData} from "../utils.js"
 import {pStatus} from '../../static/data/dataformat.js'
 import {Pie} from 'react-chartjs-2'
