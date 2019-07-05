@@ -50,8 +50,8 @@ export default () => (
   <React.Fragment>
   <StatsWrapper>
     <StatsRow>
-      <PrimaryStatObject number={data.totalMoneyAwarded} description="Funds Awarded" />
-      <PrimaryStatObject number={data.totalMoneyDispersed} description="Funds Dispersed" />
+      <PrimaryStatObject number={data.totalMoneyAwarded} description="Dai Awarded" />
+      <PrimaryStatObject number={data.totalMoneyDispersed} description="Dai Dispersed" />
       <PrimaryStatObject number={data.averageAwardedMoney} description="Average Awarded" />
     </StatsRow>
     <StatsRow>
