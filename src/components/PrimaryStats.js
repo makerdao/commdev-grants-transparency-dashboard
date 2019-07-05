@@ -3,13 +3,9 @@ import styled from "styled-components"
 import PrimaryStatObject from "../components/PrimaryStatObject.js"
 import ProjectStatus from "../components/ProjectStatus.js"
 import ProjectCountries from "../components/ProjectCountries.js"
-import {data, doughnutData} from "../utils.js"
-import {Doughnut} from 'react-chartjs-2'
-import Chart from "chart.js";
+import ChartDoughnut from "../components/ChartDoughnut.js"
+import {data} from "../utils.js"
 
-Chart.defaults.doughnut.cutoutPercentage = 80;
-Chart.defaults.doughnut.hover.mode = 'off';
-console.log('options:', Chart.defaults.doughnut)
 
 const StatsWrapper = styled.section`
 display: grid;
@@ -30,6 +26,16 @@ justify-content: space-between;
 text-align: center;
 `
 
+const DoughnutChartContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-items: center;
+align-items: center;
+justify-self: center;
+width: 100%;
+max-width: 300px;
+`
+
 export default () => (
   <React.Fragment>
   <StatsWrapper>
@@ -37,10 +43,9 @@ export default () => (
     <PrimaryStatObject number={data.totalMoneyDispersed} description="Funds Dispersed" />
     <PrimaryStatObject number={data.averageAwardedMoney} description="Average Awarded" />
     <PrimaryStatObject number={data.appsSubmitted} description="Grant Applications Submitted" />
-    <Doughnut
-      data={doughnutData}
-      /* options = {{ maintainAspectRatio: false }} */ // not 100% sure what this does, you might need for your styling to take effect
-    />
+    <DoughnutChartContainer>
+    <ChartDoughnut/>
+    </DoughnutChartContainer>
 
   <PrimaryStatObject number={data.appsAccepted} description="Grant Applications Accepted" />
     <ProjectStatusWrapper>
