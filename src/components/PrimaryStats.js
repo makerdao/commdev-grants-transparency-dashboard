@@ -17,13 +17,23 @@ padding: 6rem 0.5rem 6rem 0.5rem;
 text-align: center;
 `
 
-const ProjectStatusWrapper = styled.section`
+const StatsRow = styled.div`
+grid-column: 1 / -1;
+display: grid;
+grid-template-columns: repeat(auto-fit, 360px);
+justify-content: space-between;
+text-align: center;
+`
+
+
+const StatsRowStatus = styled.div`
 grid-column: 1 / -1;
 display: grid;
 grid-template-columns: 1fr;
-grid-column-gap: 0rem;
 justify-content: space-between;
 text-align: center;
+border: 1px solid #eadea9;
+border-radius: 2px;
 `
 
 const DoughnutChartContainer = styled.div`
@@ -39,25 +49,30 @@ max-width: 300px;
 export default () => (
   <React.Fragment>
   <StatsWrapper>
-    <PrimaryStatObject number={data.totalMoneyAwarded} description="Funds Awarded" />
-    <PrimaryStatObject number={data.totalMoneyDispersed} description="Funds Dispersed" />
-    <PrimaryStatObject number={data.averageAwardedMoney} description="Average Awarded" />
-    <PrimaryStatObject number={data.appsSubmitted} description="Grant Applications Submitted" />
-    <DoughnutChartContainer>
-    <ChartDoughnut/>
-    </DoughnutChartContainer>
-
-  <PrimaryStatObject number={data.appsAccepted} description="Grant Applications Accepted" />
-    <ProjectStatusWrapper>
+    <StatsRow>
+      <PrimaryStatObject number={data.totalMoneyAwarded} description="Funds Awarded" />
+      <PrimaryStatObject number={data.totalMoneyDispersed} description="Funds Dispersed" />
+      <PrimaryStatObject number={data.averageAwardedMoney} description="Average Awarded" />
+    </StatsRow>
+    <StatsRow>
+      <PrimaryStatObject number={data.milestones.total} description="Milestones Completed" />
+      <PrimaryStatObject number={data.milestones.last30days} description="Milestones Completed (30 days)" />
+    </StatsRow>
+    <StatsRow>
+      <PrimaryStatObject color="#000000" number={data.appsSubmitted} description="Grant Applications Submitted" />
+      <DoughnutChartContainer>
+      <ChartDoughnut/>
+      </DoughnutChartContainer>
+      <PrimaryStatObject number={data.appsAccepted} description="Grant Applications Accepted" />
+    </StatsRow>
+    <StatsRowStatus>
       <PrimaryStatObject number={data.currentlyActive} description="Active Projects" />
       <ProjectStatus />
-    </ProjectStatusWrapper>
-    <ProjectStatusWrapper>
+    </StatsRowStatus>
+    <StatsRow>
       <PrimaryStatObject number={data.nCountries} description="Countries Represented" />
       <ProjectCountries />
-    </ProjectStatusWrapper>
-    <PrimaryStatObject number={data.milestones.total} description="Milestones Completed" />
-    <PrimaryStatObject number={data.milestones.last30days} description="Milestones Completed (30 days)" />
+    </StatsRow>
   </StatsWrapper>
   </React.Fragment>
 );

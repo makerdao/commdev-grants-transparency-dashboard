@@ -16,6 +16,7 @@ color: #179b8c;
 
 
 const StatsTitle = styled.h5`
+max-width: 200px;
 `
 
 
