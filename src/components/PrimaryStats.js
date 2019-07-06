@@ -9,7 +9,7 @@ import {data} from "../utils.js"
 
 const StatsWrapper = styled.section`
 display: grid;
-grid-template-columns: repeat(auto-fit, 360px);
+grid-template-columns: repeat(auto-fit, 300px);
 grid-column-gap: 3rem;
 grid-row-gap: 8rem;
 justify-content: space-around;
@@ -20,7 +20,15 @@ text-align: center;
 const StatsRow = styled.div`
 grid-column: 1 / -1;
 display: grid;
-grid-template-columns: repeat(auto-fit, 360px);
+grid-template-columns: repeat(auto-fit, 300px);
+justify-content: space-around;
+text-align: center;
+`
+
+const StatsRowMilestones = styled.div`
+grid-column: 1 / -1;
+display: grid;
+grid-template-columns: 1fr 1fr;
 justify-content: space-between;
 text-align: center;
 `
@@ -52,11 +60,11 @@ export default () => (
     <StatsRow>
       <PrimaryStatObject number={data.totalMoneyAwarded} description="Dai Awarded" />
       <PrimaryStatObject number={data.totalMoneyDispersed} description="Dai Dispersed" />
-      <PrimaryStatObject number={data.averageAwardedMoney} description="Average Awarded" />
+      <PrimaryStatObject number={data.averageAwardedMoney} description="Average Dai Award" />
     </StatsRow>
     <StatsRow>
-      <PrimaryStatObject number={data.milestones.total} description="Milestones Completed" />
-      <PrimaryStatObject number={data.milestones.last30days} description="Milestones Completed (30 days)" />
+      <PrimaryStatObject number={data.milestones.total} description="Total Milestones Completed" />
+      <PrimaryStatObject number={data.milestones.last30days} description="Recent Milestones Completed" />
     </StatsRow>
     <StatsRow>
       <PrimaryStatObject color="#000000" number={data.appsSubmitted} description="Grant Applications Submitted" />
