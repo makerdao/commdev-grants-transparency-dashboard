@@ -18,13 +18,11 @@ const LogoMaker = styled.img`
   align-self: center;
 `
 
-const IntroHeader = styled.h1`
+const IntroHeader = styled.h3`
   grid-column: 1 / -1;
   grid-row: 2;
   color: #444;
-  font-size: 3rem;
   text-align: center;
-  font-weight: 400;
 `
 
 const IntroHeaderHighlight = styled.span`
