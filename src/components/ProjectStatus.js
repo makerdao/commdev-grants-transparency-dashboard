@@ -34,7 +34,6 @@ const ProjectStatusChart = styled.div`
 width: 48px;
 height: 48px;
 border-radius: 100px;
-background-color: #1AAB9B;
 `
 
 const ProjectStatusNumber = styled.h6`
