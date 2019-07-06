@@ -25,14 +25,6 @@ justify-content: space-around;
 text-align: center;
 `
 
-const StatsRowMilestones = styled.div`
-grid-column: 1 / -1;
-display: grid;
-grid-template-columns: 1fr 1fr;
-justify-content: space-between;
-text-align: center;
-`
-
 
 const StatsRowStatus = styled.div`
 grid-column: 1 / -1;
@@ -63,15 +55,15 @@ export default () => (
       <PrimaryStatObject number={data.averageAwardedMoney} description="Average Dai Award" />
     </StatsRow>
     <StatsRow>
-      <PrimaryStatObject number={data.milestones.total} description="Total Milestones Completed" />
-      <PrimaryStatObject number={data.milestones.last30days} description="Recent Milestones Completed" />
-    </StatsRow>
-    <StatsRow>
       <PrimaryStatObject color="#000000" number={data.appsSubmitted} description="Grant Applications Submitted" />
       <DoughnutChartContainer>
       <ChartDoughnut/>
       </DoughnutChartContainer>
       <PrimaryStatObject number={data.appsAccepted} description="Grant Applications Accepted" />
+    </StatsRow>
+    <StatsRow>
+      <PrimaryStatObject number={data.milestones.total} description="Total Milestones Completed" />
+      <PrimaryStatObject number={data.milestones.last30days} description="Recent Milestones Completed" />
     </StatsRow>
     <StatsRowStatus>
       <PrimaryStatObject number={data.currentlyActive} description="Active Projects" />
