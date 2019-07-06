@@ -8,6 +8,7 @@ const IntroWrapper = styled.section`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 120px repeat(2, 1fr);
   justify-items: center;
+  padding: 1rem;
 `;
 
 const LogoMaker = styled.img`
@@ -30,7 +31,7 @@ color: #179b8c;
 `
 
 const IntroContent = styled.h5`
-  grid-column 1 / -1;
+  grid-column: 1 / -1;
   grid-row: 3;
   color: #333;
   font-weight: 400rem;
