@@ -1,4 +1,4 @@
-import React from "React"
+import React from "react"
 import styled from "styled-components"
 
 const StatsContainer = styled.div`
@@ -15,6 +15,7 @@ color: #179b8c;
 
 
 const StatsTitle = styled.h5`
+max-width: 200px;
 `
 
 

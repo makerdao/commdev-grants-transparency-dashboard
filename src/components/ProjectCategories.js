@@ -4,7 +4,6 @@ import styled from "styled-components"
 import {SectionWrapper} from "../components/SectionWrapper.js"
 import {PrimaryButton} from "../components/PrimaryButton.js"
 import ProjectCards from "../components/ProjectCards"
-import {SectionTitle} from "../components/SectionTitle.js"
 import {data, pieData} from "../utils.js"
 import {pType} from '../../static/data/dataformat.js'
 import {Pie} from 'react-chartjs-2'

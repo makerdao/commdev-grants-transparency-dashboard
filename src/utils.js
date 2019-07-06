@@ -17,7 +17,6 @@ const getNofAcceptedProjects = () => {
 const getNofCountries = () => {
   let countries = getAcceptedProjects().map(p => p.location)
   let distinctCountries = new Set(countries)
-  console.log('countries ', countries )
   return distinctCountries.size
 }
 // REFACTOR: those next two could be fused together
@@ -107,4 +106,12 @@ export const pieData = (field, value) => {
     displayData.datasets[0].backgroundColor = ['#FF0000']
   }
   return displayData
+}
+
+export const doughnutData = {
+  datasets: [{
+    data: [getNofAcceptedProjects(),getAppsSubmitted()],
+    backgroundColor: ['#1AAB9B', '#EDC47E'],
+    borderColor: ['#1AAB9B', '#EDC47E']
+  }]
 }

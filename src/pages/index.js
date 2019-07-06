@@ -2,8 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import Header from "../components/Header"
 import PrimaryStats from "../components/PrimaryStats"
-import ProjectStatus from "../components/ProjectStatus"
-import ProjectCountries from "../components/ProjectCountries"
 import {ProjectCategories} from "../components/ProjectCategories"
 import Footer from "../components/Footer"
 
