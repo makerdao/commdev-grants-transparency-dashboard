@@ -16,14 +16,14 @@ const ProjectCard = styled.div`
 display: ${props => props.hide ? 'none' : 'grid'};
 grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-template-rows: 1fr 2fr 1fr 1fr;
-width: 300px;
+max-width: 300px;
 height: 280px;
 margin: 2rem 0rem 2rem 0rem;
 flex-direction: column;
 align-items: flex-start;
 background: hsla(255,255,255,0.4);
 border: 1px solid #ddd;
-padding: 1rem 1rem 0.15rem 1rem;
+padding: 1rem 1rem 1rem 1rem;
 `
 
 
