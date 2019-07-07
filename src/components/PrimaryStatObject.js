@@ -6,11 +6,12 @@ display: flex;
 flex-direction: column;
 justify-items: center;
 align-items: center;
-width: 200px;
+width: 100%;
 `
 
 const StatsNumber = styled.h3`
 color: #179b8c;
+font-size: ${props => props.fontSize}
 `
 
 

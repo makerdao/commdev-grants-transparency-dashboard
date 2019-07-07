@@ -40,12 +40,13 @@ const StatsRowOverflow = styled.div`
 grid-column: 1 / -1;
 display: grid;
 grid-template-columns: 280px 1fr;
-justify-content: space-between;
+justify-content: ${props => props.justifyContent};
 text-align: center;
-border: 1px solid #eadea9;
+border: ${props => props.border};
 border-radius: 2px;
 justify-items: center;
 `
+
 
 const DoughnutChartContainer = styled.div`
 position: relative;
@@ -78,11 +79,11 @@ export default () => (
       <PrimaryStatObject number={data.milestones.total} description="Total Milestones Completed" />
       <PrimaryStatObject number={data.milestones.last30days} description="Recent Milestones Completed" />
     </StatsRow>
-    <StatsRowOverflow>
+    <StatsRowOverflow justifyContent="center">
       <PrimaryStatObject number={data.currentlyActive} description="Active Projects" />
       <ProjectStatus />
     </StatsRowOverflow>
-    <StatsRowOverflow>
+    <StatsRowOverflow justifyContent="space-between" border="1px solid #eadea9;">
       <PrimaryStatObject number={data.nCountries} description="Countries Represented" />
       <ProjectCountries />
     </StatsRowOverflow>

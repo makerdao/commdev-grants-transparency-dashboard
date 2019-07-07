@@ -65,7 +65,7 @@ justify-content: left;
 
 
 export default () => (
-      <RowOverflow>
+      <RowOverflow backgroundColor="#f7f1db;">
     {
       // Only display regions that have countries in them.
       Object.values(region).filter(reg => data.countriesByRegion[reg].length > 0).map( reg => (

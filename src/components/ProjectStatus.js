@@ -39,7 +39,7 @@ color: #231536;
 
 
 export default () => (
-  <RowOverflow>
+  <RowOverflow gridColumn="1 / -1" maxWidth="1024px" justifyContent="center">
   {
     Object.values(pStatus).map( status => (
       <ProjectStatusContainer key={status.toString()}>
