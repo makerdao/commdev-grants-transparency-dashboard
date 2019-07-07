@@ -14,7 +14,7 @@ width: 100%;
 
 const BottomWrapper = styled.section`
   background: #F6F8F9;
-  padding: 48px;
+  padding: 1rem;
   `
 
 const PageSectionTitle = styled.h4`
@@ -32,11 +32,7 @@ export default () => (
     <BottomWrapper>
       <PageSectionTitle>Explore our funded projects</PageSectionTitle>
       <ProjectCategories />
-
-      {/* <ProjectCard /> */}
-
     </BottomWrapper>
 
-    <Footer />
   </React.Fragment>
 )
