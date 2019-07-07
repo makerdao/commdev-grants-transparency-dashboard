@@ -59,6 +59,7 @@ text-transform: uppercase;
 
 
 const ViewMoreButtonContainer = styled.div`
+grid-column: 1 / -1;
 display: flex;
 justify-content: center;
 margin: 1.5rem;
