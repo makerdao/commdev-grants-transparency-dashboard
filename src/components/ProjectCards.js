@@ -16,7 +16,8 @@ const ProjectCard = styled.div`
 display: ${props => props.hide ? 'none' : 'grid'};
 grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-template-rows: 1fr 2fr 1fr 1fr;
-max-width: 300px;
+width: 100%;
+max-width: 360px;
 height: 280px;
 margin: 2rem 0rem 2rem 0rem;
 flex-direction: column;
@@ -37,11 +38,6 @@ overflow: hidden;
 white-space: nowrap;
 `
 
-// const Row = styled.div`
-// grid-column: 1 / -1;
-// display: grid;
-// grid-template-columns: repeat(2, 1fr);
-// `
 
 const ProjectStatus = styled.h6`
 grid-column: 1 / 2;
@@ -50,11 +46,6 @@ color: #444;
 text-transform: uppercase;
 `
 
-// const ProjectCategory = styled.h6`
-// grid-column: 1 / 3;
-// grid-row: 3;
-// color: #444;
-// `
 
 const ProjectDescription = styled.p`
 grid-column: 1 / -1;
