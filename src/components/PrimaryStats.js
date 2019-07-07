@@ -29,7 +29,7 @@ text-align: center;
 const StatsRowOverflow = styled.div`
 grid-column: 1 / -1;
 display: grid;
-grid-template-columns: 1fr;
+grid-template-columns: 280px 1fr;
 justify-content: space-between;
 text-align: center;
 border: 1px solid #eadea9;

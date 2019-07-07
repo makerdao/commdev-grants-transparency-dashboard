@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 const RowOverflow = styled.div`
 grid-column: 2 / -1;
+width: 100%;
 display: flex;
 flex-direction: flex-row;
 flex-wrap: nowrap;
