@@ -4,25 +4,35 @@ import PrimaryStatObject from "../components/PrimaryStatObject.js"
 import ProjectStatus from "../components/ProjectStatus.js"
 import ProjectCountries from "../components/ProjectCountries.js"
 import ChartDoughnut from "../components/ChartDoughnut.js"
+import {device} from "../mediaqueries/device.js"
 import {data} from "../utils.js"
 
 
 const StatsWrapper = styled.section`
 display: grid;
 grid-template-columns: repeat(auto-fit, 300px);
-grid-column-gap: 3rem;
+grid-column-gap: 1rem;
 grid-row-gap: 8rem;
 justify-content: space-around;
 padding: 6rem 0.5rem 6rem 0.5rem;
 text-align: center;
+
+@media ${device.mobileL} {
+  grid-row-gap: 4rem;
+}
 `
 
 const StatsRow = styled.div`
 grid-column: 1 / -1;
 display: grid;
-grid-template-columns: repeat(auto-fit, 300px);
+grid-template-columns: repeat(auto-fit, 200px);
 justify-content: space-around;
 text-align: center;
+
+@media ${device.mobileL} {
+  grid-row-gap: 2rem;
+  background-color: hsla(158, 56%, 88%, 1);
+}
 `
 
 

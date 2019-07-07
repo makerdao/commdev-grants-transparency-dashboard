@@ -12,6 +12,9 @@ export default () => (
       data={doughnutData}
       width={300}
       height={300}
-      /* options = {{ maintainAspectRatio: false }} */ // not 100% sure what this does, you might need for your styling to take effect
+      options = {{
+        maintainAspectRatio: true,
+        responsive:true
+      }}
     />
 )

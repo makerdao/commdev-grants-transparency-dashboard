@@ -2,10 +2,10 @@ import styled from "styled-components"
 
 const SectionWrapper = styled.section`
 display: grid;
-grid-template-columns: ${props => props.small ? "repeat(auto-fit, 160px)" : "repeat(auto-fit, 240px)"};
+grid-template-columns: ${props => props.small ? "repeat(auto-fit, 160px)" : "repeat(auto-fit, 300px)"};
 grid-gap: 2rem;
 justify-content: space-around;
-padding: 4rem 0rem 4rem 0rem;
+padding: 0rem 1rem 0rem 1rem;
 `
 
 export {SectionWrapper}

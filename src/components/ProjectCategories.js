@@ -149,7 +149,6 @@ export class ProjectCategories extends Component {
                 : null
             }
             </SectionWrapper>
-
         </React.Fragment>
     )
   }

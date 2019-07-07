@@ -30,6 +30,7 @@ border-radius: 100px;
 
 const ProjectStatusNumber = styled.h6`
 color: #444;
+margin-bottom: 1rem;
 `
 
 const ProjectStatusLabel = styled.h6`
