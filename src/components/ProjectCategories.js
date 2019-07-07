@@ -4,6 +4,7 @@ import styled from "styled-components"
 import {SectionWrapper} from "../components/SectionWrapper.js"
 import {PrimaryButton} from "../components/PrimaryButton.js"
 import ProjectCards from "../components/ProjectCards"
+import {device} from "../mediaqueries/device.js"
 import {data, pieData} from "../utils.js"
 import {pType} from '../../static/data/dataformat.js'
 import {Pie} from 'react-chartjs-2'
@@ -12,13 +13,18 @@ import Chart from "chart.js";
 Chart.defaults.global.legend.display = false;
 Chart.defaults.global.tooltips.enabled = false;
 
+const ProjectCategoryListWrapper = styled.div`
+display: flex;
+grid-column: 1 / -1;
+justify-content: center;
+`
 
 const ProjectCategoryList = styled.ul`
 grid-column: 1 / -1;
 display: flex;
 flex-direction: flex-row;
 list-style: none;
-justify-content: space-between;
+justify-content: flex-start;
 flex-wrap: nowrap;
 overflow-x: auto;
 padding: 2rem 0rem 2rem 0rem;
@@ -30,7 +36,11 @@ flex-direction: column;
 justify-content: space-between;
 align-items: center;
 background: hsla(255,255,255,0.4);
-margin: 0rem 0.5rem 0rem 0.5rem;
+margin: 0rem 1rem 0rem 1rem;
+
+@media ${device.mobileL} {
+  margin: 0rem 0.25rem 0rem 0.25rem;
+}
 `
 //${props => props.disp ? 'flex' : 'none'};
 const ProjectCategoryChart = styled.div`
@@ -56,8 +66,14 @@ margin: 1.5rem;
 
 const ProjectCategoryButton = styled(PrimaryButton)`
 min-width: 120px;
-border: ${props => props.active ? '1px solid #B6EDE7' : '1px solid #ddd'};
-background: ${props => props.active ? '#B6EDE7' : 'none'};
+color: ${props => props.active ? '#fafafa' : '#555'};
+border: ${props => props.active ? '1px solid #1aaa9b' : '1px solid #ddd'};
+background: ${props => props.active ? '#1aaa9b' : 'none'};
+border-radius: 400px;
+text-transform: uppercase;
+font-size: 1rem;
+font-weight: 400;
+letter-spacing: 0.0125rem;
 `
 
 const ViewMoreButton = styled(PrimaryButton)`
@@ -112,7 +128,8 @@ export class ProjectCategories extends Component {
     return (
       <React.Fragment>
       <SectionWrapper>
-          <ProjectCategoryList>
+        <ProjectCategoryListWrapper>
+            <ProjectCategoryList>
           {
             categories.map( type => (
               <ProjectCategoryContainer key={type.toString()}>
@@ -133,6 +150,7 @@ export class ProjectCategories extends Component {
             ))
           }
           </ProjectCategoryList>
+          </ProjectCategoryListWrapper>
         <ProjectCards
           selectedProjects={this.state.projectsForSelectedCategory}
           displayType={this.state.displayType}
