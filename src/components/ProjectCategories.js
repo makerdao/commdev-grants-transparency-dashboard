@@ -111,7 +111,7 @@ export class ProjectCategories extends Component {
 
     return (
       <React.Fragment>
-      <SectionWrapper small>
+      <SectionWrapper>
           <ProjectCategoryList>
           {
             categories.map( type => (
@@ -133,7 +133,6 @@ export class ProjectCategories extends Component {
             ))
           }
           </ProjectCategoryList>
-        </SectionWrapper>
         <ProjectCards
           selectedProjects={this.state.projectsForSelectedCategory}
           displayType={this.state.displayType}
@@ -149,6 +148,8 @@ export class ProjectCategories extends Component {
                  </ViewMoreButtonContainer>)
                 : null
             }
+            </SectionWrapper>
+
         </React.Fragment>
     )
   }

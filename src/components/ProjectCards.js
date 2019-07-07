@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 
 const ProjectCardWrapper = styled.section`
+grid-column: 1 / -1;
 display: grid;
 grid-template-columns: repeat(auto-fit, 300px);
 justify-items: space-around;
