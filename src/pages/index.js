@@ -33,6 +33,7 @@ export default () => (
       <PageSectionTitle>Explore our funded projects</PageSectionTitle>
       <ProjectCategories />
     </BottomWrapper>
+    <Footer />
 
   </React.Fragment>
 )

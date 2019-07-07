@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import {device} from "../mediaqueries/device.js"
 import {SectionWrapper} from "../components/SectionWrapper.js"
 
 const FooterRow = styled.section`
@@ -8,7 +9,12 @@ display: grid;
 grid-template-columns: repeat(auto-fit, 360px);
 grid-row-gap: 2rem;
 justify-content: space-between;
-padding: 3rem 4rem 3rem 4rem;
+padding: 1rem;
+
+@media ${device.laptop} {
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 300px);
+}
 `
 
 const FooterTitle = styled.h4`
@@ -30,14 +36,12 @@ color: #1AAB9B;
 
 const FooterCardCTA = styled.div`
 display: grid;
-max-width: 400px;
 grid-template-columns: 48px repeat(2, 1fr);
 grid-template-rows: 48px 1fr;
 `
 
 const FooterCard = styled.div`
 display: grid;
-max-width: 400px;
 grid-template-columns: 48px repeat(2, 1fr);
 grid-template-rows: 48px 1fr;
 `
@@ -79,7 +83,7 @@ padding-top: 2rem;
 `
 
 const ButtonContainer = styled.div`
-grid-column: 1  -1;
+grid-column: 1 / -1;
 display: grid;
 justify-items: center;
 `
@@ -108,6 +112,10 @@ background: none;
 font-size: 1.25rem;
 justify-content: center;
 align-items: center;
+
+@media ${device.mobileL} {
+  grid-row: 3;
+}
 `
 
 export default () => (
