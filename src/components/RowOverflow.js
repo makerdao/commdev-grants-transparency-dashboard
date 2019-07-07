@@ -8,7 +8,7 @@ flex-direction: flex-row;
 flex-wrap: nowrap;
 overflow-x: auto;
 justify-content: flex-start;
-background-color: hsla(38, 76%, 71%, 0.1);
+background-color: #f7f1db;
 `
 
 export {RowOverflow}
