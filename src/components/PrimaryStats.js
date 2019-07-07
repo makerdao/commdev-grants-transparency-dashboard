@@ -26,7 +26,7 @@ text-align: center;
 `
 
 
-const StatsRowStatus = styled.div`
+const StatsRowOverflow = styled.div`
 grid-column: 1 / -1;
 display: grid;
 grid-template-columns: 1fr;
@@ -34,9 +34,11 @@ justify-content: space-between;
 text-align: center;
 border: 1px solid #eadea9;
 border-radius: 2px;
+justify-items: center;
 `
 
 const DoughnutChartContainer = styled.div`
+position: relative;
 display: flex;
 flex-direction: column;
 justify-items: center;
@@ -44,6 +46,7 @@ align-items: center;
 justify-self: center;
 width: 100%;
 max-width: 300px;
+height: 100%;
 `
 
 export default () => (
@@ -65,14 +68,14 @@ export default () => (
       <PrimaryStatObject number={data.milestones.total} description="Total Milestones Completed" />
       <PrimaryStatObject number={data.milestones.last30days} description="Recent Milestones Completed" />
     </StatsRow>
-    <StatsRowStatus>
+    <StatsRowOverflow>
       <PrimaryStatObject number={data.currentlyActive} description="Active Projects" />
       <ProjectStatus />
-    </StatsRowStatus>
-    <StatsRow>
+    </StatsRowOverflow>
+    <StatsRowOverflow>
       <PrimaryStatObject number={data.nCountries} description="Countries Represented" />
       <ProjectCountries />
-    </StatsRow>
+    </StatsRowOverflow>
   </StatsWrapper>
   </React.Fragment>
 );

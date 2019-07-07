@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import {RowOverflow} from "../components/RowOverflow.js"
 import {region} from '../../static/data/dataformat.js'
 import {data} from "../utils.js"
 import imgAfrica from "../img/africa.svg"
@@ -21,7 +22,7 @@ const continentImages = {
   [region.africa]: imgAfrica,
 }
 
-const CountryListContainer = styled.ul`
+const RowOverflowContent = styled.ul`
   grid-column: 2 / -1;
   display: flex;
   flex-direction: row;
@@ -64,7 +65,7 @@ justify-content: left;
 
 
 export default () => (
-      <CountryListContainer>
+      <RowOverflow>
     {
       // Only display regions that have countries in them.
       Object.values(region).filter(reg => data.countriesByRegion[reg].length > 0).map( reg => (
@@ -80,5 +81,5 @@ export default () => (
         </CountryListObject>
       ))
     }
-    </CountryListContainer>
+    </RowOverflow>
 );

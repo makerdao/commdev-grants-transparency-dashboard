@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import {RowOverflow} from "../components/RowOverflow.js"
 import {data, pieData} from "../utils.js"
 import {pStatus} from '../../static/data/dataformat.js'
 import {Pie} from 'react-chartjs-2'
@@ -11,15 +12,6 @@ Chart.defaults.global.elements.arc.backgroundColor = '#fcf6e4';
 Chart.defaults.global.elements.arc.borderWidth = 1;
 Chart.defaults.pie.hover.mode = "none";
 
-const ProjectStatusRow = styled.div`
-grid-column: 2 / -1;
-display: flex;
-flex-direction: flex-row;
-flex-wrap: nowrap;
-overflow-x: auto;
-justify-content: flex-start;
-background-color: hsla(38, 76%, 71%, 0.1);
-`
 
 const ProjectStatusContainer = styled.div`
 display: flex;
@@ -46,7 +38,7 @@ color: #231536;
 
 
 export default () => (
-  <ProjectStatusRow>
+  <RowOverflow>
   {
     Object.values(pStatus).map( status => (
       <ProjectStatusContainer key={status.toString()}>
@@ -66,5 +58,5 @@ export default () => (
       </ProjectStatusContainer>
     ))
   }
-  </ProjectStatusRow>
+  </RowOverflow>
 )
