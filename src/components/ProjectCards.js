@@ -11,6 +11,10 @@ grid-template-columns: repeat(auto-fit, 300px);
 justify-items: space-around;
 grid-gap: 4rem;
 justify-content: space-around;
+
+@media ${device.mobileL} {
+  grid-gap: 1rem;
+}
 `
 
 
@@ -21,12 +25,15 @@ grid-template-rows: 1fr 2fr 1fr 1fr;
 width: 100%;
 max-width: 360px;
 height: 280px;
-margin: 2rem 0rem 2rem 0rem;
 flex-direction: column;
 align-items: flex-start;
 background: hsla(255,255,255,0.4);
 border: 1px solid #ddd;
 padding: 1rem 1rem 1rem 1rem;
+
+@media ${device.mobileL} {
+  max-width: 280px;
+}
 `
 
 
