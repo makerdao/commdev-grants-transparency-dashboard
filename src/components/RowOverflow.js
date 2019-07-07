@@ -9,13 +9,10 @@ display: flex;
 flex-direction: flex-row;
 flex-wrap: nowrap;
 overflow-x: auto;
-justify-content: space-around;
+justify-content: flex-start;
 background-color: #f7f1db;
 /* padding: 2rem 0rem 2rem 0rem; */
 
-@media ${device.laptop} {
-  justify-content: flex-start
-}
 
 @media ${device.tablet} {
   grid-column: 1 / -1;
