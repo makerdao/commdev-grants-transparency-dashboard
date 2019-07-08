@@ -21,7 +21,7 @@ max-width: 200px;
 
 const PrimaryStatObject = (props) => (
     <StatsContainer large={props.large}>
-      <StatsNumber large={props.large}>{props.number.toString()}</StatsNumber>,
+      <StatsNumber large={props.large}>{props.number.toString()}</StatsNumber>
       <StatsTitle>{props.description}</StatsTitle>
     </StatsContainer>
 )
