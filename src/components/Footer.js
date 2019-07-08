@@ -160,28 +160,6 @@ export default () => (
         </FooterCardDesc>
         </FooterCard>
       </FooterRow>
-      <FooterRow>
-      <CallToActionContainer>
-        <FooterCardCTA>
-        <FooterCardNum>
-          →
-        </FooterCardNum>
-        <FooterCardTitle>
-          Ready to Apply?
-        </FooterCardTitle>
-        <FooterCardDesc>
-          All you need is 10 minutes and a little enthusiasm for contributing to the future of crypto.
-        </FooterCardDesc>
-        </FooterCardCTA>
-        <ButtonContainer>
-        <CallToActionLink>
-          Apply
-        </CallToActionLink>
-        <CallToActionFAQ>
-          FAQ
-        </CallToActionFAQ>
-        </ButtonContainer>
-      </CallToActionContainer>
-    </FooterRow>
+
   </SectionWrapper>
 );
