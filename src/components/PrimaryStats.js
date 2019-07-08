@@ -31,7 +31,7 @@ text-align: center;
 
 @media ${device.mobileL} {
   grid-row-gap: 2rem;
-  background-color: hsla(158, 56%, 88%, 1);
+  background-color: ${props => props.backgroundColor};
 }
 `
 
@@ -58,6 +58,10 @@ justify-self: center;
 width: 100%;
 max-width: 300px;
 height: 100%;
+
+@media ${device.mobileL} {
+  transform: rotate(97deg);
+}
 `
 
 export default () => (
@@ -68,7 +72,7 @@ export default () => (
       <PrimaryStatObject number={data.totalMoneyDispersed} description="Dai Dispersed" />
       <PrimaryStatObject number={data.averageAwardedMoney} description="Average Dai Award" />
     </StatsRow>
-    <StatsRow>
+    <StatsRow backgroundColor="hsla(158, 56%, 88%, 1)">
       <PrimaryStatObject colorOrange={true} number={data.appsSubmitted} description="Grant Applications Submitted" />
       <DoughnutChartContainer>
       <ChartDoughnut/>
