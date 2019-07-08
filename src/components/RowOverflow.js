@@ -12,7 +12,6 @@ flex-wrap: nowrap;
 overflow-x: auto;
 justify-content: center;
 background-color: #f7f1db;
-/* padding: 2rem 0rem 2rem 0rem; */
 
 @media ${device.mobileL} {
   justify-content: flex-start
