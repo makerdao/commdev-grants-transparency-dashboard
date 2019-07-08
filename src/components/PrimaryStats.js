@@ -80,7 +80,7 @@ export default () => (
       <PrimaryStatObject number={data.milestones.last30days} description="Recent Milestones Completed" />
     </StatsRow>
     <StatsRowOverflow justifyContent="center">
-      <PrimaryStatObject number={data.currentlyActive} description="Active Projects" />
+      <PrimaryStatObject number={data.currentlyActive} large={true} description="Active Projects" />
       <ProjectStatus />
     </StatsRowOverflow>
     <StatsRowOverflow justifyContent="space-between" border="1px solid #eadea9;">
