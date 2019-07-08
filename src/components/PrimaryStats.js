@@ -69,7 +69,7 @@ export default () => (
       <PrimaryStatObject number={data.averageAwardedMoney} description="Average Dai Award" />
     </StatsRow>
     <StatsRow>
-      <PrimaryStatObject color="#000000" number={data.appsSubmitted} description="Grant Applications Submitted" />
+      <PrimaryStatObject colorOrange={true} number={data.appsSubmitted} description="Grant Applications Submitted" />
       <DoughnutChartContainer>
       <ChartDoughnut/>
       </DoughnutChartContainer>
