@@ -129,7 +129,7 @@ export default () => (
           1
         </FooterCardNum>
         <FooterCardTitle>
-          Learn about the program
+          Learn
         </FooterCardTitle>
         <FooterCardDesc>
           Learn more about the Maker grants program by visiting our <a href="https://community-development.makerdao.com/grants" target="_blank">grants information page</a>.
@@ -141,7 +141,7 @@ export default () => (
           2
         </FooterCardNum>
         <FooterCardTitle>
-          Write your proposal
+          Write
         </FooterCardTitle>
         <FooterCardDesc>
           Within 1-2 pages, answer: What does it do, exactly? What problem does it solve? Why will it be successful? And approximately what will it cost?
@@ -153,7 +153,7 @@ export default () => (
           3
         </FooterCardNum>
         <FooterCardTitle>
-          Submit!
+          Submit
         </FooterCardTitle>
         <FooterCardDesc>
           Send your proposal to <a href="mailto: grants@makerdao.com">grants@makerdao.com</a>. Due to the large volume of submissions, expect a response within 2-3 weeks.
