@@ -54,6 +54,7 @@ opacity: ${props => props.selected ? 1 : 0}
 
 const ProjectCategoryNumber = styled.h6`
 color: #444;
+margin: 0.875rem;
 text-transform: uppercase;
 `
 
