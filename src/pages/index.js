@@ -11,18 +11,6 @@ background: linear-gradient(180deg, rgba(182, 237, 231, 0.38) 0%, rgba(253, 193,
 width: 100%;
 `
 
-
-const BottomWrapper = styled.section`
-  background: #F6F8F9;
-  padding: 1rem;
-  `
-
-const PageSectionTitle = styled.h4`
-color: #1AAB9B;
-text-align: center;
-font-weight: 300;
-`
-
 export default () => (
   <React.Fragment>
     <TopWrapper>
