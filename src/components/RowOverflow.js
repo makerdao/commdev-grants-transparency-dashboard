@@ -10,10 +10,13 @@ display: flex;
 flex-direction: flex-row;
 flex-wrap: nowrap;
 overflow-x: auto;
-justify-content: ${props => props.justifyContent};
+justify-content: center;
 background-color: #f7f1db;
 /* padding: 2rem 0rem 2rem 0rem; */
 
+@media ${device.mobileL} {
+  justify-content: flex-start
+}
 
 @media ${device.tablet} {
   grid-column: 1 / -1;
