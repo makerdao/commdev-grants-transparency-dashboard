@@ -6,6 +6,7 @@ grid-template-columns: ${props => props.small ? "repeat(auto-fit, 160px)" : "rep
 grid-gap: 2rem;
 justify-content: space-around;
 padding: 0rem 1rem 0rem 1rem;
+background: ${props => props.backgroundColor}
 `
 
 export {SectionWrapper}

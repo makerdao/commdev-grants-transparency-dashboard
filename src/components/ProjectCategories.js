@@ -2,6 +2,7 @@ import React from 'react'
 import { Component } from 'react'
 import styled from "styled-components"
 import {SectionWrapper} from "../components/SectionWrapper.js"
+import {SectionTitle} from "../components/SectionTitle.js"
 import {PrimaryButton} from "../components/PrimaryButton.js"
 import ProjectCards from "../components/ProjectCards"
 import {device} from "../mediaqueries/device.js"
@@ -129,7 +130,8 @@ export class ProjectCategories extends Component {
 
     return (
       <React.Fragment>
-      <SectionWrapper>
+      <SectionWrapper name="Projects" backgroundColor="#F6F8F9">
+      <SectionTitle>Explore Our Supported Projects</SectionTitle>
         <ProjectCategoryListWrapper>
             <ProjectCategoryList>
           {
