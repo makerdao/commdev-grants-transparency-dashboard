@@ -95,7 +95,6 @@
     "type": "Hold",
     "location": "USA",
     "region": "North America",
-    "active": true,
     "accepted": true
   },
   {
@@ -110,7 +109,6 @@
     "type": "Spend Dai",
     "location": "Egypt",
     "region": "Africa",
-    "active": true,
     "accepted": true
   },
   {
@@ -125,7 +123,6 @@
     "type": "Spend Dai",
     "location": "Egypt",
     "region": "Africa",
-    "active": true,
     "accepted": true
   },
   {
@@ -140,7 +137,6 @@
     "type": "CDP",
     "location": "Canada",
     "region": "North America",
-    "active": true,
     "accepted": true
   },
   {
@@ -155,7 +151,6 @@
     "type": "Spend Dai",
     "location": "Brazil",
     "region": "South America",
-    "active": true,
     "accepted": true
   },
   {
@@ -170,7 +165,6 @@
     "type": "Enterprise",
     "location": "Germany",
     "region": "Europe",
-    "active": false,
     "accepted": false
   },
   {
@@ -185,7 +179,6 @@
     "type": "Hold",
     "location": "USA",
     "region": "North America",
-    "active": true,
     "accepted": true
   },
   {
@@ -200,7 +193,6 @@
     "type": "Spend Dai",
     "location": "Egypt",
     "region": "Africa",
-    "active": true,
     "accepted": true
   },
   {
@@ -215,7 +207,6 @@
     "type": "Spend Dai",
     "location": "Egypt",
     "region": "Africa",
-    "active": true,
     "accepted": true
   },
   {
@@ -230,7 +221,6 @@
     "type": "CDP",
     "location": "Canada",
     "region": "North America",
-    "active": true,
     "accepted": true
   },
   {
@@ -245,7 +235,6 @@
     "type": "Spend Dai",
     "location": "Brazil",
     "region": "South America",
-    "active": true,
     "accepted": true
   },
   {
@@ -260,7 +249,6 @@
     "type": "Learn",
     "location": "Germany",
     "region": "Europe",
-    "active": false,
     "accepted": false
   }
 ]

@@ -26,6 +26,11 @@ const getNofProjectField = (field, value) => {
 }
 // console.log('getNofProjectField ', getNofProjectField('status', 'BETA', true))
 
+// all projects that have been accepted and are not discontinued
+const getNofActiveProjects = () => {
+  return getAcceptedProjects().filter(p => p.status != 'Inactive').length
+}
+
 // Creating stats of how many projects there are of each type and status:
 // REFACTOR maybe instead of doing map and reduce this can be done in one step?
 let statusDistributionList = Object.values(pStatus).map( p => {
@@ -82,7 +87,7 @@ export const data = {
     "total": publicFinanceData.totalMilestones,
     "last30days": publicFinanceData.milestonesLast30Days
   },
-  "currentlyActive": getNofProjectField('active', true),
+  "currentlyActive": getNofActiveProjects(),
   typeDistribution,
   countriesByRegion
 }
