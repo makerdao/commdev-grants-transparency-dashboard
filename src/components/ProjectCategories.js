@@ -28,7 +28,6 @@ list-style: none;
 justify-content: flex-start;
 flex-wrap: nowrap;
 overflow-x: auto;
-padding: 2rem 0rem 2rem 0rem;
 `
 
 const ProjectCategoryContainer = styled.li`
@@ -83,7 +82,7 @@ const ViewMoreButton = styled(PrimaryButton)`
 opacity: 1;
 justify-self: center;
 font-size: 1.5rem;
-padding: 1.25rem;
+padding: 0.875rem 1.5rem 0.875rem 1.5rem;
 border: 1px solid #1AAB9B;
 color: #1AAB9B;
 border-radius: 2px;
