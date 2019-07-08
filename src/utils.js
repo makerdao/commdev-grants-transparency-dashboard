@@ -116,7 +116,7 @@ export const pieData = (field, value) => {
 export const doughnutData = {
   datasets: [{
     data: [getNofAcceptedProjects(),getAppsSubmitted()],
-    backgroundColor: ['#1AAB9B', '#EDC47E'],
-    borderColor: ['#1AAB9B', '#EDC47E']
+    backgroundColor: ['#1AAB9B', 'hsla(38,90%,60%,1)'],
+    borderColor: ['#1AAB9B', 'hsla(38,90%,60%,1)']
   }]
 }
