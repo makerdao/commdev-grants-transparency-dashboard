@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import {device} from "../mediaqueries/device.js"
 import {SectionWrapper} from "../components/SectionWrapper.js"
+import {SectionTitle} from "../components/SectionTitle.js"
+
 
 const FooterRow = styled.section`
 grid-column: 1 / -1;
@@ -120,7 +122,7 @@ align-items: center;
 
 export default () => (
   <SectionWrapper name="Footer">
-    <FooterTitle>Apply for a grant</FooterTitle>
+    <SectionTitle>Apply for a grant</SectionTitle>
     <FooterRow>
         <FooterCard>
         <FooterCardNum>
