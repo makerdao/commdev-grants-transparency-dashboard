@@ -10,7 +10,6 @@ const IntroWrapper = styled.section`
   grid-template-rows: 120px repeat(2, 1fr);
   justify-items: center;
   text-align: center;
-  padding: 1rem;
 
   @media ${device.mobileL} {
     grid-template-rows: 80px 1fr;
@@ -32,6 +31,7 @@ const IntroHeader = styled.h3`
 
   @media ${device.mobileL} {
     font-size: 2.25rem;
+    padding: 1rem 0rem 0rem 2rem;
 `
 
 const IntroHeaderHighlight = styled.span`
@@ -45,6 +45,10 @@ const IntroContent = styled.h5`
   font-weight: 400rem;
   max-width: 720px;
   line-height: 140%;
+
+  @media ${device.mobileL} {
+    padding: 1rem 2rem 0rem 2rem;
+  }
 `
 
 export default () => (
