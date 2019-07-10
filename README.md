@@ -25,7 +25,7 @@ Public Data (*name*, *type*, *status*,...) for **accepted projects** is entered
 into ```/static/data/acceptedProjectsData.json```. 
 
 The format for that file is specified in a JSON-SCHEMA in
-```/static/data/dataformat.js``` and compliance is checked in the integration
+```/static/data/dataformat.js``` and compliance is checked in the integration (**currenlty broken**)
 pipeline and can be tested manually by running:
 
 > npm run test
