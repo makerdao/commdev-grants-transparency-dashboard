@@ -38,10 +38,9 @@ const Project = {
     "location": { "type": "string" },
     "region": {"type": "string", "enum": [...Object.values(region)]},
     "type": { "type": "string", "enum": [...Object.values(pType)]},
-    "status": { "type": "string", "enum": [...Object.values(pStatus)]},
-    "accepted": {"type": "boolean"},
+    "status": { "type": "string", "enum": [...Object.values(pStatus)]}
   },
-  "required": ["name", "description", "learnMoreLink", "location", "region", "type", "status", "accepted"]
+  "required": ["name", "description", "learnMoreLink", "location", "region", "type", "status"]
 };
 
 module.exports = {pStatus, pType, region, Project};
