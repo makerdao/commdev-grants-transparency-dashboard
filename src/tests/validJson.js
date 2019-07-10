@@ -1,4 +1,4 @@
-var rawProjectData = require('../../static/data/projectData.json')
+var rawProjectData = require('../../static/data/acceptedProjectsData.json')
 var dataFormat = require('../../static/data/dataformat.js')
 
 var Ajv = require('ajv')
