@@ -1,17 +1,18 @@
-import rawData from '../static/data/projectData.json'
-import publicFinanceData from '../static/data/publicFinanceData.json'
+import rawData from '../static/data/acceptedProjectsData.json'
+import publicData from '../static/data/publicData.json'
 import {pStatus, pType, region} from '../static/data/dataformat.js'
 
 const getAcceptedProjects = () => {
-  return rawData.filter(project => project.accepted)
+  return rawData
 }
 
 const getAppsSubmitted = () => {
-  return rawData.length
+  return publicData.applicationsSubmitted
 }
 
+
 const getNofAcceptedProjects = () => {
-  return getAcceptedProjects().length
+  return rawData.length
 }
 
 const getNofCountries = () => {
@@ -19,34 +20,29 @@ const getNofCountries = () => {
   let distinctCountries = new Set(countries)
   return distinctCountries.size
 }
-// REFACTOR: those next two could be fused together
 // counts the number of projects which have a given value in a certain field
 const getNofProjectField = (field, value) => {
   return getAcceptedProjects().filter(p => p[field] === value).length
 }
-// console.log('getNofProjectField ', getNofProjectField('status', 'BETA', true))
-
 // all projects that have been accepted and are not discontinued
 const getNofActiveProjects = () => {
-  return getAcceptedProjects().filter(p => p.status != 'Inactive').length
+  return getAcceptedProjects().filter(p => p.status !== 'Inactive').length
 }
 
-// Creating stats of how many projects there are of each type and status:
-// REFACTOR maybe instead of doing map and reduce this can be done in one step?
+// Creating stats of how many projects there are of each status:
 let statusDistributionList = Object.values(pStatus).map( p => {
   return {[p]: getNofProjectField('status', p)};
 })
 
+// Creating stats of how many projects there are of each type
 let typeDistributionList = Object.values(pType).map( p => {
   return {[p]: getNofProjectField('type', p)};
 })
 
-// reduce function to merge lists into one handy object with status/types as keys
+// helper-reduce function to merge lists into one handy object with status/types as keys
 const mergeObjects = (acc, currentValue) => Object.assign(acc, currentValue)
-// let td = typeDistributionList.reduce(mergeObjects)
 
-// get distribution of projectTypes as percentages
-// get distribution of projectTypes as percentages
+// get distribution of projectTypes as percentages (used for pieCharts)
 let typeDistribution = {}
 for (let type of Object.values(pType)) {
   typeDistribution[type] = (getNofProjectField('type', type)) // / (nOfProjects)) * 100
@@ -54,6 +50,9 @@ for (let type of Object.values(pType)) {
 // let typeDistribution = Object.values(pType).map(t => getNofProjectField('type', t))
 
 
+//===== get all countries of each region ========
+var countriesByRegion = {}
+// helper-function to reduce a list to unique objects
 const distinct = (value, index, self) => {
   return self.indexOf(value) === index;
 }
@@ -61,31 +60,29 @@ const distinct = (value, index, self) => {
 const getCountriesOfRegion = (region) => {
   return getAcceptedProjects().filter(p => p.region === region).map(p => p.location).filter(distinct)
 }
-
-var countriesByRegion = {}
 for (let reg of Object.values(region)) {
   countriesByRegion[reg] = getCountriesOfRegion(reg)
 }
 // console.log('countriesByRegion ', countriesByRegion )
 
-// function to insert comma as separators every 3 digits
+// helper-function to insert comma as separators every 3 digits
 function formatNumber(num) {
   return Math.round(num).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
 export const data = {
   "acceptedProjects": getAcceptedProjects(),
-  "totalMoneyAwarded": formatNumber(publicFinanceData.totalMoneyAwarded),
-  "totalMoneyDispersed": formatNumber(publicFinanceData.totalMoneyDispersed),
-  "averageAwardedMoney": formatNumber(publicFinanceData.totalMoneyAwarded / getNofAcceptedProjects()),
+  "totalMoneyAwarded": formatNumber(publicData.totalMoneyAwarded),
+  "totalMoneyDispersed": formatNumber(publicData.totalMoneyDispersed),
+  "averageAwardedMoney": formatNumber(publicData.totalMoneyAwarded / getNofAcceptedProjects()),
   "appsSubmitted": getAppsSubmitted(),
   "appsAccepted": getNofAcceptedProjects(),
   "nCountries": getNofCountries(),
   "NofProjectType": typeDistributionList.reduce(mergeObjects),
   "NofProjectStatus":statusDistributionList.reduce(mergeObjects),
   "milestones": {
-    "total": publicFinanceData.totalMilestones,
-    "last30days": publicFinanceData.milestonesLast30Days
+    "total": publicData.totalMilestones,
+    "last30days": publicData.milestonesLast30Days
   },
   "currentlyActive": getNofActiveProjects(),
   typeDistribution,
