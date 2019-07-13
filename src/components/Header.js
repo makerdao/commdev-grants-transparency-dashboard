@@ -24,10 +24,10 @@ const LogoMaker = styled.img`
   align-self: center;
 `
 
-const IntroHeader = styled.h3`
+const IntroHeader = styled.h4`
   grid-column: 1 / -1;
   grid-row: 2;
-  color: #444;
+  color: #291a42;
 
   @media ${device.mobileL} {
     font-size: 2.25rem;
@@ -41,7 +41,7 @@ color: #179b8c;
 const IntroContent = styled.h5`
   grid-column: 1 / -1;
   grid-row: 3;
-  color: #333;
+  color: #53546a;
   font-weight: 400rem;
   max-width: 720px;
   line-height: 140%;
