@@ -4,7 +4,9 @@ import styled from "styled-components"
 import {SectionWrapper} from "../components/SectionWrapper.js"
 import {SectionTitle} from "../components/SectionTitle.js"
 import {PrimaryButton} from "../components/PrimaryButton.js"
-import ProjectCards from "../components/ProjectCards"
+// import ProjectCards from "../components/ProjectCards"
+import ProjectRows from "../components/ProjectRows"
+// import ProjectRowsCards from "../components/ProjectRowsCards"
 import {device} from "../mediaqueries/device.js"
 import {data, pieData} from "../utils.js"
 import {pType} from '../../static/data/dataformat.js'
@@ -28,6 +30,8 @@ list-style: none;
 justify-content: flex-start;
 flex-wrap: nowrap;
 overflow-x: auto;
+padding-left: 0;
+padding-bottom: 3rem;
 `
 
 const ProjectCategoryContainer = styled.li`
@@ -68,8 +72,8 @@ margin: 1.5rem;
 
 const ProjectCategoryButton = styled(PrimaryButton)`
 min-width: 120px;
-color: ${props => props.active ? '#fafafa' : '#555'};
-border: ${props => props.active ? '1px solid #1aaa9b' : '1px solid #ddd'};
+color: ${props => props.active ? '#fafafa' : '#53546a'};
+border: ${props => props.active ? '1px solid #1aaa9b' : '1px solid #53546a'};
 background: ${props => props.active ? '#1aaa9b' : 'none'};
 border-radius: 400px;
 text-transform: uppercase;
@@ -129,7 +133,7 @@ export class ProjectCategories extends Component {
 
     return (
       <React.Fragment>
-      <SectionWrapper name="Projects" backgroundColor="#F6F8F9">
+      <SectionWrapper name="Projects">
       <SectionTitle>Explore Our Supported Projects</SectionTitle>
         <ProjectCategoryListWrapper>
             <ProjectCategoryList>
@@ -154,11 +158,11 @@ export class ProjectCategories extends Component {
           }
           </ProjectCategoryList>
           </ProjectCategoryListWrapper>
-        <ProjectCards
+        <ProjectRows
           selectedProjects={this.state.projectsForSelectedCategory}
           displayType={this.state.displayType}
           projectsToShow={this.state.projectsToShow}>
-        </ProjectCards>
+        </ProjectRows>
             {
               this.state.projectsToShow < this.state.projectsForSelectedCategory.length ?
                 (<ViewMoreButtonContainer>
