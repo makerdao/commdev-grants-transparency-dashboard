@@ -10,11 +10,12 @@ display: flex;
 flex-direction: flex-row;
 flex-wrap: nowrap;
 overflow-x: auto;
-justify-content: center;
-background-color: #f7f1db;
+justify-content: ${props => props.justifyContent};
+/* background-color: #f7f1db; */
 
 @media ${device.mobileL} {
-  justify-content: flex-start
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 @media ${device.tablet} {
