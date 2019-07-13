@@ -1,10 +1,11 @@
 import styled from "styled-components"
 
-const SectionTitle = styled.h4`
+const SectionTitle = styled.h5`
 grid-column: 1 / -1;
-color: #1AAB9B;
+color: #179b8c;
 justify-self: center;
-font-weight: 300;
+font-weight: 400;
+text-transform: uppercase;
 `
 
 export {SectionTitle}
