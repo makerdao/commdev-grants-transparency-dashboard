@@ -8,7 +8,7 @@ import Chart from "chart.js";
 Chart.defaults.global.legend.display = false;
 Chart.defaults.global.tooltips.enabled = false;
 Chart.defaults.global.elements.arc.borderColor = '#1AAB9B';
-Chart.defaults.global.elements.arc.backgroundColor = '#f7f1db';
+Chart.defaults.global.elements.arc.backgroundColor = 'hsl(152, 45%, 94%)';
 Chart.defaults.global.elements.arc.borderWidth = 1;
 Chart.defaults.pie.hover.mode = "none";
 
@@ -16,10 +16,10 @@ Chart.defaults.pie.hover.mode = "none";
 const ProjectStatusContainer = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: space-between;
+justify-content: flex-start;
 align-items: center;
-background: hsla(255,255,255,0.4);
-min-width: 200px;
+background: linear-gradient(hsla(168, 50%, 90%, 1), hsla(168, 50%, 86%, 1));
+min-width: 160px;
 `
 
 const ProjectStatusChart = styled.div`
@@ -39,7 +39,7 @@ color: #231536;
 
 
 export default () => (
-  <RowOverflow gridColumn="1 / -1" maxWidth="1024px" justifyContent="center">
+  <RowOverflow gridColumn="2 / -1" maxWidth="" justifyContent="center">
   {
     Object.values(pStatus).map( status => (
       <ProjectStatusContainer key={status.toString()}>

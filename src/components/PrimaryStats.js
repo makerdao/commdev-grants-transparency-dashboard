@@ -12,8 +12,8 @@ const StatsWrapper = styled.section`
 display: grid;
 grid-template-columns: repeat(auto-fit, 300px);
 grid-column-gap: 1rem;
-grid-row-gap: 8rem;
-justify-content: space-around;
+grid-row-gap: 5rem;
+justify-content: center;
 padding: 6rem 0.5rem 6rem 0.5rem;
 text-align: center;
 
@@ -25,8 +25,9 @@ text-align: center;
 const StatsRow = styled.div`
 grid-column: 1 / -1;
 display: grid;
-grid-template-columns: repeat(auto-fit, 200px);
-justify-content: space-around;
+grid-template-columns: ${props => props.singlecolumn ? '1fr' : 'repeat(auto-fit, 300px)'};
+grid-row-gap: 5rem;
+justify-content: space-between;
 text-align: center;
 
 @media ${device.mobileL} {
@@ -39,7 +40,7 @@ text-align: center;
 const StatsRowOverflow = styled.div`
 grid-column: 1 / -1;
 display: grid;
-grid-template-columns: 280px 1fr;
+grid-template-columns: repeat(auto-fit, 300px);
 justify-content: ${props => props.justifyContent};
 text-align: center;
 border: ${props => props.border};
@@ -56,8 +57,10 @@ justify-items: center;
 align-items: center;
 justify-self: center;
 width: 100%;
-max-width: 300px;
+max-width: 200px;
 height: 100%;
+transform: rotate(8deg);
+
 
 @media ${device.mobileL} {
   transform: rotate(97deg);
@@ -79,16 +82,16 @@ export default () => (
       </DoughnutChartContainer>
       <PrimaryStatObject number={data.appsAccepted} description="Grant Applications Accepted" />
     </StatsRow>
+    <StatsRow singlecolumn justifyContent="center">
+      <PrimaryStatObject statsActiveProjects={true} number={data.currentlyActive} large={false} description="Active Projects" />
+      <ProjectStatus />
+    </StatsRow>
     <StatsRow>
+      <PrimaryStatObject statsCountriesRepresented={true} number={data.nCountries} description="Countries Represented" />
       <PrimaryStatObject number={data.milestones.total} description="Total Milestones Completed" />
       <PrimaryStatObject number={data.milestones.last30days} description="Recent Milestones Completed" />
     </StatsRow>
-    <StatsRowOverflow justifyContent="center">
-      <PrimaryStatObject number={data.currentlyActive} large={true} description="Active Projects" />
-      <ProjectStatus />
-    </StatsRowOverflow>
-    <StatsRowOverflow justifyContent="space-between" border="1px solid #eadea9;">
-      <PrimaryStatObject number={data.nCountries} description="Countries Represented" />
+    <StatsRowOverflow justifyContent="space-between">
       <ProjectCountries />
     </StatsRowOverflow>
   </StatsWrapper>

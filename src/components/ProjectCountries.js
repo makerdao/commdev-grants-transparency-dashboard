@@ -3,6 +3,7 @@ import styled from "styled-components"
 import {RowOverflow} from "../components/RowOverflow.js"
 import {region} from '../../static/data/dataformat.js'
 import {data} from "../utils.js"
+import {device} from "../mediaqueries/device.js"
 import imgAfrica from "../img/africa.svg"
 import imgAsia from "../img/asia.svg"
 import imgEurope from "../img/europe.svg"
@@ -23,7 +24,7 @@ const continentImages = {
 }
 
 const RowOverflowContent = styled.ul`
-  grid-column: 2 / -1;
+  grid-column: 1 / -1;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -31,6 +32,10 @@ const RowOverflowContent = styled.ul`
   overflow-x: auto;
   font-size: 2rem;
   padding: 0;
+
+  @media ${device.tablet} {
+    background: #dcf4eb;
+  }
 `
 
 const CountryListObject = styled.li`
@@ -40,8 +45,11 @@ const CountryListObject = styled.li`
   align-items: center;
   font-size: 2rem;
   align-content: center;
-  justify-content:center;
+  justify-content:space-between;
+  padding: 0rem 2rem 0rem 0rem;
   margin: 0rem 2rem 0rem 2rem;
+  border-radius: 4px;
+  background: linear-gradient(hsla(39, 70%, 91%, 1), hsla(39, 70%, 86%, 1));
 `
 
 
@@ -55,22 +63,28 @@ const CountryList = styled.ul`
   padding: 0px;
   flex-flow: wrap column;
   max-height: 160px;
+  text-align: left;
   justify-items: center;
 
 `
 
 const CountryListItem = styled.li`
 justify-content: left;
+margin: 0.25rem;
 `
 
+const CountryImg = styled.img`
+width: 160px;
+transform: translate(-48px, -16px);
+`
 
 export default () => (
-      <RowOverflow backgroundColor="#f7f1db;">
+      <RowOverflow gridColumn="1 / -1" justifyContent="space-between" backgroundColor="#f7f1db;">
     {
       // Only display regions that have countries in them.
       Object.values(region).filter(reg => data.countriesByRegion[reg].length > 0).map( reg => (
         <CountryListObject key={reg}>
-          <img width={"160px"} src={continentImages[reg]} alt={reg} />
+          <CountryImg src={continentImages[reg]} alt={reg} />
           <CountryList>
             {
               Object.values(data.countriesByRegion[reg]).map( country => (
