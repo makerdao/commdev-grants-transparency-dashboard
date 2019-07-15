@@ -7,10 +7,10 @@ import {device} from "../mediaqueries/device.js"
 const ProjectCardWrapper = styled.section`
 grid-column: 1 / -1;
 display: grid;
-grid-template-columns: repeat(auto-fit, 300px);
-justify-items: space-around;
-grid-gap: 4rem;
-justify-content: space-around;
+grid-template-columns: repeat(auto-fit, 320px);
+grid-gap: 3rem;
+justify-items: center;
+justify-content: center;
 
 @media ${device.mobileL} {
   grid-gap: 1rem;
@@ -18,28 +18,52 @@ justify-content: space-around;
 `
 
 
+
 const ProjectCard = styled.div`
-display: ${props => props.hide ? 'none' : 'grid'};
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: 1fr 2fr 1fr 1fr;
+display: ${props => props.hide ? 'none' : 'flex'};
 width: 100%;
-max-width: 360px;
-height: 280px;
+max-width: 320px;
 flex-direction: column;
 align-items: flex-start;
-background: hsla(255,255,255,0.4);
-border: 1px solid #ddd;
-padding: 1rem 1rem 1rem 1rem;
+justify-content: space-between;
+background: hsla(210, 33%, 97%, 1);
+/* border: 1px solid hsla(240, 10%, 90%, 1); */
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;
+box-shadow: 0px 0px 2px #888;
+
+@media ${device.tablet} {
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
 @media ${device.mobileL} {
   max-width: 280px;
+  border: 1px solid hsla(157, 49%, 84%, 1);
+  border-radius: 4px;
+  padding-bottom: 0;
 }
 `
 
+const ProjectTopContainer = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+padding: 1rem;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;
+background:linear-gradient(hsla(168,50%,90%,1),hsla(168,50%,86%,1));
+box-sizing: border-box;
+`
+
+
+const ProjectRow = styled.div`
+display: flex;
+flex-direction: row;
+padding: 0.5rem 0rem 0.5rem 0rem;
+`
 
 const ProjectTitle = styled.h5`
-grid-column: 1 / -1;
-grid-row: 1;
 color: #231536;
 margin:0;
 text-overflow: ellipsis;
@@ -48,35 +72,51 @@ white-space: nowrap;
 `
 
 
-const ProjectStatus = styled.h6`
-grid-column: 1 / 2;
-grid-row: 4;
-color: #444;
+const ProjectLabel = styled.span`
+font-size: 1rem;
+margin:0;
+color: #53546a;
 text-transform: uppercase;
+text-align: left;
+
+:nth-child(2) {
+  margin-left: 1rem;
+}
+`
+const ProjectBottomContainer = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+padding: 1rem;
+box-sizing: border-box;
 `
 
-
 const ProjectDescription = styled.p`
-grid-column: 1 / -1;
-grid-row: 2;
-color: #444;
+color: #53546a;
+width: 100%;
 max-height: 140px;
 overflow: hidden;
+padding: 0.5rem 0rem 0.5rem 0rem;
 `
 
 const ButtonLearnMore = styled.a`
-grid-column: 3 / -1;
-grid-row: 4;
 align-self: center;
-justify-self: flex-end;
-border: 1px solid #aaa;
-border-radius: 0.125rem;
-padding: 0.875rem 0.875rem 0.875rem 0.875rem;
-max-width: 96px;
+
+padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+width: 100%;
 font-size: 1.15rem;
-text-align: center;
-background: none;
+text-align: right;
+color: #189a8c;
+background: hsla(210, 33%, 97%, 1);
 text-decoration: none;
+padding: 1rem;
+box-sizing: border-box;
+transition: 0.2s ease-in-out;
+
+:hover {
+  background: hsla(216, 41%, 95%, 1);
+}
+
 `
 
 export default (props) => {
@@ -85,11 +125,17 @@ export default (props) => {
       {
         props.selectedProjects.map( (project, index) => (
           <ProjectCard key={project.name} hide={index > props.projectsToShow - 1}>
-            <ProjectTitle>{project.name}</ProjectTitle>
-            <ProjectDescription>{project.description}</ProjectDescription>
-            <ProjectStatus>{project.status}</ProjectStatus>
-
-            <ButtonLearnMore href={project.learnMoreLink} target="_blank" rel="noopener noreferrer"> Learn More</ButtonLearnMore>
+            <ProjectTopContainer>
+                <ProjectTitle>{project.name}</ProjectTitle>
+                <ProjectRow>
+                  <ProjectLabel>{project.status}</ProjectLabel>
+                  <ProjectLabel>{project.location}</ProjectLabel>
+                </ProjectRow>
+                </ProjectTopContainer>
+            <ProjectBottomContainer>
+              <ProjectDescription>{project.description}</ProjectDescription>
+            </ProjectBottomContainer>
+            <ButtonLearnMore href={project.learnMoreLink} target="_blank" rel="noopener noreferrer">More ↗</ButtonLearnMore>
           </ProjectCard>
         ))
       }
