@@ -25,7 +25,7 @@ body {
   background: linear-gradient(180deg, rgba(182, 237, 231, 0.38) 0%, rgba(253, 193, 52, 0.15) 100%);
 }
 
-p > a {
+a {
   color: #1AAB9B;
 }
 
