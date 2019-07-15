@@ -5,12 +5,13 @@ import Chart from "chart.js";
 
 Chart.defaults.doughnut.cutoutPercentage = 80;
 Chart.defaults.doughnut.hover.mode = 'off';
+console.log('options:', Chart.defaults.doughnut)
 
 export default () => (
 <Doughnut
       data={doughnutData}
-      width={300}
-      height={300}
+      width={200}
+      height={200}
       options = {{
         maintainAspectRatio: true,
         responsive:true
