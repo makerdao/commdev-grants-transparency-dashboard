@@ -4,9 +4,9 @@ import styled from "styled-components"
 import {SectionWrapper} from "../components/SectionWrapper.js"
 import {SectionTitle} from "../components/SectionTitle.js"
 import {PrimaryButton} from "../components/PrimaryButton.js"
-// import ProjectCards from "../components/ProjectCards"
-import ProjectRows from "../components/ProjectRows"
-// import ProjectRowsCards from "../components/ProjectRowsCards"
+// import ProjectCards from "../components/ProjectCards.js"
+import ProjectRows from "../components/ProjectRows.js"
+// import ProjectRowsCards from "../components/ProjectRowsCards.js"
 import {device} from "../mediaqueries/device.js"
 import {data, pieData} from "../utils.js"
 import {pType} from '../../static/data/dataformat.js'
@@ -18,8 +18,28 @@ Chart.defaults.global.tooltips.enabled = false;
 
 const ProjectCategoryListWrapper = styled.div`
 display: flex;
+position: relative;
 grid-column: 1 / -1;
 justify-content: center;
+`
+
+const ProjectBackground = styled.div`
+width: 100%;
+height: 50%;
+background: linear-gradient(hsl(169, 49%, 89%),hsl(60, 44%, 94%));
+/* color: hsla(173, 54%, 25%, 1);  */
+/* background: linear-gradient(hsla(168, 69%, 50%, 1), hsla(168, 40%, 76%, 1));  old background*/
+position: absolute;
+z-index: 999;
+top: 0;
+left: 0;
+right: 0;
+margin: auto;
+max-width: 1200px;
+/* border-top-left-radius: 8px; */
+/* border-top-right-radius: 8px; */
+/* max-width: 1200px; */
+z-index:-9;
 `
 
 const ProjectCategoryList = styled.ul`
@@ -89,7 +109,7 @@ font-size: 1.5rem;
 padding: 0.875rem 1.5rem 0.875rem 1.5rem;
 border: 1px solid #1AAB9B;
 color: #1AAB9B;
-border-radius: 2px;
+border-radius: 100px;
 
 :hover {
 cursor: pointer;
@@ -133,7 +153,8 @@ export class ProjectCategories extends Component {
 
     return (
       <React.Fragment>
-      <SectionWrapper name="Projects">
+      <SectionWrapper large name="Projects">
+        <ProjectBackground />
       <SectionTitle>Explore Our Supported Projects</SectionTitle>
         <ProjectCategoryListWrapper>
             <ProjectCategoryList>
