@@ -50,6 +50,10 @@ const CountryListObject = styled.li`
   margin: 0rem 2rem 0rem 2rem;
   border-radius: 4px;
   background: linear-gradient(hsla(39, 70%, 91%, 1), hsla(39, 70%, 86%, 1));
+
+  @media ${device.tablet} {
+    background: linear-gradient(90deg, hsla(39, 70%, 91%, 1), hsla(39, 70%, 86%, 1));
+  }
 `
 
 
@@ -66,6 +70,10 @@ const CountryList = styled.ul`
   text-align: left;
   justify-items: center;
 
+
+@media ${device.mobileL}{
+  flex-direction: row;
+}
 `
 
 const CountryListItem = styled.li`
@@ -76,10 +84,15 @@ margin: 0.25rem;
 const CountryImg = styled.img`
 width: 160px;
 transform: translate(-48px, -16px);
+
+@media ${device.mobileL} {
+  width: 120px;
+  transform: translate(-8px,0px);
+}
 `
 
 export default () => (
-      <RowOverflow gridColumn="1 / -1" justifyContent="space-between" backgroundColor="#f7f1db;">
+      <RowOverflow gridColumn="2 / -1" justifyContent="space-between" backgroundColor="#f7f1db;">
     {
       // Only display regions that have countries in them.
       Object.values(region).filter(reg => data.countriesByRegion[reg].length > 0).map( reg => (
