@@ -14,20 +14,20 @@ ${props => props.statsCountriesRepresented ? 'background: linear-gradient(hsla(3
 /* Lets a Stat object take up an entire horizontal row by creating a single column */
 ${props => props.large ? 'grid-column: 1 / -1' : null};
 
-/* Places the "Countries Represented" stat onto its own row to better establish its relationship / the hierarchy of information between it and the list of countries below it.
+/* Places the "Countries Represented" stat onto its own row to better establish its relationship / the hierarchy of information between it and the list of countries below it. */
 @media ${device.laptop} {
   ${props => props.statsCountriesRepresented ? 'grid-column: 1 / -1;' : null};
-  ${props => props.statsCountriesRepresented ? 'grid-row: 2;' : null};
 }
 
-/* Changes the orientation (to 90degrees) of the background gradient to make it blend once this element changes from flex-direction: row to flex-direction: column */
 @media ${device.mobileL} {
-  ${props => props.statsActiveProjects ? 'background: linear-gradient(90deg,hsla(168, 50%, 90%, 1), hsla(168, 50%, 86%, 1));' : null};
+  /* Places the "Countries Represented" Stat just above the country list */
+  ${props => props.statsCountriesRepresented ? 'grid-row: 3;' : null};
 }
 `
-const StatsNumber = styled.h3`
-${props => props.colorOrange ? 'color: hsla(38, 90%, 60%, 1)' : 'color: #179b8c'};
-
+const StatsNumber = styled.h4`
+${props => props.colorOrange ? 'color: hsla(38, 90%, 60%, 1);' : 'color: #179b8c;'};
+/* If the "Data Last Compiled" stat object, invoked in PrimaryStats.js (displayed bottom right of screen), reduce font-size to 2rem; */
+${props => props.statsAttribution ? 'font-size: 2rem;' : ''};
 `
 
 const StatsTitle = styled.h5`
@@ -40,7 +40,12 @@ const PrimaryStatObject = (props) => (
       statsActiveProjects={props.statsActiveProjects}
       statsCountriesRepresented={props.statsCountriesRepresented}
       large={props.large}>
-      <StatsNumber colorOrange={props.colorOrange} large={props.large}>{props.number.toString()}</StatsNumber>
+      <StatsNumber
+        statsAttribution={props.statsAttribution}
+        colorOrange={props.colorOrange}
+        large={props.large}>
+        {props.number.toString()}
+      </StatsNumber>
       <StatsTitle>{props.description}</StatsTitle>
     </StatsContainer>
 )

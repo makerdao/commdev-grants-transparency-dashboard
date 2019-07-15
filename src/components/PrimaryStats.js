@@ -12,7 +12,7 @@ const StatsWrapper = styled.section`
 display: grid;
 grid-template-columns: repeat(auto-fit, 300px);
 grid-column-gap: 1rem;
-grid-row-gap: 5rem;
+grid-row-gap: 3rem;
 justify-content: center;
 padding: 6rem 0.5rem 6rem 0.5rem;
 text-align: center;
@@ -29,6 +29,11 @@ grid-template-columns: ${props => props.singlecolumn ? '1fr' : 'repeat(auto-fit,
 grid-row-gap: 5rem;
 justify-content: space-between;
 text-align: center;
+
+@media ${device.laptop} {
+  justify-content: center;
+  justify-items: center;
+}
 
 @media ${device.mobileL} {
   grid-row-gap: 2rem;
@@ -82,18 +87,19 @@ export default () => (
       </DoughnutChartContainer>
       <PrimaryStatObject number={data.appsAccepted} description="Grant Applications Accepted" />
     </StatsRow>
-    <StatsRow singlecolumn justifyContent="center">
+    <StatsRow singlecolumn>
       <PrimaryStatObject statsActiveProjects={true} number={data.currentlyActive} large={false} description="Active Projects" />
       <ProjectStatus />
     </StatsRow>
-    <StatsRow>
+    <StatsRow justifyContent="space-between">
       <PrimaryStatObject statsCountriesRepresented={true} number={data.nCountries} description="Countries Represented" />
+      <ProjectCountries />
+    </StatsRow>
+    <StatsRow justifyContent="center">
       <PrimaryStatObject number={data.milestones.total} description="Total Milestones Completed" />
       <PrimaryStatObject number={data.milestones.last30days} description="Recent Milestones Completed" />
+      <PrimaryStatObject statsAttribution={true} number="June 2019" description="Data Last Compiled" />
     </StatsRow>
-    <StatsRowOverflow justifyContent="space-between">
-      <ProjectCountries />
-    </StatsRowOverflow>
   </StatsWrapper>
   </React.Fragment>
 );

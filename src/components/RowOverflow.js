@@ -10,7 +10,7 @@ display: flex;
 flex-direction: flex-row;
 flex-wrap: nowrap;
 overflow-x: auto;
-justify-content: ${props => props.justifyContent};
+justify-content: flex-start;
 /* background-color: #f7f1db; */
 
 @media ${device.mobileL} {
@@ -18,7 +18,7 @@ justify-content: ${props => props.justifyContent};
   flex-direction: column;
 }
 
-@media ${device.tablet} {
+@media ${device.laptop} {
   grid-column: 1 / -1;
 }
 `
