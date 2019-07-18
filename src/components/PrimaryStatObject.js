@@ -18,11 +18,6 @@ ${props => props.large ? 'grid-column: 1 / -1' : null};
 @media ${device.laptop} {
   ${props => props.statsCountriesRepresented ? 'grid-column: 1 / -1;' : null};
 }
-
-@media ${device.mobileL} {
-  /* Places the "Countries Represented" Stat just above the country list */
-  ${props => props.statsCountriesRepresented ? 'grid-row: 3;' : null};
-}
 `
 const StatsNumber = styled.h4`
 ${props => props.colorOrange ? 'color: hsla(38, 90%, 60%, 1);' : 'color: #179b8c;'};
