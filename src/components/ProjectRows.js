@@ -1,6 +1,11 @@
 import React from "react"
 import styled from "styled-components"
+import projectRowStyles from "./projectrows.module.css"
 import {device} from "../mediaqueries/device.js"
+import { FaGithub } from 'react-icons/fa';
+import { FaMedium } from 'react-icons/fa';
+import { FaTwitter } from 'react-icons/fa';
+
 
 
 
@@ -64,7 +69,7 @@ flex-direction: column;
 const ProjectRow = styled.div`
 display: flex;
 flex-direction: row;
-padding: 0.5rem 0rem 1rem 0rem;
+padding: 0.5rem 0rem 0.5rem 0rem;
 `
 
 const ProjectTitle = styled.h5`
@@ -115,7 +120,23 @@ padding: 0.5rem 1rem 0.5rem 0rem;
 }
 `
 
-const ButtonLearnMore = styled.a`
+const ProjectLinkContainer = styled.div`
+display: flex;
+justify-items: center;
+align-items: center;
+margin-right: 1rem;
+`
+
+const ProjectLink = styled.a`
+display: flex;
+align-items: center;
+text-decoration: none;
+font-size: 1.5rem;
+margin: 0rem 0.475rem;
+`
+
+
+const ProjectLinkLearnMore = styled.a`
 align-self: center;
 border: 1px solid #189a8c;
 border-radius: 0.125rem;
@@ -149,7 +170,18 @@ export default (props) => {
             </ProjectTopContainer>
             <ProjectBottomContainer>
               <ProjectDescription>{project.description}</ProjectDescription>
-              <ButtonLearnMore href={project.learnMoreLink} target="_blank" rel="noopener noreferrer">More ↗</ButtonLearnMore>
+              <ProjectLinkContainer>
+                <ProjectLink href={project.github}>
+                <FaGithub className={projectRowStyles.ico} />
+                </ProjectLink>
+                <ProjectLink href={project.medium}>
+                <FaMedium className={projectRowStyles.ico} />
+                </ProjectLink>
+                <ProjectLink href={project.twitter}>
+                <FaTwitter className={projectRowStyles.ico} />
+                </ProjectLink>
+              </ProjectLinkContainer>
+              <ProjectLinkLearnMore href={project.learnMoreLink} target="_blank" rel="noopener noreferrer">More ↗</ProjectLinkLearnMore>
             </ProjectBottomContainer>
           </ProjectCard>
         ))

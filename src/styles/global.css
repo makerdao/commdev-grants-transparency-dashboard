@@ -16,7 +16,6 @@
 
   * {
     font-family: system-ui, 'Helvetica Neue', sans-serif;
-    color: #444;
   }
 
 body {
@@ -28,6 +27,7 @@ body {
 a {
   color: #1AAB9B;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
