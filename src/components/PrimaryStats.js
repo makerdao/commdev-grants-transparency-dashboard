@@ -12,7 +12,7 @@ const StatsWrapper = styled.section`
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1200px));
 grid-column-gap: 1rem;
-grid-row-gap: 3rem;
+grid-row-gap: 4rem;
 justify-content: center;
 padding: 6rem 0.5rem 6rem 0.5rem;
 text-align: center;
