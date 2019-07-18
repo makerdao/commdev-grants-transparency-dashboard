@@ -1,0 +1,8 @@
+.ico {
+  color: #aaa;
+  transition: 0.2s ease-in-out;
+}
+
+.ico:hover {
+  color: #1AAB9B;
+}
