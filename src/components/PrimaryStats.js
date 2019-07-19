@@ -17,15 +17,15 @@ justify-content: center;
 padding: 6rem 0.5rem 6rem 0.5rem;
 text-align: center;
 
-@media ${device.mobileL} {
-  grid-row-gap: 4rem;
+@media ${device.tablet} {
+  grid-row-gap: 3rem;
 }
 `
 
 const StatsRow = styled.div`
 grid-column: 1 / -1;
 display: grid;
-grid-template-columns: ${props => props.singlecolumn ? '1fr' : 'repeat(auto-fit, 300px)'};
+grid-template-columns: ${props => props.singlecolumn ? '1fr' : 'repeat(auto-fit, minmax(240px, 300px))'};
 grid-row-gap: 5rem;
 justify-content: space-between;
 text-align: center;
@@ -33,6 +33,12 @@ text-align: center;
 @media ${device.laptop} {
   justify-content: center;
   justify-items: center;
+}
+
+@media ${device.tablet} {
+  grid-row-gap: 2rem;
+  /* Sets a single column for the element wrapping the doughnut graph & stats */
+  grid-template-columns: ${props => props.doughnutcolumn ? '1fr' : 'repeat(auto-fit, minmax(240px, 300px))'};
 }
 
 @media ${device.mobileL} {
@@ -80,7 +86,7 @@ export default () => (
       <PrimaryStatObject number={data.totalMoneyDispersed} description="Dai Dispersed" />
       <PrimaryStatObject number={data.averageAwardedMoney} description="Average Dai Award" />
     </StatsRow>
-    <StatsRow backgroundColor="hsla(158, 56%, 88%, 1)">
+    <StatsRow doughnutcolumn>
       <PrimaryStatObject colorOrange={true} number={data.appsSubmitted} description="Grant Applications Submitted" />
       <DoughnutChartContainer>
       <ChartDoughnut/>
@@ -91,7 +97,7 @@ export default () => (
       <PrimaryStatObject statsActiveProjects={true} number={data.currentlyActive} large={false} description="Active Projects" />
       <ProjectStatus />
     </StatsRow>
-    <StatsRow justifyContent="space-between">
+    <StatsRow singlecolumn justifyContent="space-between">
       <PrimaryStatObject statsCountriesRepresented={true} number={data.nCountries} description="Countries Represented" />
       <ProjectCountries />
     </StatsRow>
