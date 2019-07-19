@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const SectionTitle = styled.h5`
 grid-column: 1 / -1;
-color: #179b8c;
+color: var(--subheadline-color);
 justify-self: center;
 text-align: center;
 font-weight: 400;
