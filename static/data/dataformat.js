@@ -10,9 +10,10 @@ const pStatus = {
 const pType = {
   "hold": "Hold Dai",
   "spend": "Spend Dai",
+  "send": "Send Dai",
   "watch": "Watch Dai",
   "use": "Use Dai",
-  "learn": "Learn",
+  "understand": "Understand Dai",
   "cdpmgmt": "CDP",
 }
 
