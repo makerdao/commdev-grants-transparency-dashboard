@@ -15,18 +15,23 @@ ${props => props.statsCountriesRepresented ? 'background: linear-gradient(hsla(3
 ${props => props.large ? 'grid-column: 1 / -1' : null};
 
 /* Places the "Countries Represented" stat onto its own row to better establish its relationship / the hierarchy of information between it and the list of countries below it. */
-@media ${device.laptop} {
-  ${props => props.statsCountriesRepresented ? 'grid-column: 1 / -1;' : null};
+
+
+@media ${device.tablet} {
+  ${props => props.statsCountriesRepresented ? 'grid-column: auto;' : null};
+}
+@media ${device.tablet} {
+  ${props => props.statsActiveProjects ? 'grid-column: auto;' : null};
 }
 `
 const StatsNumber = styled.h4`
-${props => props.colorOrange ? 'color: hsla(38, 90%, 60%, 1);' : 'color: #179b8c;'};
+${props => props.colorOrange ? 'color: var(--highlight-color--makerorange);' : 'color: var(--highlight-color--makerteal);'};
 /* If the "Data Last Compiled" stat object, invoked in PrimaryStats.js (displayed bottom right of screen), reduce font-size to 2rem; */
 ${props => props.statsAttribution ? 'font-size: 2rem;' : ''};
 `
 
 const StatsTitle = styled.h5`
-color: #53546a;
+color: var(--body-color);
 max-width: 200px;
 `
 

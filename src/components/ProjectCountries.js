@@ -78,17 +78,13 @@ const CountryList = styled.ul`
 
 const CountryListItem = styled.li`
 justify-content: left;
+color: var(--body-color);
 margin: 0.25rem;
 `
 
 const CountryImg = styled.img`
 width: 160px;
 transform: translate(-48px, -16px);
-
-@media ${device.mobileL} {
-  width: 120px;
-  transform: translate(-8px,0px);
-}
 `
 
 export default () => (
