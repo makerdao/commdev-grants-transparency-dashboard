@@ -4,22 +4,68 @@ import {device} from "../mediaqueries/device.js"
 import {SectionWrapper} from "../components/SectionWrapper.js"
 import {SectionTitle} from "../components/SectionTitle.js"
 
+const SectionWrapperFooter = styled(SectionWrapper)`
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  padding: 0;
 
-const FooterRow = styled.div`
+  @media ${device.tablet} {
+    grid-template-columns: 1fr;
+  }
+`
+
+const FooterBackgroundTop = styled.div`
+width: 100%;
+height: 100%;
+background: linear-gradient(hsl(169, 49%, 89%),hsl(60, 44%, 94%));
+/* color: hsla(173, 54%, 25%, 1);  */
+/* background: linear-gradient(hsla(168, 69%, 50%, 1), hsla(168, 40%, 76%, 1));  old background*/
+position: absolute;
+z-index: 999;
+top: 0;
+/* border-top-left-radius: 8px; */
+/* border-top-right-radius: 8px; */
+/* max-width: 1200px; */
+z-index:-9;
+`
+
+const FooterBackgroundBottom = styled.div`
 grid-column: 1 / -1;
+grid-row: 4;
+grid-template-rows: 1fr;
+grid-template-columns: 1fr;
+bottom: 0;
+background: linear-gradient(hsl(246, 49%, 89%),hsl(60,44%,94%));
+position: relative;
+display: flex;
+align-content: flex-end;
+justify-content: flex-end;
+left: 0;
+right: 0;
+margin: auto;
+max-width: 1200px;
+z-index: -99;
+`
+
+const FooterColumn = styled.div`
+grid-column: auto;
 display: grid;
-grid-template-columns: repeat(2, minmax(300px, 480px));
-grid-row-gap: 2rem;
+grid-template-columns: minmax(320px, 540px);
+grid-gap: 2rem;
 justify-self: center;
 justify-content: space-around;
-padding: 1rem;
 width: 100%;
-border-radius: 2px;
+padding: 2rem 0rem;
+background: ${props => props.columnLeft ? 'linear-gradient(hsla(210,50%,90%,1),hsla(210,50%,86%,1))' : ''};
 
 
 @media ${device.laptop} {
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, 300px);
+}
+
+@media ${device.tablet} {
+  justify-content: center;
+  grid-template-columns: 1fr;
 }
 `
 
@@ -49,36 +95,30 @@ box-shadow: 0px 0px 2px #444;
 
 `
 
-const FooterCard = styled.div`
+const FooterCard = styled.ul`
 display: grid;
-grid-template-columns: 48px repeat(2, 1fr);
-grid-template-rows: 48px auto;
+grid-template-columns: minmax(300px, 1fr);
 background: ${props => props.hero ? "#eee" : null};
 border-radius: ${props => props.hero ? "8px" : null};
 box-shadow: ${props => props.hero ? "1px 1px 4px #bbb" : null};
-margin:1rem;
+padding:0;
+margin: 1rem;
+list-style: none;
+
+@media ${device.mobileL} {
+  grid-template-columns: 1fr;
+}
 `
 
-const FooterCardNum = styled.h5`
-grid-column: 1;
-justify-self: center;
-align-self: center;
-color: #1AAB9B;
-margin:0px;
-`
-
-const FooterCardTitle = styled.h6`
-
-grid-column: 2 / -1;
+const FooterCardTitle = styled.li`
 align-self: center;
 color: #179b8c;
 margin:0px;
 text-transform: uppercase;
 `
 
-const FooterCardDesc = styled.p`
-grid-column: 2 / -1;
-color: #231536;
+const FooterCardDesc = styled.li`
+color: var(--body-color: #53546a);
 margin:0px;
 padding: 1rem 0rem 1rem 0rem;
 line-height: 140%;
@@ -86,20 +126,22 @@ line-height: 140%;
 
 const FooterCardListContainer = styled.ul`
 grid-column: 1 / -1;
-color: #48495F;
 background: ${props => props.cardFooter ? 'black' : '#fafafa;'};
 color: #53546a;
 margin:0px;
 padding: 0;
 line-height: 140%;
 list-style: none;
-border-bottom-left-radius: 8px;
-border-bottom-right-radius: 8px;
+border-bottom-left-radius: 2px;
+border-bottom-right-radius: 2px;
 
 `
 
 const FooterCardListItem = styled.li`
-padding: 1rem 1rem 1rem 3rem;
+padding: ${props => props.headerTop ? '1.5rem 1rem 0rem 3rem' : '1.5rem 1rem 1.5rem 3rem'};
+padding: ${props => props.headerBottom ? '0rem 1rem 0rem 3rem' : ''};
+background: ${props => props.headerTop ? 'linear-gradient(hsla(168,50%,90%,1),hsla(168,50%,86%,1)) !important;' : ''};
+background: ${props => props.headerBottom ? '#c9ede6 !important' : ''};
 
 
 :first-child {
@@ -107,11 +149,11 @@ padding: 1rem 1rem 1rem 3rem;
 }
 
 :nth-child(even) {
-  background: ${props => props.cardFooter ? '#ddd' : '#f5f5f5'};
+  background: ${props => props.cardFooter ? 'none' : 'hsla(168, 50%, 90%, 1)'};
 }
 
 :nth-child(odd) {
-  background: ${props => props.cardFooter ? '#ddd' : '#fafafa'};
+  background: ${props => props.cardFooter ? 'none' : 'hsla(168, 49%, 93%, 1)'};
 }
 
 :last-child {
@@ -169,38 +211,50 @@ align-items: center;
 `
 
 export default () => (
-  <SectionWrapper name="Footer">
-    <SectionTitle>How can I get a grant?</SectionTitle>
-    <FooterRow>
-        <div>
-        <FooterCard>
-        <FooterCardNum>
-          1
-        </FooterCardNum>
-        <FooterCardTitle>
-          Learn
-        </FooterCardTitle>
-        <FooterCardDesc>
-          Learn more about the Maker grants program by visiting our <a href="https://community-development.makerdao.com/grants" target="_blank">grants information page</a>.
-        </FooterCardDesc>
-        <FooterCardDesc>
-          New to Maker? Visit our <a href="https://community-development.makerdao.com/grants" target="_blank">onboarding site</a>.
-        </FooterCardDesc>
-        <FooterCardDesc>
-          See what the community has created at <a href="https://community-development.makerdao.com/grants" target="_blank">Awesome MakerDao</a>.
-        </FooterCardDesc>
-        </FooterCard>
-        </div>
+  <SectionWrapperFooter name="Footer">
+    <FooterBackgroundTop />
+    <FooterColumn columnLeft>
+      <FooterCard>
+      <FooterCardListContainer>
+        <FooterCardListItem headerTop>
+          <FooterCardTitle>
+            How can I get a grant?
+          </FooterCardTitle>
+        </FooterCardListItem>
+        <FooterCardListItem headerBottom>
+          <FooterCardDesc>
+            Get up to speed on Dai and the Maker project:
+          </FooterCardDesc>
+        </FooterCardListItem>
+      </FooterCardListContainer>
+      <FooterCardListContainer>
+        <FooterCardListItem>→  What does it do, exactly?</FooterCardListItem>
+        <FooterCardListItem>→  What problem does it solve?</FooterCardListItem>
+        <FooterCardListItem>→  Why will it be successful?</FooterCardListItem>
+        <FooterCardListItem>→  And approximately what will it cost?</FooterCardListItem>
+      </FooterCardListContainer>
+      <FooterCardListContainer>
+        <FooterCardListItem cardFooter>Send your proposal to <a href="mailto:grants@makerdao.com">grants@makerdao.com</a>
+        </FooterCardListItem>
+        <FooterCardListItem cardFooter>Due to the large number of submissions, please expect a response within 2-3 weeks.</FooterCardListItem>
+      </FooterCardListContainer>
+      </FooterCard>
+      </FooterColumn>
+
+        <FooterColumn>
         <FooterCard hero>
-        <FooterCardNum>
-          2
-        </FooterCardNum>
-        <FooterCardTitle>
-          Write
-        </FooterCardTitle>
-        <FooterCardDesc>
-          Write a 1-2 page proposal, answering:
-        </FooterCardDesc>
+        <FooterCardListContainer>
+          <FooterCardListItem headerTop>
+            <FooterCardTitle>
+              APPLY
+            </FooterCardTitle>
+          </FooterCardListItem>
+          <FooterCardListItem headerBottom>
+            <FooterCardDesc>
+              Write a 1-2 page proposal, answering:
+            </FooterCardDesc>
+          </FooterCardListItem>
+        </FooterCardListContainer>
         <FooterCardListContainer>
           <FooterCardListItem>→  What does it do, exactly?</FooterCardListItem>
           <FooterCardListItem>→  What problem does it solve?</FooterCardListItem>
@@ -208,11 +262,12 @@ export default () => (
           <FooterCardListItem>→  And approximately what will it cost?</FooterCardListItem>
         </FooterCardListContainer>
         <FooterCardListContainer>
-          <FooterCardListItem cardFooter>Send your proposal to grants@makerdao.com.</FooterCardListItem>
+          <FooterCardListItem cardFooter>Send your proposal to <a href="mailto:grants@makerdao.com">grants@makerdao.com</a>
+          </FooterCardListItem>
           <FooterCardListItem cardFooter>Due to the large number of submissions, please expect a response within 2-3 weeks.</FooterCardListItem>
         </FooterCardListContainer>
         </FooterCard>
-      </FooterRow>
 
-  </SectionWrapper>
+      </FooterColumn>
+  </SectionWrapperFooter>
 );
