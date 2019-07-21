@@ -16,6 +16,11 @@ import Chart from "chart.js";
 Chart.defaults.global.legend.display = false;
 Chart.defaults.global.tooltips.enabled = false;
 
+
+const SectionWrapperProjects = styled(SectionWrapper)`
+grid-template-columns: repeat(auto-fit, minmax(300px, 1400px));
+`
+
 const ProjectCategoryListWrapper = styled.div`
 display: flex;
 position: relative;
@@ -66,7 +71,7 @@ margin: 0rem 1rem 0rem 1rem;
   margin: 0rem 0.25rem 0rem 0.25rem;
 }
 `
-//${props => props.disp ? 'flex' : 'none'};
+
 const ProjectCategoryChart = styled.div`
 display: flex;
 width: 48px;
@@ -94,7 +99,7 @@ const ProjectCategoryButton = styled(PrimaryButton)`
 min-width: 120px;
 color: ${props => props.active ? '#fafafa' : '#53546a'};
 border: ${props => props.active ? '1px solid #1aaa9b' : '1px solid #53546a'};
-background: ${props => props.active ? '#1aaa9b' : 'none'};
+background: ${props => props.active ? '#1aaa9b' : '#def2eb'};
 border-radius: 400px;
 text-transform: uppercase;
 font-size: 1rem;
@@ -153,7 +158,7 @@ export class ProjectCategories extends Component {
 
     return (
       <React.Fragment>
-      <SectionWrapper large name="Projects">
+      <SectionWrapperProjects large name="Projects">
         <ProjectBackground />
       <SectionTitle>Explore Our Supported Projects</SectionTitle>
         <ProjectCategoryListWrapper>
@@ -194,7 +199,7 @@ export class ProjectCategories extends Component {
                  </ViewMoreButtonContainer>)
                 : null
             }
-            </SectionWrapper>
+            </SectionWrapperProjects>
         </React.Fragment>
     )
   }
