@@ -3,6 +3,7 @@ import {device} from "../mediaqueries/device.js"
 
 
 const RowOverflow = styled.div`
+position: relative;
 grid-column: ${props => props.gridColumn};
 width: 100%;
 max-width: ${props => props.maxWidth};
@@ -14,13 +15,11 @@ justify-content: flex-start;
 /* background-color: #f7f1db; */
 
 @media ${device.mobileL} {
+  grid-column: 1 / -1;
   justify-content: flex-start;
   flex-direction: column;
 }
 
-@media ${device.laptop} {
-  grid-column: 1 / -1;
-}
 `
 
 export {RowOverflow}
