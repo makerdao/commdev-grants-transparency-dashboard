@@ -22,9 +22,9 @@ align-items: center;
 background: linear-gradient(hsla(168, 50%, 90%, 1), hsla(168, 50%, 86%, 1));
 min-width: 160px;
 
-
 @media ${device.tablet} {
   /* Changes the orientation (to 90degrees) of the background gradient to make it blend once this element changes from flex-direction: row to flex-direction: column */
+  /* July 19 - Disabled if we go with a horizontal scroll & overflow on mobile. If we want to display it vertically, reenable this. */
   background: linear-gradient(90deg,hsla(168, 50%, 90%, 1), hsla(168, 50%, 86%, 1));
 }
 `
@@ -36,12 +36,12 @@ border-radius: 100px;
 `
 
 const ProjectStatusNumber = styled.h6`
-color: #444;
+color: var(--body-color);
 margin-bottom: 1rem;
 `
 
 const ProjectStatusLabel = styled.h6`
-color: #231536;
+color: var(--body-color);
 `
 
 
