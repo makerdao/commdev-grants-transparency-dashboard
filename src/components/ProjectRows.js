@@ -12,7 +12,7 @@ import { FaTwitter } from 'react-icons/fa';
 const ProjectCardWrapper = styled.section`
 grid-column: 1 / -1;
 display: grid;
-grid-template-columns: 1fr;
+grid-template-columns: minmax(300px, 1024px);
 justify-items: center;
 justify-content: space-around;
 margin:   0rem 1rem 0rem 1rem;
@@ -61,7 +61,9 @@ padding: 1rem;
 
 const ProjectTopContainer = styled.div`
 display: flex;
-flex-direction: column;
+flex-direction: row;
+width:100%;
+justify-content: space-between;
 `
 
 
@@ -69,27 +71,43 @@ flex-direction: column;
 const ProjectRow = styled.div`
 display: flex;
 flex-direction: row;
-padding: 0.5rem 0rem 0.5rem 0rem;
+flex-wrap: wrap;
+padding: 1rem 0rem 0.5rem 0rem;
+
+@media ${device.mobileL} {
+  padding: 1rem 0rem 2rem 0rem;
+}
 `
 
 const ProjectTitle = styled.h5`
-color: #231536;
+color: var(--headline-color);
 margin:0;
 text-overflow: ellipsis;
 overflow: hidden;
 white-space: nowrap;
+transition: 0.15s ease-in-out;
+
+:hover {
+  color: var(--highlight-color--makerteal);
+}
+
+span {
+  color: var(--highlight-color--makerteal);
+}
+
 `
 
 
 const ProjectLabel = styled.span`
 font-size: 1rem;
 margin:0;
-color: #53546a;
+color: var(--body-color);
 text-transform: uppercase;
 text-align: left;
+margin-left: 1rem;
 
-:nth-child(2) {
-  margin-left: 1rem;
+:nth-child(1) {
+  margin-left: 0rem;
 }
 `
 
@@ -107,13 +125,18 @@ width: 100%;
 
 
 const ProjectDescription = styled.p`
-color: #53546a;
-width: 100%;
+color: var(--body-color);
+width: 75%;
 white-space: nowrap;
 text-overflow: ellipsis;
 max-height: 140px;
 overflow: hidden;
-padding: 0.5rem 1rem 0.5rem 0rem;
+padding: 1rem 1rem 1rem 0rem;
+transition: 0.1s ease-in-out;
+
+:hover {
+  white-space: pre-wrap;
+}
 
 @media ${device.tablet} {
   white-space: normal;
@@ -124,34 +147,30 @@ const ProjectLinkContainer = styled.div`
 display: flex;
 justify-items: center;
 align-items: center;
-margin-right: 1rem;
 `
 
 const ProjectLink = styled.a`
 display: flex;
 align-items: center;
 text-decoration: none;
-font-size: 1.5rem;
+font-size: 1.25rem;
 margin: 0rem 0.475rem;
 `
 
-
-const ProjectLinkLearnMore = styled.a`
+const TitleLinkLearnMore = styled.a`
 align-self: center;
-border: 1px solid #189a8c;
-border-radius: 0.125rem;
-padding: 0.5rem 0.75rem 0.5rem 0.75rem;
-width: 96px;
-font-size: 1.15rem;
-text-align: center;
-color: #189a8c;
 background: none;
 text-decoration: none;
-border-radius: 100px;
+transition: 0.15s ease-in-out;
 
-@media ${device.tablet} {
-  margin: 1rem 0rem 1rem 0rem;
-  align-self: flex-start;
+
+:hover {
+  color: var(--highlight-color--makerteal);
+
+  span {
+    display: inline-block;
+    transform: translate(2px, -4px);
+  }
 }
 `
 
@@ -162,26 +181,27 @@ export default (props) => {
         props.selectedProjects.map( (project, index) => (
           <ProjectCard key={project.name} hide={index > props.projectsToShow - 1}>
             <ProjectTopContainer>
-                <ProjectTitle>{project.name}</ProjectTitle>
-                <ProjectRow>
-                  <ProjectLabel>{project.status}</ProjectLabel>
-                  <ProjectLabel>{project.location}</ProjectLabel>
-                </ProjectRow>
+              <TitleLinkLearnMore href={project.learnMoreLink} target="_blank" rel="noopener noreferrer">
+                <ProjectTitle>{project.name} <span>↗</span></ProjectTitle>
+              </TitleLinkLearnMore>
+                <ProjectLinkContainer>
+                  <ProjectLink href={project.github}>
+                  <FaGithub className={projectRowStyles.ico} />
+                  </ProjectLink>
+                  <ProjectLink href={project.medium}>
+                  <FaMedium className={projectRowStyles.ico} />
+                  </ProjectLink>
+                  <ProjectLink href={project.twitter}>
+                  <FaTwitter className={projectRowStyles.ico} />
+                  </ProjectLink>
+                </ProjectLinkContainer>
             </ProjectTopContainer>
+            <ProjectDescription>{project.description}</ProjectDescription>
             <ProjectBottomContainer>
-              <ProjectDescription>{project.description}</ProjectDescription>
-              <ProjectLinkContainer>
-                <ProjectLink href={project.github}>
-                <FaGithub className={projectRowStyles.ico} />
-                </ProjectLink>
-                <ProjectLink href={project.medium}>
-                <FaMedium className={projectRowStyles.ico} />
-                </ProjectLink>
-                <ProjectLink href={project.twitter}>
-                <FaTwitter className={projectRowStyles.ico} />
-                </ProjectLink>
-              </ProjectLinkContainer>
-              <ProjectLinkLearnMore href={project.learnMoreLink} target="_blank" rel="noopener noreferrer">More ↗</ProjectLinkLearnMore>
+            <ProjectRow>
+              <ProjectLabel>{project.status}</ProjectLabel>
+              <ProjectLabel>{project.location}</ProjectLabel>
+            </ProjectRow>
             </ProjectBottomContainer>
           </ProjectCard>
         ))
