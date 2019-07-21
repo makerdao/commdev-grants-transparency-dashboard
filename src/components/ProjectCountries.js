@@ -84,7 +84,7 @@ margin: 0.25rem;
 
 const CountryImg = styled.img`
 width: 160px;
-transform: translate(-48px, -16px);
+transform: translate(-32px, -16px);
 `
 
 export default () => (
