@@ -17,9 +17,10 @@
 /* Color Variables */
 :root {
   --headline-color: #291a42;
+  --subheadline-color: #179b8c;
   --body-color: #53546a;
   --highlight-color--makerteal: #179b8c;
-  --highlight-color-makerorange: #f5b13d;
+  --highlight-color--makerorange: #f5b13d;
 }
 
   * {
