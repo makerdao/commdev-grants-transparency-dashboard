@@ -132,6 +132,8 @@ margin: 1rem 0rem !important;
 background: none;
 transition: 0.15s linear;
 background: hsla(210,50%,85%,0);
+border: 1px solid hsla(209, 51%, 80%, 1);
+border-radius: 4px !important;
 
 :hover {
   background: hsla(210,50%,85%,1);
@@ -190,10 +192,10 @@ export default () => (
             View a list of educational resources.
           </FooterCardListItemLeft>
         </FooterLink>
-        <FooterLink href="https://community-development.makerdao.com/grants" target="_blank">
+        <FooterLink href="https://chat.makerdao.com" target="_blank">
           <FooterCardListItemLeft noBackground>
             <Label labelContent="Meet the community"></Label>
-            Visit our onboarding site
+            Join the official MakerDAO chat.
           </FooterCardListItemLeft>
         </FooterLink>
         <FooterLink href="https://github.com/makerdao/awesome-makerdao#use-your-dai" target="_blank">
