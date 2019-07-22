@@ -140,12 +140,16 @@ const FooterCardListHeader = styled.li`
 padding: 1.5rem 1rem 1rem 3rem;
 border-top-left-radius: 8px;
 border-top-right-radius: 8px;
+background: linear-gradient(hsla(168,50%,90%,1),hsla(168,50%,86%,1));
 `
 
 const FooterCardListItem = styled.li`
+display: ${props => props.applyCardFooter ? 'flex' : null};
+align-items: ${props => props.applyCardFooter ? 'center' : null};
 color: var(--body-color);
 padding: 1.5rem 1.875rem 1.875rem 3rem;
-border-radius: 4px;
+border-radius: ${props => props.applyCardFooter ? null : '4px'};
+height: ${props => props.applyCardFooter ? '100%' : null};
 
 :first-child {
   margin-top: 0rem;
@@ -167,7 +171,8 @@ border-radius: 4px;
 `
 
 const FooterCardListItemLeft = styled(FooterCardListItem)`
-margin: 1rem 0rem;
+/* !important here overrides the selector styles on its parent. Since this is locally scoped, I think it's a meaningful trade-off right now. Can be revisited later. */
+margin: 1rem 0rem !important;
 background: none;
 transition: 0.15s linear;
 background: hsla(210,50%,85%,0);
@@ -180,6 +185,13 @@ background: hsla(210,50%,85%,0);
   max-width: 480px;
   justify-self: center;
 }
+
+@media ${device.mobileL} {
+  margin: 1rem 0rem;
+  /* !important here overrides the selector styles on its parent. Since this is locally scoped, I think it's a meaningful trade-off right now. Can be revisited later. */
+  background: hsla(210,50%,85%,1) !important;
+}
+
 `
 
 
@@ -206,6 +218,7 @@ color: var(--highlight-color--makerteal);
 text-decoration: none;
 transition: 0.15s ease-in-out;
 border-bottom: 2px solid hsla(173, 74%, 35%, 0);
+margin: ${props => props.inlineLink ? '0rem 0rem 0rem 0.25rem' : null};
 
 :hover {
   border-bottom: 2px solid var(--highlight-color--makerteal);
@@ -223,7 +236,7 @@ export default () => (
             How can I get a grant?
           </FooterCardTitle>
           <FooterCardDesc>
-            Get up to speed on Dai and the Maker project:
+            Get up to speed on the Maker project & Dai stablecoin:
           </FooterCardDesc>
         </FooterCardListItem>
         <FooterLink href="https://community-development.makerdao.com/grants" target="_blank">
@@ -232,10 +245,10 @@ export default () => (
             Visit the Maker Grants Program FAQ
           </FooterCardListItemLeft>
         </FooterLink>
-        <FooterLink href="https://community-development.makerdao.com/grants" target="_blank">
+        <FooterLink href="https://github.com/makerdao/awesome-makerdao" target="_blank">
           <FooterCardListItemLeft noBackground>
             <Label labelContent="New to Maker?"></Label>
-            Visit our onboarding site
+            View a list of educational resources.
           </FooterCardListItemLeft>
         </FooterLink>
         <FooterLink href="https://community-development.makerdao.com/grants" target="_blank">
@@ -244,10 +257,10 @@ export default () => (
             Visit our onboarding site
           </FooterCardListItemLeft>
         </FooterLink>
-        <FooterLink href="https://community-development.makerdao.com/grants" target="_blank">
+        <FooterLink href="https://github.com/makerdao/awesome-makerdao#use-your-dai" target="_blank">
           <FooterCardListItemLeft noBackground>
-            <Label labelContent="Explore community projects"></Label>
-            Check out Awesome MakerDAO
+            <Label labelContent="Looking for inspiration?"></Label>
+            Check out these community projects
           </FooterCardListItemLeft>
         </FooterLink>
       </FooterCardListContainer>
@@ -269,7 +282,7 @@ export default () => (
           <FooterCardListItem>→  What problem does it solve?</FooterCardListItem>
           <FooterCardListItem>→  Why will it be successful?</FooterCardListItem>
           <FooterCardListItem>→  Approximately what will it cost?</FooterCardListItem>
-          <FooterCardListItem>↗  Send it to <FooterLink href="mailto:grants@makerdao.com">grants@makerdao.com</FooterLink>
+          <FooterCardListItem applyCardFooter>↗  Send it to <FooterLink inlineLink href="mailto:grants@makerdao.com">grants@makerdao.com</FooterLink>
           </FooterCardListItem>
         </FooterCard>
         <FooterCard>
