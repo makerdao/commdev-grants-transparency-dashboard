@@ -21,6 +21,7 @@
   --body-color: #53546a;
   --highlight-color--makerteal: #179b8c;
   --highlight-color--makerorange: #f5b13d;
+  --highlight-color--makerblue: #08529b;
 }
 
   * {
@@ -33,9 +34,6 @@ body {
   background: linear-gradient(180deg, rgba(182, 237, 231, 0.38) 0%, rgba(253, 193, 52, 0.15) 100%);
 }
 
-a {
-  color: #1AAB9B;
-}
 
 
 h1, h2, h3, h4, h5, h6 {
