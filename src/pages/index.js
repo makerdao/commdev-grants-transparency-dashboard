@@ -1,5 +1,4 @@
 import React from "react"
-import styled from "styled-components"
 import Header from "../components/Header"
 import PrimaryStats from "../components/PrimaryStats"
 import {ProjectCategories} from "../components/ProjectCategories"

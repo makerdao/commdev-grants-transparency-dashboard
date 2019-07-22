@@ -23,20 +23,6 @@ const continentImages = {
   [region.africa]: imgAfrica,
 }
 
-const RowOverflowContent = styled.ul`
-  grid-column: 1 / -1;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  font-size: 2rem;
-  padding: 0;
-
-  @media ${device.tablet} {
-    background: #dcf4eb;
-  }
-`
 
 const CountryListObject = styled.li`
   display: flex;

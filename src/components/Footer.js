@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import {device} from "../mediaqueries/device.js"
 import {SectionWrapper} from "../components/SectionWrapper.js"
-import {SectionTitle} from "../components/SectionTitle.js"
 import Label from "../components/Label.js"
 
 const SectionWrapperFooter = styled(SectionWrapper)`
@@ -30,24 +29,6 @@ top: 0;
 z-index:-9;
 `
 
-const FooterBackgroundBottom = styled.div`
-grid-column: 1 / -1;
-grid-row: 4;
-grid-template-rows: 1fr;
-grid-template-columns: 1fr;
-bottom: 0;
-background: linear-gradient(hsl(246, 49%, 89%),hsl(60,44%,94%));
-position: relative;
-display: flex;
-align-content: flex-end;
-justify-content: flex-end;
-left: 0;
-right: 0;
-margin: auto;
-max-width: 1200px;
-z-index: -99;
-`
-
 const FooterColumn = styled.div`
 grid-column: auto;
 display: grid;
@@ -70,31 +51,6 @@ background: ${props => props.columnLeft ? 'linear-gradient(hsla(210,50%,90%,1),h
 }
 `
 
-const FooterTitle = styled.h4`
-grid-column: 1 / -1;
-justify-self: center;
-align-self: center;
-font-weight: 300;
-color: #1AAB9B;
-`
-
-// const FooterCardContainer = styled.div`
-// grid-column: 1 / -1;
-// grid-gap: 3rem;
-// display: grid;
-// grid-template-columns: repeat(auto-fit, 360px);
-// justify-content: center;
-// padding: 6rem 0rem 6rem 0rem;
-// `
-
-const FooterCardCTA = styled.div`
-grid-column: 1 / -1;
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: 48px 1fr;
-box-shadow: 0px 0px 2px #444;
-
-`
 
 const FooterCard = styled.ul`
 display: flex;
@@ -195,29 +151,12 @@ background: hsla(210,50%,85%,0);
 `
 
 
-const CallToActionContainer = styled.div`
-grid-column: 1 / -1;
-display: grid;
-grid-template-columns: minmax(300px, 540px);
-grid-gap: 2rem;
-justify-content: center;
-align-items: center;
-justify-self: flex-start;
-border: 1px solid #ddd;
-padding-top: 2rem;
-`
-
-const ButtonContainer = styled.div`
-grid-column: 1 / -1;
-display: grid;
-justify-items: center;
-`
-
 const FooterLink = styled.a`
 color: var(--highlight-color--makerteal);
 text-decoration: none;
 transition: 0.15s ease-in-out;
 border-bottom: 2px solid hsla(173, 74%, 35%, 0);
+/* This is used to establish spacing in the footer of the "Apply card" between the link and the text before it. */
 margin: ${props => props.inlineLink ? '0rem 0rem 0rem 0.25rem' : null};
 
 :hover {

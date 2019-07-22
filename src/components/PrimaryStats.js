@@ -48,17 +48,6 @@ text-align: center;
 `
 
 
-const StatsRowOverflow = styled.div`
-grid-column: 1 / -1;
-display: grid;
-grid-template-columns: repeat(auto-fit, 300px);
-justify-content: ${props => props.justifyContent};
-text-align: center;
-border: ${props => props.border};
-border-radius: 2px;
-justify-items: center;
-`
-
 
 const DoughnutChartContainer = styled.div`
 position: relative;

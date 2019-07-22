@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import {device} from "../mediaqueries/device.js"
 
 const SectionWrapper = styled.section`
 position: relative;
