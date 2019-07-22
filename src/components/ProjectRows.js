@@ -135,7 +135,8 @@ padding: 1rem 1rem 1rem 0rem;
 transition: 0.1s ease-in-out;
 
 :hover {
-  white-space: pre-wrap;
+  /* Enable this and overflowing project descriptions will be revealed on hover */
+  /* white-space: pre-wrap; */
 }
 
 @media ${device.tablet} {
