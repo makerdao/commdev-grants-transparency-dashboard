@@ -3,6 +3,7 @@ import styled from "styled-components"
 import {device} from "../mediaqueries/device.js"
 import {SectionWrapper} from "../components/SectionWrapper.js"
 import {SectionTitle} from "../components/SectionTitle.js"
+import Label from "../components/Label.js"
 
 const SectionWrapperFooter = styled(SectionWrapper)`
   grid-template-columns: 1fr 1fr;
@@ -96,11 +97,10 @@ box-shadow: 0px 0px 2px #444;
 `
 
 const FooterCard = styled.ul`
-display: grid;
-grid-template-columns: minmax(300px, 1fr);
-background: ${props => props.hero ? "#eee" : null};
+display: flex;
+flex-direction: column;
 border-radius: ${props => props.hero ? "8px" : null};
-box-shadow: ${props => props.hero ? "1px 1px 4px #bbb" : null};
+box-shadow: ${props => props.hero ? "1px 1px 4px #bbb" : 'none'};
 padding:0;
 margin: 1rem;
 list-style: none;
@@ -112,13 +112,13 @@ list-style: none;
 
 const FooterCardTitle = styled.li`
 align-self: center;
-color: #179b8c;
+color: ${props => props.columnLeft ? 'var(--highlight-color--makerblue)' : 'var(--highlight-color--makerteal)'};
 margin:0px;
 text-transform: uppercase;
 `
 
 const FooterCardDesc = styled.li`
-color: var(--body-color: #53546a);
+color: var(--body-color);
 margin:0px;
 padding: 1rem 0rem 1rem 0rem;
 line-height: 140%;
@@ -126,38 +126,59 @@ line-height: 140%;
 
 const FooterCardListContainer = styled.ul`
 grid-column: 1 / -1;
-background: ${props => props.cardFooter ? 'black' : '#fafafa;'};
-color: #53546a;
+color: var(--body-color);
 margin:0px;
 padding: 0;
 line-height: 140%;
 list-style: none;
 border-bottom-left-radius: 2px;
 border-bottom-right-radius: 2px;
+background: ${props => props.header ? 'linear-gradient(hsla(168,50%,90%,1),hsla(168,50%,86%,1)) !important' : null};
+`
 
+const FooterCardListHeader = styled.li`
+padding: 1.5rem 1rem 1rem 3rem;
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
 `
 
 const FooterCardListItem = styled.li`
-padding: ${props => props.headerTop ? '1.5rem 1rem 0rem 3rem' : '1.5rem 1rem 1.5rem 3rem'};
-padding: ${props => props.headerBottom ? '0rem 1rem 0rem 3rem' : ''};
-background: ${props => props.headerTop ? 'linear-gradient(hsla(168,50%,90%,1),hsla(168,50%,86%,1)) !important;' : ''};
-background: ${props => props.headerBottom ? '#c9ede6 !important' : ''};
-
+color: var(--body-color);
+padding: 1.5rem 1.875rem 1.875rem 3rem;
+border-radius: 4px;
 
 :first-child {
   margin-top: 0rem;
 }
 
 :nth-child(even) {
-  background: ${props => props.cardFooter ? 'none' : 'hsla(168, 50%, 90%, 1)'};
+  background: ${props => props.noBackground ? 'none' : 'hsla(168, 50%, 90%, 1)'};
 }
 
 :nth-child(odd) {
-  background: ${props => props.cardFooter ? 'none' : 'hsla(168, 49%, 93%, 1)'};
+  background: ${props => props.noBackground ? 'none' : 'hsla(168, 49%, 93%, 1)'};
 }
 
 :last-child {
   margin-bottom: 0rem;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+`
+
+const FooterCardListItemLeft = styled(FooterCardListItem)`
+margin: 1rem 0rem;
+background: none;
+transition: 0.15s linear;
+background: hsla(210,50%,85%,0);
+
+:hover {
+  background: hsla(210,50%,85%,1);
+}
+
+@media ${device.tablet} {
+  max-width: 480px;
+  justify-self: center;
 }
 `
 
@@ -180,33 +201,14 @@ display: grid;
 justify-items: center;
 `
 
-const CallToActionLink = styled.a`
-width: 100%;
-grid-row: 2;
-display: flex;
-height: 64px;
-border: 1px solid #1AAB9B;
-background: #1AAB9B;
-color: #fafafa;
-font-size: 1.25rem;
-justify-content: center;
-align-items: center;
-`
+const FooterLink = styled.a`
+color: var(--highlight-color--makerteal);
+text-decoration: none;
+transition: 0.15s ease-in-out;
+border-bottom: 2px solid hsla(173, 74%, 35%, 0);
 
-const CallToActionFAQ = styled.a`
-width: 100%;
-grid-row: 2;
-display: flex;
-height: 64px;
-border: 1px solid #1AAB9B;
-color: #1AAB9B;
-background: none;
-font-size: 1.25rem;
-justify-content: center;
-align-items: center;
-
-@media ${device.mobileL} {
-  grid-row: 3;
+:hover {
+  border-bottom: 2px solid var(--highlight-color--makerteal);
 }
 `
 
@@ -215,56 +217,66 @@ export default () => (
     <FooterBackgroundTop />
     <FooterColumn columnLeft>
       <FooterCard>
-      <FooterCardListContainer>
-        <FooterCardListItem headerTop>
-          <FooterCardTitle>
+      <FooterCardListContainer noBackground>
+        <FooterCardListItem noBackground>
+          <FooterCardTitle columnLeft>
             How can I get a grant?
           </FooterCardTitle>
-        </FooterCardListItem>
-        <FooterCardListItem headerBottom>
           <FooterCardDesc>
             Get up to speed on Dai and the Maker project:
           </FooterCardDesc>
         </FooterCardListItem>
+        <FooterLink href="https://community-development.makerdao.com/grants" target="_blank">
+          <FooterCardListItemLeft noBackground>
+            <Label labelContent="Questions about the grants program?"></Label>
+            Visit the Maker Grants Program FAQ
+          </FooterCardListItemLeft>
+        </FooterLink>
+        <FooterLink href="https://community-development.makerdao.com/grants" target="_blank">
+          <FooterCardListItemLeft noBackground>
+            <Label labelContent="New to Maker?"></Label>
+            Visit our onboarding site
+          </FooterCardListItemLeft>
+        </FooterLink>
+        <FooterLink href="https://community-development.makerdao.com/grants" target="_blank">
+          <FooterCardListItemLeft noBackground>
+            <Label labelContent="Meet the community"></Label>
+            Visit our onboarding site
+          </FooterCardListItemLeft>
+        </FooterLink>
+        <FooterLink href="https://community-development.makerdao.com/grants" target="_blank">
+          <FooterCardListItemLeft noBackground>
+            <Label labelContent="Explore community projects"></Label>
+            Check out Awesome MakerDAO
+          </FooterCardListItemLeft>
+        </FooterLink>
       </FooterCardListContainer>
-      <FooterCardListContainer>
-        <FooterCardListItem>→  What does it do, exactly?</FooterCardListItem>
-        <FooterCardListItem>→  What problem does it solve?</FooterCardListItem>
-        <FooterCardListItem>→  Why will it be successful?</FooterCardListItem>
-        <FooterCardListItem>→  And approximately what will it cost?</FooterCardListItem>
-      </FooterCardListContainer>
-      <FooterCardListContainer>
-        <FooterCardListItem cardFooter>Send your proposal to <a href="mailto:grants@makerdao.com">grants@makerdao.com</a>
-        </FooterCardListItem>
-        <FooterCardListItem cardFooter>Due to the large number of submissions, please expect a response within 2-3 weeks.</FooterCardListItem>
-      </FooterCardListContainer>
+
       </FooterCard>
       </FooterColumn>
 
         <FooterColumn>
         <FooterCard hero>
-        <FooterCardListContainer>
-          <FooterCardListItem headerTop>
+          <FooterCardListHeader>
             <FooterCardTitle>
               APPLY
             </FooterCardTitle>
-          </FooterCardListItem>
-          <FooterCardListItem headerBottom>
             <FooterCardDesc>
               Write a 1-2 page proposal, answering:
             </FooterCardDesc>
-          </FooterCardListItem>
-        </FooterCardListContainer>
-        <FooterCardListContainer>
+          </FooterCardListHeader>
           <FooterCardListItem>→  What does it do, exactly?</FooterCardListItem>
           <FooterCardListItem>→  What problem does it solve?</FooterCardListItem>
           <FooterCardListItem>→  Why will it be successful?</FooterCardListItem>
-          <FooterCardListItem>→  And approximately what will it cost?</FooterCardListItem>
-        </FooterCardListContainer>
-        <FooterCardListContainer>
-          <FooterCardListItem cardFooter>Send your proposal to <a href="mailto:grants@makerdao.com">grants@makerdao.com</a>
+          <FooterCardListItem>→  Approximately what will it cost?</FooterCardListItem>
+          <FooterCardListItem>↗  Send it to <FooterLink href="mailto:grants@makerdao.com">grants@makerdao.com</FooterLink>
           </FooterCardListItem>
-          <FooterCardListItem cardFooter>Due to the large number of submissions, please expect a response within 2-3 weeks.</FooterCardListItem>
+        </FooterCard>
+        <FooterCard>
+        <FooterCardListContainer>
+          <FooterCardListItem noBackground>
+          <Label colorMakerTeal="true" labelContent="Due to the large number of submissions, please expect a response within 2-3 weeks."></Label>
+          </FooterCardListItem>
         </FooterCardListContainer>
         </FooterCard>
 
