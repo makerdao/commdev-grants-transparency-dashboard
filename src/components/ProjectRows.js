@@ -79,7 +79,7 @@ padding: 1rem 0rem 0.5rem 0rem;
 }
 `
 
-const ProjectTitle = styled.h5`
+const ProjectTitle = styled.h2`
 color: var(--headline-color);
 margin:0;
 text-overflow: ellipsis;
@@ -168,11 +168,16 @@ transition: 0.15s ease-in-out;
 :hover {
   color: var(--highlight-color--makerteal);
 
-  span {
-    display: inline-block;
-    transform: translate(2px, -4px);
+  IcoArrow {
+    transform:translate(4px);
   }
 }
+`
+
+const IcoArrow = styled.span`
+display: inline-block
+transition: 0.15s ease-in-out;
+color: var(--highlight-color--makerteal);
 `
 
 export default (props) => {
@@ -183,7 +188,7 @@ export default (props) => {
           <ProjectCard key={project.name} hide={index > props.projectsToShow - 1}>
             <ProjectTopContainer>
               <TitleLinkLearnMore href={project.learnMoreLink} target="_blank" rel="noopener noreferrer">
-                <ProjectTitle>{project.name} <span>↗</span></ProjectTitle>
+                <ProjectTitle>{project.name} <IcoArrow>↗</IcoArrow></ProjectTitle>
               </TitleLinkLearnMore>
                 <ProjectLinkContainer>
                   <ProjectLink href={project.github}>

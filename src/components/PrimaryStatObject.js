@@ -24,13 +24,13 @@ ${props => props.large ? 'grid-column: 1 / -1' : null};
   ${props => props.statsActiveProjects ? 'grid-column: auto;' : null};
 }
 `
-const StatsNumber = styled.h4`
+const StatsNumber = styled.h1`
 ${props => props.colorOrange ? 'color: var(--highlight-color--makerorange);' : 'color: var(--highlight-color--makerteal);'};
 /* If the "Data Last Compiled" stat object, invoked in PrimaryStats.js (displayed bottom right of screen), reduce font-size to 2rem; */
 ${props => props.statsAttribution ? 'font-size: 2rem;' : ''};
 `
 
-const StatsTitle = styled.h5`
+const StatsTitle = styled.h2`
 color: var(--body-color);
 max-width: 200px;
 `

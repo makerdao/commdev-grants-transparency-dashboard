@@ -24,7 +24,7 @@ const LogoMaker = styled.img`
   align-self: center;
 `
 
-const IntroHeader = styled.h4`
+const IntroHeader = styled.h1`
   grid-column: 1 / -1;
   grid-row: 2;
   color: var(--headline-color);
@@ -38,7 +38,7 @@ const IntroHeaderHighlight = styled.span`
 color: var(--highlight-color--makerteal);
 `
 
-const IntroContent = styled.h5`
+const IntroContent = styled.h2`
   grid-column: 1 / -1;
   grid-row: 3;
   color: var(--body-color);

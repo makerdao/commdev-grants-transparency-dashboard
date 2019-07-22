@@ -35,12 +35,12 @@ height: 48px;
 border-radius: 100px;
 `
 
-const ProjectStatusNumber = styled.h6`
+const ProjectStatusNumber = styled.h3`
 color: var(--body-color);
 margin-bottom: 1rem;
 `
 
-const ProjectStatusLabel = styled.h6`
+const ProjectStatusLabel = styled.h3`
 color: var(--body-color);
 `
 
