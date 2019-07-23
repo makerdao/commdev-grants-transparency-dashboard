@@ -96,7 +96,7 @@ const FooterCardListHeader = styled.li`
 padding: 1.5rem 1rem 1rem 3rem;
 border-top-left-radius: 8px;
 border-top-right-radius: 8px;
-background: linear-gradient(hsla(168,50%,90%,1),hsla(168,50%,86%,1));
+background: ${props => props.columnLeft ? null : 'linear-gradient(hsla(168,50%,90%,1),hsla(168,50%,86%,1))'};
 `
 
 const FooterCardListItem = styled.li`
@@ -172,33 +172,33 @@ export default () => (
     <FooterColumn columnLeft>
       <FooterCard>
       <FooterCardListContainer noBackground>
-        <FooterCardListItem noBackground>
+        <FooterCardListHeader columnLeft>
           <FooterCardTitle columnLeft>
             How can I get a grant?
           </FooterCardTitle>
           <FooterCardDesc>
             Get up to speed on the Maker project & Dai stablecoin:
           </FooterCardDesc>
-        </FooterCardListItem>
-        <FooterLink href="https://community-development.makerdao.com/grants" target="_blank">
+        </FooterCardListHeader>
+        <FooterLink href="https://community-development.makerdao.com/grants" target="_blank" rel="noopener noreferrer">
           <FooterCardListItemLeft noBackground>
             <Label labelContent="Questions about the grants program?"></Label>
             Visit the Maker Grants Program FAQ
           </FooterCardListItemLeft>
         </FooterLink>
-        <FooterLink href="https://github.com/makerdao/awesome-makerdao" target="_blank">
+        <FooterLink href="https://github.com/makerdao/awesome-makerdao" target="_blank" rel="noopener noreferrer">
           <FooterCardListItemLeft noBackground>
             <Label labelContent="New to Maker?"></Label>
             View a list of educational resources.
           </FooterCardListItemLeft>
         </FooterLink>
-        <FooterLink href="https://chat.makerdao.com" target="_blank">
+        <FooterLink href="https://chat.makerdao.com" target="_blank" rel="noopener noreferrer">
           <FooterCardListItemLeft noBackground>
             <Label labelContent="Meet the community"></Label>
             Join the official MakerDAO chat.
           </FooterCardListItemLeft>
         </FooterLink>
-        <FooterLink href="https://github.com/makerdao/awesome-makerdao#use-your-dai" target="_blank">
+        <FooterLink href="https://github.com/makerdao/awesome-makerdao#use-your-dai" target="_blank" rel="noopener noreferrer">
           <FooterCardListItemLeft noBackground>
             <Label labelContent="Looking for inspiration?"></Label>
             Check out these community projects
