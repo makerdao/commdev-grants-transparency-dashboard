@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import PrimaryStatObject from "../components/PrimaryStatObject.js"
-import ProjectStatus from "../components/ProjectStatus.js"
-import ProjectCountries from "../components/ProjectCountries.js"
+import PrimaryStatProjectStatus from "../components/PrimaryStatProjectStatus.js"
+import PrimaryStatProjectCountries from "../components/PrimaryStatProjectCountries.js"
 import ChartDoughnut from "../components/ChartDoughnut.js"
 import {device} from "../mediaqueries/device.js"
 import {data} from "../utils.js"
@@ -84,11 +84,11 @@ export default () => (
     </StatsRow>
     <StatsRow singlecolumn>
       <PrimaryStatObject statsActiveProjects={true} number={data.currentlyActive} large={false} description="Active Projects" />
-      <ProjectStatus />
+      <PrimaryStatProjectStatus />
     </StatsRow>
     <StatsRow singlecolumn justifyContent="space-between">
       <PrimaryStatObject statsCountriesRepresented={true} number={data.nCountries} description="Countries Represented" />
-      <ProjectCountries />
+      <PrimaryStatProjectCountries />
     </StatsRow>
     <StatsRow justifyContent="center">
       <PrimaryStatObject number={data.milestones.total} description="Total Milestones Completed" />
