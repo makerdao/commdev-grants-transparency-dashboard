@@ -71,15 +71,13 @@ justify-content: space-between;
 const ProjectRow = styled.div`
 display: flex;
 flex-direction: row;
-width: 100%;
-max-width: 400px;
-justify-items: space-between;
+justify-content: space-between;
 align-items: center;
 flex-wrap: wrap;
 padding: 1rem 0rem 0.5rem 0rem;
 
 @media ${device.mobileL} {
-  padding: 1rem 0rem 2rem 0rem;
+  padding: 1rem 0rem 1rem 0rem;
 }
 `
 
@@ -104,7 +102,7 @@ span {
 
 const ProjectLabel = styled.span`
 font-size: 1rem;
-margin:0;
+margin:0 1rem;
 color: var(--body-color);
 text-transform: uppercase;
 text-align: left;
@@ -115,7 +113,7 @@ text-align: left;
 }
 
 @media ${device.mobileL} {
-  margin: 0.5rem 0rem;
+  margin: 0.5rem;
 }
 `
 
