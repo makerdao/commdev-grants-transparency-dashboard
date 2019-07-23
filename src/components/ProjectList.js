@@ -116,7 +116,7 @@ transform: translateY(10%);
 `
 
 //categoryPieData(type)}
-export class ProjectCategories extends Component {
+export class ProjectList extends Component {
   constructor (props) {
     super(props)
     this.cardsPerPage = 4

@@ -1,7 +1,7 @@
 import React from "react"
-import Header from "../components/Header"
-import PrimaryStats from "../components/PrimaryStats"
-import {ProjectCategories} from "../components/ProjectCategories"
+import Header from "../components/Header.js"
+import PrimaryStats from "../components/PrimaryStats.js"
+import {ProjectList} from "../components/ProjectList.js"
 import Footer from "../components/Footer"
 
 
@@ -9,7 +9,7 @@ export default () => (
   <React.Fragment>
       <Header />
       <PrimaryStats />
-      <ProjectCategories />
+      <ProjectList />
       <Footer />
   </React.Fragment>
 )
