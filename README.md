@@ -1,31 +1,31 @@
 
-## MakerDao Community Fund Allocation Dashboard
+## MakerDAO Core Community Initiative Transparency Dashboard
 
-to display how funds are being allocated to projects.
+The dashboard displays how the funds in the CCDI are being distributed.
 
-developped from the [Gatbsy-hello world starter kit](https://github.com/gatsbyjs/gatsby-starter-hello-world)
+Developed from the [Gatbsy-hello world starter kit](https://github.com/gatsbyjs/gatsby-starter-hello-world)
 
 ### Develop
-install dependencies:
+Install dependencies:
 
-> npm i 
+> npm i
 
-fire up site:
+Fire up site:
 > $ gatbsy develop
 
-and navigate to http://localhost:8000/ to visit your site
+And navigate to http://localhost:8000/ to visit your site
 
 ### Deploy
 
-TODO
+TBD
 
 ### Feeding data into the site
 
 Public Data (*name*, *type*, *status*,...) for **accepted projects** is entered
-into ```/static/data/acceptedProjectsData.json```. 
+into ```/static/data/acceptedProjectsData.json```.
 
 The format for that file is specified in a JSON-SCHEMA in
-```/static/data/dataformat.js``` and compliance is checked in the integration (**currenlty broken**)
+```/static/data/dataformat.js``` and compliance is checked in the integration
 pipeline and can be tested manually by running:
 
 > npm run test
@@ -33,5 +33,3 @@ pipeline and can be tested manually by running:
 General information about awarded money (average dispersed, total awarded, ...),
 completed milestones (total and last30days) and the total number of submitted
 projects is entered into ```/static/data/publicData.json```
-
-
