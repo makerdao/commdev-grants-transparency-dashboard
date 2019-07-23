@@ -71,6 +71,10 @@ justify-content: space-between;
 const ProjectRow = styled.div`
 display: flex;
 flex-direction: row;
+width: 100%;
+max-width: 400px;
+justify-items: space-between;
+align-items: center;
 flex-wrap: wrap;
 padding: 1rem 0rem 0.5rem 0rem;
 
@@ -104,11 +108,22 @@ margin:0;
 color: var(--body-color);
 text-transform: uppercase;
 text-align: left;
-margin-left: 1rem;
+
 
 :nth-child(1) {
   margin-left: 0rem;
 }
+
+@media ${device.mobileL} {
+  margin: 0.5rem 0rem;
+}
+`
+
+const ProjectLabelAudited = styled(ProjectLabel)`
+padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+background: linear-gradient(hsla(168,50%,90%,1),hsla(168,50%,86%,1));
+color: var(--highlight-color--makerteal);
+border-radius: 4px;
 `
 
 const ProjectBottomContainer = styled.div`
@@ -191,15 +206,25 @@ export default (props) => {
                 <ProjectTitle>{project.name} <IcoArrow>↗</IcoArrow></ProjectTitle>
               </TitleLinkLearnMore>
                 <ProjectLinkContainer>
+                {
+                  project.github ?
                   <ProjectLink href={project.github}>
                   <FaGithub className={projectRowStyles.ico} />
                   </ProjectLink>
+                  : null
+                }
+                {project.medium ?
                   <ProjectLink href={project.medium}>
                   <FaMedium className={projectRowStyles.ico} />
                   </ProjectLink>
+                  : null
+                }
+                {project.twitter ?
                   <ProjectLink href={project.twitter}>
                   <FaTwitter className={projectRowStyles.ico} />
                   </ProjectLink>
+                  : null
+                }
                 </ProjectLinkContainer>
             </ProjectTopContainer>
             <ProjectDescription>{project.description}</ProjectDescription>
@@ -207,6 +232,9 @@ export default (props) => {
             <ProjectRow>
               <ProjectLabel>{project.status}</ProjectLabel>
               <ProjectLabel>{project.location}</ProjectLabel>
+              {
+                project.audited ? <ProjectLabelAudited>Audited</ProjectLabelAudited> : null
+              }
             </ProjectRow>
             </ProjectBottomContainer>
           </ProjectCard>
