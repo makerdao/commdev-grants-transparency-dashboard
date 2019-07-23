@@ -9,7 +9,8 @@
     "status": "Prototype",
     "type": "Hold Dai",
     "location": "",
-    "region": "South America"
+    "region": "South America",
+    "audited": false
   },
   {
     "name": "mkr.tools",
@@ -21,7 +22,8 @@
     "status": "Beta",
     "type": "Watch Dai",
     "location": "",
-    "region": "North America"
+    "region": "North America",
+    "audited": false
   },
   {
     "name": "Giveth",
@@ -33,7 +35,8 @@
     "status": "Inactive",
     "type": "Spend Dai",
     "location": "",
-    "region": "Europe"
+    "region": "Europe",
+    "audited": false
   },
   {
     "name": "CryptoPay",
@@ -45,7 +48,8 @@
     "status": "Beta",
     "type": "Spend Dai",
     "location": "India",
-    "region": "Asia"
+    "region": "Asia",
+    "audited": false
   },
   {
     "name": "StablePay",
@@ -57,7 +61,8 @@
     "status": "Beta",
     "type": "Spend Dai",
     "location": "",
-    "region": "South America"
+    "region": "South America",
+    "audited": false
   },
   {
     "name": "Burner Wallet",
@@ -69,7 +74,8 @@
     "status": "Prototype",
     "type": "Hold Dai",
     "location": "",
-    "region": "North America"
+    "region": "North America",
+    "audited": false
   },
   {
     "name": "Ching! Store",
@@ -81,7 +87,8 @@
     "status": "Beta",
     "type": "Spend Dai",
     "location": "",
-    "region": "North America"
+    "region": "North America",
+    "audited": false
   },
   {
     "name": "CDP Console/Shadowlands",
@@ -93,7 +100,8 @@
     "status": "Beta",
     "type": "Use Dai",
     "location": "",
-    "region": "North America"
+    "region": "North America",
+    "audited": false
   },
   {
     "name": "Vending Machine",
@@ -105,7 +113,8 @@
     "status": "Beta",
     "type": "Spend Dai",
     "location": "",
-    "region": "North America"
+    "region": "North America",
+    "audited": false
   },
   {
     "name": "DexPOS",
@@ -117,7 +126,8 @@
     "status": "Beta",
     "type": "Spend Dai",
     "location": "",
-    "region": "Europe"
+    "region": "Europe",
+    "audited": false
   },
   {
     "name": "Share & Charge",
@@ -129,7 +139,8 @@
     "status": "Prototype",
     "type": "Use Dai",
     "location": "",
-    "region": "Europe"
+    "region": "Europe",
+    "audited": false
   },
   {
     "name": "Balance.io",
@@ -141,7 +152,8 @@
     "status": "Beta",
     "type": "Hold Dai",
     "location": "",
-    "region": "North America"
+    "region": "North America",
+    "audited": false
   },
   {
     "name": "cdp.tools",
@@ -153,7 +165,8 @@
     "status": "Beta",
     "type": "Watch Dai",
     "location": "",
-    "region": "Oceania"
+    "region": "Oceania",
+    "audited": false
   },
   {
     "name": "Mechanism Labs",
@@ -165,7 +178,8 @@
     "status": "Beta",
     "type": "Understand Dai",
     "location": "India",
-    "region": "Asia"
+    "region": "Asia",
+    "audited": false
   },
   {
     "name": "CDP Insurance",
@@ -177,7 +191,8 @@
     "status": "Beta",
     "type": "CDP",
     "location": "",
-    "region": "Europe"
+    "region": "Europe",
+    "audited": false
   },
   {
     "name": "Limepay",
@@ -189,7 +204,8 @@
     "status": "Beta",
     "type": "Spend Dai",
     "location": "",
-    "region": "North America"
+    "region": "North America",
+    "audited": true
   },
   {
     "name": "Protea",
@@ -201,7 +217,8 @@
     "status": "Beta",
     "type": "Use Dai",
     "location": "",
-    "region": "Africa"
+    "region": "Africa",
+    "audited": false
   },
   {
     "name": "Dafnir",
@@ -213,7 +230,8 @@
     "status": "Beta",
     "type": "Send Dai",
     "location": "",
-    "region": "Europe"
+    "region": "Europe",
+    "audited": false
   },
   {
     "name": "Ching! Service",
@@ -225,7 +243,8 @@
     "status": "Beta",
     "type": "Spend Dai",
     "location": "",
-    "region": "North America"
+    "region": "North America",
+    "audited": false
   },
   {
     "name": "PoolTogether",
@@ -237,7 +256,8 @@
     "status": "Beta",
     "type": "Enjoy Dai",
     "location": "",
-    "region": "North America"
+    "region": "North America",
+    "audited": true
   },
   {
     "name": "SportCrypt",
@@ -249,7 +269,8 @@
     "status": "Beta",
     "type": "Enjoy Dai",
     "location": "",
-    "region": "North America"
+    "region": "North America",
+    "audited": false
   },
   {
     "name": "Paper Wallet Generator",
@@ -261,7 +282,8 @@
     "status": "Beta",
     "type": "Enjoy Dai",
     "location": "",
-    "region": "North America"
+    "region": "North America",
+    "audited": false
   },
   {
     "name": "Grants Dashboard",
@@ -273,6 +295,7 @@
     "status": "Beta",
     "type": "Understand Dai",
     "location": "",
-    "region": "North America"
+    "region": "North America",
+    "audited": false
   }
 ]
