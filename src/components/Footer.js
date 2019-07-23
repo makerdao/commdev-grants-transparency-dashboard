@@ -92,10 +92,11 @@ border-bottom-right-radius: 2px;
 background: ${props => props.header ? 'linear-gradient(hsla(168,50%,90%,1),hsla(168,50%,86%,1)) !important' : null};
 `
 
-const FooterCardListHeader = styled.li`
+const FooterCardListHeader = styled.ul`
 padding: 1.5rem 1rem 1rem 3rem;
 border-top-left-radius: 8px;
 border-top-right-radius: 8px;
+list-style: none;
 background: ${props => props.columnLeft ? null : 'linear-gradient(hsla(168,50%,90%,1),hsla(168,50%,86%,1))'};
 `
 
