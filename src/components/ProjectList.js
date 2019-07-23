@@ -4,7 +4,7 @@ import styled from "styled-components"
 import {SectionWrapper} from "../components/SectionWrapper.js"
 import SectionTitle from "../components/SectionTitle.js"
 import {PrimaryButton} from "../components/PrimaryButton.js"
-import ProjectRows from "../components/ProjectRows.js"
+import ProjectListRows from "../components/ProjectListRows.js"
 import {device} from "../mediaqueries/device.js"
 import {data, pieData} from "../utils.js"
 import {pType} from '../../static/data/dataformat.js'
@@ -177,11 +177,11 @@ export class ProjectList extends Component {
           }
           </ProjectCategoryList>
           </ProjectCategoryListWrapper>
-        <ProjectRows
+        <ProjectListRows
           selectedProjects={this.state.projectsForSelectedCategory}
           displayType={this.state.displayType}
           projectsToShow={this.state.projectsToShow}>
-        </ProjectRows>
+        </ProjectListRows>
             {
               this.state.projectsToShow < this.state.projectsForSelectedCategory.length ?
                 (<ViewMoreButtonContainer>
