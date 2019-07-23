@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const Label = styled.h6`
 width: 100%;
-${props => props.colorMakerTeal ? 'color: var(--highlight-color--makerteal)' : 'color: var(--highlight-color--makerblue)'};
+${props => props.colorMakerBlue ? 'color: var(--highlight-color--makerblue)' : 'color: var(--body-color)'};
 justify-self: center;
 text-align: left;
 font-size: 1rem;
@@ -14,5 +14,5 @@ margin-top: 0rem;
 `
 
 export default (props) => (
-  <Label colorMakerTeal={props.colorMakerTeal}>{props.labelContent}</Label>
+  <Label colorMakerBlue={props.colorMakerBlue}>{props.labelContent}</Label>
 )

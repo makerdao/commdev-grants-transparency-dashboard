@@ -183,25 +183,25 @@ export default () => (
         </FooterCardListHeader>
         <FooterLink href="https://community-development.makerdao.com/grants" target="_blank" rel="noopener noreferrer">
           <FooterCardListItemLeft noBackground>
-            <Label labelContent="Questions about the grants program?"></Label>
+            <Label colorMakerBlue="true" labelContent="Questions about the grants program?"></Label>
             Visit the Maker Grants Program FAQ
           </FooterCardListItemLeft>
         </FooterLink>
         <FooterLink href="https://github.com/makerdao/awesome-makerdao" target="_blank" rel="noopener noreferrer">
           <FooterCardListItemLeft noBackground>
-            <Label labelContent="New to Maker?"></Label>
+            <Label colorMakerBlue="true" labelContent="New to Maker?"></Label>
             View a list of educational resources.
           </FooterCardListItemLeft>
         </FooterLink>
         <FooterLink href="https://chat.makerdao.com" target="_blank" rel="noopener noreferrer">
           <FooterCardListItemLeft noBackground>
-            <Label labelContent="Meet the community"></Label>
+            <Label colorMakerBlue="true" labelContent="Meet the community"></Label>
             Join the official MakerDAO chat.
           </FooterCardListItemLeft>
         </FooterLink>
         <FooterLink href="https://github.com/makerdao/awesome-makerdao#use-your-dai" target="_blank" rel="noopener noreferrer">
           <FooterCardListItemLeft noBackground>
-            <Label labelContent="Looking for inspiration?"></Label>
+            <Label colorMakerBlue="true" labelContent="Looking for inspiration?"></Label>
             Check out these community projects
           </FooterCardListItemLeft>
         </FooterLink>
@@ -230,7 +230,7 @@ export default () => (
         <FooterCard>
         <FooterCardListContainer>
           <FooterCardListItem noBackground>
-          <Label colorMakerTeal="true" labelContent="Due to the large number of submissions, please expect a response within 2-3 weeks."></Label>
+          <Label labelContent="Due to the large number of submissions, please expect a response within 2-3 weeks."></Label>
           </FooterCardListItem>
         </FooterCardListContainer>
         </FooterCard>
