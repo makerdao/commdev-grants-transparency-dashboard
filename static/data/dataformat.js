@@ -39,7 +39,8 @@ const Project = {
     "location": { "type": "string" },
     "region": {"type": "string", "enum": [...Object.values(region)]},
     "type": { "type": "string", "enum": [...Object.values(pType)]},
-    "status": { "type": "string", "enum": [...Object.values(pStatus)]}
+    "status": { "type": "string", "enum": [...Object.values(pStatus)]},
+    "audited": { "type": "boolean"}
   },
   "required": ["name", "description", "learnMoreLink", "location", "region", "type", "status"]
 };
