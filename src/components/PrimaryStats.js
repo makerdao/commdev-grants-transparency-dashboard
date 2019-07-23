@@ -93,7 +93,7 @@ export default () => (
     <StatsRow justifyContent="center">
       <PrimaryStatObject number={data.milestones.total} description="Total Milestones Completed" />
       <PrimaryStatObject number={data.milestones.last30days} description="Recent Milestones Completed" />
-      <PrimaryStatObject statsAttribution={true} number="June 2019" description="Data Last Compiled" />
+      <PrimaryStatObject statsAttribution={true} number="1" description="Months Since Last Update" />
     </StatsRow>
   </StatsWrapper>
   </React.Fragment>
