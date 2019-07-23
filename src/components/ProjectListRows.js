@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import projectRowStyles from "./projectrows.module.css"
+import projectListRowStyles from "./projectlistrows.module.css"
 import {device} from "../mediaqueries/device.js"
 import { FaGithub } from 'react-icons/fa';
 import { FaMedium } from 'react-icons/fa';
@@ -207,19 +207,19 @@ export default (props) => {
                 {
                   project.github ?
                   <ProjectLink href={project.github}>
-                  <FaGithub className={projectRowStyles.ico} />
+                  <FaGithub className={projectListRowStyles.ico} />
                   </ProjectLink>
                   : null
                 }
                 {project.medium ?
                   <ProjectLink href={project.medium}>
-                  <FaMedium className={projectRowStyles.ico} />
+                  <FaMedium className={projectListRowStyles.ico} />
                   </ProjectLink>
                   : null
                 }
                 {project.twitter ?
                   <ProjectLink href={project.twitter}>
-                  <FaTwitter className={projectRowStyles.ico} />
+                  <FaTwitter className={projectListRowStyles.ico} />
                   </ProjectLink>
                   : null
                 }
