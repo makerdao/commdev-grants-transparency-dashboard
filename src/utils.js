@@ -18,6 +18,7 @@ const getNofAcceptedProjects = () => {
 const getNofCountries = () => {
   let countries = getAcceptedProjects().map(p => p.location)
   let distinctCountries = new Set(countries)
+  distinctCountries.delete("")
   return distinctCountries.size
 }
 // counts the number of projects which have a given value in a certain field
@@ -62,6 +63,11 @@ const getCountriesOfRegion = (region) => {
 }
 for (let reg of Object.values(region)) {
   countriesByRegion[reg] = getCountriesOfRegion(reg)
+  // if there is an empty location-string remove that from the list
+  let emptyStringIndex = countriesByRegion[reg].indexOf("")
+  if (emptyStringIndex > -1) {
+    countriesByRegion[reg].splice(emptyStringIndex,1)
+  }
 }
 // console.log('countriesByRegion ', countriesByRegion )
 
