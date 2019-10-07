@@ -1,15 +1,14 @@
 {
-  "totalMoneyAwarded": 21500,
+  "totalMoneyAwarded": 681887,
   "whatIsTotalMoneyAwarded": "The total amount of Dai awarded to date to successful grant applicants",
-  "totalMoneyDispersed": 10000,
+  "totalMoneyDispersed": 512958,
   "whatIsTotalMoneyDispersed": "Of the total amount of Dai awarded, how much has actually been dispersed to date?",
-  "totalMilestones": 7,
+  "totalMilestones": 55,
   "whatIsTotalMilestones": "The total milestones across all funded projects to date",
-  "milestonesCompleted": 3,
+  "milestonesCompleted": 0,
   "whatAreMilestonesCompleted": "The total number of milestones completed by all the projects funded by the grants program",
-  "milestonesLast30Days": 2,
+  "milestonesLast30Days": 4,
   "whatIsMilestonesLast30Days": "The total number of milestones completed within the last 30 days?",
-  "applicationsSubmitted": 83,
+  "applicationsSubmitted": 204,
   "whatAreApplicationSubmitted": "How many total applications have been submitted to the Maker grants program?"
-
 }
