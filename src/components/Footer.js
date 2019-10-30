@@ -100,7 +100,7 @@ const FooterCardListContainer = styled.ul`
 `
 
 const FooterCardListHeader = styled.ul`
-  padding: 1.5rem 1rem 1rem 3rem;
+  padding: 1.5rem 1rem 1rem 2rem;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   list-style: none;
