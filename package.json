@@ -10,7 +10,8 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "node src/tests/validJson.js"
+    "test": "node src/tests/validJson.js",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "ajv": "^6.10.0",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "ajv": "^6.10.0",
+    "gh-pages": "^2.1.1",
     "prettier": "^1.18.2",
     "tailwind.macro": "^0.5.10",
     "tailwindcss": "^1.0.4"
