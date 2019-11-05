@@ -57,7 +57,7 @@ const FooterCard = styled.ul`
   display: flex;
   flex-direction: column;
   border-radius: ${props => (props.hero ? "8px" : null)};
-  box-shadow: ${props => (props.hero ? "1px 1px 4px #bbb" : "none")};
+  box-shadow: ${props => (props.hero ? "0px 0px 8px #bbb" : "none")};
   padding: 0;
   margin: 1rem;
   list-style: none;
@@ -100,10 +100,11 @@ const FooterCardListContainer = styled.ul`
 `
 
 const FooterCardListHeader = styled.ul`
-  padding: 1.5rem 1rem 1rem 2rem;
+  padding: 1.5rem 1rem 1rem 1.5rem;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   list-style: none;
+  border-bottom: 1px solid hsla(173, 74%, 35%, 0.25);
   background: ${props =>
     props.columnLeft
       ? null
@@ -115,29 +116,23 @@ const FooterCardListItem = styled.li`
   flex-wrap: wrap;
   align-items: ${props => (props.applyCardFooter ? "center" : null)};
   color: var(--body-color);
-  padding: 1.5rem 1.875rem 1.875rem 3rem;
-  border-radius: ${props => (props.applyCardFooter ? null : "4px")};
+  background: ${props =>
+    props.noBackground ? "none" : "hsla(255, 100%, 100%, 0.75)"};
+  padding: 1.5rem;
+  border-top: 1px solid #f5f5f5;
+  border-radius: ${props => (props.applyCardFooter ? null : "0px")};
   height: ${props => (props.applyCardFooter ? "100%" : null)};
 
   :first-child {
     margin-top: 0rem;
   }
+`
 
-  :nth-child(even) {
-    background: ${props =>
-      props.noBackground ? "none" : "hsla(168, 50%, 90%, 1)"};
-  }
-
-  :nth-child(odd) {
-    background: ${props =>
-      props.noBackground ? "none" : "hsla(168, 49%, 93%, 1)"};
-  }
-
-  :last-child {
-    margin-bottom: 0rem;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-  }
+const FooterCardListFooter = styled(FooterCardListItem)`
+  background: hsla(0, 0%, 98%, 1);
+  margin-bottom: 0rem;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 `
 
 const FooterCardListItemLeft = styled(FooterCardListItem)`
@@ -255,12 +250,12 @@ export default () => (
         <FooterCardListItem>
           → Approximately what will it cost?
         </FooterCardListItem>
-        <FooterCardListItem applyCardFooter>
+        <FooterCardListFooter applyCardFooter>
           ↗ Send it to{" "}
           <FooterLink inlineLink href="mailto:grants@makerdao.com">
             grants@makerdao.com
           </FooterLink>
-        </FooterCardListItem>
+        </FooterCardListFooter>
       </FooterCard>
       <FooterCard>
         <FooterCardListContainer>
