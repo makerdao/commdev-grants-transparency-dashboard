@@ -1,17 +1,17 @@
 @font-face {
-  font-family: 'GT America';
+  font-family: "GT America";
   font-weight: 400;
-  src: url('/static/GT-America-Standard-Regular.woff2') format('woff2'),
-       url('/static/GT-America-Standard-Regular.ttf')  format('truetype'),
-       url('/static/GT-America-Standard-Regular.otf')  format('opentype'),
+  src: url("/static/GT-America-Standard-Regular.woff2") format("woff2"),
+    url("/static/GT-America-Standard-Regular.ttf") format("truetype"),
+    url("/static/GT-America-Standard-Regular.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'GT America';
+  font-family: "GT America";
   font-weight: 700;
-  src: url('/static/GT-America-Standard-Bold.woff2') format('woff2'),
-       url('/static/GT-America-Standard-Bold.ttf')  format('truetype'),
-       url('/static/GT-America-Standard-Bold.otf')  format('opentype'),
+  src: url("/static/GT-America-Standard-Bold.woff2") format("woff2"),
+    url("/static/GT-America-Standard-Bold.ttf") format("truetype"),
+    url("/static/GT-America-Standard-Bold.otf") format("opentype");
 }
 
 /* Color Variables */
@@ -22,21 +22,29 @@
   --highlight-color--makerteal: #179b8c;
   --highlight-color--makerorange: #f5b13d;
   --highlight-color--makerblue: #08529b;
+  --background-gradient--maker: linear-gradient(
+    180deg,
+    rgba(182, 237, 231, 0.38) 0%,
+    rgba(253, 193, 52, 0.15) 100%
+  );
 }
 
-  * {
-    font-family: system-ui, 'Helvetica Neue', sans-serif;
-  }
+* {
+  font-family: system-ui, "Helvetica Neue", sans-serif;
+}
 
 body {
   width: 100%;
   margin: 0px;
-  background: linear-gradient(180deg, rgba(182, 237, 231, 0.38) 0%, rgba(253, 193, 52, 0.15) 100%);
+  background: var(--background-gradient--maker);
 }
 
-
-
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -53,17 +61,17 @@ h2 {
 }
 
 h3 {
-  font-size: 1.25rem
+  font-size: 1.25rem;
 }
 
 p {
   font-size: 1.25rem;
-  margin:0px;
+  margin: 0px;
   line-height: 140%;
 }
 
 li {
   font-size: 1.25rem;
-  margin:0px;
+  margin: 0px;
   line-height: 140%;
 }
