@@ -104,7 +104,8 @@ const FooterCardListHeader = styled.ul`
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   list-style: none;
-  border-bottom: 1px solid hsla(173, 74%, 35%, 0.25);
+  border-bottom: ${props =>
+    props.columnLeft ? null : "1px solid hsla(173, 74%, 35%, 0.25)"};
   background: ${props =>
     props.columnLeft
       ? null
