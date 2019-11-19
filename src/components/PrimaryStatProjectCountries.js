@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { RowOverflow } from "../components/RowOverflow.js"
-import { Label } from "../components/Label.js"
 import { region } from "../../static/data/dataformat.js"
 import { data } from "../utils.js"
 import { device } from "../mediaqueries/device.js"
@@ -44,24 +43,6 @@ const CountryListObject = styled.li`
   }
 `
 
-const CountryList = styled.ul`
-  display: flex;
-  width: 100%;
-  font-size: 1.25rem;
-  list-style: none;
-  padding-left: 0px;
-  line-height: 160%;
-  padding: 0px;
-  flex-flow: wrap column;
-  max-height: 160px;
-  text-align: left;
-  justify-items: center;
-
-  @media ${device.mobileL} {
-    flex-direction: row;
-  }
-`
-
 const CountryListParent = styled.ul`
   padding: 0;
   list-style: none;
@@ -71,12 +52,6 @@ const CountryListParent = styled.ul`
   align-items: center;
   /* margin: 1rem 0rem; */
   justify-content: center;
-`
-
-const CountryListItem = styled.li`
-  justify-content: left;
-  color: var(--body-color);
-  margin: 0.25rem;
 `
 
 const CountryListNumber = styled.h1`
