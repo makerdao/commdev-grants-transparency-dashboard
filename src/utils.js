@@ -20,10 +20,16 @@ const getNofCountries = () => {
   distinctCountries.delete("")
   return distinctCountries.size
 }
+
 // counts the number of projects which have a given value in a certain field
 const getNofProjectField = (field, value) => {
   return getAcceptedProjects().filter(p => p[field] === value).length
 }
+
+const nOfProjectsByRegion = Object.values(region).map(reg => {
+  return { [reg]: getNofProjectField("region", reg) }
+})
+
 // all projects that have been accepted and are not discontinued
 const getNofActiveProjects = () => {
   return getAcceptedProjects().filter(p => p.status !== "Inactive").length
@@ -89,6 +95,7 @@ export const data = {
   appsSubmitted: getAppsSubmitted(),
   appsAccepted: getNofAcceptedProjects(),
   nCountries: getNofCountries(),
+  nProjectsByRegion: nOfProjectsByRegion.reduce(mergeObjects),
   NofProjectType: typeDistributionList.reduce(mergeObjects),
   NofProjectStatus: statusDistributionList.reduce(mergeObjects),
   milestones: {
@@ -100,7 +107,8 @@ export const data = {
   countriesByRegion,
 }
 
-console.log("processed data", data)
+// activate this to debug data flows
+// console.log("processed data", data)
 
 export const pieData = (field, value) => {
   let nOfValue = getNofProjectField(field, value)
