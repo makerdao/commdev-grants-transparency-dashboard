@@ -36,6 +36,8 @@ const ProjectBackground = styled.div`
   right: 0;
   margin: auto;
   max-width: 1280px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   z-index: -9;
 `
 
