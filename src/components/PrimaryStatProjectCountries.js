@@ -34,12 +34,13 @@ const CountryListObject = styled.li`
   border-radius: 4px;
   background: linear-gradient(hsla(39, 70%, 91%, 1), hsla(39, 70%, 86%, 1));
 
-  @media ${device.tablet} {
+  @media ${device.mobileL} {
     background: linear-gradient(
       90deg,
       hsla(39, 70%, 91%, 1),
       hsla(39, 70%, 86%, 1)
     );
+    margin: 0;
   }
 `
 
@@ -61,6 +62,17 @@ const CountryList = styled.ul`
   }
 `
 
+const CountryListParent = styled.ul`
+  padding: 0;
+  list-style: none;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin: 1rem 0rem; */
+  justify-content: center;
+`
+
 const CountryListItem = styled.li`
   justify-content: left;
   color: var(--body-color);
@@ -77,6 +89,7 @@ const CountryListName = styled.h3`
 
 const CountryImg = styled.img`
   width: 160px;
+  opacity: 0.8;
 `
 
 export default () => (
@@ -91,10 +104,10 @@ export default () => (
       .map(reg => (
         <CountryListObject key={reg}>
           <CountryImg src={continentImages[reg]} alt={reg} />
-          <div>
+          <CountryListParent>
             <CountryListNumber>{data.nProjectsByRegion[reg]}</CountryListNumber>
             <CountryListName>{reg}</CountryListName>
-          </div>
+          </CountryListParent>
         </CountryListObject>
       ))}
   </RowOverflow>
