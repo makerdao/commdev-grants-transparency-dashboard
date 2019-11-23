@@ -40,6 +40,8 @@ const ProjectCard = styled.div`
     max-width: 280px;
     border-radius: 4px;
     padding-bottom: 0;
+    border: 1px solid hsla(240, 10%, 80%, 1);
+    box-shadow: 0px 0px 4px hsla(0, 0%, 50%, 0.25);
   }
 
   :first-child {
@@ -80,6 +82,7 @@ const ProjectTitle = styled.h2`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  max-width: 180px;
   transition: 0.15s ease-in-out;
 
   :hover {
