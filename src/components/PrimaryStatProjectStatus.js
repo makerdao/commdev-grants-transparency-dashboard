@@ -21,6 +21,16 @@ const ProjectStatusContainer = styled.div`
   background: linear-gradient(hsla(168, 50%, 90%, 1), hsla(168, 50%, 86%, 1));
   min-width: 160px;
 
+  &:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
   @media ${device.mobileL} {
     /* Changes the orientation (to 90degrees) of the background gradient to make it blend once this element changes from flex-direction: row to flex-direction: column */
     /* July 19 - Disabled if we go with a horizontal scroll & overflow on mobile. If we want to display it vertically, reenable this. */
@@ -29,6 +39,16 @@ const ProjectStatusContainer = styled.div`
       hsla(168, 50%, 90%, 1),
       hsla(168, 50%, 86%, 1)
     );
+
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
   }
 `
 
