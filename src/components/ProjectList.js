@@ -120,7 +120,7 @@ const ViewMoreButton = styled(PrimaryButton)`
 export class ProjectList extends Component {
   constructor(props) {
     super(props)
-    this.cardsPerPage = 4
+    this.cardsPerPage = 10
     this.state = {
       displayType: "All",
       projectsToShow: this.cardsPerPage,
