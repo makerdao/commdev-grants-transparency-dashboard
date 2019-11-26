@@ -82,7 +82,6 @@ const ProjectTitle = styled.h2`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  max-width: 480px;
   transition: 0.15s ease-in-out;
 
   :hover {
@@ -91,6 +90,10 @@ const ProjectTitle = styled.h2`
 
   span {
     color: var(--highlight-color--makerteal);
+  }
+
+  @media ${device.mobileL} {
+    max-width: 180px;
   }
 `
 
