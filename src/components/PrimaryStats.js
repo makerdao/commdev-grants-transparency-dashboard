@@ -9,7 +9,7 @@ import { data } from "../utils.js"
 
 const StatsWrapper = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1200px));
+  grid-template-columns: fit-content(1280px);
   grid-column-gap: 1rem;
   grid-row-gap: 2rem;
   justify-content: center;
