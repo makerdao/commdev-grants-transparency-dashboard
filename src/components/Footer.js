@@ -46,11 +46,6 @@ const FooterColumn = styled.div`
   @media ${device.laptop} {
     justify-content: center;
   }
-
-  @media ${device.tablet} {
-    justify-content: center;
-    grid-template-columns: 1fr;
-  }
 `
 
 const FooterCard = styled.ul`

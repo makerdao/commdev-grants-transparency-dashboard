@@ -9,9 +9,9 @@ import { data } from "../utils.js"
 
 const StatsWrapper = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1200px));
+  grid-template-columns: fit-content(1280px);
   grid-column-gap: 1rem;
-  grid-row-gap: 2rem;
+  grid-row-gap: 4rem;
   justify-content: center;
   padding: 6rem 0.5rem 6rem 0.5rem;
   text-align: center;
@@ -25,19 +25,16 @@ const StatsRow = styled.div`
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: ${props =>
-    props.singleColumn ? "1fr" : "repeat(auto-fit, minmax(240px, 300px))"};
-  grid-row-gap: 5rem;
-  justify-content: space-between;
+    props.singleColumn
+      ? "repeat(3, 1fr)"
+      : "repeat(auto-fit, minmax(240px, 1fr))"};
+  grid-row-gap: 4rem;
+  justify-content: center;
+  justify-items: center;
   text-align: center;
-
-  @media ${device.laptop} {
-    justify-content: center;
-    justify-items: center;
-  }
 
   @media ${device.tablet} {
     grid-row-gap: 2rem;
-    grid-template-columns: 1fr;
   }
 
   @media ${device.mobileL} {
