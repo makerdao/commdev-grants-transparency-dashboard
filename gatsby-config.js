@@ -6,5 +6,5 @@
 
 module.exports = {
   plugins: [`gatsby-plugin-styled-components`],
-  pathPrefix: "/commdev-grants-transparency-dashboard",
+  pathPrefix: "/",
 }
