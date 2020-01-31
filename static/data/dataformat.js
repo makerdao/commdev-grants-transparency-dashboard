@@ -13,8 +13,10 @@ const pType = {
   send: "Send Dai",
   watch: "Watch Dai",
   use: "Use Dai",
-  understand: "Learn Dai",
+  understand: "Understand Dai",
+  enjoy: "Enjoy Dai",
   cdpmgmt: "CDP",
+  none: ""
 }
 
 const region = {

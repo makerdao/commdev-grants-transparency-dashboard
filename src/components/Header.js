@@ -14,6 +14,7 @@ const IntroWrapper = styled.section`
   @media ${device.mobileL} {
     grid-template-rows: 80px 1fr;
     text-align: left;
+  }
 `
 
 const LogoMaker = styled.img`
@@ -32,6 +33,7 @@ const IntroHeader = styled.h1`
   @media ${device.mobileL} {
     font-size: 2.25rem;
     padding: 1rem 0rem 0rem 2rem;
+  }
 `
 
 const IntroHeaderHighlight = styled.span`
