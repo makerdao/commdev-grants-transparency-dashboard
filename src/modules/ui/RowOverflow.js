@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { device } from "../mediaqueries/device.js"
+import { device } from "@src/mediaqueries/device.js"
 
 const RowOverflow = styled.div`
   position: relative;

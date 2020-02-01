@@ -1,15 +1,14 @@
 import React from "react"
-import Header from "../components/Header.js"
-import PrimaryStats from "../components/PrimaryStats.js"
-import {ProjectList} from "../components/ProjectList.js"
-import Footer from "../components/Footer"
+
+import PrimaryStats from "@modules/charts/PrimaryStats.js"
+import {ProjectList} from "@modules/ui/ProjectList.js"
+
+import {Layout} from "@modules/ui/layouts";
 
 
 export default () => (
-  <React.Fragment>
-      <Header />
+  <Layout>
       <PrimaryStats />
       <ProjectList />
-      <Footer />
-  </React.Fragment>
+  </Layout>
 )

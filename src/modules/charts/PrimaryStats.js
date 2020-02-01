@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import PrimaryStatObject from "../components/PrimaryStatObject.js"
-import PrimaryStatProjectStatus from "../components/PrimaryStatProjectStatus.js"
-import PrimaryStatProjectCountries from "../components/PrimaryStatProjectCountries.js"
-import ChartDoughnut from "../components/ChartDoughnut.js"
-import { device } from "../mediaqueries/device.js"
-import { data } from "../utils.js"
+import PrimaryStatObject from "./PrimaryStatObject"
+import PrimaryStatProjectStatus from "./PrimaryStatProjectStatus"
+import PrimaryStatProjectCountries from "./PrimaryStatProjectCountries"
+import ChartDoughnut from "@modules/charts/ChartDoughnut"
+import { device } from "@src/mediaqueries/device.js"
+import { data } from "@src/utils.js"
 
 const StatsWrapper = styled.section`
   display: grid;

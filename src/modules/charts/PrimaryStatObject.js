@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { device } from "../mediaqueries/device.js"
+import { device } from "@src/mediaqueries/device.js"
 
 const StatsContainer = styled.div`
   display: flex;

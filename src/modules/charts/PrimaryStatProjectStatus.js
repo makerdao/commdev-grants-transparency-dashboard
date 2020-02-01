@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import { RowOverflow } from "../components/RowOverflow.js"
-import { device } from "../mediaqueries/device.js"
-import { data, pieData } from "../utils.js"
-import { pStatus } from "../../static/data/dataformat.js"
+import { RowOverflow } from "@modules/ui/RowOverflow.js"
+import { device } from "@src/mediaqueries/device.js"
+import { data, pieData } from "@src/utils.js"
+import { pStatus } from "@static/data/dataformat.js"
 import { Pie } from "react-chartjs-2"
 import Chart from "chart.js"
 Chart.defaults.global.legend.display = false

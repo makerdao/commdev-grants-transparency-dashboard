@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import {device} from "../mediaqueries/device.js"
-import {data} from "../utils.js"
+import {device} from "@src/mediaqueries/device.js"
+import {data} from "@src/utils.js"
 
 
 const IntroWrapper = styled.section`
