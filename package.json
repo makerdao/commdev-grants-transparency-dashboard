@@ -27,10 +27,12 @@
   },
   "devDependencies": {
     "ajv": "^6.10.0",
+    "babel-plugin-macros": "^2.8.0",
+    "babel-preset-gatsby": "^0.2.28",
     "gh-pages": "^2.1.1",
     "prettier": "^1.18.2",
-    "tailwind.macro": "^0.5.10",
-    "tailwindcss": "^1.0.4"
+    "tailwind.macro": "^1.0.0-alpha.10",
+    "tailwindcss": "^1.2.0-canary.5"
   },
   "repository": {
     "type": "git",
