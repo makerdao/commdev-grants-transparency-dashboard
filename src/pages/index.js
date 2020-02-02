@@ -1,17 +1,15 @@
 import React from "react"
 
-import PrimaryStats from "@modules/charts/PrimaryStats.js"
+import PrimaryStats from "@modules/layouts/PrimaryStats.js"
 import { ProjectList } from "@modules/ui/ProjectList.js"
 
-import { Layout } from "@modules/ui/layouts"
-import tw from 'tailwind.macro';
-export default () => {
-  console.log(tw`text-test-pink`);
+import { PageLayout } from "@modules/ui/layouts"
 
+export default () => {
   return (
-    <Layout>
-    <PrimaryStats />
-    <ProjectList />
-  </Layout>
+    <PageLayout>
+      <PrimaryStats />
+      <ProjectList />
+    </PageLayout>
   )
 }

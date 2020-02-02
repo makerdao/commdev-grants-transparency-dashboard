@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import {device} from "@src/mediaqueries/device.js"
-import {data} from "@src/utils.js"
-
+import { device } from "@src/mediaqueries/device.js"
+import { data } from "@src/utils.js"
 
 const IntroWrapper = styled.section`
   display: grid;
@@ -37,7 +36,7 @@ const IntroHeader = styled.h1`
 `
 
 const IntroHeaderHighlight = styled.span`
-color: var(--highlight-color--makerteal);
+  color: var(--highlight-color--makerteal);
 `
 
 const IntroContent = styled.h2`
@@ -54,9 +53,16 @@ const IntroContent = styled.h2`
 `
 
 export default () => (
-<IntroWrapper>
-  <LogoMaker src={'makerlogo.svg'} alt="Logo"></LogoMaker>
-  <IntroHeader>We've awarded <IntroHeaderHighlight>{data.totalMoneyAwarded} Dai</IntroHeaderHighlight> since February 2018.</IntroHeader>
-  <IntroContent>MakerDAO’s Core Community Development Initiative funds teams creating infrastructure and applications within the Maker ecosystem.</IntroContent>
-</IntroWrapper>
-);
+  <IntroWrapper>
+    <LogoMaker src={"makerlogo.svg"} alt="Logo"></LogoMaker>
+    <IntroHeader>
+      We've awarded{" "}
+      <IntroHeaderHighlight>{data.totalMoneyAwarded} Dai</IntroHeaderHighlight>{" "}
+      since February 2018.
+    </IntroHeader>
+    <IntroContent>
+      MakerDAO’s Core Community Development Initiative funds teams creating
+      infrastructure and applications within the Maker ecosystem.
+    </IntroContent>
+  </IntroWrapper>
+)
