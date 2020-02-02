@@ -5,8 +5,8 @@ import { Doughnut, Pie, defaults } from "react-chartjs-2"
 import { device } from "@src/mediaqueries/device.js"
 
 //ChartJS defaults
-defaults.doughnut.cutoutPercentage = 80;
-defaults.doughnut.hover.mode = 'off';
+defaults.doughnut.cutoutPercentage = 80
+defaults.doughnut.hover.mode = "off"
 defaults.global.legend.display = false
 defaults.global.tooltips.enabled = false
 defaults.global.elements.arc.borderColor = "#1AAB9B"
@@ -53,7 +53,7 @@ export const StatNumber = styled.h1`
   ${props => (props.statsAttribution ? "font-size: 2rem;" : "")};
 `
 
-//Stat Title 
+//Stat Title
 export const StatTitle = styled.h2`
   color: var(--body-color);
   max-width: 200px;
@@ -98,7 +98,7 @@ const StatusContainer = styled.div`
       border-bottom-right-radius: 4px;
     }
   }
-`;
+`
 
 //Status Number
 export const StatusNumber = styled.h3`
@@ -111,36 +111,45 @@ export const StatusLabel = styled.h3`
   color: var(--body-color);
 `
 
-//NOTE(Rejon): I'm doing this backwards compared to the Doughtnut implementation 
-//             since we can import Pie directly from Chartjs. But I need to ensure 
+//NOTE(Rejon): I'm doing this backwards compared to the Doughtnut implementation
+//             since we can import Pie directly from Chartjs. But I need to ensure
 //             the "data" prop gets passed to the Pie component.
 //NOTE(Rejon): I have to put the div here or the styled class won't get applied. See this issue for why: https://github.com/jerairrest/react-chartjs-2/issues/287
-const PieChart = ({className, ...otherProps}) => (
+const PieChart = ({ className, ...otherProps }) => (
   <div className={className}>
-    <Pie  {...otherProps} />
+    <Pie {...otherProps} />
   </div>
-);
+)
 
 //TODO(Rejon): Might not be the best place for this since it forces width and height without context.
-//             I'll leave it up to you for where this should go. 
+//             I'll leave it up to you for where this should go.
 export const StatusChart = styled(PieChart)`
   width: 48px;
   height: 48px;
   border-radius: 100px;
-`;
+`
 
-
-export const StatStatus = ({children, className, style, number, data, label, key, ...otherProps}) => (
+export const StatStatus = ({
+  children,
+  className,
+  style,
+  number,
+  data,
+  label,
+  key,
+  ...otherProps
+}) => (
   <StatusContainer key={key}>
-    {(children === null || children === undefined) ?
-        <>
-          {number && <StatusNumber>{number}</StatusNumber>}
-          {/* //NOTE(Rejon): All other props spill into StatusChart. */}
-          {data && <StatusChart data={data} {...otherProps} />} 
-          {label && <StatusLabel>{label}</StatusLabel>}
-        </>
-      :
-        children  //NOTE(Rejon): If you have children, you handle all the rendering
+    {children === null || children === undefined ? (
+      <>
+        {number && <StatusNumber>{number}</StatusNumber>}
+        {/* //NOTE(Rejon): All other props spill into StatusChart. */}
+        {data && <StatusChart data={data} {...otherProps} />}
+        {label && <StatusLabel>{label}</StatusLabel>}
+      </>
+    ) : (
+      children
+    ) //NOTE(Rejon): If you have children, you handle all the rendering
     }
   </StatusContainer>
 )

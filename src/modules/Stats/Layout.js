@@ -58,8 +58,7 @@ export const StatRowOverflow = styled.div`
     flex-direction: column;
     max-width: 300px;
   }
-`;
-
+`
 
 export const StatContainer = styled.div`
   display: flex;
@@ -70,4 +69,4 @@ export const StatContainer = styled.div`
   border-radius: 4px;
   /* Lets a Stat object take up an entire horizontal row by creating a single column */
   ${props => (props.fullWidth ? "grid-column: 1 / -1" : null)};
-`;
+`

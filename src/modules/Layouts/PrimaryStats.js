@@ -8,7 +8,6 @@ import PrimaryStatProjectStatus from "@modules/Layouts/PrimaryStatProjectStatus"
 import PrimaryStatProjectCountries from "@modules/Layouts/PrimaryStatProjectCountries"
 import Stat from "@modules/Stats"
 
-
 const StatWithActiveProject = styled(Stat)`
   background: linear-gradient(hsla(168, 50%, 90%, 1), hsla(168, 50%, 86%, 1));
 
@@ -16,32 +15,39 @@ const StatWithActiveProject = styled(Stat)`
   @media ${device.table} {
     grid-column: auto;
   }
-`;
+`
 
 const StatWithCountriesRepresented = styled(Stat)`
-  background: linear-gradient(hsla(39,70%,91%,1),hsla(39,70%,86%,1));
+  background: linear-gradient(hsla(39, 70%, 91%, 1), hsla(39, 70%, 86%, 1));
 
   /* Places the "Countries Represented" stat onto its own row to better establish its relationship / the hierarchy of information between it and the list of countries below it. */
   @media ${device.table} {
     grid-column: auto;
   }
-`;
+`
 
 const StatNumberLastCompiled = styled(Stat.Number)`
   /* If the "Data Last Compiled" stat object, invoked in PrimaryStats.js (displayed bottom right of screen), reduce font-size to 2rem; */
-  font-size: 2rem; 
-`;
+  font-size: 2rem;
+`
 
 export default () => (
   <>
     <Stat.Section>
       <Stat.Row>
-        <Stat number={data.totalMoneyAwarded} description="Dai Awarded"/>
-        <Stat number={data.totalMoneyDispersed} description="Dai Dispersed"/>
-        <Stat number={data.averageAwardedMoney} description="Average Dai Award"/>
+        <Stat number={data.totalMoneyAwarded} description="Dai Awarded" />
+        <Stat number={data.totalMoneyDispersed} description="Dai Dispersed" />
+        <Stat
+          number={data.averageAwardedMoney}
+          description="Average Dai Award"
+        />
       </Stat.Row>
       <Stat.Row>
-        <Stat colorOrange number={data.appsSubmitted} description="Grant Applications Submitted" />
+        <Stat
+          colorOrange
+          number={data.appsSubmitted}
+          description="Grant Applications Submitted"
+        />
         <Stat.DoughnutChart
           data={doughnutData}
           width={200}
@@ -51,7 +57,10 @@ export default () => (
             responsive: true,
           }}
         />
-        <Stat number={data.appsAccepted} description="Grant Applications Accepted" />
+        <Stat
+          number={data.appsAccepted}
+          description="Grant Applications Accepted"
+        />
       </Stat.Row>
       <Stat.Row singleColumn>
         {/* Commented out the gradient background for the "Active Projects" stat to improve information hierarchy. */}
@@ -63,8 +72,14 @@ export default () => (
         <PrimaryStatProjectCountries />
       </Stat.Row>
       <Stat.Row justifyContent="center">
-        <Stat number={data.milestones.total} description="Total Milestones Completed" />
-        <Stat number={data.milestones.last30days} description="Recent Milestones Completed" />
+        <Stat
+          number={data.milestones.total}
+          description="Total Milestones Completed"
+        />
+        <Stat
+          number={data.milestones.last30days}
+          description="Recent Milestones Completed"
+        />
         <Stat>
           <StatNumberLastCompiled>1</StatNumberLastCompiled>
           <Stat.Title>Months Since Last Update</Stat.Title>
