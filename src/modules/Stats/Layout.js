@@ -40,6 +40,27 @@ export const StatRow = styled.div`
   }
 `
 
+export const StatRowOverflow = styled.div`
+  position: relative;
+  grid-column: ${props => props.gridColumn};
+  width: 100%;
+  max-width: ${props => props.maxWidth};
+  display: flex;
+  flex-direction: flex-row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: flex-start;
+  /* background-color: #f7f1db; */
+
+  @media ${device.mobileL} {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    flex-direction: column;
+    max-width: 300px;
+  }
+`;
+
+
 export const StatContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -49,4 +70,4 @@ export const StatContainer = styled.div`
   border-radius: 4px;
   /* Lets a Stat object take up an entire horizontal row by creating a single column */
   ${props => (props.fullWidth ? "grid-column: 1 / -1" : null)};
-`
+`;

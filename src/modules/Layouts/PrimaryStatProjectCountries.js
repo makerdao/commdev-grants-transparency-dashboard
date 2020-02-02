@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { RowOverflow } from "@modules/ui/RowOverflow.js"
 import { region } from "@static/data/dataformat.js"
 import { data } from "@src/utils.js"
 import { device } from "@src/mediaqueries/device.js"
@@ -10,6 +9,8 @@ import imgEurope from "@images/europe.svg"
 import imgNorthAmerica from "@images/northamerica.svg"
 import imgOceania from "@images/oceania.svg"
 import imgSouthAmerica from "@images/southamerica.svg"
+
+import Stat from "@modules/Stats"
 
 // Geographic Representation
 const continentImages = {
@@ -68,7 +69,7 @@ const CountryImg = styled.img`
 `
 
 export default () => (
-  <RowOverflow
+  <Stat.Row.Overflow
     gridColumn="1 / -1"
     justifyContent="space-between"
     backgroundColor="#f7f1db;"
@@ -85,5 +86,5 @@ export default () => (
           </CountryListParent>
         </CountryListObject>
       ))}
-  </RowOverflow>
+  </Stat.Row.Overflow>
 )

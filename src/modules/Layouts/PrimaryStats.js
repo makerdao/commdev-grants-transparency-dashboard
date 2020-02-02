@@ -1,12 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import PrimaryStatProjectStatus from "./PrimaryStatProjectStatus"
-import PrimaryStatProjectCountries from "./PrimaryStatProjectCountries"
 
 import { device } from "@src/mediaqueries/device.js"
 import { data, doughnutData } from "@src/utils.js"
 
+import PrimaryStatProjectStatus from "@modules/Layouts/PrimaryStatProjectStatus"
+import PrimaryStatProjectCountries from "@modules/Layouts/PrimaryStatProjectCountries"
 import Stat from "@modules/Stats"
+
 
 const StatWithActiveProject = styled(Stat)`
   background: linear-gradient(hsla(168, 50%, 90%, 1), hsla(168, 50%, 86%, 1));
@@ -27,12 +28,12 @@ const StatWithCountriesRepresented = styled(Stat)`
 `;
 
 const StatNumberLastCompiled = styled(Stat.Number)`
-/* If the "Data Last Compiled" stat object, invoked in PrimaryStats.js (displayed bottom right of screen), reduce font-size to 2rem; */
+  /* If the "Data Last Compiled" stat object, invoked in PrimaryStats.js (displayed bottom right of screen), reduce font-size to 2rem; */
   font-size: 2rem; 
-`
+`;
 
 export default () => (
-  <React.Fragment>
+  <>
     <Stat.Section>
       <Stat.Row>
         <Stat number={data.totalMoneyAwarded} description="Dai Awarded"/>
@@ -70,5 +71,5 @@ export default () => (
         </Stat>
       </Stat.Row>
     </Stat.Section>
-  </React.Fragment>
+  </>
 )
