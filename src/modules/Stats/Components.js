@@ -4,6 +4,15 @@ import styled from "styled-components"
 import { Doughnut, Pie, defaults } from "react-chartjs-2"
 import { device } from "@src/mediaqueries/device.js"
 
+import {CountryListElement, CountryDataContainer} from './Layout';
+import imgAfrica from "@images/africa.svg"
+import imgAsia from "@images/asia.svg"
+import imgEurope from "@images/europe.svg"
+import imgNorthAmerica from "@images/northamerica.svg"
+import imgOceania from "@images/oceania.svg"
+import imgSouthAmerica from "@images/southamerica.svg"
+import { region } from "@static/data/dataformat.js"
+
 //ChartJS defaults
 defaults.doughnut.cutoutPercentage = 80
 defaults.doughnut.hover.mode = "off"
@@ -136,10 +145,9 @@ export const StatStatus = ({
   number,
   data,
   label,
-  key,
   ...otherProps
 }) => (
-  <StatusContainer key={key}>
+  <StatusContainer>
     {children === null || children === undefined ? (
       <>
         {number && <StatusNumber>{number}</StatusNumber>}
@@ -152,4 +160,44 @@ export const StatStatus = ({
     ) //NOTE(Rejon): If you have children, you handle all the rendering
     }
   </StatusContainer>
+)
+
+export const CountryImg = styled.img`
+  width: 160px;
+  opacity: 0.8;
+`;
+
+export const CountryNumber = styled.h1`
+  color: var(--highlight-color--makerteal);
+`
+
+export const CountryLabel = styled.h3`
+  color: var(--body-color);
+`
+
+// Geographic Representation
+const continentImages = {
+  [region.asia]: imgAsia,
+  [region.europe]: imgEurope,
+  [region.northamerica]: imgNorthAmerica,
+  [region.southamerica]: imgSouthAmerica,
+  [region.oceania]: imgOceania,
+  [region.africa]: imgAfrica,
+}
+
+export const Country = ({country, alt, number, label, children}) => (
+  <CountryListElement>
+    {children === null || children === undefined ? (
+      <>
+        <CountryImg src={continentImages[country]} alt={alt || country} />
+        <CountryDataContainer>
+          {number && <CountryNumber>{number}</CountryNumber>}
+          {(country || label) && <CountryLabel>{label || country}</CountryLabel>}
+        </CountryDataContainer>
+      </>
+      )
+    :
+      children
+    }
+  </CountryListElement>
 )

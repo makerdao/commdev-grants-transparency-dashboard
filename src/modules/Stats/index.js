@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { StatSection, StatRow, StatRowOverflow, StatContainer } from "./Layout"
+import { StatSection, StatRow, StatRowOverflow, StatContainer, CountryListElement, CountryDataContainer } from "./Layout"
 import {
   DoughnutChart,
   StatNumber,
@@ -10,6 +10,10 @@ import {
   StatusChart,
   StatusLabel,
   StatusNumber,
+  CountryImg, 
+  CountryNumber, 
+  CountryLabel,
+  Country
 } from "./Components"
 
 const Stat = ({
@@ -52,5 +56,13 @@ Stat.Status.Number = StatusNumber
 
 //Doughnut Component(s)
 Stat.DoughnutChart = DoughnutChart
+
+//Country Components
+Stat.Country = Country; 
+Stat.Country.Img = CountryImg; 
+Stat.Country.Number = CountryNumber; 
+Stat.Country.Label = CountryLabel; 
+Stat.Country.li = CountryListElement; 
+Stat.Country.DataContainer = CountryDataContainer; 
 
 export default Stat
