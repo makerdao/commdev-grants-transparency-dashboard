@@ -3,9 +3,16 @@ import styled from "styled-components"
 
 import { StatSection, StatRow, StatRowOverflow, StatContainer } from "./Layout"
 
-import {DoughnutChart, StatNumber, StatTitle} from './Basic';
-import {StatStatus, StatusChart, StatusLabel, StatusNumber} from './Status';
-import {CountryImg, CountryNumber, CountryLabel, Country, CountryListElement, CountryDataContainer} from './Country'
+import { DoughnutChart, StatNumber, StatTitle } from "./Basic"
+import { StatStatus, StatusChart, StatusLabel, StatusNumber } from "./Status"
+import {
+  CountryImg,
+  CountryNumber,
+  CountryLabel,
+  Country,
+  CountryListElement,
+  CountryDataContainer,
+} from "./Country"
 
 const Stat = ({
   children,
@@ -49,11 +56,11 @@ Stat.Status.Number = StatusNumber
 Stat.DoughnutChart = DoughnutChart
 
 //Country Components
-Stat.Country = Country; 
-Stat.Country.Img = CountryImg; 
-Stat.Country.Number = CountryNumber; 
-Stat.Country.Label = CountryLabel; 
-Stat.Country.li = CountryListElement; 
-Stat.Country.DataContainer = CountryDataContainer; 
+Stat.Country = Country
+Stat.Country.Img = CountryImg
+Stat.Country.Number = CountryNumber
+Stat.Country.Label = CountryLabel
+Stat.Country.li = CountryListElement
+Stat.Country.DataContainer = CountryDataContainer
 
 export default Stat

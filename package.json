@@ -20,10 +20,12 @@
     "gatsby": "^2.19.10",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-postcss": "^2.1.20",
+    "gatsby-plugin-react-head": "^1.1.0",
     "gatsby-plugin-styled-components": "^3.0.7",
     "react": "^16.12.0",
     "react-chartjs-2": "^2.7.6",
     "react-dom": "^16.12.0",
+    "react-head": "^3.3.0",
     "react-icons": "^3.7.0",
     "styled-components": "^4.3.1"
   },

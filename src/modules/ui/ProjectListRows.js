@@ -181,9 +181,9 @@ const TitleLinkLearnMore = styled.a`
 `
 
 const IcoArrow = styled.span`
-display: inline-block;
-transition: 0.15s ease-in-out;
-color: var(--highlight-color--makerteal);
+  display: inline-block;
+  transition: 0.15s ease-in-out;
+  color: var(--highlight-color--makerteal);
 `
 
 export default props => {

@@ -60,7 +60,7 @@ export const DoughnutChart = ({
 )
 
 export default {
-  StatNumber, 
-  StatTitle, 
-  DoughnutChart
+  StatNumber,
+  StatTitle,
+  DoughnutChart,
 }

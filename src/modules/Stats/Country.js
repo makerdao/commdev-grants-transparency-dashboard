@@ -31,7 +31,7 @@ export const CountryListElement = styled.li`
     );
     margin: 0;
   }
-`;
+`
 
 export const CountryDataContainer = styled.div`
   padding: 0;
@@ -42,12 +42,12 @@ export const CountryDataContainer = styled.div`
   align-items: center;
   /* margin: 1rem 0rem; */
   justify-content: center;
-`;
+`
 
 export const CountryImg = styled.img`
   width: 160px;
   opacity: 0.8;
-`;
+`
 
 export const CountryNumber = styled.h1`
   color: var(--highlight-color--makerteal);
@@ -67,28 +67,29 @@ const continentImages = {
   [region.africa]: imgAfrica,
 }
 
-export const Country = ({country, alt, number, label, children}) => (
+export const Country = ({ country, alt, number, label, children }) => (
   <CountryListElement>
     {children === null || children === undefined ? (
       <>
         <CountryImg src={continentImages[country]} alt={alt || country} />
         <CountryDataContainer>
           {number && <CountryNumber>{number}</CountryNumber>}
-          {(country || label) && <CountryLabel>{label || country}</CountryLabel>}
+          {(country || label) && (
+            <CountryLabel>{label || country}</CountryLabel>
+          )}
         </CountryDataContainer>
       </>
-      )
-    :
+    ) : (
       children
-    }
+    )}
   </CountryListElement>
 )
 
 export default {
-    CountryImg, 
-    CountryNumber, 
-    CountryLabel, 
-    Country,
-    CountryListElement,
-    CountryDataContainer
+  CountryImg,
+  CountryNumber,
+  CountryLabel,
+  Country,
+  CountryListElement,
+  CountryDataContainer,
 }

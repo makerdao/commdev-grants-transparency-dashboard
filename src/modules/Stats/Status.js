@@ -101,8 +101,8 @@ export const StatStatus = ({
 )
 
 export default {
-    StatusNumber, 
-    StatusLabel,
-    StatusChart, 
-    StatStatus
+  StatusNumber,
+  StatusLabel,
+  StatusChart,
+  StatStatus,
 }

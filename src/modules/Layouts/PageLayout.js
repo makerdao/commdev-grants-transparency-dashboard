@@ -1,6 +1,6 @@
 import React from "react"
-import Header from "./Header"
-import Footer from "./Footer"
+import Header from "@modules/ui/Header"
+import Footer from "@modules/ui/Footer"
 
 //Default Layout
 export const PageLayout = ({ children, seo, hideHeader, hideFooter }) => {
@@ -12,5 +12,3 @@ export const PageLayout = ({ children, seo, hideHeader, hideFooter }) => {
     </>
   )
 }
-
-//Space for any kind of Layout can go here based on your needs.

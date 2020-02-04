@@ -70,5 +70,3 @@ export const StatContainer = styled.div`
   /* Lets a Stat object take up an entire horizontal row by creating a single column */
   ${props => (props.fullWidth ? "grid-column: 1 / -1" : null)};
 `
-
-
