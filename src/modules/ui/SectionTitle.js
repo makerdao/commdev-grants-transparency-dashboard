@@ -13,8 +13,6 @@ const SectionTitle = styled.h2`
   text-transform: uppercase;
 `
 
-export default props => (
-  <SectionTitle colorMakerTeal={props.colorMakerTeal}>
-    {props.title}
-  </SectionTitle>
+export default ({ children }) => (
+  <SectionTitle colorMakerTeal={props.colorMakerTeal}>{children}</SectionTitle>
 )
