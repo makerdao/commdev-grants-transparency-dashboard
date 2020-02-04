@@ -84,7 +84,7 @@ export const Category = ({
     </CategoryChart>
     <CategoryNumber>{number}</CategoryNumber>
     <CategoryButton
-      noClick={onClick}
+      onClick={onClick}
       active={selected}
     >{` ${label} `}</CategoryButton>
   </CategoryContainer>

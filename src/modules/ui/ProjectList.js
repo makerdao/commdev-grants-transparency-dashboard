@@ -69,7 +69,7 @@ export class ProjectList extends Component {
     categories = categories.concat(Object.values(pType))
 
     return (
-      <Project.Container large name="Projects">
+      <Project.Wrapper large name="Projects">
         <SectionTitle colorMakerTeal="true">
           Explore our supported projects
         </SectionTitle>
@@ -86,59 +86,24 @@ export class ProjectList extends Component {
                     ? data.appsAccepted
                     : data.typeDistribution[type]
                 }
-                onClick={() => setType(type)}
+                onClick={() => this.setType(type)}
+                options={{ maintainAspectRatio: false }}
               />
             ))}
           </Project.Category.List>
         </Project.Category.ListContainer>
-      </Project.Container>
+        <Project.List>
+          {this.state.projectsForSelectedCategory.map((project, index) => (
+            <Project
+              key={`${project.name}-${index}`}
+              hide={index > this.state.projectsToShow - 1}
+              {...project}
+            />
+          ))}
+        </Project.List>
+      </Project.Wrapper>
 
       // <React.Fragment>
-      //   <SectionWrapperProjects large name="Projects">
-      //     <ProjectBackground />
-      //     <SectionTitle
-      //       colorMakerTeal="true"
-      //       title="Explore our supported projects"
-      //     ></SectionTitle>
-      //     <ProjectCategoryListWrapper>
-      //       <ProjectCategoryList>
-      //         {categories.map(type => (
-      //           <ProjectCategoryContainer key={type.toString()}>
-      //             {type === this.state.displayType ? (
-      //               // in order for the animation to be seen upon selecting a filter, this object has to be drawn anew
-      //               <ProjectCategoryChart selected={true}>
-      //                 <Pie
-      //                   data={pieData("type", type)}
-      //                   options={{ maintainAspectRatio: false }}
-      //                 />
-      //               </ProjectCategoryChart>
-      //             ) : (
-      //               <ProjectCategoryChart
-      //                 selected={false}
-      //               ></ProjectCategoryChart>
-      //             )}
-      //             <ProjectCategoryNumber>
-      //               {type === "All"
-      //                 ? data.appsAccepted
-      //                 : data.typeDistribution[type]}
-      //             </ProjectCategoryNumber>
-      //             <ProjectCategoryButton
-      //               onClick={this.setType.bind(this)}
-      //               id={type}
-      //               active={type === this.state.displayType}
-      //             >
-      //               {" "}
-      //               {type}{" "}
-      //             </ProjectCategoryButton>
-      //           </ProjectCategoryContainer>
-      //         ))}
-      //       </ProjectCategoryList>
-      //     </ProjectCategoryListWrapper>
-      //     <ProjectListRows
-      //       selectedProjects={this.state.projectsForSelectedCategory}
-      //       displayType={this.state.displayType}
-      //       projectsToShow={this.state.projectsToShow}
-      //     ></ProjectListRows>
       //     {this.state.projectsToShow <
       //     this.state.projectsForSelectedCategory.length ? (
       //       <ViewMoreButtonContainer>
