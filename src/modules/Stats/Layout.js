@@ -71,36 +71,4 @@ export const StatContainer = styled.div`
   ${props => (props.fullWidth ? "grid-column: 1 / -1" : null)};
 `
 
-//Countries
-export const CountryListElement = styled.li`
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  padding: 0rem 2rem 0rem 0rem;
-  margin: 0rem 2rem 0rem 0rem;
-  border-radius: 4px;
-  background: linear-gradient(hsla(39, 70%, 91%, 1), hsla(39, 70%, 86%, 1));
 
-  @media ${device.mobileL} {
-    background: linear-gradient(
-      90deg,
-      hsla(39, 70%, 91%, 1),
-      hsla(39, 70%, 86%, 1)
-    );
-    margin: 0;
-  }
-`;
-
-export const CountryDataContainer = styled.div`
-  padding: 0;
-  list-style: none;
-  /* height: 100%; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* margin: 1rem 0rem; */
-  justify-content: center;
-`;

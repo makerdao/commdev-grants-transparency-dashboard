@@ -14,6 +14,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
+    "@quickbaseoss/babel-plugin-styled-components-css-namespace": "^1.0.0-rc4",
     "ajv": "^6.10.0",
     "chart.js": "^2.8.0",
     "gatsby": "^2.19.10",

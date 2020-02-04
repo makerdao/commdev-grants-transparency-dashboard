@@ -1,20 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 
-import { StatSection, StatRow, StatRowOverflow, StatContainer, CountryListElement, CountryDataContainer } from "./Layout"
-import {
-  DoughnutChart,
-  StatNumber,
-  StatTitle,
-  StatStatus,
-  StatusChart,
-  StatusLabel,
-  StatusNumber,
-  CountryImg, 
-  CountryNumber, 
-  CountryLabel,
-  Country
-} from "./Components"
+import { StatSection, StatRow, StatRowOverflow, StatContainer } from "./Layout"
+
+import {DoughnutChart, StatNumber, StatTitle} from './Basic';
+import {StatStatus, StatusChart, StatusLabel, StatusNumber} from './Status';
+import {CountryImg, CountryNumber, CountryLabel, Country, CountryListElement, CountryDataContainer} from './Country'
 
 const Stat = ({
   children,

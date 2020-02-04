@@ -1,9 +1,10 @@
 {
     "plugins": [
+        "@quickbaseoss/babel-plugin-styled-components-css-namespace", //Added to have styled components have more specificity over a global class system (ie.Tailwind).
         "macros"
     ],
     "presets": [
-        [
+        [ 
             "babel-preset-gatsby"
         ]
     ]
