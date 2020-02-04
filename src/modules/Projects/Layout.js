@@ -55,7 +55,7 @@ export const ProjectBottomContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
   padding: 1rem 0rem 0.5rem 0rem;
   align-items: center;

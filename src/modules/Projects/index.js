@@ -1,5 +1,4 @@
 import React from "react"
-import styled from "styled-components"
 
 import { FaGithub } from "react-icons/fa"
 import { FaMedium } from "react-icons/fa"
@@ -65,9 +64,7 @@ const Project = ({
               </ProjectTitle>
             </TitleLinkLearnMore>
           ) : (
-            <ProjectTitle>
-              {name} <IcoArrow>↗</IcoArrow>
-            </ProjectTitle>
+            <ProjectTitle>{name}</ProjectTitle>
           )}
           <ProjectLinkContainer>
             {github && (

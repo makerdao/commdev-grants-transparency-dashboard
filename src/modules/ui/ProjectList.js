@@ -1,10 +1,8 @@
-import React from "react"
-import { Component } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 import SectionTitle from "@modules/ui/SectionTitle.js"
 import { PrimaryButton } from "@modules/ui/PrimaryButton.js"
-import ProjectListRows from "@modules/ui/ProjectListRows.js"
 
 import { data, pieData } from "@src/utils.js"
 import { pType } from "@static/data/dataformat.js"
@@ -33,87 +31,68 @@ const ViewMoreButton = styled(PrimaryButton)`
   }
 `
 
-//categoryPieData(type)}
-export class ProjectList extends Component {
-  constructor(props) {
-    super(props)
-    this.cardsPerPage = 10
-    this.state = {
-      displayType: "All",
-      projectsToShow: this.cardsPerPage,
-      projectsForSelectedCategory: data.acceptedProjects,
-    }
-  }
+export const ProjectList = props => {
+  const cardsPerPage = 10
+  const categories = ["All"].concat(Object.values(pType))
 
-  setType = type => {
+  const [displayType, setDisplayType] = useState("All")
+  const [projectsToShow, setProjectsToShow] = useState(cardsPerPage)
+  const [projectsForCurrentCategory, setprojectsForCurrentCategory] = useState(
+    data.acceptedProjects
+  )
+
+  const setType = type => {
     let desiredType = type
-    let nextProjectsForSelectedCategory =
+    let nextprojectsForCurrentCategory =
       desiredType === "All"
         ? data.acceptedProjects
         : data.acceptedProjects.filter(p => p.type === desiredType)
-    this.setState({
-      displayType: desiredType,
-      projectsToShow: this.cardsPerPage,
-      projectsForSelectedCategory: nextProjectsForSelectedCategory,
-    })
+
+    setDisplayType(desiredType)
+    setProjectsToShow(cardsPerPage)
+    setprojectsForCurrentCategory(nextprojectsForCurrentCategory)
   }
 
-  seeMore(e) {
-    this.setState({
-      projectsToShow: this.state.projectsToShow + this.cardsPerPage,
-    })
-  }
-
-  render() {
-    let categories = ["All"]
-    categories = categories.concat(Object.values(pType))
-
-    return (
-      <Project.Wrapper large name="Projects">
-        <SectionTitle colorMakerTeal="true">
-          Explore our supported projects
-        </SectionTitle>
-        <Project.Category.ListContainer>
-          <Project.Category.List>
-            {categories.map(type => (
-              <Project.Category
-                key={type.toString()}
-                label={type}
-                data={pieData("type", type)}
-                selected={type === this.state.displayType}
-                number={
-                  type === "All"
-                    ? data.appsAccepted
-                    : data.typeDistribution[type]
-                }
-                onClick={() => this.setType(type)}
-                options={{ maintainAspectRatio: false }}
-              />
-            ))}
-          </Project.Category.List>
-        </Project.Category.ListContainer>
-        <Project.List>
-          {this.state.projectsForSelectedCategory.map((project, index) => (
-            <Project
-              key={`${project.name}-${index}`}
-              hide={index > this.state.projectsToShow - 1}
-              {...project}
+  return (
+    <Project.Wrapper large name="Projects">
+      <SectionTitle colorMakerTeal="true">
+        Explore our supported projects
+      </SectionTitle>
+      <Project.Category.ListContainer>
+        <Project.Category.List>
+          {categories.map(type => (
+            <Project.Category
+              key={type.toString()}
+              label={type}
+              data={pieData("type", type)}
+              selected={type === displayType}
+              number={
+                type === "All" ? data.appsAccepted : data.typeDistribution[type]
+              }
+              onClick={() => setType(type)}
+              options={{ maintainAspectRatio: false }}
             />
           ))}
-        </Project.List>
-      </Project.Wrapper>
-
-      // <React.Fragment>
-      //     {this.state.projectsToShow <
-      //     this.state.projectsForSelectedCategory.length ? (
-      //       <ViewMoreButtonContainer>
-      //         <ViewMoreButton onClick={this.seeMore.bind(this)}>
-      //           View More
-      //         </ViewMoreButton>
-      //       </ViewMoreButtonContainer>
-      //     ) : null}
-      //   </SectionWrapperProjects>
-      // </React.Fragment>
-    )
-  }
+        </Project.Category.List>
+      </Project.Category.ListContainer>
+      <Project.List>
+        {projectsForCurrentCategory.map((project, index) => (
+          <Project
+            key={`${project.name}-${index}`}
+            hide={index > projectsToShow - 1}
+            {...project}
+          />
+        ))}
+      </Project.List>
+      {projectsToShow < projectsForCurrentCategory.length ? (
+        <ViewMoreButtonContainer>
+          <ViewMoreButton
+            onClick={() => setProjectsToShow(projectsToShow + cardsPerPage)}
+          >
+            View More
+          </ViewMoreButton>
+        </ViewMoreButtonContainer>
+      ) : null}
+    </Project.Wrapper>
+  )
 }

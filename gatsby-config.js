@@ -9,7 +9,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-head`,
-    `gatsby-plugin-postcss`,
+    // `gatsby-plugin-postcss`, //(Rejon): For when you do need it
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
