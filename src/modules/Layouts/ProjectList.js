@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 
-import SectionTitle from "@modules/ui/SectionTitle.js"
-import { PrimaryButton } from "@modules/ui/PrimaryButton.js"
+import SectionTitle from "@modules/ui/SectionTitle"
+import { PrimaryButton } from "@modules/ui/PrimaryButton"
 
-import { data, pieData } from "@src/utils.js"
-import { pType } from "@static/data/dataformat.js"
+import { data, pieData } from "@src/utils"
+import { pType } from "@static/data/dataformat"
 
 import Project from "@modules/Projects"
 
@@ -31,7 +31,7 @@ const ViewMoreButton = styled(PrimaryButton)`
   }
 `
 
-export const ProjectList = props => {
+const ProjectList = props => {
   const cardsPerPage = 10
   const categories = ["All"].concat(Object.values(pType))
 
@@ -96,3 +96,5 @@ export const ProjectList = props => {
     </Project.Wrapper>
   )
 }
+
+export default ProjectList

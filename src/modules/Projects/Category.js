@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { PrimaryButton } from "@modules/ui/PrimaryButton.js"
 
-import { device } from "@src/mediaqueries/device"
+import { device } from "@src/styles/mediaqueries"
 import { Pie, defaults } from "react-chartjs-2"
 
 //ChartJS defaults

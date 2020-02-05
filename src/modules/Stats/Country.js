@@ -8,7 +8,7 @@ import imgNorthAmerica from "@images/northamerica.svg"
 import imgOceania from "@images/oceania.svg"
 import imgSouthAmerica from "@images/southamerica.svg"
 import { region } from "@static/data/dataformat.js"
-import { device } from "@src/mediaqueries/device.js"
+import { device } from "@src/styles/mediaqueries"
 
 //Layout
 export const CountryListElement = styled.li`

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { device } from "@src/mediaqueries/device.js"
+import { device } from "@src/styles/mediaqueries"
 
 //NOTE(Rejon): Previously StatsWrapper
 export const StatSection = styled.section`

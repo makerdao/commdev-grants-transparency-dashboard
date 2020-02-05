@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { device } from "@src/mediaqueries/device"
+import { device } from "@src/styles/mediaqueries"
 
 export const ProjectTitle = styled.h2`
   color: var(--headline-color);

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { device } from "@src/mediaqueries/device"
+import { device } from "@src/styles/mediaqueries"
 import { SectionWrapper } from "@modules/ui/SectionWrapper"
 
 export const SectionWrapperProjects = styled(SectionWrapper)`

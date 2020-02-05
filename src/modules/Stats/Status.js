@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { Pie, defaults } from "react-chartjs-2"
-import { device } from "@src/mediaqueries/device.js"
+import { device } from "@src/styles/mediaqueries"
 
 //ChartJS defaults
 defaults.pie.hover.mode = "none"

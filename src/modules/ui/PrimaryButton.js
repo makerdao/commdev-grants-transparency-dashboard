@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const PrimaryButton = styled.button`
+export const PrimaryButton = styled.button`
   padding: 0.5rem 0.875rem 0.5rem 0.875rem;
   color: #231536;
   font-size: 1.25rem;
@@ -20,5 +20,3 @@ const PrimaryButton = styled.button`
     border: 1px solid #b6ede7;
   }
 `
-
-export { PrimaryButton }
