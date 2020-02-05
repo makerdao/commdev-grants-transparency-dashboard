@@ -14,7 +14,6 @@ export const Body = createGlobalStyle`
 `
 
 export const RootColors = createGlobalStyle`
-${props => console.log("Root", props.theme)}
     :root {
         --headline-color: ${({ theme: { colors } }) => colors.headline_color};
         --subheadline-color: ${({ theme: { colors } }) => colors.maker_teal};

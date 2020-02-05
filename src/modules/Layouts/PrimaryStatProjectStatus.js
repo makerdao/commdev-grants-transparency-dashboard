@@ -1,11 +1,13 @@
 import React from "react"
 
-import { data, pieData } from "@src/utils.js"
 import { pStatus } from "@static/data/dataformat.js"
+
+import { data, pieData } from "@src/utils.js"
+
 import Stat from "@modules/Stats"
 
 export default () => (
-  <Stat.Row.Overflow gridColumn="2 / -1" maxWidth="" justifyContent="center">
+  <Stat.Row.Overflow gridColumn="2 / -1">
     {Object.values(pStatus).map(status => (
       <Stat.Status
         key={status.toString()}

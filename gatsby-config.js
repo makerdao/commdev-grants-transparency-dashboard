@@ -9,8 +9,8 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-head`,
-    // `gatsby-plugin-postcss`, //(Rejon): For when you do need it
-    {
+    // `gatsby-plugin-postcss`, //(Rejon): For when you need it
+    { //NOTE(Rejon): This is what allows us to do aliased imports like "@modules/ect..."
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
@@ -20,7 +20,7 @@ module.exports = {
           "@images": path.resolve(__dirname, 'public/images'),
           "@static": path.resolve(__dirname, 'static')
         },
-        extensions: [
+        extensions: [ //NOTE(Rejon): You don't have to write .js at the end of js files now.
           "js"
         ]
       }

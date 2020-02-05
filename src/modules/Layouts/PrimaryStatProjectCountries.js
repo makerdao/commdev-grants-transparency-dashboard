@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-//Static
-import { region } from "@static/data/dataformat.js"
-//SRC
-import { data } from "@src/utils.js"
-//Modules
+
+import { region } from "@static/data/dataformat"
+
+import { data } from "@src/utils"
+
 import Stat from "@modules/Stats"
 
 const StatULRowOverflow = styled(Stat.Row.Overflow).attrs({ as: "ul" })``

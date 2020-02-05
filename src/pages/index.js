@@ -9,7 +9,6 @@ export default () => {
   return (
     <>
       <Title>MakerDAO Development Grants</Title>
-
       <PrimaryStats />
       <ProjectList />
     </>
