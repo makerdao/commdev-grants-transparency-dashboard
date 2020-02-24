@@ -1,15 +1,16 @@
 import React from "react"
-import Header from "../components/Header.js"
-import PrimaryStats from "../components/PrimaryStats.js"
-import {ProjectList} from "../components/ProjectList.js"
-import Footer from "../components/Footer"
 
+import PrimaryStats from "@modules/Layouts/PrimaryStats.js"
+import ProjectList from "@modules/Layouts/ProjectList.js"
 
-export default () => (
-  <React.Fragment>
-      <Header />
+import { Title } from "react-head"
+
+export default () => {
+  return (
+    <>
+      <Title>MakerDAO Development Grants</Title>
       <PrimaryStats />
       <ProjectList />
-      <Footer />
-  </React.Fragment>
-)
+    </>
+  )
+}
