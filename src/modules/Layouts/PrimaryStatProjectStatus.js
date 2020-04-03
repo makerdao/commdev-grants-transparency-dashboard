@@ -2,7 +2,7 @@ import React from "react"
 
 import { pStatus } from "@static/data/dataformat.js"
 
-import { data, pieData } from "@src/utils.js"
+import { grantsData, pieData } from "@src/utils" //TODO: rename this component to specify that it displays grant stats
 
 import Stat from "@modules/Stats"
 
@@ -11,7 +11,7 @@ export default () => (
     {Object.values(pStatus).map(status => (
       <Stat.Status
         key={status.toString()}
-        number={data.NofProjectStatus[status]}
+        number={grantsData.NofProjectStatus[status]}
         data={pieData("status", status)}
         label={status}
         width={100}

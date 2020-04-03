@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 // import { device } from "@src/styles/mediaqueries"
-import { data, doughnutData } from "@src/utils.js"
+import { grantsData, doughnutData } from "@src/utils" //TODO: rename this component to specify that it displays grant stats
 
 import PrimaryStatProjectStatus from "@modules/Layouts/PrimaryStatProjectStatus"
 import PrimaryStatProjectCountries from "@modules/Layouts/PrimaryStatProjectCountries"
@@ -36,17 +36,17 @@ export default () => (
   <>
     <Stat.Section>
       <Stat.Row>
-        <Stat number={data.totalMoneyAwarded} description="Dai Awarded" />
-        <Stat number={data.totalMoneyDispersed} description="Dai Dispersed" />
+        <Stat number={grantsData.totalMoneyAwarded} description="Dai Awarded" />
+        <Stat number={grantsData.totalMoneyDispersed} description="Dai Dispersed" />
         <Stat
-          number={data.averageAwardedMoney}
+          number={grantsData.averageAwardedMoney}
           description="Average Dai Award"
         />
       </Stat.Row>
       <Stat.Row>
         <Stat
           colorOrange
-          number={data.appsSubmitted}
+          number={grantsData.appsSubmitted}
           description="Grant Applications Submitted"
         />
         <Stat.DoughnutChart
@@ -59,14 +59,14 @@ export default () => (
           }}
         />
         <Stat
-          number={data.appsAccepted}
+          number={grantsData.appsAccepted}
           description="Grant Applications Accepted"
         />
       </Stat.Row>
       <Stat.Row singleColumn>
         {/* Commented out the gradient background for the "Active Projects" stat to improve information hierarchy. */}
         {/* <StatWithActiveProject number={data.currentlyActive} description="Active Projects" /> */}
-        <Stat number={data.currentlyActive} description="Active Projects" />
+        <Stat number={grantsData.currentlyActive} description="Active Projects" />
         <PrimaryStatProjectStatus />
       </Stat.Row>
       <Stat.Row singleColumn justifyContent="center">
@@ -74,11 +74,11 @@ export default () => (
       </Stat.Row>
       <Stat.Row justifyContent="center">
         <Stat
-          number={data.milestones.total}
+          number={grantsData.milestones.total}
           description="Total Milestones Completed"
         />
         <Stat
-          number={data.milestones.last30days}
+          number={grantsData.milestones.last30days}
           description="Recent Milestones Completed"
         />
         <Stat>

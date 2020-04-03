@@ -1,6 +1,6 @@
 import React from "react"
 
-import { data } from "@src/utils.js"
+import { grantsData } from "@src/utils.js" //TODO: rename this component to specify that it displays grant stats
 
 import {
   IntroWrapper,
@@ -15,7 +15,7 @@ export default () => (
     <LogoMaker src={"makerlogo.svg"} alt="Logo"></LogoMaker>
     <IntroHeader>
       We've awarded{" "}
-      <IntroHeaderHighlight>{data.totalMoneyAwarded} Dai</IntroHeaderHighlight>{" "}
+      <IntroHeaderHighlight>{grantsData.totalMoneyAwarded} Dai</IntroHeaderHighlight>{" "}
       since February 2018.
     </IntroHeader>
     <IntroContent>
