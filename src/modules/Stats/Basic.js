@@ -19,7 +19,7 @@ export const StatNumber = styled.h1`
     props.colorOrange
       ? "color: var(--highlight-color--makerorange);"
       : "color: var(--highlight-color--makerteal);"};
-  /* If the "Data Last Compiled" stat object, invoked in PrimaryStats.js (displayed bottom right of screen), reduce font-size to 2rem; */
+  /* If the "Data Last Compiled" stat object, invoked in index.js (displayed bottom right of screen), reduce font-size to 2rem; */
   ${props => (props.statsAttribution ? "font-size: 2rem;" : "")};
 `
 
