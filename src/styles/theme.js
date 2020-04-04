@@ -43,17 +43,17 @@ const themes = {
       "linear-gradient(180deg, rgba(182, 237, 231, 0.38) 0%, rgba(253, 193, 52, 0.15) 100%)",
   },
   //NOTE(Rejon): You can put your dark theme here. This is just here for testing.
-  dark: {
-    colors: {
-      body_color: "#dbd3e8",
-      headline_color: "#e6d8fe",
-      maker_teal: "#50d4c4",
-      maker_orange: "#fac469",
-      maker_blue: "#0b77e0",
-      bg_gradient:
-        "linear-gradient( 180deg, hsla(173, 68%, 12%, 1) 0%, hsla(42, 75%, 9%, 1) 100% )",
-    },
-  },
+  // dark: {
+  //   colors: {
+  //     body_color: "#dbd3e8",
+  //     headline_color: "#e6d8fe",
+  //     maker_teal: "#50d4c4",
+  //     maker_orange: "#fac469",
+  //     maker_blue: "#0b77e0",
+  //     bg_gradient:
+  //       "linear-gradient( 180deg, hsla(173, 68%, 12%, 1) 0%, hsla(42, 75%, 9%, 1) 100% )",
+  //   },
+  // },
 }
 
 //NOTE(Rejon): This is the heart of the theme system.

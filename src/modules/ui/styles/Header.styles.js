@@ -17,8 +17,6 @@ export const IntroWrapper = styled.section`
 export const LogoMaker = styled.img`
   width: 64px;
   height: 64px;
-  grid-column: 1 / -1;
-  grid-row: 1;
   align-self: center;
 `
 
@@ -26,6 +24,7 @@ export const IntroHeader = styled.h1`
   grid-column: 1 / -1;
   grid-row: 2;
   color: var(--headline-color);
+  text-align: center; 
 
   @media ${device.mobileL} {
     font-size: 2.25rem;
@@ -44,6 +43,8 @@ export const IntroContent = styled.h2`
   font-weight: 400rem;
   max-width: 720px;
   line-height: 140%;
+  text-align: center; 
+  margin: 1rem auto; 
 
   @media ${device.mobileL} {
     padding: 1rem 2rem 0rem 2rem;

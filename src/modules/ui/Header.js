@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import { data } from "@src/utils.js"
 
@@ -12,15 +13,9 @@ import {
 
 export default () => (
   <IntroWrapper>
-    <LogoMaker src={"makerlogo.svg"} alt="Logo"></LogoMaker>
-    <IntroHeader>
-      We've awarded{" "}
-      <IntroHeaderHighlight>{data.totalMoneyAwarded} Dai</IntroHeaderHighlight>{" "}
-      since February 2018.
-    </IntroHeader>
-    <IntroContent>
-      MakerDAO’s Core Community Development Initiative funds teams creating
-      infrastructure and applications within the Maker ecosystem.
-    </IntroContent>
+    <Link to="/" style={{"align-self": 'center', 'text-align': 'center', 'margin': 'auto', 'grid-column': '1 / -1', 'grid-row': '1'}}>
+      <LogoMaker src={"makerlogo.svg"} alt="Logo"></LogoMaker>
+    </Link>
+
   </IntroWrapper>
 )
