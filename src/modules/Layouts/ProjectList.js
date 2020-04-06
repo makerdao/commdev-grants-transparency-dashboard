@@ -4,10 +4,13 @@ import styled from "styled-components"
 import SectionTitle from "@modules/ui/SectionTitle"
 import { PrimaryButton } from "@modules/ui/PrimaryButton"
 
-import { data, pieData } from "@src/utils"
+import { grantsData, pieData } from "@src/utils"
 import { pType } from "@static/data/dataformat"
 
 import Project from "@modules/Projects"
+
+//TODO: refactor component to be more modular & accept different data fields, or rename to specify that it displays grant stats
+const data = grantsData;
 
 const ViewMoreButtonContainer = styled.div`
   grid-column: 1 / -1;

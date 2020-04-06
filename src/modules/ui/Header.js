@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { data } from "@src/utils.js"
+import { grantsData } from "@src/utils.js" //TODO: rename this component to specify that it displays grant stats
 
 import {
   IntroWrapper,
