@@ -2,12 +2,15 @@ import rawData from "../static/data/acceptedProjectsData.json"
 import publicData from "../static/data/publicData.json"
 import { pStatus, pType, region } from "../static/data/dataformat.js"
 
+const publicGrantsData = publicData.grants[0];
+const publicMeetupsData = publicData.meetups[0];
+
 const getAcceptedProjects = () => {
   return rawData
 }
 
 const getAppsSubmitted = () => {
-  return publicData.applicationsSubmitted
+  return publicGrantsData.applicationsSubmitted
 }
 
 const getNofAcceptedProjects = () => {
@@ -85,12 +88,12 @@ function formatNumber(num) {
     .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
 }
 
-export const data = {
+export const grantsData = {
   acceptedProjects: getAcceptedProjects(),
-  totalMoneyAwarded: formatNumber(publicData.totalMoneyAwarded),
-  totalMoneyDispersed: formatNumber(publicData.totalMoneyDispersed),
+  totalMoneyAwarded: formatNumber(publicGrantsData.totalMoneyAwarded),
+  totalMoneyDispersed: formatNumber(publicGrantsData.totalMoneyDispersed),
   averageAwardedMoney: formatNumber(
-    publicData.totalMoneyAwarded / getNofAcceptedProjects()
+    publicGrantsData.totalMoneyAwarded / getNofAcceptedProjects()
   ),
   appsSubmitted: getAppsSubmitted(),
   appsAccepted: getNofAcceptedProjects(),
@@ -99,12 +102,25 @@ export const data = {
   NofProjectType: typeDistributionList.reduce(mergeObjects),
   NofProjectStatus: statusDistributionList.reduce(mergeObjects),
   milestones: {
-    total: publicData.totalMilestones,
-    last30days: publicData.milestonesLast30Days,
+    total: publicGrantsData.totalMilestones,
+    last30days: publicGrantsData.milestonesLast30Days,
   },
   currentlyActive: getNofActiveProjects(),
   typeDistribution,
   countriesByRegion,
+}
+
+export const meetupsData = {
+  totalMoneyDispersed: formatNumber(publicMeetupsData.totalMoneyDispersed),
+  totalNumberMeetups: publicMeetupsData.totalNumberMeetups,
+  totalNumberUniqueHosts: publicMeetupsData.totalNumberUNiqueHosts,
+  totalNumberRepeatHosts: publicMeetupsData.totalNumberRepeatHosts,
+  totalNumberCountries: publicMeetupsData.totalNumberCountries,
+  totalNumberPresentations: publicMeetupsData.totalNumberPresentations,
+  totalNumberReportedAttendees: formatNumber(publicMeetupsData.totalNumberReportedAttendees),
+  averageNumberAttendeesPerMonthThisYear: publicMeetupsData.averageNumberAttendeesPerMonthThisYear,
+  averageNumberMeetupsPerMonthThisYear: publicMeetupsData.averageNumberMeetupsPerMonthThisYear,
+  applicationsSubmitted: publicMeetupsData.applicationsSubmitted
 }
 
 // activate this to debug data flows
