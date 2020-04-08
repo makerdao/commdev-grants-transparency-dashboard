@@ -4,11 +4,13 @@ import styled from "styled-components"
 
 import Stat from "@modules/Stats"
 
+import {meetupsData, meetupsDoughnutData} from "@src/utils"
+
 const StatNumberLastCompiled = styled(Stat.Number)`
   /* If the "Data Last Compiled" stat object, invoked in index.js (displayed bottom right of screen), reduce font-size to 2rem; */
   font-size: 2rem;
 `
-
+console.log(meetupsData)
 const Meetups = () => {
 	return (
 		<>
@@ -16,21 +18,21 @@ const Meetups = () => {
 			{/* Primary Stats Section */}
 			<Stat.Section>
 				<Stat.Row>
-				<Stat number={0} description="Dai Awarded" />
-				<Stat number={0} description="Dai Dispersed" />
-				<Stat
-					number={0}
-					description="Average Dai Award"
+				<Stat number={meetupsData.totalNumberPresentations} description="Number of Presentations" />
+				<Stat number={meetupsData.totalMoneyDispersed} description="Dai Dispersed" />
+				<Stat                                                                   
+					number={meetupsData.totalNumberReportedAttendees}
+					description="Total Attendees"
 				/>
 				</Stat.Row>
 				<Stat.Row>
 				<Stat
 					colorOrange
-					number={0}
-					description="Grant Applications Submitted"
+					number={meetupsData.totalNumberMeetups}
+					description="Total Meetups"
 				/>
 				<Stat.DoughnutChart
-					data={[0]}
+					data={meetupsDoughnutData}
 					width={200}
 					height={200}
 					options={{
@@ -39,29 +41,24 @@ const Meetups = () => {
 					}}
 				/>
 				<Stat
-					number={0}
-					description="Grant Applications Accepted"
+					number={meetupsData.applicationsSubmitted}
+					description="Meetup Applications Submitted"
 				/>
 				</Stat.Row>
 				<Stat.Row singleColumn>
-				<Stat number={0} description="Active Projects" />
-				</Stat.Row>
-				<Stat.Row singleColumn justifyContent="center">
-	
+				<Stat number={meetupsData.averageNumberMeetupsPerMonthThisYear} description="Avg. Meetups per Month" />
+				<Stat number={meetupsData.averageNumberAttendeesPerMonthThisYear} description="Avg. Attendees per Month" />
+				<Stat number={meetupsData.totalNumberCountries} description="Total Number of Countries" />
 				</Stat.Row>
 				<Stat.Row justifyContent="center">
 				<Stat
-					number={0}
-					description="Total Milestones Completed"
+					number={meetupsData.totalNumberUniqueHosts}
+					description="Number of Unique Hosts"
 				/>
 				<Stat
-					number={0}
-					description="Recent Milestones Completed"
+					number={meetupsData.totalNumberRepeatHosts}
+					description="Number of Repeat Hosts"
 				/>
-				<Stat>
-					<StatNumberLastCompiled>1</StatNumberLastCompiled>
-					<Stat.Title>Months Since Last Update</Stat.Title>
-				</Stat>
 				</Stat.Row>
 			</Stat.Section>
 		</>
