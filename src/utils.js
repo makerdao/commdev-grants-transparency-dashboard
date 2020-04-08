@@ -113,7 +113,7 @@ export const grantsData = {
 export const meetupsData = {
   totalMoneyDispersed: formatNumber(publicMeetupsData.totalMoneyDispersed),
   totalNumberMeetups: publicMeetupsData.totalNumberMeetups,
-  totalNumberUniqueHosts: publicMeetupsData.totalNumberUNiqueHosts,
+  totalNumberUniqueHosts: publicMeetupsData.totalNumberUniqueHosts,
   totalNumberRepeatHosts: publicMeetupsData.totalNumberRepeatHosts,
   totalNumberCountries: publicMeetupsData.totalNumberCountries,
   totalNumberPresentations: publicMeetupsData.totalNumberPresentations,
@@ -159,6 +159,16 @@ export const doughnutData = {
       borderColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
     },
   ],
+}
+
+export const meetupsDoughnutData = {
+  datasets: [
+    {
+      data: [meetupsData.applicationsSubmitted, meetupsData.totalNumberMeetups],
+      backgroundColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
+      borderColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
+    }
+  ]
 }
 
 //NOTE(Rejon): I didn't want to import lodash just for the merge method. This is a vanilla js implementation.
