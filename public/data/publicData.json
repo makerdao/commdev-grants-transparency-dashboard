@@ -70,7 +70,8 @@
           "Thailand": 3,
           "Turkey": 1,
           "Uganda": 8,
-          "USA": 10
+          "USA": 10,
+          "Virtual": 1
         },
         "whatAreCountryMeetupCounts": "The total number of funded meetups by country"
       }
