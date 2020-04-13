@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import PrimaryStatProjectStatus from "@modules/Layouts/PrimaryStatProjectStatus"
 import PrimaryStatProjectCountries from "@modules/Layouts/PrimaryStatProjectCountries"
+import ProjectList from '@modules/Layouts/ProjectList'
 import Stat from "@modules/Stats"
 
 import {
@@ -106,5 +107,6 @@ export default () => (
         </Stat>
       </Stat.Row>
     </Stat.Section>
+    <ProjectList/>
   </>
 )
