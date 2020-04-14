@@ -202,7 +202,7 @@
     "twitter": "",
     "medium": "",
     "status": "Live",
-    "type": "Understand Dai",
+    "type": "Learn Dai",
     "country": "",
     "region": "North America",
     "audited": false
@@ -241,7 +241,7 @@
     "twitter": "",
     "medium": "https://medium.com/opyn/crypto-and-india-stunted-growth-5229715d7d4",
     "status": "Beta",
-    "type": "Understand Dai",
+    "type": "Learn Dai",
     "country": "India",
     "region": "Asia",
     "audited": false
@@ -332,7 +332,7 @@
     "twitter": "https://twitter.com/RampNetwork",
     "medium": "",
     "status": "Live",
-    "type": "",
+    "type": "Use Dai",
     "country": "",
     "region": "Europe",
     "audited": true
@@ -345,7 +345,7 @@
     "twitter": "https://twitter.com/SablierHQ",
     "medium": "https://medium.com/sablier-app",
     "status": "Beta",
-    "type": "",
+    "type": "Use Dai",
     "country": "",
     "region": "Europe",
     "audited": true
