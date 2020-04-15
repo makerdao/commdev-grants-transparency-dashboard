@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import { grantsData } from "@src/utils.js" //TODO: rename this component to specify that it displays grant stats
 
@@ -9,13 +8,23 @@ import {
   IntroHeader,
   IntroHeaderHighlight,
   IntroContent,
+  HeaderNav,
+  HeaderNavItem,
+  HeaderNavLink,
 } from "./styles/Header.styles"
 
 export default () => (
   <IntroWrapper>
-    <Link to="/" style={{"align-self": 'center', 'text-align': 'center', 'margin': 'auto', 'grid-column': '1 / -1', 'grid-row': '1'}}>
-      <LogoMaker src={"makerlogo.svg"} alt="Logo"></LogoMaker>
-    </Link>
-
+    <HeaderNav>
+      <HeaderNavItem>
+        <HeaderNavLink to="/">Grants</HeaderNavLink>
+      </HeaderNavItem>
+      <HeaderNavItem>
+        <LogoMaker src={"makerlogo.svg"} alt="Logo"></LogoMaker>
+      </HeaderNavItem>
+      <HeaderNavItem>
+        <HeaderNavLink to="/meetups">Meetups</HeaderNavLink>
+      </HeaderNavItem>
+    </HeaderNav>
   </IntroWrapper>
 )
