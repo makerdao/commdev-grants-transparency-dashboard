@@ -8,12 +8,13 @@ const pStatus = {
 }
 
 const pType = {
+  enjoy: "Enjoy Dai",
   hold: "Hold Dai",
   spend: "Spend Dai",
   send: "Send Dai",
   watch: "Watch Dai",
   use: "Use Dai",
-  understand: "Learn Dai",
+  learn: "Learn Dai",
   cdpmgmt: "CDP",
 }
 
