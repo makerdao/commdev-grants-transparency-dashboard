@@ -30,7 +30,7 @@ const Meetups = () => {
         people since February 2018.
       </IntroHeader>
       <IntroContent>
-        MakerDAO’s Core Community Development Initiative supports physical
+        MakerDAO’s Core Community Development Initiative supports virtual and physical
         meetups to help anyone interested learn about Ethereum, DeFi, and
         MakerDAO.
       </IntroContent>
