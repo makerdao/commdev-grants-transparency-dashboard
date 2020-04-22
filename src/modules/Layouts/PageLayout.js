@@ -6,7 +6,6 @@ import withMakerTheme from "@src/hoc/withMakerTheme"
 import Typography from "@src/styles/typography"
 
 import Header from "@modules/ui/Header"
-import Footer from "@modules/ui/Footer"
 
 import ThemeSwitcher from "@modules/ui/ThemeSwitcher"
 
@@ -33,7 +32,6 @@ const PageLayout = ({ children, hideHeader, hideFooter, makerTheme }) => {
     <ThemeContext.Provider value={theme(makerTheme)}>
       {!hideHeader && <Header />}
       {children}
-      {!hideFooter && <Footer />}
       {/* Commented out since it's purely for example. */}
       {/* <ThemeSwitcher /> */}
 

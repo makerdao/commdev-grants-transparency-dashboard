@@ -6,6 +6,7 @@ import PrimaryStatProjectStatus from "@modules/Layouts/PrimaryStatProjectStatus"
 import PrimaryStatProjectCountries from "@modules/Layouts/PrimaryStatProjectCountries"
 import ProjectList from '@modules/Layouts/ProjectList'
 import Stat from "@modules/Stats"
+import GrantsFooter from "@modules/ui/GrantsFooter"
 
 import {
   IntroHeader,
@@ -108,5 +109,6 @@ export default () => (
       </Stat.Row>
     </Stat.Section>
     <ProjectList/>
+    <GrantsFooter/>
   </>
 )

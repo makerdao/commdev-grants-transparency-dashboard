@@ -4,6 +4,8 @@ import styled from "styled-components"
 
 import Stat from "@modules/Stats"
 
+import MeetupsFooter from "@modules/ui/MeetupsFooter"
+
 import { meetupsData, meetupsDoughnutData } from "@src/utils"
 
 import {
@@ -94,6 +96,7 @@ const Meetups = () => {
           />
         </Stat.Row>
       </Stat.Section>
+      <MeetupsFooter/>
     </>
   )
 }
