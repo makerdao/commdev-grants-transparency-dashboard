@@ -1,5 +1,6 @@
 import React from "react"
 import { Title } from "react-head"
+import styled from "styled-components"
 
 import Stat from "@modules/Stats"
 
@@ -13,7 +14,11 @@ import {
   IntroContent,
 } from "@modules/ui/styles/Header.styles"
 
-const {meetupsDoughnutData} = meetupsData;
+const {doughnutData} = meetupsData;
+
+const MeetupsSection = styled(Stat.Section)`
+  padding-top: 3rem; 
+`
 
 const Meetups = () => {
   return (
@@ -32,45 +37,20 @@ const Meetups = () => {
         meetups to help anyone interested learn about Ethereum, DeFi, and
         MakerDAO.
       </IntroContent>
-      <Stat.Section>
-        <MeetupCountries/>
-      </Stat.Section>
-      <Stat.Section>
+      <MeetupsSection>
         <Stat.Row>
           <Stat
-            number={meetupsData.totalNumberPresentations}
-            description="Number of Presentations"
-          />
-          <Stat
-            number={meetupsData.totalMoneyDispersed}
-            description="Dai Dispersed"
-          />
+              number={meetupsData.totalNumberCountries}
+              description="Total Number of Countries"
+            />
+        </Stat.Row>
+        <MeetupCountries/>
+      
+        <Stat.Row>
           <Stat
             number={meetupsData.totalNumberReportedAttendees}
             description="Total Attendees"
           />
-        </Stat.Row>
-        <Stat.Row>
-          <Stat
-            colorOrange
-            number={meetupsData.totalNumberMeetups}
-            description="Total Meetups"
-          />
-          <Stat.DoughnutChart
-            data={meetupsDoughnutData}
-            width={200}
-            height={200}
-            options={{
-              maintainAspectRatio: true,
-              responsive: true,
-            }}
-          />
-          <Stat
-            number={meetupsData.applicationsSubmitted}
-            description="Meetup Applications Submitted"
-          />
-        </Stat.Row>
-        <Stat.Row singleColumn>
           <Stat
             number={meetupsData.averageNumberMeetupsPerMonthThisYear}
             description="Avg. Meetups per Month"
@@ -79,11 +59,29 @@ const Meetups = () => {
             number={meetupsData.averageNumberAttendeesPerMonthThisYear}
             description="Avg. Attendees per Month"
           />
+        </Stat.Row>
+
+        <Stat.Row>
           <Stat
-            number={meetupsData.totalNumberCountries}
-            description="Total Number of Countries"
+            number={meetupsData.totalNumberMeetups}
+            description="Total Meetups"
+          />
+          <Stat.DoughnutChart
+            data={doughnutData}
+            width={200}
+            height={200}
+            options={{
+              maintainAspectRatio: true,
+              responsive: true,
+            }}
+          />
+          <Stat
+            colorOrange
+            number={meetupsData.applicationsSubmitted}
+            description="Meetup Applications Submitted"
           />
         </Stat.Row>
+
         <Stat.Row justifyContent="center">
           <Stat
             number={meetupsData.totalNumberUniqueHosts}
@@ -94,7 +92,7 @@ const Meetups = () => {
             description="Number of Repeat Hosts"
           />
         </Stat.Row>
-      </Stat.Section>
+      </MeetupsSection>
     </>
   )
 }

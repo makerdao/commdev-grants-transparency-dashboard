@@ -9,8 +9,8 @@ defaults.doughnut.cutoutPercentage = 80
 defaults.doughnut.hover.mode = "off"
 defaults.global.legend.display = false
 defaults.global.tooltips.enabled = false
-defaults.global.elements.arc.borderColor = "#1AAB9B"
-defaults.global.elements.arc.backgroundColor = "hsl(152, 45%, 94%)"
+defaults.global.elements.arc.borderColor = "hsl(152, 45%, 94%)"
+defaults.global.elements.arc.backgroundColor = "#1AAB9B" 
 defaults.global.elements.arc.borderWidth = 1
 
 //Stat Number

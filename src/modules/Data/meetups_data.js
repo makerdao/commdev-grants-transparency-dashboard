@@ -18,7 +18,7 @@ const nOfMeetupsByRegion = () => {
 export const doughnutData = {
   datasets: [
     {
-      data: [publicMeetupsData.applicationsSubmitted, publicMeetupsData.totalNumberMeetups],
+      data: [publicMeetupsData.totalNumberMeetups, publicMeetupsData.applicationsSubmitted],
       backgroundColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
       borderColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
     }
