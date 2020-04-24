@@ -52,7 +52,7 @@ export default () => (
             </FooterCardListItemLeft>
           </FooterLink>
           <FooterLink
-            href="https://chat.makerdao.com"
+            href="https://forum.makerdao.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -61,7 +61,7 @@ export default () => (
                 colorMakerBlue="true"
                 labelContent="Meet the community"
               ></Label>
-              Join the official MakerDAO chat.
+              Join the official MakerDAO forum
             </FooterCardListItemLeft>
           </FooterLink>
           <FooterLink
