@@ -73,6 +73,14 @@
           "USA": 10,
           "Virtual": 1
         },
+        "regionMeetupsCount": {
+          "North America": 14,
+          "South America": 19,
+          "Africa": 34,
+          "Europe": 19,
+          "Asia": 8,
+          "Oceania": 5
+        },
         "whatAreCountryMeetupCounts": "The total number of funded meetups by country"
       }
     ]

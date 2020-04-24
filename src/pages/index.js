@@ -2,8 +2,8 @@ import React from "react"
 import { Title } from "react-head"
 import styled from "styled-components"
 
-import PrimaryStatProjectStatus from "@modules/Layouts/PrimaryStatProjectStatus"
-import PrimaryStatProjectCountries from "@modules/Layouts/PrimaryStatProjectCountries"
+import GrantsProjectStatus from "@modules/Layouts/GrantsProjectStatus"
+import GrantsProjectCountries from "@modules/Layouts/GrantsProjectCountries"
 import ProjectList from '@modules/Layouts/ProjectList'
 import Stat from "@modules/Stats"
 
@@ -13,7 +13,7 @@ import {
   IntroContent,
 } from "@modules/ui/styles/Header.styles"
 
-import { grantsData, doughnutData } from "@src/utils.js"
+import { grantsData } from "@modules/Data/grants_data"
 
 //NOTE(Rejon): Commented out for now since they aren't being used and are causing warnings.
 // const StatWithActiveProject = styled(Stat)`
@@ -70,7 +70,7 @@ export default () => (
           description="Grant Applications Submitted"
         />
         <Stat.DoughnutChart
-          data={doughnutData}
+          data={grantsData.doughnutData}
           width={200}
           height={200}
           options={{
@@ -87,10 +87,10 @@ export default () => (
         {/* Commented out the gradient background for the "Active Projects" stat to improve information hierarchy. */}
         {/* <StatWithActiveProject number={data.currentlyActive} description="Active Projects" /> */}
         <Stat number={grantsData.currentlyActive} description="Active Projects" />
-        <PrimaryStatProjectStatus />
+        <GrantsProjectStatus />
       </Stat.Row>
       <Stat.Row singleColumn justifyContent="center">
-        <PrimaryStatProjectCountries />
+        <GrantsProjectCountries />
       </Stat.Row>
       <Stat.Row justifyContent="center">
         <Stat

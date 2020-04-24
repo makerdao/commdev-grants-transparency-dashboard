@@ -16,9 +16,11 @@ module.exports = {
         alias: {
           "@modules": path.resolve(__dirname, 'src/modules'),
           "@src": path.resolve(__dirname, 'src'),
+          '@data': path.resolve(__dirname, 'public/data'),
           "@pages": path.resolve(__dirname, 'src/pages'),
           "@images": path.resolve(__dirname, 'public/images'),
-          "@static": path.resolve(__dirname, 'static')
+          "@static": path.resolve(__dirname, 'static'),
+          "@utils": path.resolve(__dirname, 'src/utils.js')
         },
         extensions: [ //NOTE(Rejon): You don't have to write .js at the end of js files now.
           "js"
