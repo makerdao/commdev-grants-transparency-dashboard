@@ -13,7 +13,7 @@ import {
   IntroContent,
 } from "@modules/ui/styles/Header.styles"
 
-const {meetupsDoughnutData} = meetupsData;
+const {doughnutData} = meetupsData;
 
 const Meetups = () => {
   return (
@@ -57,7 +57,7 @@ const Meetups = () => {
             description="Total Meetups"
           />
           <Stat.DoughnutChart
-            data={meetupsDoughnutData}
+            data={doughnutData}
             width={200}
             height={200}
             options={{
