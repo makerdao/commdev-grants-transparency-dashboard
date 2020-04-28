@@ -2,7 +2,7 @@ import React from "react"
 
 import { pStatus } from "@static/data/dataformat.js"
 
-import { grantsData, pieData } from "@src/utils" //TODO: rename this component to specify that it displays grant stats
+import { grantsData, pieData } from "@modules/Data/grants_data" //TODO: rename this component to specify that it displays grant stats
 
 import Stat from "@modules/Stats"
 

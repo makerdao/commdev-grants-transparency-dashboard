@@ -1,4 +1,4 @@
-import { extend } from "@src/utils"
+import { extend } from "@utils"
 
 import { createGlobalStyle } from "styled-components"
 import { primaryFont } from "./typography"

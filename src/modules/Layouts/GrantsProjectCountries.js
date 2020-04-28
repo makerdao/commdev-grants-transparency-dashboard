@@ -1,9 +1,8 @@
 import React from "react"
-import styled from "styled-components"
 
 import { region } from "@static/data/dataformat"
 
-import { grantsData } from "@src/utils" //TODO: rename this component to specify that it displays grant stats
+import { grantsData } from "@modules/Data/grants_data" //TODO: rename this component to specify that it displays grant stats
 
 import Stat from "@modules/Stats"
 

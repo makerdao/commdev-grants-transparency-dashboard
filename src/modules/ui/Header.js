@@ -1,13 +1,8 @@
 import React from "react"
 
-import { grantsData } from "@src/utils.js" //TODO: rename this component to specify that it displays grant stats
-
 import {
   IntroWrapper,
   LogoMaker,
-  IntroHeader,
-  IntroHeaderHighlight,
-  IntroContent,
   HeaderNav,
   HeaderNavItem,
   HeaderNavLink,

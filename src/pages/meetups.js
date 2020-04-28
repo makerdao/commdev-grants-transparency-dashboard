@@ -1,10 +1,11 @@
 import React from "react"
 import { Title } from "react-head"
-import styled from "styled-components"
 
 import Stat from "@modules/Stats"
 
-import { meetupsData, meetupsDoughnutData } from "@src/utils"
+import MeetupCountries from "@modules/Layouts/MeetupCountries"
+
+import { meetupsData } from "@modules/Data/meetups_data"
 
 import {
   IntroHeader,
@@ -12,11 +13,8 @@ import {
   IntroContent,
 } from "@modules/ui/styles/Header.styles"
 
-const StatNumberLastCompiled = styled(Stat.Number)`
-  /* If the "Data Last Compiled" stat object, invoked in index.js (displayed bottom right of screen), reduce font-size to 2rem; */
-  font-size: 2rem;
-`
-console.log(meetupsData)
+const {doughnutData} = meetupsData;
+
 const Meetups = () => {
   return (
     <>
@@ -34,6 +32,9 @@ const Meetups = () => {
         meetups to help anyone interested learn about Ethereum, DeFi, and
         MakerDAO.
       </IntroContent>
+      <Stat.Section>
+        <MeetupCountries/>
+      </Stat.Section>
       <Stat.Section>
         <Stat.Row>
           <Stat
@@ -56,7 +57,7 @@ const Meetups = () => {
             description="Total Meetups"
           />
           <Stat.DoughnutChart
-            data={meetupsDoughnutData}
+            data={doughnutData}
             width={200}
             height={200}
             options={{
