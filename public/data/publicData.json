@@ -79,7 +79,8 @@
           "Africa": 34,
           "Europe": 19,
           "Asia": 8,
-          "Oceania": 5
+          "Oceania": 5,
+          "Virtual": 1
         },
         "whatAreCountryMeetupCounts": "The total number of funded meetups by country"
       }

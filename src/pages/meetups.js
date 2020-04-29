@@ -14,7 +14,7 @@ import {
   IntroContent,
 } from "@modules/ui/styles/Header.styles"
 
-const {doughnutData} = meetupsData;
+const {totalMeetupsAppsSubmittedDoughnut, avgMeetupsAttendeesDoughnut, uniqueHostsRepeatHostsDoughnut} = meetupsData;
 
 const MeetupsSection = styled(Stat.Section)`
   padding-top: 3rem; 
@@ -48,15 +48,36 @@ const Meetups = () => {
       
         <Stat.Row>
           <Stat
+            number={meetupsData.totalMoneyDispersed}
+            description="Total Dai Dispersed"
+          />
+          <Stat
             number={meetupsData.totalNumberReportedAttendees}
             description="Total Attendees"
           />
           <Stat
+            number={meetupsData.roiPerAttendee}
+            description="ROI Per Attendee"
+          />
+          
+        </Stat.Row>
+        <Stat.Row>
+          <Stat
             number={meetupsData.averageNumberMeetupsPerMonthThisYear}
             description="Avg. Meetups per Month"
           />
+          <Stat.DoughnutChart
+            data={avgMeetupsAttendeesDoughnut}
+            width={200}
+            height={200}
+            options={{
+              maintainAspectRatio: true,
+              responsive: true,
+            }}
+          />
           <Stat
             number={meetupsData.averageNumberAttendeesPerMonthThisYear}
+            colorOrange
             description="Avg. Attendees per Month"
           />
         </Stat.Row>
@@ -67,7 +88,7 @@ const Meetups = () => {
             description="Total Meetups"
           />
           <Stat.DoughnutChart
-            data={doughnutData}
+            data={totalMeetupsAppsSubmittedDoughnut}
             width={200}
             height={200}
             options={{
@@ -82,13 +103,30 @@ const Meetups = () => {
           />
         </Stat.Row>
 
+        <Stat.Row>
+          <Stat
+            number={meetupsData.totalNumberPresentations}
+            description="Total Presentations"
+          />
+        </Stat.Row>
+
         <Stat.Row justifyContent="center">
           <Stat
             number={meetupsData.totalNumberUniqueHosts}
             description="Number of Unique Hosts"
           />
+          <Stat.DoughnutChart
+            data={uniqueHostsRepeatHostsDoughnut}
+            width={200}
+            height={200}
+            options={{
+              maintainAspectRatio: true,
+              responsive: true,
+            }}
+          />
           <Stat
             number={meetupsData.totalNumberRepeatHosts}
+            colorOrange
             description="Number of Repeat Hosts"
           />
         </Stat.Row>

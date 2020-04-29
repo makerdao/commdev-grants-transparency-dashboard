@@ -7,6 +7,7 @@ import imgEurope from "@images/europe.svg"
 import imgNorthAmerica from "@images/northamerica.svg"
 import imgOceania from "@images/oceania.svg"
 import imgSouthAmerica from "@images/southamerica.svg"
+import imgVirtual from '@images/iconmonstr-globe-3.svg'
 import { region } from "@static/data/dataformat.js"
 import { device } from "@src/styles/mediaqueries"
 
@@ -65,6 +66,7 @@ const continentImages = {
   [region.southamerica]: imgSouthAmerica,
   [region.oceania]: imgOceania,
   [region.africa]: imgAfrica,
+  [region.virtual]: imgVirtual
 }
 
 export const Country = ({ country, alt, number, label, children, bottomSpaced }) => (
