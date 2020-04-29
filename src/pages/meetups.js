@@ -1,5 +1,6 @@
 import React from "react"
 import { Title } from "react-head"
+import styled from "styled-components"
 
 import Stat from "@modules/Stats"
 
@@ -14,6 +15,10 @@ import {
 } from "@modules/ui/styles/Header.styles"
 
 const {doughnutData} = meetupsData;
+
+const MeetupsSection = styled(Stat.Section)`
+  padding-top: 3rem; 
+`
 
 const Meetups = () => {
   return (
@@ -32,27 +37,32 @@ const Meetups = () => {
         meetups to help anyone interested learn about Ethereum, DeFi, and
         MakerDAO.
       </IntroContent>
-      <Stat.Section>
-        <MeetupCountries/>
-      </Stat.Section>
-      <Stat.Section>
+      <MeetupsSection>
         <Stat.Row>
           <Stat
-            number={meetupsData.totalNumberPresentations}
-            description="Number of Presentations"
-          />
-          <Stat
-            number={meetupsData.totalMoneyDispersed}
-            description="Dai Dispersed"
-          />
+              number={meetupsData.totalNumberCountries}
+              description="Total Number of Countries"
+            />
+        </Stat.Row>
+        <MeetupCountries/>
+      
+        <Stat.Row>
           <Stat
             number={meetupsData.totalNumberReportedAttendees}
             description="Total Attendees"
           />
+          <Stat
+            number={meetupsData.averageNumberMeetupsPerMonthThisYear}
+            description="Avg. Meetups per Month"
+          />
+          <Stat
+            number={meetupsData.averageNumberAttendeesPerMonthThisYear}
+            description="Avg. Attendees per Month"
+          />
         </Stat.Row>
+
         <Stat.Row>
           <Stat
-            colorOrange
             number={meetupsData.totalNumberMeetups}
             description="Total Meetups"
           />
@@ -66,24 +76,12 @@ const Meetups = () => {
             }}
           />
           <Stat
+            colorOrange
             number={meetupsData.applicationsSubmitted}
             description="Meetup Applications Submitted"
           />
         </Stat.Row>
-        <Stat.Row singleColumn>
-          <Stat
-            number={meetupsData.averageNumberMeetupsPerMonthThisYear}
-            description="Avg. Meetups per Month"
-          />
-          <Stat
-            number={meetupsData.averageNumberAttendeesPerMonthThisYear}
-            description="Avg. Attendees per Month"
-          />
-          <Stat
-            number={meetupsData.totalNumberCountries}
-            description="Total Number of Countries"
-          />
-        </Stat.Row>
+
         <Stat.Row justifyContent="center">
           <Stat
             number={meetupsData.totalNumberUniqueHosts}
@@ -94,7 +92,7 @@ const Meetups = () => {
             description="Number of Repeat Hosts"
           />
         </Stat.Row>
-      </Stat.Section>
+      </MeetupsSection>
     </>
   )
 }
