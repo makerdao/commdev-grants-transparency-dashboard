@@ -57,7 +57,7 @@ export const meetupsData = {
   averageNumberMeetupsPerMonthThisYear: publicMeetupsData.averageNumberMeetupsPerMonthThisYear,
   applicationsSubmitted: publicMeetupsData.applicationsSubmitted,
   nMeetupsByRegion: nOfMeetupsByRegion(),
-  roiPerAttendee: formatNumber(publicMeetupsData.totalMoneyDispersed * publicMeetupsData.totalNumberMeetups),
+  roiPerAttendee: formatNumber(publicMeetupsData.totalMoneyDispersed / publicMeetupsData.totalNumberMeetups),
   totalMeetupsAppsSubmittedDoughnut,
   avgMeetupsAttendeesDoughnut,
   uniqueHostsRepeatHostsDoughnut
