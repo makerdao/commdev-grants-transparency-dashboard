@@ -7,8 +7,6 @@ import Typography from "@src/styles/typography"
 
 import Header from "@modules/ui/Header"
 
-import ThemeSwitcher from "@modules/ui/ThemeSwitcher"
-
 /**
  * PageLayout - Rejon Taylor-Foster (Feb 2, 2020)
  *

@@ -18,8 +18,8 @@ export const CountryListElement = styled.li`
   align-items: center;
   align-content: center;
   justify-content: center;
-  padding: 0rem 2rem 0rem 0rem;
-  margin: 0rem 2rem 0rem 0rem;
+  padding-right: 2rem;
+  margin: 0rem 2rem ${props => props.bottomSpaced ? '2rem' : '0rem'} 0rem ;
   border-radius: 4px;
   background: linear-gradient(hsla(39, 70%, 91%, 1), hsla(39, 70%, 86%, 1));
 
@@ -67,8 +67,8 @@ const continentImages = {
   [region.africa]: imgAfrica,
 }
 
-export const Country = ({ country, alt, number, label, children }) => (
-  <CountryListElement>
+export const Country = ({ country, alt, number, label, children, bottomSpaced }) => (
+  <CountryListElement bottomSpaced={bottomSpaced}>
     {children === null || children === undefined ? (
       <>
         <CountryImg src={continentImages[country]} alt={alt || country} />
