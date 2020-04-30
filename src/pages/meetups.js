@@ -14,7 +14,6 @@ import {
   IntroContent,
 } from "@modules/ui/styles/Header.styles"
 
-<<<<<<< HEAD
 import Label from "@modules/ui/Label"
 
 import {
@@ -35,12 +34,12 @@ import {
 const StatNumberLastCompiled = styled(Stat.Number)`
   /* If the "Data Last Compiled" stat object, invoked in index.js (displayed bottom right of screen), reduce font-size to 2rem; */
   font-size: 2rem;
-=======
+`
+
 const {doughnutData} = meetupsData;
 
 const MeetupsSection = styled(Stat.Section)`
   padding-top: 3rem; 
->>>>>>> cdip10-v2
 `
 
 const Meetups = () => {
@@ -49,11 +48,11 @@ const Meetups = () => {
       <Title>MakerDAO Community - Development Grants</Title>
       {/* Primary Stats Section */}
       <IntroHeader>
-        We've brought together{" "}
-        <IntroHeaderHighlight>
-          {meetupsData.totalNumberReportedAttendees}
-        </IntroHeaderHighlight>{" "}
-        people since February 2018.
+We've brought together{" "}
+<IntroHeaderHighlight>
+  {meetupsData.totalNumberReportedAttendees}
+</IntroHeaderHighlight>{" "}
+people since February 2018.
       </IntroHeader>
       <IntroContent>
         MakerDAO’s Core Community Development Initiative supports virtual and physical
@@ -63,12 +62,12 @@ const Meetups = () => {
       <MeetupsSection>
         <Stat.Row>
           <Stat
-              number={meetupsData.totalNumberCountries}
-              description="Total Number of Countries"
-            />
+            number={meetupsData.totalNumberCountries}
+            description="Total Number of Countries"
+          />
         </Stat.Row>
         <MeetupCountries/>
-      
+
         <Stat.Row>
           <Stat
             number={meetupsData.totalNumberReportedAttendees}
@@ -115,9 +114,8 @@ const Meetups = () => {
             description="Number of Repeat Hosts"
           />
         </Stat.Row>
-<<<<<<< HEAD
-      </Stat.Section>
-      
+      </MeetupsSection>
+
       {/*FOOTER*/}
       <SectionWrapperFooter name="Footer">
         <FooterBackgroundTop />
@@ -195,26 +193,22 @@ const Meetups = () => {
               <FooterCardTitle>APPLY</FooterCardTitle>
             </FooterCardListHeader>
             <FooterCardListFooter applyCardFooter>
-↗ Fill out the{" "}
-<FooterLink inlineLink href="https://airtable.com/shr4HOtcZ8o3VZmek" target="_blank">
-  application form.
-</FooterLink>
-        </FooterCardListFooter>
-      </FooterCard>
-      <FooterCard>
-        <FooterCardListContainer>
-          <FooterCardListItem noBackground>
-            <Label labelContent="Due to the large number of submissions, please expect a response within 2-3 weeks."></Label>
-          </FooterCardListItem>
-        </FooterCardListContainer>
-      </FooterCard>
-    </FooterColumn>
-  </SectionWrapperFooter>
-</>
-=======
-      </MeetupsSection>
+                ↗ Fill out the{" "}
+                <FooterLink inlineLink href="https://airtable.com/shr4HOtcZ8o3VZmek" target="_blank">
+                application form.
+              </FooterLink>
+            </FooterCardListFooter>
+          </FooterCard>
+          <FooterCard>
+            <FooterCardListContainer>
+              <FooterCardListItem noBackground>
+                <Label labelContent="Due to the large number of submissions, please expect a response within 2-3 weeks."></Label>
+              </FooterCardListItem>
+            </FooterCardListContainer>
+          </FooterCard>
+        </FooterColumn>
+      </SectionWrapperFooter>
     </>
->>>>>>> cdip10-v2
   )
 }
 

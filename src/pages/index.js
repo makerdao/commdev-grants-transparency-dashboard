@@ -13,7 +13,6 @@ import {
   IntroContent,
 } from "@modules/ui/styles/Header.styles"
 
-<<<<<<< HEAD
 import Label from "@modules/ui/Label"
 
 import {
@@ -31,10 +30,7 @@ import {
   FooterLink,
 } from "@modules/ui/styles/Footer.styles"
 
-import { grantsData, doughnutData } from "@src/utils.js"
-=======
 import { grantsData } from "@modules/Data/grants_data"
->>>>>>> cdip10-v2
 
 //NOTE(Rejon): Commented out for now since they aren't being used and are causing warnings.
 // const StatWithActiveProject = styled(Stat)`
