@@ -97,13 +97,13 @@ export const pieData = (field, value) => {
           nOfValue > 0
             ? ["#1BBBAA", "hsl(152, 45%, 94%)"]
             : ["#1BBBAA","hsl(152, 45%, 94%)"],
-        borderColor: ["#1AA9BB"],
+        borderColor: ["#1AA9BB", "#1AA9BB"],
       },
     ],
   }
   if (value === "Inactive") {
     displayData.datasets[0].borderColor = ["#FF0000", "#FF0000"]
-    displayData.datasets[0].backgroundColor = ["#FF0000"]
+    displayData.datasets[0].backgroundColor = ["#FF0000", "hsl(152, 45%, 94%)"]
   }
   return displayData
 }
