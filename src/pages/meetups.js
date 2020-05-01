@@ -14,10 +14,14 @@ import {
   IntroContent,
 } from "@modules/ui/styles/Header.styles"
 
-const {totalMeetupsAppsSubmittedDoughnut, avgMeetupsAttendeesDoughnut, uniqueHostsRepeatHostsDoughnut} = meetupsData;
+const {
+  totalMeetupsAppsSubmittedDoughnut,
+  avgMeetupsAttendeesDoughnut,
+  uniqueHostsRepeatHostsDoughnut,
+} = meetupsData
 
 const MeetupsSection = styled(Stat.Section)`
-  padding-top: 3rem; 
+  padding-top: 3rem;
 `
 
 const Meetups = () => {
@@ -33,19 +37,19 @@ const Meetups = () => {
         people since February 2018.
       </IntroHeader>
       <IntroContent>
-        MakerDAO’s Core Community Development Initiative supports virtual and physical
-        meetups to help anyone interested learn about Ethereum, DeFi, and
-        MakerDAO.
+        MakerDAO’s Core Community Development Initiative supports virtual and
+        physical meetups to help anyone interested learn about Ethereum, DeFi,
+        and MakerDAO.
       </IntroContent>
       <MeetupsSection>
         <Stat.Row>
           <Stat
-              number={meetupsData.totalNumberCountries}
-              description="Total Number of Countries"
-            />
+            number={meetupsData.totalNumberCountries}
+            description="Total Number of Countries"
+          />
         </Stat.Row>
-        <MeetupCountries/>
-      
+        <MeetupCountries />
+
         <Stat.Row>
           <Stat
             number={meetupsData.totalMoneyDispersed}
@@ -57,9 +61,8 @@ const Meetups = () => {
           />
           <Stat
             number={meetupsData.roiPerAttendee}
-            description="ROI Per Attendee"
+            description="Cost Per Attendee"
           />
-          
         </Stat.Row>
         <Stat.Row>
           <Stat
@@ -74,6 +77,9 @@ const Meetups = () => {
               maintainAspectRatio: true,
               responsive: true,
             }}
+            css={`
+              transform: rotate(-95deg);
+            `}
           />
           <Stat
             number={meetupsData.averageNumberAttendeesPerMonthThisYear}
@@ -95,6 +101,9 @@ const Meetups = () => {
               maintainAspectRatio: true,
               responsive: true,
             }}
+            css={`
+              transform: rotate(-165deg);
+            `}
           />
           <Stat
             colorOrange
@@ -103,12 +112,13 @@ const Meetups = () => {
           />
         </Stat.Row>
 
+        {/* Alex -- Gonna keep this out for now based on my comments in rocketchat.
         <Stat.Row>
           <Stat
             number={meetupsData.totalNumberPresentations}
             description="Total Presentations"
           />
-        </Stat.Row>
+        </Stat.Row> */}
 
         <Stat.Row justifyContent="center">
           <Stat
@@ -123,6 +133,9 @@ const Meetups = () => {
               maintainAspectRatio: true,
               responsive: true,
             }}
+            css={`
+              transform: rotate(-235deg);
+            `}
           />
           <Stat
             number={meetupsData.totalNumberRepeatHosts}
