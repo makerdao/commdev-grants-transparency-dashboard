@@ -61,7 +61,7 @@ const Meetups = () => {
           />
           <Stat
             number={meetupsData.roiPerAttendee}
-            description="Cost Per Attendee"
+            description="Dai Spent Per Attendee"
           />
         </Stat.Row>
         <Stat.Row>
