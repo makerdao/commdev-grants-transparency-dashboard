@@ -96,7 +96,7 @@ export const pieData = (field, value) => {
         backgroundColor:
           nOfValue > 0
             ? ["#1BBBAA", "hsl(152, 45%, 94%)"]
-            : ["hsl(152, 45%, 94%)"],
+            : ["#1BBBAA","hsl(152, 45%, 94%)"],
         borderColor: ["#1AA9BB"],
       },
     ],

@@ -31,12 +31,9 @@ import {
   FooterLink,
 } from "@modules/ui/styles/Footer.styles"
 
-const StatNumberLastCompiled = styled(Stat.Number)`
-  /* If the "Data Last Compiled" stat object, invoked in index.js (displayed bottom right of screen), reduce font-size to 2rem; */
-  font-size: 2rem;
-`
+const {totalMeetupsAppsSubmittedDoughnut, avgMeetupsAttendeesDoughnut, uniqueHostsRepeatHostsDoughnut} = meetupsData;
 
-const {doughnutData} = meetupsData;
+
 
 const MeetupsSection = styled(Stat.Section)`
   padding-top: 3rem; 
@@ -70,15 +67,36 @@ people since February 2018.
 
         <Stat.Row>
           <Stat
+            number={meetupsData.totalMoneyDispersed}
+            description="Total Dai Dispersed"
+          />
+          <Stat
             number={meetupsData.totalNumberReportedAttendees}
             description="Total Attendees"
           />
           <Stat
+            number={meetupsData.roiPerAttendee}
+            description="ROI Per Attendee"
+          />
+          
+        </Stat.Row>
+        <Stat.Row>
+          <Stat
             number={meetupsData.averageNumberMeetupsPerMonthThisYear}
             description="Avg. Meetups per Month"
           />
+          <Stat.DoughnutChart
+            data={avgMeetupsAttendeesDoughnut}
+            width={200}
+            height={200}
+            options={{
+              maintainAspectRatio: true,
+              responsive: true,
+            }}
+          />
           <Stat
             number={meetupsData.averageNumberAttendeesPerMonthThisYear}
+            colorOrange
             description="Avg. Attendees per Month"
           />
         </Stat.Row>
@@ -89,7 +107,7 @@ people since February 2018.
             description="Total Meetups"
           />
           <Stat.DoughnutChart
-            data={doughnutData}
+            data={totalMeetupsAppsSubmittedDoughnut}
             width={200}
             height={200}
             options={{
@@ -104,13 +122,30 @@ people since February 2018.
           />
         </Stat.Row>
 
+        <Stat.Row>
+          <Stat
+            number={meetupsData.totalNumberPresentations}
+            description="Total Presentations"
+          />
+        </Stat.Row>
+
         <Stat.Row justifyContent="center">
           <Stat
             number={meetupsData.totalNumberUniqueHosts}
             description="Number of Unique Hosts"
           />
+          <Stat.DoughnutChart
+            data={uniqueHostsRepeatHostsDoughnut}
+            width={200}
+            height={200}
+            options={{
+              maintainAspectRatio: true,
+              responsive: true,
+            }}
+          />
           <Stat
             number={meetupsData.totalNumberRepeatHosts}
+            colorOrange
             description="Number of Repeat Hosts"
           />
         </Stat.Row>
@@ -122,18 +157,20 @@ people since February 2018.
         <FooterColumn columnLeft>
           <FooterCard>
             <FooterCardListContainer noBackground>
-              <FooterCardListHeader columnLeft>
-                <FooterLink
-                  href="https://community-development.makerdao.com/meetups"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FooterCardTitle columnLeft>How can I get a meetup grant?</FooterCardTitle>
-                  <FooterCardDesc>
-                    Get up to speed on how to host a meetup and receive funding to help cover the costs.
-                  </FooterCardDesc>
-                </FooterLink>
-              </FooterCardListHeader>
+
+              <FooterLink
+                href="https://community-development.makerdao.com/meetups"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FooterCardListItemLeft noBackground>
+                  <Label
+                    colorMakerBlue="true"
+                    labelContent="How can I get a meetup grant?"
+                  ></Label>
+                  Get up to speed on how to host a meetup and receive funding to help cover the costs.
+                </FooterCardListItemLeft>
+              </FooterLink>
               <FooterLink
                 href="https://community-development.makerdao.com/meetups/faq"
                 target="_blank"

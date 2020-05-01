@@ -15,10 +15,30 @@ const nOfMeetupsByRegion = () => {
   return output
 }
 
-export const doughnutData = {
+export const totalMeetupsAppsSubmittedDoughnut = {
   datasets: [
     {
       data: [publicMeetupsData.totalNumberMeetups, publicMeetupsData.applicationsSubmitted],
+      backgroundColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
+      borderColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
+    }
+  ]
+}
+
+export const avgMeetupsAttendeesDoughnut = {
+  datasets: [
+    {
+      data: [publicMeetupsData.averageNumberMeetupsPerMonthThisYear, publicMeetupsData.averageNumberAttendeesPerMonthThisYear],
+      backgroundColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
+      borderColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
+    }
+  ]
+}
+
+export const uniqueHostsRepeatHostsDoughnut = {
+  datasets: [
+    {
+      data: [publicMeetupsData.totalNumberUniqueHosts, publicMeetupsData.totalNumberRepeatHosts],
       backgroundColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
       borderColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
     }
@@ -37,7 +57,10 @@ export const meetupsData = {
   averageNumberMeetupsPerMonthThisYear: publicMeetupsData.averageNumberMeetupsPerMonthThisYear,
   applicationsSubmitted: publicMeetupsData.applicationsSubmitted,
   nMeetupsByRegion: nOfMeetupsByRegion(),
-  doughnutData
+  roiPerAttendee: formatNumber(publicMeetupsData.totalMoneyDispersed / publicMeetupsData.totalNumberMeetups),
+  totalMeetupsAppsSubmittedDoughnut,
+  avgMeetupsAttendeesDoughnut,
+  uniqueHostsRepeatHostsDoughnut
 }
 
 

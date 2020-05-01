@@ -25,6 +25,7 @@ const region = {
   europe: "Europe",
   asia: "Asia",
   oceania: "Oceania",
+  virtual: "Virtual"
 }
 
 // json-SCHEMA defintion that entries have to conform with
