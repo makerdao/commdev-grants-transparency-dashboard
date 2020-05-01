@@ -45,7 +45,7 @@ const Meetups = () => {
         <Stat.Row>
           <Stat
             number={meetupsData.totalNumberCountries}
-            description="Total Number of Countries"
+            description="Countries With Meetups"
           />
         </Stat.Row>
         <MeetupCountries />
