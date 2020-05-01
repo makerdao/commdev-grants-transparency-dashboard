@@ -1,15 +1,14 @@
 import publicData from "@data/publicData.json"
-import {region} from '@data/dataformat'
-import {formatNumber} from '@utils'
+import { region } from "@data/dataformat"
+import { formatNumber } from "@utils"
 
-
-const publicMeetupsData = publicData.meetups[0];
+const publicMeetupsData = publicData.meetups[0]
 
 const nOfMeetupsByRegion = () => {
-  let output = {};
+  let output = {}
 
   Object.values(region).map(reg => {
-    output[reg] = publicMeetupsData.regionMeetupsCount[reg];
+    output[reg] = publicMeetupsData.regionMeetupsCount[reg]
   })
 
   return output
@@ -18,31 +17,40 @@ const nOfMeetupsByRegion = () => {
 export const totalMeetupsAppsSubmittedDoughnut = {
   datasets: [
     {
-      data: [publicMeetupsData.totalNumberMeetups, publicMeetupsData.applicationsSubmitted],
+      data: [
+        publicMeetupsData.totalNumberMeetups,
+        publicMeetupsData.applicationsSubmitted,
+      ],
       backgroundColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
       borderColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
-    }
-  ]
+    },
+  ],
 }
 
 export const avgMeetupsAttendeesDoughnut = {
   datasets: [
     {
-      data: [publicMeetupsData.averageNumberMeetupsPerMonthThisYear, publicMeetupsData.averageNumberAttendeesPerMonthThisYear],
+      data: [
+        publicMeetupsData.averageNumberMeetupsPerMonthThisYear,
+        publicMeetupsData.averageNumberAttendeesPerMonthThisYear,
+      ],
       backgroundColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
       borderColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
-    }
-  ]
+    },
+  ],
 }
 
 export const uniqueHostsRepeatHostsDoughnut = {
   datasets: [
     {
-      data: [publicMeetupsData.totalNumberUniqueHosts, publicMeetupsData.totalNumberRepeatHosts],
+      data: [
+        publicMeetupsData.totalNumberUniqueHosts,
+        publicMeetupsData.totalNumberRepeatHosts,
+      ],
       backgroundColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
       borderColor: ["#1AAB9B", "hsla(38,90%,60%,1)"],
-    }
-  ]
+    },
+  ],
 }
 
 export const meetupsData = {
@@ -52,17 +60,20 @@ export const meetupsData = {
   totalNumberRepeatHosts: publicMeetupsData.totalNumberRepeatHosts,
   totalNumberCountries: publicMeetupsData.totalNumberCountries,
   totalNumberPresentations: publicMeetupsData.totalNumberPresentations,
-  totalNumberReportedAttendees: formatNumber(publicMeetupsData.totalNumberReportedAttendees),
-  averageNumberAttendeesPerMonthThisYear: publicMeetupsData.averageNumberAttendeesPerMonthThisYear,
-  averageNumberMeetupsPerMonthThisYear: publicMeetupsData.averageNumberMeetupsPerMonthThisYear,
+  totalNumberReportedAttendees: formatNumber(
+    publicMeetupsData.totalNumberReportedAttendees
+  ),
+  averageNumberAttendeesPerMonthThisYear:
+    publicMeetupsData.averageNumberAttendeesPerMonthThisYear,
+  averageNumberMeetupsPerMonthThisYear:
+    publicMeetupsData.averageNumberMeetupsPerMonthThisYear,
   applicationsSubmitted: publicMeetupsData.applicationsSubmitted,
   nMeetupsByRegion: nOfMeetupsByRegion(),
-  roiPerAttendee: formatNumber(publicMeetupsData.totalMoneyDispersed / publicMeetupsData.totalNumberMeetups),
+  roiPerAttendee: formatNumber(
+    publicMeetupsData.totalMoneyDispersed /
+      publicMeetupsData.totalNumberReportedAttendees
+  ),
   totalMeetupsAppsSubmittedDoughnut,
   avgMeetupsAttendeesDoughnut,
-  uniqueHostsRepeatHostsDoughnut
+  uniqueHostsRepeatHostsDoughnut,
 }
-
-
-
-
