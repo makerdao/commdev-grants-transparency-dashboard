@@ -1,4 +1,5 @@
 import React from "react"
+import { Location } from "@reach/router"
 
 import {
   IntroWrapper,
@@ -12,13 +13,17 @@ export default () => (
   <IntroWrapper>
     <HeaderNav>
       <HeaderNavItem>
-        <HeaderNavLink to="/">Grants</HeaderNavLink>
+        <HeaderNavLink to="/" activeClassName="active">
+          Grants
+        </HeaderNavLink>
       </HeaderNavItem>
       <HeaderNavItem>
         <LogoMaker src={"makerlogo.svg"} alt="Logo"></LogoMaker>
       </HeaderNavItem>
       <HeaderNavItem>
-        <HeaderNavLink to="/meetups">Meetups</HeaderNavLink>
+        <HeaderNavLink to="/meetups" activeClassName="active">
+          Meetups
+        </HeaderNavLink>
       </HeaderNavItem>
     </HeaderNav>
   </IntroWrapper>
