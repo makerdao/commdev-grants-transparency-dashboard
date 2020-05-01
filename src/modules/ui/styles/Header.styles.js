@@ -43,8 +43,12 @@ export const HeaderNavLink = styled(Link)`
   text-decoration: none;
   padding-bottom: 0.25rem;
 
-  &:hover {
+  &.active {
     border-bottom: 2px solid ${props => props.theme.colors.headline_color};
+  }
+
+  &:hover {
+    border-bottom: 2px solid ${props => props.theme.colors.body_color};
   }
 `
 

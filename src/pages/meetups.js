@@ -31,12 +31,16 @@ import {
   FooterLink,
 } from "@modules/ui/styles/Footer.styles"
 
-const {totalMeetupsAppsSubmittedDoughnut, avgMeetupsAttendeesDoughnut, uniqueHostsRepeatHostsDoughnut} = meetupsData;
+const {
+  totalMeetupsAppsSubmittedDoughnut,
+  avgMeetupsAttendeesDoughnut,
+  uniqueHostsRepeatHostsDoughnut,
+} = meetupsData
 
 
 
 const MeetupsSection = styled(Stat.Section)`
-  padding-top: 3rem; 
+  padding-top: 3rem;
 `
 
 const Meetups = () => {
@@ -52,18 +56,18 @@ We've brought together{" "}
 people since February 2018.
       </IntroHeader>
       <IntroContent>
-        MakerDAO’s Core Community Development Initiative supports virtual and physical
-        meetups to help anyone interested learn about Ethereum, DeFi, and
-        MakerDAO.
+        MakerDAO’s Core Community Development Initiative supports virtual and
+        physical meetups to help anyone interested learn about Ethereum, DeFi,
+        and MakerDAO.
       </IntroContent>
       <MeetupsSection>
         <Stat.Row>
           <Stat
             number={meetupsData.totalNumberCountries}
-            description="Total Number of Countries"
+            description="Countries With Meetups"
           />
         </Stat.Row>
-        <MeetupCountries/>
+        <MeetupCountries />
 
         <Stat.Row>
           <Stat
@@ -76,9 +80,8 @@ people since February 2018.
           />
           <Stat
             number={meetupsData.roiPerAttendee}
-            description="ROI Per Attendee"
+            description="Dai Spent Per Attendee"
           />
-          
         </Stat.Row>
         <Stat.Row>
           <Stat
@@ -93,6 +96,9 @@ people since February 2018.
               maintainAspectRatio: true,
               responsive: true,
             }}
+            css={`
+              transform: rotate(-95deg);
+            `}
           />
           <Stat
             number={meetupsData.averageNumberAttendeesPerMonthThisYear}
@@ -114,6 +120,9 @@ people since February 2018.
               maintainAspectRatio: true,
               responsive: true,
             }}
+            css={`
+              transform: rotate(-165deg);
+            `}
           />
           <Stat
             colorOrange
@@ -122,12 +131,13 @@ people since February 2018.
           />
         </Stat.Row>
 
+        {/* Alex -- Gonna keep this out for now based on my comments in rocketchat.
         <Stat.Row>
           <Stat
             number={meetupsData.totalNumberPresentations}
             description="Total Presentations"
           />
-        </Stat.Row>
+        </Stat.Row> */}
 
         <Stat.Row justifyContent="center">
           <Stat
@@ -142,6 +152,9 @@ people since February 2018.
               maintainAspectRatio: true,
               responsive: true,
             }}
+            css={`
+              transform: rotate(-235deg);
+            `}
           />
           <Stat
             number={meetupsData.totalNumberRepeatHosts}
