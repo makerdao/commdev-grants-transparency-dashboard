@@ -38,7 +38,6 @@ const {
 } = meetupsData
 
 
-
 const MeetupsSection = styled(Stat.Section)`
   padding-top: 3rem;
 `
@@ -49,11 +48,11 @@ const Meetups = () => {
       <Title>MakerDAO Community - Development Grants</Title>
       {/* Primary Stats Section */}
       <IntroHeader>
-We've brought together{" "}
-<IntroHeaderHighlight>
-  {meetupsData.totalNumberReportedAttendees}
-</IntroHeaderHighlight>{" "}
-people since February 2018.
+        We've brought together{" "}
+        <IntroHeaderHighlight>
+          {meetupsData.totalNumberReportedAttendees}
+        </IntroHeaderHighlight>{" "}
+        people since February 2018.
       </IntroHeader>
       <IntroContent>
         MakerDAO’s Core Community Development Initiative supports virtual and
@@ -170,7 +169,6 @@ people since February 2018.
         <FooterColumn columnLeft>
           <FooterCard>
             <FooterCardListContainer noBackground>
-
               <FooterLink
                 href="https://community-development.makerdao.com/meetups"
                 target="_blank"
@@ -181,7 +179,8 @@ people since February 2018.
                     colorMakerBlue="true"
                     labelContent="How can I get a meetup grant?"
                   ></Label>
-                  Get up to speed on how to host a meetup and receive funding to help cover the costs.
+                  Get up to speed on how to host a meetup and receive funding to
+                  help cover the costs.
                 </FooterCardListItemLeft>
               </FooterLink>
               <FooterLink
@@ -203,7 +202,10 @@ people since February 2018.
                 rel="noopener noreferrer"
               >
                 <FooterCardListItemLeft noBackground>
-                  <Label colorMakerBlue="true" labelContent="New to Maker?"></Label>
+                  <Label
+                    colorMakerBlue="true"
+                    labelContent="New to Maker?"
+                  ></Label>
                   View a list of educational resources.
                 </FooterCardListItemLeft>
               </FooterLink>
@@ -241,14 +243,31 @@ people since February 2018.
           <FooterCard hero>
             <FooterCardListHeader>
               <FooterCardTitle>APPLY</FooterCardTitle>
+              <FooterCardDesc>
+                Complete the Maker Meetup application form.
+              </FooterCardDesc>
+              <FooterCardDesc>Some questions we'll ask you are:</FooterCardDesc>
             </FooterCardListHeader>
+            <FooterCardListItem>→ Your goals for the event</FooterCardListItem>
+            <FooterCardListItem>
+              → How does it align with the MakerDAO principles?
+            </FooterCardListItem>
+            <FooterCardListItem>→ What's your meetup agenda</FooterCardListItem>
+            <FooterCardListItem>
+              → Do you plan to monetize the event?
+            </FooterCardListItem>
             <FooterCardListFooter applyCardFooter>
-                ↗ Fill out the{" "}
-                <FooterLink inlineLink href="https://airtable.com/shr4HOtcZ8o3VZmek" target="_blank">
+              ↗ Complete the Maker Meetups
+              <FooterLink
+                inlineLink
+                href="https://airtable.com/shr4HOtcZ8o3VZmek"
+                target="_blank"
+              >
                 application form.
               </FooterLink>
             </FooterCardListFooter>
           </FooterCard>
+
           <FooterCard>
             <FooterCardListContainer>
               <FooterCardListItem noBackground>
