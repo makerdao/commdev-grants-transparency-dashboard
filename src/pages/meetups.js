@@ -37,6 +37,7 @@ const {
   uniqueHostsRepeatHostsDoughnut,
 } = meetupsData
 
+
 const MeetupsSection = styled(Stat.Section)`
   padding-top: 3rem;
 `
@@ -62,7 +63,7 @@ const Meetups = () => {
         <Stat.Row>
           <Stat
             number={meetupsData.totalNumberCountries}
-            description="Total Number of Countries"
+            description="Countries With Meetups"
           />
         </Stat.Row>
         <MeetupCountries />
@@ -78,7 +79,7 @@ const Meetups = () => {
           />
           <Stat
             number={meetupsData.roiPerAttendee}
-            description="ROI Per Attendee"
+            description="Dai Spent Per Attendee"
           />
         </Stat.Row>
         <Stat.Row>
@@ -94,6 +95,9 @@ const Meetups = () => {
               maintainAspectRatio: true,
               responsive: true,
             }}
+            css={`
+              transform: rotate(-95deg);
+            `}
           />
           <Stat
             number={meetupsData.averageNumberAttendeesPerMonthThisYear}
@@ -115,6 +119,9 @@ const Meetups = () => {
               maintainAspectRatio: true,
               responsive: true,
             }}
+            css={`
+              transform: rotate(-165deg);
+            `}
           />
           <Stat
             colorOrange
@@ -123,12 +130,13 @@ const Meetups = () => {
           />
         </Stat.Row>
 
+        {/* Alex -- Gonna keep this out for now based on my comments in rocketchat.
         <Stat.Row>
           <Stat
             number={meetupsData.totalNumberPresentations}
             description="Total Presentations"
           />
-        </Stat.Row>
+        </Stat.Row> */}
 
         <Stat.Row justifyContent="center">
           <Stat
@@ -143,6 +151,9 @@ const Meetups = () => {
               maintainAspectRatio: true,
               responsive: true,
             }}
+            css={`
+              transform: rotate(-235deg);
+            `}
           />
           <Stat
             number={meetupsData.totalNumberRepeatHosts}
