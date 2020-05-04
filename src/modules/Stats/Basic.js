@@ -10,7 +10,7 @@ defaults.doughnut.hover.mode = "off"
 defaults.global.legend.display = false
 defaults.global.tooltips.enabled = false
 defaults.global.elements.arc.borderColor = "hsl(152, 45%, 94%)"
-defaults.global.elements.arc.backgroundColor = "#1AAB9B" 
+defaults.global.elements.arc.backgroundColor = "#1AAB9B"
 defaults.global.elements.arc.borderWidth = 1
 
 //Stat Number
@@ -41,7 +41,6 @@ const DoughnutChartContainer = styled.div`
   width: 100%;
   max-width: 200px;
   height: 100%;
-  transform: rotate(8deg);
 
   @media ${device.mobileL} {
     transform: rotate(97deg);
