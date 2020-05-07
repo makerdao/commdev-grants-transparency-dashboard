@@ -47,6 +47,7 @@ const Project = ({
   status,
   country,
   audited,
+  auditReport, 
   ...otherProps
 }) => (
   <ProjectCard hide={hide} className={className}>
@@ -88,7 +89,15 @@ const Project = ({
         <ProjectBottomContainer>
           <ProjectLabel>{status}</ProjectLabel>
           <ProjectLabel>{country}</ProjectLabel>
-          {audited ? <ProjectLabelAudited>Audited</ProjectLabelAudited> : null}
+          {audited ? 
+            <a target="_blank" 
+               rel="noopener noreferrer" 
+               href={auditReport} 
+               style={{'text-decoration': 'none'}}>
+               <ProjectLabelAudited>Audited</ProjectLabelAudited>
+            </a>
+          : 
+          null}
         </ProjectBottomContainer>
       </>
     ) : (
