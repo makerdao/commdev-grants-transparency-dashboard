@@ -53,7 +53,7 @@
     "country": "",
     "region": "Europe",
     "audited": true,
-    "auditReport": null
+    "auditReport": "https://github.com/makerdao/community/blob/master/grants/audits/CDP%20Insurance%20-%20Audit.pdf"
   },
   {
     "name": "cdp.tools",
@@ -151,7 +151,7 @@
     "country": "",
     "region": "North America",
     "audited": true,
-    "auditReport": null
+    "auditReport": "https://github.com/makerdao/community/blob/master/grants/audits/Degens%20-%20Audit.pdf"
   },
   {
     "name": "DexPOS",
@@ -249,7 +249,7 @@
     "country": "",
     "region": "North America",
     "audited": true,
-    "auditReport": null
+    "auditReport": "https://github.com/makerdao/community/blob/master/grants/audits/LimePay%20-%20Audit.pdf"
   },
   {
     "name": "Mechanism Labs",
@@ -319,7 +319,7 @@
     "country": "",
     "region": "North America",
     "audited": true,
-    "auditReport": null
+    "auditReport": "https://github.com/makerdao/community/blob/master/grants/audits/PoolTogether%20-%20Audit.pdf"
   },
   {
     "name": "PoolTogether Phase 2",
@@ -403,7 +403,7 @@
     "country": "Puerto Rico",
     "region": "South America",
     "audited": true,
-    "auditReport": null
+    "auditReport": "https://github.com/makerdao/community/blob/master/grants/audits/StablePay%20-%20Audit.pdf"
   },
   {
     "name": "Vending Machine",
