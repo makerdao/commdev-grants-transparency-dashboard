@@ -10,7 +10,8 @@
     "type": "Hold Dai",
     "country": "US",
     "region": "North America",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "Burner Wallet",
@@ -23,7 +24,8 @@
     "type": "Hold Dai",
     "country": "US",
     "region": "North America",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "CDP Console/Shadowlands",
@@ -36,7 +38,8 @@
     "type": "Use Dai",
     "country": "US",
     "region": "North America",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "CDP Insurance",
@@ -49,7 +52,8 @@
     "type": "CDP",
     "country": "",
     "region": "Europe",
-    "audited": true
+    "audited": true,
+    "auditReport": "https://github.com/makerdao/community/blob/master/grants/audits/CDP%20Insurance%20-%20Audit.pdf"
   },
   {
     "name": "cdp.tools",
@@ -62,7 +66,8 @@
     "type": "Watch Dai",
     "country": "China",
     "region": "Oceania",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "Ching! Service",
@@ -75,7 +80,8 @@
     "type": "Spend Dai",
     "country": "",
     "region": "North America",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "Ching! Store",
@@ -88,7 +94,8 @@
     "type": "Spend Dai",
     "country": "US",
     "region": "North America",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "CryptoPay",
@@ -101,7 +108,8 @@
     "type": "Spend Dai",
     "country": "India",
     "region": "Asia",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "Dafnir",
@@ -114,7 +122,8 @@
     "type": "Send Dai",
     "country": "",
     "region": "Europe",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "Daily Wallet",
@@ -127,7 +136,8 @@
     "type": "Hold Dai",
     "country": "Venezuela",
     "region": "South America",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "Degens",
@@ -140,7 +150,8 @@
     "type": "Enjoy Dai",
     "country": "",
     "region": "North America",
-    "audited": true
+    "audited": true,
+    "auditReport": "https://github.com/makerdao/community/blob/master/grants/audits/Degens%20-%20Audit.pdf"
   },
   {
     "name": "DexPOS",
@@ -153,7 +164,8 @@
     "type": "Spend Dai",
     "country": "",
     "region": "Europe",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "Gas Station Network",
@@ -166,7 +178,8 @@
     "type": "Spend Dai",
     "country": "Israel",
     "region": "Asia",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "Giveth",
@@ -179,7 +192,8 @@
     "type": "Spend Dai",
     "country": "Spain",
     "region": "Europe",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "Governance Dashboard",
@@ -192,7 +206,8 @@
     "type": "Watch Dai",
     "country": "Spain",
     "region": "Europe",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "Grants Dashboard",
@@ -205,7 +220,8 @@
     "type": "Learn Dai",
     "country": "",
     "region": "North America",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "Kickback.Events",
@@ -218,7 +234,8 @@
     "type": "Use Dai",
     "country": "",
     "region": "Europe",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "Limepay",
@@ -231,7 +248,8 @@
     "type": "Spend Dai",
     "country": "",
     "region": "North America",
-    "audited": true
+    "audited": true,
+    "auditReport": "https://github.com/makerdao/community/blob/master/grants/audits/LimePay%20-%20Audit.pdf"
   },
   {
     "name": "Mechanism Labs",
@@ -244,7 +262,8 @@
     "type": "Learn Dai",
     "country": "India",
     "region": "Asia",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "mkr.tools",
@@ -257,7 +276,8 @@
     "type": "Watch Dai",
     "country": "US",
     "region": "North America",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "Opolis",
@@ -270,7 +290,8 @@
     "type": "Use Dai",
     "country": "US",
     "region": "North America",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "Paper Wallet Generator",
@@ -283,7 +304,8 @@
     "type": "Enjoy Dai",
     "country": "",
     "region": "North America",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "PoolTogether",
@@ -296,7 +318,8 @@
     "type": "Enjoy Dai",
     "country": "",
     "region": "North America",
-    "audited": true
+    "audited": true,
+    "auditReport": "https://github.com/makerdao/community/blob/master/grants/audits/PoolTogether%20-%20Audit.pdf"
   },
   {
     "name": "PoolTogether Phase 2",
@@ -309,7 +332,8 @@
     "type": "Enjoy Dai",
     "country": "",
     "region": "North America",
-    "audited": true
+    "audited": true,
+    "auditReport": null
   },
   {
     "name": "Protea Gather",
@@ -322,7 +346,8 @@
     "type": "Use Dai",
     "country": "",
     "region": "Africa",
-    "audited": true
+    "audited": true,
+    "auditReport": null
   },
   {
     "name": "Ramp.Networks",
@@ -335,7 +360,8 @@
     "type": "Use Dai",
     "country": "",
     "region": "Europe",
-    "audited": true
+    "audited": true,
+    "auditReport": null
   },
   {
     "name": "Sablier",
@@ -348,7 +374,8 @@
     "type": "Use Dai",
     "country": "",
     "region": "Europe",
-    "audited": true
+    "audited": true,
+    "auditReport": null
   },
   {
     "name": "Share & Charge",
@@ -361,7 +388,8 @@
     "type": "Use Dai",
     "country": "",
     "region": "Europe",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   },
   {
     "name": "StablePay",
@@ -374,7 +402,8 @@
     "type": "Spend Dai",
     "country": "Puerto Rico",
     "region": "South America",
-    "audited": true
+    "audited": true,
+    "auditReport": "https://github.com/makerdao/community/blob/master/grants/audits/StablePay%20-%20Audit.pdf"
   },
   {
     "name": "Vending Machine",
@@ -387,6 +416,7 @@
     "type": "Spend Dai",
     "country": "",
     "region": "North America",
-    "audited": false
+    "audited": false,
+    "auditReport": null
   }
 ]

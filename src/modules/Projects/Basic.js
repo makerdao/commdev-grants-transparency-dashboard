@@ -29,6 +29,7 @@ export const ProjectLabel = styled.span`
   color: var(--body-color);
   text-transform: uppercase;
   text-align: left;
+  text-decoration: none; 
 
   :nth-child(1) {
     margin-left: 0rem;
@@ -44,6 +45,7 @@ export const ProjectLabelAudited = styled(ProjectLabel)`
   background: linear-gradient(hsla(168, 50%, 90%, 1), hsla(168, 50%, 86%, 1));
   color: var(--highlight-color--makerteal);
   border-radius: 4px;
+  text-decoration: none; 
 `
 
 export const ProjectDescription = styled.p`
