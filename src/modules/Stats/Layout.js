@@ -49,6 +49,7 @@ export const StatRowOverflow = styled.div`
   flex-wrap: nowrap;
   overflow-x: auto;
   justify-content: flex-start;
+  padding: 2rem 0rem;
   /* background-color: #f7f1db; */
 
   @media ${device.mobileL} {
@@ -63,6 +64,7 @@ export const StatContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-items: center;
+  justify-content: center;
   align-items: center;
   width: 300px;
   border-radius: 4px;
