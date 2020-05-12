@@ -34,6 +34,7 @@ export const StatRow = styled.div`
   }
 
   @media ${device.mobileL} {
+    grid-template-columns: ${props => props.singleColumn && "1fr"};
     grid-row-gap: 2rem;
     background-color: ${props => props.backgroundColor};
   }

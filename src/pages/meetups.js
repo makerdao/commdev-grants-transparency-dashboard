@@ -37,7 +37,6 @@ const {
   uniqueHostsRepeatHostsDoughnut,
 } = meetupsData
 
-
 const MeetupsSection = styled(Stat.Section)`
   padding-top: 3rem;
 `
@@ -59,15 +58,15 @@ const Meetups = () => {
         physical meetups to help anyone interested learn about Ethereum, DeFi,
         and MakerDAO.
       </IntroContent>
+
       <MeetupsSection>
-        <Stat.Row>
+        <Stat.Row singleColumn>
           <Stat
             number={meetupsData.totalNumberCountries}
-            description="Countries With Meetups"
+            description="Total Countries With Meetups"
           />
+          <MeetupCountries />
         </Stat.Row>
-        <MeetupCountries />
-
         <Stat.Row>
           <Stat
             number={meetupsData.totalMoneyDispersed}
