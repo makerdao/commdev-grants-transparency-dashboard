@@ -9,7 +9,7 @@ export const Body = createGlobalStyle`
     body {
         width: 100%;
         margin: 0px;
-        background: var(--background-gradient--maker);
+        background: #fff;
     }
 `
 
