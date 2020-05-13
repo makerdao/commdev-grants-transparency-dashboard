@@ -34,7 +34,7 @@ const themes = {
     sans_serif: `"${primaryFont}", system-ui, "Helvetica Neue", sans-serif`,
   },
   colors: {
-    body_color: "#53546a",
+    body_color: "#333",
     headline_color: "#291a42",
     maker_teal: "#179b8c",
     maker_orange: "#f5b13d",
