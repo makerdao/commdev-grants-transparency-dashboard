@@ -51,7 +51,11 @@ const Meetups = () => {
         <IntroHeaderHighlight>
           {meetupsData.totalNumberReportedAttendees}
         </IntroHeaderHighlight>{" "}
-        people since February 2018.
+        people in{" "}
+        <IntroHeaderHighlight>
+          {meetupsData.totalNumberCountries}
+        </IntroHeaderHighlight>{" "}
+        countries since February 2018.
       </IntroHeader>
       <IntroContent>
         MakerDAO’s Core Community Development Initiative supports virtual and
