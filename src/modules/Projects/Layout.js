@@ -12,7 +12,7 @@ export const SectionWrapperProjects = styled(SectionWrapper)`
 export const ProjectBackground = styled.div`
   width: 100%;
   height: 100%;
-  background: linear-gradient(hsl(169, 49%, 89%), hsl(60, 44%, 94%));
+  background: linear-gradient(hsl(169, 49%, 89%), hsla(60, 44%, 94%, 0.01));
   position: absolute;
   z-index: 999;
   top: 0;
@@ -20,7 +20,7 @@ export const ProjectBackground = styled.div`
   right: 0;
   margin: auto;
   max-width: 1280px;
-  border-radius: 8px;
+  border-radius: 4px;
   z-index: -9;
 `
 
