@@ -7,6 +7,7 @@ import { SectionWrapper } from "@modules/ui/SectionWrapper"
 export const SectionWrapperProjects = styled(SectionWrapper)`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1400px));
   margin-bottom: 2rem;
+  padding: 2rem 0.25rem 4rem 0.25rem;
 `
 
 export const ProjectBackground = styled.div`
