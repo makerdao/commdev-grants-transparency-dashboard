@@ -172,6 +172,14 @@ const Meetups = () => {
         <FooterColumn columnLeft>
           <FooterCard>
             <FooterCardListContainer noBackground>
+              <FooterCardListHeader columnLeft>
+                <FooterCardTitle columnLeft>
+                  How can I get a meetup grant?
+                </FooterCardTitle>
+                <FooterCardDesc>
+                  Get up to speed on the Maker project & Dai stablecoin:
+                </FooterCardDesc>
+              </FooterCardListHeader>
               <FooterLink
                 href="https://community-development.makerdao.com/meetups"
                 target="_blank"
@@ -180,10 +188,9 @@ const Meetups = () => {
                 <FooterCardListItemLeft noBackground>
                   <Label
                     colorMakerBlue="true"
-                    labelContent="How can I get a meetup grant?"
+                    labelContent="Want the big picture on Maker's meetups program?"
                   ></Label>
-                  Get up to speed on how to host a meetup and receive funding to
-                  help cover the costs.
+                  Start here.
                 </FooterCardListItemLeft>
               </FooterLink>
               <FooterLink
