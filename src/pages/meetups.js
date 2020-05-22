@@ -66,9 +66,13 @@ const Meetups = () => {
       <MeetupsSection>
         <Stat.Row singleColumn>
           <Stat
+            number={meetupsData.totalNumberMeetups}
+            description="Total Meetups"
+          />
+          {/* <Stat
             number={meetupsData.totalNumberCountries}
             description="Total Countries With Meetups"
-          />
+          /> */}
           <MeetupCountries />
         </Stat.Row>
         <Stat.Row>
@@ -109,7 +113,7 @@ const Meetups = () => {
           />
         </Stat.Row>
 
-        <Stat.Row>
+        {/* <Stat.Row>
           <Stat
             number={meetupsData.totalNumberMeetups}
             description="Total Meetups"
@@ -131,7 +135,7 @@ const Meetups = () => {
             number={meetupsData.applicationsSubmitted}
             description="Meetup Applications Submitted"
           />
-        </Stat.Row>
+        </Stat.Row> */}
 
         {/* Alex -- Gonna keep this out for now based on my comments in rocketchat.
         <Stat.Row>
