@@ -9,7 +9,7 @@ export const Body = createGlobalStyle`
     body {
         width: 100%;
         margin: 0px;
-        background: #fff;
+        background: var(--background-gradient--maker);
     }
 `
 
@@ -42,6 +42,7 @@ const themes = {
     bg_gradient:
       "linear-gradient(180deg, rgba(182, 237, 231, 0.38) 0%, rgba(253, 193, 52, 0.15) 100%)",
   },
+  boxShadow: {},
   //NOTE(Rejon): You can put your dark theme here. This is just here for testing.
   // dark: {
   //   colors: {
