@@ -58,7 +58,7 @@ const Meetups = () => {
         countries since February 2018.
       </IntroHeader>
       <IntroContent>
-        MakerDAO’s Core Community Development Initiative supports virtual and
+        MakerDAO’s Community Development Initiative supports virtual and
         physical meetups to help anyone interested learn about Ethereum, DeFi,
         and MakerDAO.
       </IntroContent>
@@ -178,10 +178,10 @@ const Meetups = () => {
             <FooterCardListContainer noBackground>
               <FooterCardListHeader columnLeft>
                 <FooterCardTitle columnLeft>
-                  How can I get a meetup grant?
+                  How can I host a meetup?
                 </FooterCardTitle>
                 <FooterCardDesc>
-                  Get up to speed on the Maker project & Dai stablecoin:
+                  We've compiled some resources to help you get started.
                 </FooterCardDesc>
               </FooterCardListHeader>
               <FooterLink
@@ -192,7 +192,7 @@ const Meetups = () => {
                 <FooterCardListItemLeft noBackground>
                   <Label
                     colorMakerBlue="true"
-                    labelContent="Want the big picture on Maker's meetups program?"
+                    labelContent="What is Maker's meetups program?"
                   ></Label>
                   Start here.
                 </FooterCardListItemLeft>
@@ -256,9 +256,10 @@ const Meetups = () => {
         <FooterColumn>
           <FooterCard hero>
             <FooterCardListHeader>
-              <FooterCardTitle>APPLY</FooterCardTitle>
+              <FooterCardTitle>APPLY FOR A MEETUP GRANT</FooterCardTitle>
               <FooterCardDesc>
-                Complete the Maker Meetup application form.
+                Maker offers financial support for eligible meetups. Complete
+                the application form if you're interested.
               </FooterCardDesc>
               <FooterCardDesc>Some questions we'll ask you are:</FooterCardDesc>
             </FooterCardListHeader>
@@ -271,7 +272,7 @@ const Meetups = () => {
               → Do you plan to monetize the event?
             </FooterCardListItem>
             <FooterCardListFooter applyCardFooter>
-              ↗ Complete the Maker Meetups
+              ↗ Start the Maker Meetups
               <FooterLink
                 inlineLink
                 href="https://airtable.com/shr4HOtcZ8o3VZmek"
