@@ -11,22 +11,27 @@ console.log(meetupsData.nMeetupsByRegion)
 const MeetupCountry = styled(Stat.Country)`
   margin: 0rem 2rem 0rem 2rem;
 `
+const countryKeysInOrder = [
+  "Africa",
+  "Asia",
+  "Oceania",
+  "South America",
+  "Europe",
+  "North America",
+]
 
 export default () => (
   <Stat.Row.Overflow gridColumn="2 / -1">
-    {// Only display regions that have countries in them.
-    Object.values(region)
-      .filter(reg => meetupsData.nMeetupsByRegion[reg] > 0)
-      .map(reg => (
-        <MeetupCountry
-          key={reg}
-          country={reg}
-          bottomSpaced
-          number={meetupsData.nMeetupsByRegion[reg]}
-          css={`
-            flex-direction: row;
-          `}
-        />
-      ))}
+    {countryKeysInOrder.map(country => (
+      <MeetupCountry
+        key={country}
+        country={country}
+        bottomSpaced
+        number={meetupsData.nMeetupsByRegion[country]}
+        css={`
+          flex-direction: row;
+        `}
+      />
+    ))}
   </Stat.Row.Overflow>
 )
