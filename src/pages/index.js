@@ -68,7 +68,7 @@ export default () => (
       since February 2018.
     </IntroHeader>
     <IntroContent>
-      MakerDAO’s Core Community Development Initiative funds teams creating
+      MakerDAO’s Community Development Initiative funds teams creating
       infrastructure and applications within the Maker ecosystem.
     </IntroContent>
     {/* Primary Stats Section */}
