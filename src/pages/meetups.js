@@ -37,7 +37,6 @@ const {
   uniqueHostsRepeatHostsDoughnut,
 } = meetupsData
 
-
 const MeetupsSection = styled(Stat.Section)`
   padding-top: 3rem;
 `
@@ -52,22 +51,30 @@ const Meetups = () => {
         <IntroHeaderHighlight>
           {meetupsData.totalNumberReportedAttendees}
         </IntroHeaderHighlight>{" "}
-        people since February 2018.
+        people in{" "}
+        <IntroHeaderHighlight>
+          {meetupsData.totalNumberCountries}
+        </IntroHeaderHighlight>{" "}
+        countries since February 2018.
       </IntroHeader>
       <IntroContent>
-        MakerDAO’s Core Community Development Initiative supports virtual and
+        MakerDAO’s Community Development Initiative supports virtual and
         physical meetups to help anyone interested learn about Ethereum, DeFi,
         and MakerDAO.
       </IntroContent>
-      <MeetupsSection>
-        <Stat.Row>
-          <Stat
-            number={meetupsData.totalNumberCountries}
-            description="Countries With Meetups"
-          />
-        </Stat.Row>
-        <MeetupCountries />
 
+      <MeetupsSection>
+        <Stat.Row singleColumn>
+          <Stat
+            number={meetupsData.totalNumberMeetups}
+            description="Total Meetups"
+          />
+          {/* <Stat
+            number={meetupsData.totalNumberCountries}
+            description="Total Countries With Meetups"
+          /> */}
+          <MeetupCountries />
+        </Stat.Row>
         <Stat.Row>
           <Stat
             number={meetupsData.totalMoneyDispersed}
@@ -87,18 +94,8 @@ const Meetups = () => {
             number={meetupsData.averageNumberMeetupsPerMonthThisYear}
             description="Avg. Meetups per Month"
           />
-          <Stat.DoughnutChart
-            data={avgMeetupsAttendeesDoughnut}
-            width={200}
-            height={200}
-            options={{
-              maintainAspectRatio: true,
-              responsive: true,
-            }}
-            css={`
-              transform: rotate(-95deg);
-            `}
-          />
+          <Stat.CircleChart fillAmount={meetupsData.averageNumberAttendeesPerMonthThisYear/meetupsData.averageNumberMeetupsPerMonthThisYear}/>
+
           <Stat
             number={meetupsData.averageNumberAttendeesPerMonthThisYear}
             colorOrange
@@ -106,7 +103,7 @@ const Meetups = () => {
           />
         </Stat.Row>
 
-        <Stat.Row>
+        {/* <Stat.Row>
           <Stat
             number={meetupsData.totalNumberMeetups}
             description="Total Meetups"
@@ -128,7 +125,7 @@ const Meetups = () => {
             number={meetupsData.applicationsSubmitted}
             description="Meetup Applications Submitted"
           />
-        </Stat.Row>
+        </Stat.Row> */}
 
         {/* Alex -- Gonna keep this out for now based on my comments in rocketchat.
         <Stat.Row>
@@ -169,6 +166,14 @@ const Meetups = () => {
         <FooterColumn columnLeft>
           <FooterCard>
             <FooterCardListContainer noBackground>
+              <FooterCardListHeader columnLeft>
+                <FooterCardTitle columnLeft>
+                  How can I host a meetup?
+                </FooterCardTitle>
+                <FooterCardDesc>
+                  We've compiled some resources to help you get started.
+                </FooterCardDesc>
+              </FooterCardListHeader>
               <FooterLink
                 href="https://community-development.makerdao.com/meetups"
                 target="_blank"
@@ -177,10 +182,9 @@ const Meetups = () => {
                 <FooterCardListItemLeft noBackground>
                   <Label
                     colorMakerBlue="true"
-                    labelContent="How can I get a meetup grant?"
+                    labelContent="What is Maker's meetups program?"
                   ></Label>
-                  Get up to speed on how to host a meetup and receive funding to
-                  help cover the costs.
+                  Start here.
                 </FooterCardListItemLeft>
               </FooterLink>
               <FooterLink
@@ -242,9 +246,10 @@ const Meetups = () => {
         <FooterColumn>
           <FooterCard hero>
             <FooterCardListHeader>
-              <FooterCardTitle>APPLY</FooterCardTitle>
+              <FooterCardTitle>APPLY FOR A MEETUP GRANT</FooterCardTitle>
               <FooterCardDesc>
-                Complete the Maker Meetup application form.
+                Maker offers financial support for eligible meetups. Complete
+                the application form if you're interested.
               </FooterCardDesc>
               <FooterCardDesc>Some questions we'll ask you are:</FooterCardDesc>
             </FooterCardListHeader>
@@ -257,7 +262,7 @@ const Meetups = () => {
               → Do you plan to monetize the event?
             </FooterCardListItem>
             <FooterCardListFooter applyCardFooter>
-              ↗ Complete the Maker Meetups
+              ↗ Start the Maker Meetups
               <FooterLink
                 inlineLink
                 href="https://airtable.com/shr4HOtcZ8o3VZmek"

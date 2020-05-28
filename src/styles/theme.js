@@ -34,7 +34,7 @@ const themes = {
     sans_serif: `"${primaryFont}", system-ui, "Helvetica Neue", sans-serif`,
   },
   colors: {
-    body_color: "#53546a",
+    body_color: "#333",
     headline_color: "#291a42",
     maker_teal: "#179b8c",
     maker_orange: "#f5b13d",
@@ -42,6 +42,7 @@ const themes = {
     bg_gradient:
       "linear-gradient(180deg, rgba(182, 237, 231, 0.38) 0%, rgba(253, 193, 52, 0.15) 100%)",
   },
+  boxShadow: {},
   //NOTE(Rejon): You can put your dark theme here. This is just here for testing.
   // dark: {
   //   colors: {

@@ -60,14 +60,16 @@ export const CategoryNumber = styled.h3`
 export const CategoryButton = styled(PrimaryButton)`
   min-width: 120px;
   color: ${props => (props.active ? "#fafafa" : "#53546a")};
-  border: ${props =>
-    props.active ? "1px solid #1aaa9b" : "1px solid #53546a"};
+  border: 0px;
   background: ${props => (props.active ? "#1aaa9b" : "#def2eb")};
   border-radius: 400px;
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.0125rem;
+  box-shadow: 0 0px 2.4px -3px rgba(0, 0, 0, 0.07),
+    0 0px 6.5px -3px rgba(0, 0, 0, 0.1), 0 0px 15.7px -3px rgba(0, 0, 0, 0.13),
+    0 0px 52px -3px rgba(0, 0, 0, 0.2);
 `
 
 export const Category = ({

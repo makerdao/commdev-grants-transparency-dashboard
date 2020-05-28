@@ -7,20 +7,20 @@ import imgEurope from "@images/europe.svg"
 import imgNorthAmerica from "@images/northamerica.svg"
 import imgOceania from "@images/oceania.svg"
 import imgSouthAmerica from "@images/southamerica.svg"
-import imgVirtual from '@images/iconmonstr-globe-3.svg'
+import imgVirtual from "@images/virtual.svg"
 import { region } from "@static/data/dataformat.js"
 import { device } from "@src/styles/mediaqueries"
 
 //Layout
 export const CountryListElement = styled.li`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-items: center;
   align-items: center;
   align-content: center;
   justify-content: center;
-  padding-right: 2rem;
-  margin: 0rem 2rem ${props => props.bottomSpaced ? '2rem' : '0rem'} 0rem ;
+  padding: 0rem 1rem;
+  margin: 0rem 1rem ${props => (props.bottomSpaced ? "2rem" : "0rem")} 0rem;
   border-radius: 4px;
   background: linear-gradient(hsla(39, 70%, 91%, 1), hsla(39, 70%, 86%, 1));
 
@@ -66,10 +66,17 @@ const continentImages = {
   [region.southamerica]: imgSouthAmerica,
   [region.oceania]: imgOceania,
   [region.africa]: imgAfrica,
-  [region.virtual]: imgVirtual
+  [region.virtual]: imgVirtual,
 }
 
-export const Country = ({ country, alt, number, label, children, bottomSpaced }) => (
+export const Country = ({
+  country,
+  alt,
+  number,
+  label,
+  children,
+  bottomSpaced,
+}) => (
   <CountryListElement bottomSpaced={bottomSpaced}>
     {children === null || children === undefined ? (
       <>

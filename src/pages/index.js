@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 import GrantsProjectStatus from "@modules/Layouts/GrantsProjectStatus"
 import GrantsProjectCountries from "@modules/Layouts/GrantsProjectCountries"
-import ProjectList from '@modules/Layouts/ProjectList'
+import ProjectList from "@modules/Layouts/ProjectList"
 import Stat from "@modules/Stats"
 
 import {
@@ -51,7 +51,6 @@ import { grantsData } from "@modules/Data/grants_data"
 //   }
 // `
 
-
 const StatNumberLastCompiled = styled(Stat.Number)`
   /* If the "Data Last Compiled" stat object, invoked in PrimaryStats.js (displayed bottom right of screen), reduce font-size to 2rem; */
   font-size: 2rem;
@@ -63,18 +62,23 @@ export default () => (
     {/* Header Content related to the Grants Page */}
     <IntroHeader>
       We've awarded{" "}
-      <IntroHeaderHighlight>{grantsData.totalMoneyAwarded} Dai</IntroHeaderHighlight>{" "}
+      <IntroHeaderHighlight>
+        {grantsData.totalMoneyAwarded} Dai
+      </IntroHeaderHighlight>{" "}
       since February 2018.
     </IntroHeader>
     <IntroContent>
-      MakerDAO’s Core Community Development Initiative funds teams creating
+      MakerDAO’s Community Development Initiative funds teams creating
       infrastructure and applications within the Maker ecosystem.
     </IntroContent>
     {/* Primary Stats Section */}
     <Stat.Section>
       <Stat.Row>
         <Stat number={grantsData.totalMoneyAwarded} description="Dai Awarded" />
-        <Stat number={grantsData.totalMoneyDispersed} description="Dai Dispersed" />
+        <Stat
+          number={grantsData.totalMoneyDispersed}
+          description="Dai Dispersed"
+        />
         <Stat
           number={grantsData.averageAwardedMoney}
           description="Average Dai Award"
@@ -94,6 +98,9 @@ export default () => (
             maintainAspectRatio: true,
             responsive: true,
           }}
+          css={`
+            transform: rotate(68deg);
+          `}
         />
         <Stat
           number={grantsData.appsAccepted}
@@ -103,7 +110,10 @@ export default () => (
       <Stat.Row singleColumn>
         {/* Commented out the gradient background for the "Active Projects" stat to improve information hierarchy. */}
         {/* <StatWithActiveProject number={data.currentlyActive} description="Active Projects" /> */}
-        <Stat number={grantsData.currentlyActive} description="Active Projects" />
+        <Stat
+          number={grantsData.currentlyActive}
+          description="Active Projects"
+        />
         <GrantsProjectStatus />
       </Stat.Row>
       <Stat.Row singleColumn justifyContent="center">
@@ -124,8 +134,8 @@ export default () => (
         </Stat>
       </Stat.Row>
     </Stat.Section>
-    <ProjectList/>
-    
+    <ProjectList />
+
     {/*FOOTER*/}
     <SectionWrapperFooter name="Footer">
       <FooterBackgroundTop />
@@ -133,7 +143,9 @@ export default () => (
         <FooterCard>
           <FooterCardListContainer noBackground>
             <FooterCardListHeader columnLeft>
-              <FooterCardTitle columnLeft>How can I get a grant?</FooterCardTitle>
+              <FooterCardTitle columnLeft>
+                How can I get a grant?
+              </FooterCardTitle>
               <FooterCardDesc>
                 Get up to speed on the Maker project & Dai stablecoin:
               </FooterCardDesc>
@@ -157,7 +169,10 @@ export default () => (
               rel="noopener noreferrer"
             >
               <FooterCardListItemLeft noBackground>
-                <Label colorMakerBlue="true" labelContent="New to Maker?"></Label>
+                <Label
+                  colorMakerBlue="true"
+                  labelContent="New to Maker?"
+                ></Label>
                 View a list of educational resources.
               </FooterCardListItemLeft>
             </FooterLink>
@@ -195,7 +210,9 @@ export default () => (
         <FooterCard hero>
           <FooterCardListHeader>
             <FooterCardTitle>APPLY</FooterCardTitle>
-            <FooterCardDesc>Write a 1-2 page proposal, answering:</FooterCardDesc>
+            <FooterCardDesc>
+              Write a 1-2 page proposal, answering:
+            </FooterCardDesc>
           </FooterCardListHeader>
           <FooterCardListItem>→ What does it do, exactly?</FooterCardListItem>
           <FooterCardListItem>→ What problem does it solve?</FooterCardListItem>
@@ -204,20 +221,20 @@ export default () => (
             → Approximately what will it cost?
           </FooterCardListItem>
           <FooterCardListFooter applyCardFooter>
-          ↗ Send it to{" "}
-          <FooterLink inlineLink href="mailto:grants@makerdao.com">
-            grants@makerdao.com
-          </FooterLink>
-        </FooterCardListFooter>
-      </FooterCard>
-      <FooterCard>
-        <FooterCardListContainer>
-          <FooterCardListItem noBackground>
-            <Label labelContent="Due to the large number of submissions, please expect a response within 2-3 weeks."></Label>
-          </FooterCardListItem>
-        </FooterCardListContainer>
-      </FooterCard>
-    </FooterColumn>
-  </SectionWrapperFooter>
+            ↗ Send it to{" "}
+            <FooterLink inlineLink href="mailto:grants@makerdao.com">
+              grants@makerdao.com
+            </FooterLink>
+          </FooterCardListFooter>
+        </FooterCard>
+        <FooterCard>
+          <FooterCardListContainer>
+            <FooterCardListItem noBackground>
+              <Label labelContent="Due to the large number of submissions, please expect a response within 2-3 weeks."></Label>
+            </FooterCardListItem>
+          </FooterCardListContainer>
+        </FooterCard>
+      </FooterColumn>
+    </SectionWrapperFooter>
   </>
 )
