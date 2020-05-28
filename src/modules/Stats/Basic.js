@@ -64,29 +64,34 @@ export default {
   DoughnutChart,
 }
 
-
-const CircleChartContainer = ({className, children}) => (
+const CircleChartContainer = ({ className, children }) => (
   <div className={className}>
-    <div className="fill">
-      {children}
-    </div>
+    <div className="fill">{children}</div>
   </div>
-);
+)
 
 export const CircleChart = styled(CircleChartContainer)`
-  width: ${({radius}) => radius ? radius : "217"}px;
-  height: ${({radius}) => radius ? radius : "217"}px;
-  background: var(--highlight-color--makerorange);
-  position: relative; 
+  width: ${({ radius }) => (radius ? radius : "217")}px;
+  height: ${({ radius }) => (radius ? radius : "217")}px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #f5b13d 0%,
+    rgba(245, 177, 61, 0.3) 100%
+  );
+  position: relative;
   border-radius: 100%;
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   justify-content: center;
 
   & .fill {
-    width: ${({fillAmount}) => fillAmount ? fillAmount : "0"}%;
-    height: ${({fillAmount}) => fillAmount ? fillAmount : "0"}%;
-    background: var(--highlight-color--makerteal);
-    border-radius: 100%; 
+    width: ${({ fillAmount }) => (fillAmount ? fillAmount : "0")}%;
+    height: ${({ fillAmount }) => (fillAmount ? fillAmount : "0")}%;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #1cac9c 0%,
+      rgba(28, 172, 156, 0.6) 100%
+    );
+    border-radius: 100%;
   }
 `
