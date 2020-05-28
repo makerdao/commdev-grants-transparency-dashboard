@@ -20,7 +20,7 @@ export const ProjectBackground = styled.div`
   left: 0;
   right: 0;
   margin: auto;
-  max-width: 1280px;
+  max-width: 1400px;
   border-radius: 4px;
   z-index: -9;
 `
