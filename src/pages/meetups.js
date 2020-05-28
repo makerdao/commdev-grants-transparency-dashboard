@@ -94,18 +94,8 @@ const Meetups = () => {
             number={meetupsData.averageNumberMeetupsPerMonthThisYear}
             description="Avg. Meetups per Month"
           />
-          <Stat.DoughnutChart
-            data={avgMeetupsAttendeesDoughnut}
-            width={200}
-            height={200}
-            options={{
-              maintainAspectRatio: true,
-              responsive: true,
-            }}
-            css={`
-              transform: rotate(-95deg);
-            `}
-          />
+          <Stat.CircleChart fillAmount={meetupsData.averageNumberAttendeesPerMonthThisYear/meetupsData.averageNumberMeetupsPerMonthThisYear}/>
+
           <Stat
             number={meetupsData.averageNumberAttendeesPerMonthThisYear}
             colorOrange
