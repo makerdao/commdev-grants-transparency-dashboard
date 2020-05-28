@@ -71,8 +71,8 @@ const CircleChartContainer = ({ className, children }) => (
 )
 
 export const CircleChart = styled(CircleChartContainer)`
-  width: ${({ radius }) => (radius ? radius : "217")}px;
-  height: ${({ radius }) => (radius ? radius : "217")}px;
+  width: ${({ radius }) => (radius ? radius : "204")}px;
+  height: ${({ radius }) => (radius ? radius : "204")}px;
   background: radial-gradient(
     50% 50% at 50% 50%,
     #f5b13d 0%,
