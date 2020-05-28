@@ -63,3 +63,30 @@ export default {
   StatTitle,
   DoughnutChart,
 }
+
+
+const CircleChartContainer = ({className, children}) => (
+  <div className={className}>
+    <div className="fill">
+      {children}
+    </div>
+  </div>
+);
+
+export const CircleChart = styled(CircleChartContainer)`
+  width: ${({radius}) => radius ? radius : "217"}px;
+  height: ${({radius}) => radius ? radius : "217"}px;
+  background: var(--highlight-color--makerorange);
+  position: relative; 
+  border-radius: 100%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+
+  & .fill {
+    width: ${({fillAmount}) => fillAmount ? fillAmount : "0"}%;
+    height: ${({fillAmount}) => fillAmount ? fillAmount : "0"}%;
+    background: var(--highlight-color--makerteal);
+    border-radius: 100%; 
+  }
+`

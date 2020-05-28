@@ -2,7 +2,7 @@ import React from "react"
 
 import { StatSection, StatRow, StatRowOverflow, StatContainer } from "./Layout"
 
-import { DoughnutChart, StatNumber, StatTitle } from "./Basic"
+import { DoughnutChart, StatNumber, StatTitle, CircleChart } from "./Basic"
 import { StatStatus, StatusChart, StatusLabel, StatusNumber } from "./Status"
 import {
   CountryImg,
@@ -53,6 +53,7 @@ Stat.Status.Number = StatusNumber
 
 //Doughnut Component(s)
 Stat.DoughnutChart = DoughnutChart
+Stat.CircleChart =  CircleChart
 
 //Country Components
 Stat.Country = Country
