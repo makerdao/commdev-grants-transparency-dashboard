@@ -65,11 +65,14 @@ export default () => (
       <IntroHeaderHighlight>
         {grantsData.totalMoneyAwarded} Dai
       </IntroHeaderHighlight>{" "}
-      since February 2018.
+      to{" "}
+      <IntroHeaderHighlight>
+        {grantsData.appsAccepted} projects
+      </IntroHeaderHighlight>{" "}
     </IntroHeader>
     <IntroContent>
-      MakerDAO’s Community Development Initiative funds teams creating
-      infrastructure and applications within the Maker ecosystem.
+      Since February 2018, MakerDAO’s Community Development Initiative funds
+      teams creating infrastructure and applications within the Maker ecosystem.
     </IntroContent>
     {/* Primary Stats Section */}
     <Stat.Section>

@@ -55,12 +55,12 @@ const Meetups = () => {
         <IntroHeaderHighlight>
           {meetupsData.totalNumberCountries}
         </IntroHeaderHighlight>{" "}
-        countries since February 2018.
+        countries
       </IntroHeader>
       <IntroContent>
-        MakerDAO’s Community Development Initiative supports virtual and
-        physical meetups to help anyone interested learn about Ethereum, DeFi,
-        and MakerDAO.
+        Since February 2018, MakerDAO’s Community Development Initiative
+        supports virtual and physical meetups to help anyone interested learn
+        about Ethereum, DeFi, and MakerDAO.
       </IntroContent>
 
       <MeetupsSection>
@@ -94,7 +94,12 @@ const Meetups = () => {
             number={meetupsData.averageNumberMeetupsPerMonthThisYear}
             description="Avg. Meetups per Month"
           />
-          <Stat.CircleChart fillAmount={meetupsData.averageNumberAttendeesPerMonthThisYear/meetupsData.averageNumberMeetupsPerMonthThisYear}/>
+          <Stat.CircleChart
+            fillAmount={
+              meetupsData.averageNumberAttendeesPerMonthThisYear /
+              meetupsData.averageNumberMeetupsPerMonthThisYear
+            }
+          />
 
           <Stat
             number={meetupsData.averageNumberAttendeesPerMonthThisYear}
