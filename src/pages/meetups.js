@@ -58,7 +58,7 @@ const Meetups = () => {
         countries
       </IntroHeader>
       <IntroContent>
-        Since February 2018, MakerDAO’s Community Development Initiative
+        Started in February 2018, MakerDAO’s Community Development Initiative
         supports virtual and physical meetups to help anyone interested learn
         about Ethereum, DeFi, and MakerDAO.
       </IntroContent>
