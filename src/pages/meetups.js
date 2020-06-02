@@ -189,7 +189,7 @@ const Meetups = () => {
                     colorMakerBlue="true"
                     labelContent="What is Maker's meetups program?"
                   ></Label>
-                  Start here.
+                  Get started with the Meetups Guide.
                 </FooterCardListItemLeft>
               </FooterLink>
               <FooterLink
@@ -258,11 +258,15 @@ const Meetups = () => {
               </FooterCardDesc>
               <FooterCardDesc>Some questions we'll ask you are:</FooterCardDesc>
             </FooterCardListHeader>
-            <FooterCardListItem>→ Your goals for the event</FooterCardListItem>
+            <FooterCardListItem>
+              → What are your goals for the event?
+            </FooterCardListItem>
             <FooterCardListItem>
               → How does it align with the MakerDAO principles?
             </FooterCardListItem>
-            <FooterCardListItem>→ What's your meetup agenda</FooterCardListItem>
+            <FooterCardListItem>
+              → What's your meetup agenda?
+            </FooterCardListItem>
             <FooterCardListItem>
               → Do you plan to monetize the event?
             </FooterCardListItem>
