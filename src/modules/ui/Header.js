@@ -1,26 +1,30 @@
 import React from "react"
-
-import { data } from "@src/utils.js"
+import { Location } from "@reach/router"
 
 import {
   IntroWrapper,
   LogoMaker,
-  IntroHeader,
-  IntroHeaderHighlight,
-  IntroContent,
+  HeaderNav,
+  HeaderNavItem,
+  HeaderNavLink,
 } from "./styles/Header.styles"
 
 export default () => (
   <IntroWrapper>
-    <LogoMaker src={"makerlogo.svg"} alt="Logo"></LogoMaker>
-    <IntroHeader>
-      We've awarded{" "}
-      <IntroHeaderHighlight>{data.totalMoneyAwarded} Dai</IntroHeaderHighlight>{" "}
-      since February 2018.
-    </IntroHeader>
-    <IntroContent>
-      MakerDAO’s Core Community Development Initiative funds teams creating
-      infrastructure and applications within the Maker ecosystem.
-    </IntroContent>
+    <HeaderNav>
+      <HeaderNavItem>
+        <HeaderNavLink to="/" activeClassName="active">
+          Grants
+        </HeaderNavLink>
+      </HeaderNavItem>
+      <HeaderNavItem>
+        <LogoMaker src={"makerlogo.svg"} alt="Logo"></LogoMaker>
+      </HeaderNavItem>
+      <HeaderNavItem>
+        <HeaderNavLink to="/meetups" activeClassName="active">
+          Meetups
+        </HeaderNavLink>
+      </HeaderNavItem>
+    </HeaderNav>
   </IntroWrapper>
 )

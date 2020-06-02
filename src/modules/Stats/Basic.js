@@ -9,8 +9,8 @@ defaults.doughnut.cutoutPercentage = 80
 defaults.doughnut.hover.mode = "off"
 defaults.global.legend.display = false
 defaults.global.tooltips.enabled = false
-defaults.global.elements.arc.borderColor = "#1AAB9B"
-defaults.global.elements.arc.backgroundColor = "hsl(152, 45%, 94%)"
+defaults.global.elements.arc.borderColor = "hsl(152, 45%, 94%)"
+defaults.global.elements.arc.backgroundColor = "#1AAB9B"
 defaults.global.elements.arc.borderWidth = 1
 
 //Stat Number
@@ -19,7 +19,7 @@ export const StatNumber = styled.h1`
     props.colorOrange
       ? "color: var(--highlight-color--makerorange);"
       : "color: var(--highlight-color--makerteal);"};
-  /* If the "Data Last Compiled" stat object, invoked in PrimaryStats.js (displayed bottom right of screen), reduce font-size to 2rem; */
+  /* If the "Data Last Compiled" stat object, invoked in index.js (displayed bottom right of screen), reduce font-size to 2rem; */
   ${props => (props.statsAttribution ? "font-size: 2rem;" : "")};
 `
 
@@ -41,7 +41,6 @@ const DoughnutChartContainer = styled.div`
   width: 100%;
   max-width: 200px;
   height: 100%;
-  transform: rotate(8deg);
 
   @media ${device.mobileL} {
     transform: rotate(97deg);
@@ -64,3 +63,35 @@ export default {
   StatTitle,
   DoughnutChart,
 }
+
+const CircleChartContainer = ({ className, children }) => (
+  <div className={className}>
+    <div className="fill">{children}</div>
+  </div>
+)
+
+export const CircleChart = styled(CircleChartContainer)`
+  width: ${({ radius }) => (radius ? radius : "204")}px;
+  height: ${({ radius }) => (radius ? radius : "204")}px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #f5b13d 0%,
+    rgba(245, 177, 61, 0.3) 100%
+  );
+  position: relative;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & .fill {
+    width: ${({ fillAmount }) => (fillAmount ? fillAmount : "0")}%;
+    height: ${({ fillAmount }) => (fillAmount ? fillAmount : "0")}%;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #1cac9c 0%,
+      rgba(28, 172, 156, 0.6) 100%
+    );
+    border-radius: 100%;
+  }
+`

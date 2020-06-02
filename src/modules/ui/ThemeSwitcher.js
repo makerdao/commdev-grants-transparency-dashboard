@@ -20,7 +20,6 @@ const ThemeSwitcher = () => {
   const onThemeChange = useCallback(
     e => {
       setTheme(e.target.value)
-      console.log(e)
     },
     [setTheme]
   )

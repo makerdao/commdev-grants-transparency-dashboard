@@ -6,21 +6,22 @@ import { SectionWrapper } from "@modules/ui/SectionWrapper"
 
 export const SectionWrapperProjects = styled(SectionWrapper)`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1400px));
+  margin-bottom: 2rem;
+  padding: 2rem 0.25rem 4rem 0.25rem;
 `
 
 export const ProjectBackground = styled.div`
   width: 100%;
-  height: 50%;
-  background: linear-gradient(hsl(169, 49%, 89%), hsl(60, 44%, 94%));
+  height: 100%;
+  background: linear-gradient(hsl(169, 49%, 89%), hsla(60, 44%, 94%, 0.01));
   position: absolute;
   z-index: 999;
   top: 0;
   left: 0;
   right: 0;
   margin: auto;
-  max-width: 1280px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  max-width: 1400px;
+  border-radius: 4px;
   z-index: -9;
 `
 

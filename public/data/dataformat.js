@@ -8,12 +8,13 @@ const pStatus = {
 }
 
 const pType = {
+  enjoy: "Enjoy Dai",
   hold: "Hold Dai",
   spend: "Spend Dai",
   send: "Send Dai",
   watch: "Watch Dai",
   use: "Use Dai",
-  understand: "Learn Dai",
+  learn: "Learn Dai",
   cdpmgmt: "CDP",
 }
 
@@ -24,6 +25,7 @@ const region = {
   europe: "Europe",
   asia: "Asia",
   oceania: "Oceania",
+  virtual: "Virtual"
 }
 
 // json-SCHEMA defintion that entries have to conform with

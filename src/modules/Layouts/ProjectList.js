@@ -4,10 +4,12 @@ import styled from "styled-components"
 import SectionTitle from "@modules/ui/SectionTitle"
 import { PrimaryButton } from "@modules/ui/PrimaryButton"
 
-import { data, pieData } from "@src/utils"
+import { grantsData } from "@modules/Data/grants_data"
 import { pType } from "@static/data/dataformat"
 
 import Project from "@modules/Projects"
+//TODO: refactor component to be more modular & accept different data fields, or rename to specify that it displays grant stats
+const {pieData} = grantsData;
 
 const ViewMoreButtonContainer = styled.div`
   grid-column: 1 / -1;
@@ -24,7 +26,7 @@ const ViewMoreButton = styled(PrimaryButton)`
   border: 1px solid #1aab9b;
   color: #1aab9b;
   border-radius: 100px;
-
+  gbbv
   :hover {
     cursor: pointer;
     transform: translateY(10%);
@@ -38,15 +40,15 @@ const ProjectList = props => {
   const [displayType, setDisplayType] = useState("All")
   const [projectsToShow, setProjectsToShow] = useState(cardsPerPage)
   const [projectsForCurrentCategory, setprojectsForCurrentCategory] = useState(
-    data.acceptedProjects
+    grantsData.acceptedProjects
   )
 
   const setType = type => {
     let desiredType = type
     let nextprojectsForCurrentCategory =
       desiredType === "All"
-        ? data.acceptedProjects
-        : data.acceptedProjects.filter(p => p.type === desiredType)
+        ? grantsData.acceptedProjects
+        : grantsData.acceptedProjects.filter(p => p.type === desiredType)
 
     setDisplayType(desiredType)
     setProjectsToShow(cardsPerPage)
@@ -67,7 +69,7 @@ const ProjectList = props => {
               data={pieData("type", type)}
               selected={type === displayType}
               number={
-                type === "All" ? data.appsAccepted : data.typeDistribution[type]
+                type === "All" ? grantsData.appsAccepted : grantsData.typeDistribution[type]
               }
               onClick={() => setType(type)}
               options={{ maintainAspectRatio: false }}
