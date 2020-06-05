@@ -15,7 +15,7 @@ export const IntroWrapper = styled.section`
   }
 `
 
-export const LogoMaker = styled.img`
+export const LogoMaker = styled.svg`
   width: 64px;
   height: 64px;
   align-self: center;
