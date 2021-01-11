@@ -6,7 +6,6 @@ import styled from "styled-components"
 import { meetupsData } from "@modules/Data/meetups_data"
 
 import Stat from "@modules/Stats"
-console.log(meetupsData.nMeetupsByRegion)
 
 const MeetupCountry = styled(Stat.Country)`
   margin: 0rem 2rem 0rem 2rem;

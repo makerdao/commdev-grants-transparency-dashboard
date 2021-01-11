@@ -81,7 +81,6 @@ for (let reg of Object.values(region)) {
 }
 
 // activate this to debug data flows
-// console.log("processed data", data)
 
 export const pieData = (field, value) => {
   let nOfValue = getNofProjectField(field, value)
