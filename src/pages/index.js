@@ -57,6 +57,7 @@ const Footer = styled.footer`
   display: flex; 
   flex-direction: column; 
   align-items: center; 
+  padding-bottom: 2rem;
   background: linear-gradient(hsla(210,50%,90%,1),hsla(210,50%,86%,1));
 
   & > div:first-of-type {
