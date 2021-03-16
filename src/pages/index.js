@@ -1,6 +1,7 @@
 import React from "react"
 import { Title } from "react-head"
 import styled from "styled-components"
+import { device } from "@src/styles/mediaqueries"
 
 import GrantsProjectStatus from "@modules/Layouts/GrantsProjectStatus"
 import GrantsProjectCountries from "@modules/Layouts/GrantsProjectCountries"
@@ -51,6 +52,91 @@ import { grantsData } from "@modules/Data/grants_data"
 //   }
 // `
 
+const Footer = styled.footer`
+  width: 100vw; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  padding-bottom: 2rem;
+  background: linear-gradient(hsla(210,50%,90%,1),hsla(210,50%,86%,1));
+
+  & > div:first-of-type {
+    text-align: center;
+  }
+`
+
+const FooterChildren = styled.div`
+  display: grid; 
+  grid-gap: 1rem; 
+  grid-template-columns: 1fr 1fr; 
+  grid-auto-rows: 1fr; 
+  flex-direction: row; 
+  padding-left: 10rem; 
+  padding-right: 10rem;
+
+  @media ${device.mobileL}, ${device.tablet} {
+    grid-template-columns: 1fr; 
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: calc(100% - 2rem); 
+  }
+
+  & > a {
+    text-align: center; 
+    border: 1px solid hsla(209, 51%, 80%, 1);
+  border-radius: 4px !important;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: hsla(210, 50%, 85%, 0);
+  
+
+  :hover {
+    background: hsla(210, 50%, 85%, 1);
+  }
+
+    @media ${device.mobileL}, ${device.tablet} {
+      width: 100%; 
+    }
+
+    & > li {
+      list-style: none; 
+      max-width: unset; 
+      
+      margin: 0 !important;
+      border: 0 !important; 
+      text-align: center; 
+
+      @media ${device.mobileL}, ${device.tablet} {
+        width: auto;
+      }
+
+      & * {
+        text-align: center; 
+      }
+    }
+  }
+`
+
+const FooterItem = styled(FooterCardListItem)`
+  /* !important here overrides the selector styles on its parent. Since this is locally scoped, I think it's a meaningful trade-off right now. Can be revisited later. */
+  margin: 1rem 0rem !important;
+  background: none;
+  transition: 0.15s linear;
+  
+
+  @media ${device.tablet} {
+    max-width: 480px;
+    justify-self: center;
+  }
+
+  @media ${device.mobileL} {
+    margin: 1rem 0rem;
+    /* !important here overrides the selector styles on its parent. Since this is locally scoped, I think it's a meaningful trade-off right now. Can be revisited later. */
+    background: hsla(210, 50%, 85%, 1) !important;
+  }
+`
+
 const StatNumberLastCompiled = styled(Stat.Number)`
   /* If the "Data Last Compiled" stat object, invoked in PrimaryStats.js (displayed bottom right of screen), reduce font-size to 2rem; */
   font-size: 2rem;
@@ -88,28 +174,8 @@ export default () => (
           description="Average Dai Award"
         />
       </Stat.Row>
-      <Stat.Row>
-        <Stat
-          colorOrange
-          number={grantsData.appsSubmitted}
-          description="Grant Applications Submitted"
-        />
-        <Stat.DoughnutChart
-          data={grantsData.doughnutData}
-          width={200}
-          height={200}
-          options={{
-            maintainAspectRatio: true,
-            responsive: true,
-          }}
-          css={`
-            transform: rotate(68deg);
-          `}
-        />
-        <Stat
-          number={grantsData.appsAccepted}
-          description="Grant Applications Accepted"
-        />
+      <Stat.Row singleColumn justifyContent="center">
+        <GrantsProjectCountries />
       </Stat.Row>
       <Stat.Row singleColumn>
         {/* Commented out the gradient background for the "Active Projects" stat to improve information hierarchy. */}
@@ -120,9 +186,7 @@ export default () => (
         />
         <GrantsProjectStatus />
       </Stat.Row>
-      <Stat.Row singleColumn justifyContent="center">
-        <GrantsProjectCountries />
-      </Stat.Row>
+      
       <Stat.Row justifyContent="center">
         <Stat
           number={grantsData.milestones.total}
@@ -130,23 +194,15 @@ export default () => (
         />
         <Stat
           number={grantsData.milestones.last30days}
-          description="Recent Milestones Completed"
+          description="Milestones Proposed"
         />
-        <Stat>
-          <StatNumberLastCompiled>1</StatNumberLastCompiled>
-          <Stat.Title>Months Since Last Update</Stat.Title>
-        </Stat>
       </Stat.Row>
     </Stat.Section>
     <ProjectList />
 
-    {/*FOOTER*/}
-    <SectionWrapperFooter name="Footer">
-      <FooterBackgroundTop />
-      <FooterColumn columnLeft>
-        <FooterCard>
-          <FooterCardListContainer noBackground>
-            <FooterCardListHeader columnLeft>
+    <Footer>
+      <div>
+      <FooterCardListHeader columnLeft>
               <FooterCardTitle columnLeft>
                 How can I get a grant?
               </FooterCardTitle>
@@ -154,91 +210,62 @@ export default () => (
                 Get up to speed on the Maker project & Dai stablecoin:
               </FooterCardDesc>
             </FooterCardListHeader>
-            <FooterLink
+      </div>
+      <FooterChildren>
+      <FooterLink
               href="https://community-development.makerdao.com/grants"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FooterCardListItemLeft noBackground>
+              <FooterItem noBackground>
                 <Label
                   colorMakerBlue="true"
                   labelContent="Questions about the grants program?"
                 ></Label>
                 Visit the Maker Grants Program FAQ
-              </FooterCardListItemLeft>
+              </FooterItem>
             </FooterLink>
             <FooterLink
               href="https://github.com/makerdao/awesome-makerdao"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FooterCardListItemLeft noBackground>
+              <FooterItem noBackground>
                 <Label
                   colorMakerBlue="true"
                   labelContent="New to Maker?"
                 ></Label>
                 View a list of educational resources.
-              </FooterCardListItemLeft>
+              </FooterItem>
             </FooterLink>
             <FooterLink
               href="https://chat.makerdao.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FooterCardListItemLeft noBackground>
+              <FooterItem noBackground>
                 <Label
                   colorMakerBlue="true"
                   labelContent="Meet the community"
                 ></Label>
                 Join the official MakerDAO chat.
-              </FooterCardListItemLeft>
+              </FooterItem>
             </FooterLink>
             <FooterLink
               href="https://github.com/makerdao/awesome-makerdao#use-your-dai"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FooterCardListItemLeft noBackground>
+              <FooterItem noBackground>
                 <Label
                   colorMakerBlue="true"
                   labelContent="Looking for inspiration?"
                 ></Label>
                 Check out these community projects
-              </FooterCardListItemLeft>
+              </FooterItem>
             </FooterLink>
-          </FooterCardListContainer>
-        </FooterCard>
-      </FooterColumn>
-
-      <FooterColumn>
-        <FooterCard hero>
-          <FooterCardListHeader>
-            <FooterCardTitle>APPLY</FooterCardTitle>
-            <FooterCardDesc>
-              Write a 1-2 page proposal, answering:
-            </FooterCardDesc>
-          </FooterCardListHeader>
-          <FooterCardListItem>→ What does it do, exactly?</FooterCardListItem>
-          <FooterCardListItem>→ What problem does it solve?</FooterCardListItem>
-          <FooterCardListItem>→ Why will it be successful?</FooterCardListItem>
-          <FooterCardListItem>
-            → Approximately what will it cost?
-          </FooterCardListItem>
-          <FooterCardListFooter applyCardFooter>
-            ↗ Send it to{" "}
-            <FooterLink inlineLink href="mailto:grants@makerdao.com">
-              grants@makerdao.com
-            </FooterLink>
-          </FooterCardListFooter>
-        </FooterCard>
-        <FooterCard>
-          <FooterCardListContainer>
-            <FooterCardListItem noBackground>
-              <Label labelContent="Due to the large number of submissions, please expect a response within 2-3 weeks."></Label>
-            </FooterCardListItem>
-          </FooterCardListContainer>
-        </FooterCard>
-      </FooterColumn>
-    </SectionWrapperFooter>
+      </FooterChildren>
+    </Footer>
+    
   </>
 )

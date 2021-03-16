@@ -12,6 +12,8 @@ export const SectionWrapperFooter = styled(SectionWrapper)`
   }
 `
 
+
+
 export const FooterBackgroundTop = styled.div`
   width: 100%;
   height: 100%;
