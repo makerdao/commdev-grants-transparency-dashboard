@@ -160,11 +160,91 @@ export const FooterLink = styled.a`
   color: var(--highlight-color--makerteal);
   text-decoration: none;
   transition: 0.15s ease-in-out;
-  border-bottom: 2px solid hsla(173, 74%, 35%, 0);
   /* This is used to establish spacing in the footer of the "Apply card" between the link and the text before it. */
   margin: ${props => (props.inlineLink ? "0rem 0rem 0rem 0.25rem" : null)};
+`
+
+export const Footer = styled.footer`
+  width: 100vw; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  padding-bottom: 2rem;
+  background: linear-gradient(hsla(210,50%,90%,1),hsla(210,50%,86%,1));
+
+  & > div:first-of-type {
+    text-align: center;
+  }
+`
+
+export const FooterChildren = styled.div`
+  display: grid; 
+  grid-gap: 1rem; 
+  grid-template-columns: 1fr 1fr; 
+  grid-auto-rows: 1fr; 
+  flex-direction: row; 
+  padding-left: 10rem; 
+  padding-right: 10rem;
+
+  @media ${device.mobileL}, ${device.tablet} {
+    grid-template-columns: 1fr; 
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: calc(100% - 2rem); 
+  }
+
+  & > a {
+    text-align: center; 
+    border: 1px solid hsla(209, 51%, 80%, 1);
+  border-radius: 4px !important;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: hsla(210, 50%, 85%, 0);
+  
 
   :hover {
-    border-bottom: 2px solid var(--highlight-color--makerteal);
+    background: hsla(210, 50%, 85%, 1);
+  }
+
+    @media ${device.mobileL}, ${device.tablet} {
+      width: 100%; 
+    }
+
+    & > li {
+      list-style: none; 
+      max-width: unset; 
+      
+      margin: 0 !important;
+      border: 0 !important; 
+      text-align: center; 
+
+      @media ${device.mobileL}, ${device.tablet} {
+        width: auto;
+      }
+
+      & * {
+        text-align: center; 
+      }
+    }
+  }
+`
+
+export const FooterItem = styled(FooterCardListItem)`
+  /* !important here overrides the selector styles on its parent. Since this is locally scoped, I think it's a meaningful trade-off right now. Can be revisited later. */
+  margin: 1rem 0rem !important;
+  background: none;
+  transition: 0.15s linear;
+  
+
+  @media ${device.tablet} {
+    max-width: 480px;
+    justify-self: center;
+  }
+
+  @media ${device.mobileL} {
+    margin: 1rem 0rem;
+    /* !important here overrides the selector styles on its parent. Since this is locally scoped, I think it's a meaningful trade-off right now. Can be revisited later. */
+    background: hsla(210, 50%, 85%, 1) !important;
   }
 `

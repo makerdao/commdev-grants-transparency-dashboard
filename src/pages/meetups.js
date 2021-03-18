@@ -29,6 +29,9 @@ import {
   FooterCardListFooter,
   FooterCardListItemLeft,
   FooterLink,
+  Footer, 
+  FooterItem,
+  FooterChildren
 } from "@modules/ui/styles/Footer.styles"
 
 const {
@@ -47,11 +50,11 @@ const Meetups = () => {
       <Title>MakerDAO Community - Development Grants</Title>
       {/* Primary Stats Section */}
       <IntroHeader>
-        We've brought together{" "}
+        We've funded{" "}
         <IntroHeaderHighlight>
           {meetupsData.totalNumberReportedAttendees}
         </IntroHeaderHighlight>{" "}
-        people in{" "}
+        meetups in{" "}
         <IntroHeaderHighlight>
           {meetupsData.totalNumberCountries}
         </IntroHeaderHighlight>{" "}
@@ -64,81 +67,27 @@ const Meetups = () => {
       </IntroContent>
 
       <MeetupsSection>
-        <Stat.Row singleColumn>
-          <Stat
-            number={meetupsData.totalNumberMeetups}
-            description="Total Meetups"
-          />
-          {/* <Stat
-            number={meetupsData.totalNumberCountries}
-            description="Total Countries With Meetups"
-          /> */}
+        <Stat.Row>
           <MeetupCountries />
         </Stat.Row>
         <Stat.Row>
-          <Stat
+        <Stat
             number={meetupsData.totalMoneyDispersed}
             description="Total Dai Dispersed"
           />
-          <Stat
-            number={meetupsData.totalNumberReportedAttendees}
-            description="Total Attendees"
-          />
-          <Stat
-            number={meetupsData.roiPerAttendee}
-            description="Dai Spent Per Attendee"
-          />
-        </Stat.Row>
-        <Stat.Row>
+          
+          {/* <Stat.CircleChart
+            fillAmount={
+              meetupsData.totalMoneyDispersed /
+              meetupsData.averageNumberMeetupsPerMonthThisYear
+            }
+          /> */}
+
           <Stat
             number={meetupsData.averageNumberMeetupsPerMonthThisYear}
             description="Avg. Meetups per Month"
           />
-          <Stat.CircleChart
-            fillAmount={
-              meetupsData.averageNumberAttendeesPerMonthThisYear /
-              meetupsData.averageNumberMeetupsPerMonthThisYear
-            }
-          />
-
-          <Stat
-            number={meetupsData.averageNumberAttendeesPerMonthThisYear}
-            colorOrange
-            description="Avg. Attendees per Month"
-          />
         </Stat.Row>
-
-        {/* <Stat.Row>
-          <Stat
-            number={meetupsData.totalNumberMeetups}
-            description="Total Meetups"
-          />
-          <Stat.DoughnutChart
-            data={totalMeetupsAppsSubmittedDoughnut}
-            width={200}
-            height={200}
-            options={{
-              maintainAspectRatio: true,
-              responsive: true,
-            }}
-            css={`
-              transform: rotate(-165deg);
-            `}
-          />
-          <Stat
-            colorOrange
-            number={meetupsData.applicationsSubmitted}
-            description="Meetup Applications Submitted"
-          />
-        </Stat.Row> */}
-
-        {/* Alex -- Gonna keep this out for now based on my comments in rocketchat.
-        <Stat.Row>
-          <Stat
-            number={meetupsData.totalNumberPresentations}
-            description="Total Presentations"
-          />
-        </Stat.Row> */}
 
         <Stat.Row justifyContent="center">
           <Stat
@@ -166,7 +115,7 @@ const Meetups = () => {
       </MeetupsSection>
 
       {/*FOOTER*/}
-      <SectionWrapperFooter name="Footer">
+      {/* <SectionWrapperFooter name="Footer">
         <FooterBackgroundTop />
         <FooterColumn columnLeft>
           <FooterCard>
@@ -290,7 +239,73 @@ const Meetups = () => {
             </FooterCardListContainer>
           </FooterCard>
         </FooterColumn>
-      </SectionWrapperFooter>
+      </SectionWrapperFooter> */}
+      <Footer>
+      <div>
+      <FooterCardListHeader columnLeft>
+              <FooterCardTitle columnLeft>
+                How can I host a meetup?
+              </FooterCardTitle>
+              <FooterCardDesc>
+              We've compiled some resources to help you get started.
+              </FooterCardDesc>
+            </FooterCardListHeader>
+      </div>
+      <FooterChildren>
+      <FooterLink
+              href="https://github.com/makerdao/awesome-makerdao"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FooterItem noBackground>
+                <Label
+                  colorMakerBlue="true"
+                  labelContent="New to Maker?"
+                ></Label>
+                View a list of educational resources.
+              </FooterItem>
+            </FooterLink>
+            <FooterLink
+                href="https://forum.makerdao.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FooterItem noBackground>
+                  <Label
+                    colorMakerBlue="true"
+                    labelContent="Meet the community"
+                  ></Label>
+                  Join the official Maker forum.
+                  </FooterItem>
+              </FooterLink>
+              <FooterLink
+                href="https://community-development.makerdao.com/meetups/getting-started-guide"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FooterItem noBackground>
+                  <Label
+                    colorMakerBlue="true"
+                    labelContent="Looking for guidance?"
+                  ></Label>
+                  View our meetup guides.
+                </FooterItem>
+              </FooterLink>
+            <FooterLink
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FooterItem noBackground>
+                <Label
+                  colorMakerBlue="true"
+                  labelContent="Looking for a Grant?"
+                ></Label>
+                Learn why this program is closed.
+              </FooterItem>
+            </FooterLink>
+      </FooterChildren>
+    </Footer>
     </>
   )
 }

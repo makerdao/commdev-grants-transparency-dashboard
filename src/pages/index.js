@@ -17,17 +17,12 @@ import {
 import Label from "@modules/ui/Label"
 
 import {
-  SectionWrapperFooter,
-  FooterBackgroundTop,
-  FooterColumn,
-  FooterCard,
+  Footer,
+  FooterChildren, 
+  FooterItem,
   FooterCardTitle,
   FooterCardDesc,
-  FooterCardListContainer,
   FooterCardListHeader,
-  FooterCardListItem,
-  FooterCardListFooter,
-  FooterCardListItemLeft,
   FooterLink,
 } from "@modules/ui/styles/Footer.styles"
 
@@ -52,90 +47,6 @@ import { grantsData } from "@modules/Data/grants_data"
 //   }
 // `
 
-const Footer = styled.footer`
-  width: 100vw; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  padding-bottom: 2rem;
-  background: linear-gradient(hsla(210,50%,90%,1),hsla(210,50%,86%,1));
-
-  & > div:first-of-type {
-    text-align: center;
-  }
-`
-
-const FooterChildren = styled.div`
-  display: grid; 
-  grid-gap: 1rem; 
-  grid-template-columns: 1fr 1fr; 
-  grid-auto-rows: 1fr; 
-  flex-direction: row; 
-  padding-left: 10rem; 
-  padding-right: 10rem;
-
-  @media ${device.mobileL}, ${device.tablet} {
-    grid-template-columns: 1fr; 
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: calc(100% - 2rem); 
-  }
-
-  & > a {
-    text-align: center; 
-    border: 1px solid hsla(209, 51%, 80%, 1);
-  border-radius: 4px !important;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  background: hsla(210, 50%, 85%, 0);
-  
-
-  :hover {
-    background: hsla(210, 50%, 85%, 1);
-  }
-
-    @media ${device.mobileL}, ${device.tablet} {
-      width: 100%; 
-    }
-
-    & > li {
-      list-style: none; 
-      max-width: unset; 
-      
-      margin: 0 !important;
-      border: 0 !important; 
-      text-align: center; 
-
-      @media ${device.mobileL}, ${device.tablet} {
-        width: auto;
-      }
-
-      & * {
-        text-align: center; 
-      }
-    }
-  }
-`
-
-const FooterItem = styled(FooterCardListItem)`
-  /* !important here overrides the selector styles on its parent. Since this is locally scoped, I think it's a meaningful trade-off right now. Can be revisited later. */
-  margin: 1rem 0rem !important;
-  background: none;
-  transition: 0.15s linear;
-  
-
-  @media ${device.tablet} {
-    max-width: 480px;
-    justify-self: center;
-  }
-
-  @media ${device.mobileL} {
-    margin: 1rem 0rem;
-    /* !important here overrides the selector styles on its parent. Since this is locally scoped, I think it's a meaningful trade-off right now. Can be revisited later. */
-    background: hsla(210, 50%, 85%, 1) !important;
-  }
-`
 
 const StatNumberLastCompiled = styled(Stat.Number)`
   /* If the "Data Last Compiled" stat object, invoked in PrimaryStats.js (displayed bottom right of screen), reduce font-size to 2rem; */
