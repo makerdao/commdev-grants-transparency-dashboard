@@ -68,9 +68,9 @@ export default () => (
       </IntroHeaderHighlight>{" "}
     </IntroHeader>
     <IntroContent>
-      Started in February 2018, MakerDAO’s Community Development Initiative
-      funds teams creating infrastructure and applications within the Maker
-      ecosystem.
+      Started by the Maker Foundation's Community Development team, 
+      the Grants Program supported individuals’ and teams’ independent 
+      creation of infrastructures and applications for the Maker ecosystem.
     </IntroContent>
     {/* Primary Stats Section */}
     <Stat.Section>
