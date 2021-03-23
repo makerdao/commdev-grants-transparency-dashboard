@@ -115,7 +115,7 @@ export default () => (
       <div>
       <FooterCardListHeader columnLeft>
               <FooterCardTitle columnLeft>
-                How can I get a grant?
+                How can I contribute to MakerDAO?
               </FooterCardTitle>
               <FooterCardDesc>
                 Get up to speed on the Maker project & Dai stablecoin:
