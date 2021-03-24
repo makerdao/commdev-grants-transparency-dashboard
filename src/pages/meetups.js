@@ -29,6 +29,9 @@ import {
   FooterCardListFooter,
   FooterCardListItemLeft,
   FooterLink,
+  Footer, 
+  FooterItem,
+  FooterChildren
 } from "@modules/ui/styles/Footer.styles"
 
 const {
@@ -47,98 +50,44 @@ const Meetups = () => {
       <Title>MakerDAO Community - Development Grants</Title>
       {/* Primary Stats Section */}
       <IntroHeader>
-        We've brought together{" "}
+        We've funded{" "}
         <IntroHeaderHighlight>
           {meetupsData.totalNumberReportedAttendees}
         </IntroHeaderHighlight>{" "}
-        people in{" "}
+        meetups in{" "}
         <IntroHeaderHighlight>
           {meetupsData.totalNumberCountries}
         </IntroHeaderHighlight>{" "}
         countries
       </IntroHeader>
       <IntroContent>
-        Started in February 2018, MakerDAO’s Community Development Initiative
-        supports virtual and physical meetups to help anyone interested learn
+        Started by the Maker Foundation's Community Development Team, this grant program
+        supported virtual and physical meetups that helped individuals around the world learn
         about Ethereum, DeFi, and MakerDAO.
       </IntroContent>
 
       <MeetupsSection>
-        <Stat.Row singleColumn>
-          <Stat
-            number={meetupsData.totalNumberMeetups}
-            description="Total Meetups"
-          />
-          {/* <Stat
-            number={meetupsData.totalNumberCountries}
-            description="Total Countries With Meetups"
-          /> */}
+        <Stat.Row>
           <MeetupCountries />
         </Stat.Row>
         <Stat.Row>
-          <Stat
+        <Stat
             number={meetupsData.totalMoneyDispersed}
             description="Total Dai Dispersed"
           />
-          <Stat
-            number={meetupsData.totalNumberReportedAttendees}
-            description="Total Attendees"
-          />
-          <Stat
-            number={meetupsData.roiPerAttendee}
-            description="Dai Spent Per Attendee"
-          />
-        </Stat.Row>
-        <Stat.Row>
+          
+          {/* <Stat.CircleChart
+            fillAmount={
+              meetupsData.totalMoneyDispersed /
+              meetupsData.averageNumberMeetupsPerMonthThisYear
+            }
+          /> */}
+
           <Stat
             number={meetupsData.averageNumberMeetupsPerMonthThisYear}
             description="Avg. Meetups per Month"
           />
-          <Stat.CircleChart
-            fillAmount={
-              meetupsData.averageNumberAttendeesPerMonthThisYear /
-              meetupsData.averageNumberMeetupsPerMonthThisYear
-            }
-          />
-
-          <Stat
-            number={meetupsData.averageNumberAttendeesPerMonthThisYear}
-            colorOrange
-            description="Avg. Attendees per Month"
-          />
         </Stat.Row>
-
-        {/* <Stat.Row>
-          <Stat
-            number={meetupsData.totalNumberMeetups}
-            description="Total Meetups"
-          />
-          <Stat.DoughnutChart
-            data={totalMeetupsAppsSubmittedDoughnut}
-            width={200}
-            height={200}
-            options={{
-              maintainAspectRatio: true,
-              responsive: true,
-            }}
-            css={`
-              transform: rotate(-165deg);
-            `}
-          />
-          <Stat
-            colorOrange
-            number={meetupsData.applicationsSubmitted}
-            description="Meetup Applications Submitted"
-          />
-        </Stat.Row> */}
-
-        {/* Alex -- Gonna keep this out for now based on my comments in rocketchat.
-        <Stat.Row>
-          <Stat
-            number={meetupsData.totalNumberPresentations}
-            description="Total Presentations"
-          />
-        </Stat.Row> */}
 
         <Stat.Row justifyContent="center">
           <Stat
@@ -166,7 +115,7 @@ const Meetups = () => {
       </MeetupsSection>
 
       {/*FOOTER*/}
-      <SectionWrapperFooter name="Footer">
+      {/* <SectionWrapperFooter name="Footer">
         <FooterBackgroundTop />
         <FooterColumn columnLeft>
           <FooterCard>
@@ -179,34 +128,9 @@ const Meetups = () => {
                   We've compiled some resources to help you get started.
                 </FooterCardDesc>
               </FooterCardListHeader>
-              <FooterLink
-                href="https://community-development.makerdao.com/meetups"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FooterCardListItemLeft noBackground>
-                  <Label
-                    colorMakerBlue="true"
-                    labelContent="What is Maker's meetups program?"
-                  ></Label>
-                  Get started with the Meetups Guide.
-                </FooterCardListItemLeft>
               </FooterLink>
               <FooterLink
-                href="https://community-development.makerdao.com/meetups/faq"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FooterCardListItemLeft noBackground>
-                  <Label
-                    colorMakerBlue="true"
-                    labelContent="Questions about the meetup grants program?"
-                  ></Label>
-                  Visit the Meetup Grants FAQ
-                </FooterCardListItemLeft>
-              </FooterLink>
-              <FooterLink
-                href="https://awesome.makerdao.com"
+                href="https://community-development.makerdao.com/en/learn/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -251,46 +175,79 @@ const Meetups = () => {
         <FooterColumn>
           <FooterCard hero>
             <FooterCardListHeader>
-              <FooterCardTitle>APPLY FOR A MEETUP GRANT</FooterCardTitle>
+              <FooterCardTitle>MEETUP GRANTS ARE CLOSED</FooterCardTitle>
               <FooterCardDesc>
-                Maker offers financial support for eligible meetups. Complete
-                the application form if you're interested.
+                As of April 19th we are no longer accepting applications for meetup grants.
               </FooterCardDesc>
-              <FooterCardDesc>Some questions we'll ask you are:</FooterCardDesc>
             </FooterCardListHeader>
-            <FooterCardListItem>
-              → What are your goals for the event?
-            </FooterCardListItem>
-            <FooterCardListItem>
-              → How does it align with the MakerDAO principles?
-            </FooterCardListItem>
-            <FooterCardListItem>
-              → What's your meetup agenda?
-            </FooterCardListItem>
-            <FooterCardListItem>
-              → Do you plan to monetize the event?
-            </FooterCardListItem>
-            <FooterCardListFooter applyCardFooter>
-              ↗ Start the Maker Meetups
-              <FooterLink
-                inlineLink
-                href="https://airtable.com/shr4HOtcZ8o3VZmek"
+          </FooterCard>
+      </SectionWrapperFooter> */}
+      <Footer>
+      <div>
+      <FooterCardListHeader columnLeft>
+              <FooterCardTitle columnLeft>
+                How can I host a meetup?
+              </FooterCardTitle>
+              <FooterCardDesc>
+              We've compiled some resources to help you get started.
+              </FooterCardDesc>
+            </FooterCardListHeader>
+      </div>
+      <FooterChildren>
+      <FooterLink
+              href="https://community-development.makerdao.com/en/learn/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FooterItem noBackground>
+                <Label
+                  colorMakerBlue="true"
+                  labelContent="New to Maker?"
+                ></Label>
+                View a list of educational resources.
+              </FooterItem>
+            </FooterLink>
+            <FooterLink
+                href="https://forum.makerdao.com/"
                 target="_blank"
+                rel="noopener noreferrer"
               >
-                application form.
+                <FooterItem noBackground>
+                  <Label
+                    colorMakerBlue="true"
+                    labelContent="Meet the community"
+                  ></Label>
+                  Join the official Maker forum.
+                  </FooterItem>
               </FooterLink>
-            </FooterCardListFooter>
-          </FooterCard>
-
-          <FooterCard>
-            <FooterCardListContainer>
-              <FooterCardListItem noBackground>
-                <Label labelContent="Due to the large number of submissions, please expect a response within 2-3 weeks."></Label>
-              </FooterCardListItem>
-            </FooterCardListContainer>
-          </FooterCard>
-        </FooterColumn>
-      </SectionWrapperFooter>
+              <FooterLink
+                href="https://community-development.makerdao.com/meetups/getting-started-guide"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FooterItem noBackground>
+                  <Label
+                    colorMakerBlue="true"
+                    labelContent="Looking for guidance?"
+                  ></Label>
+                  View our meetup guides.
+                </FooterItem>
+              </FooterLink>
+            {/* <FooterLink
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FooterItem noBackground>
+                <Label
+                  colorMakerBlue="true"
+                  labelContent="Looking for a Grant?"
+                ></Label>
+                Learn why this program is closed.
+              </FooterItem>
+            </FooterLink> */}
+      </FooterChildren>
+    </Footer>
     </>
   )
 }
