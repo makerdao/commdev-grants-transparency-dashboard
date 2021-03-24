@@ -233,7 +233,7 @@ const Meetups = () => {
                   View our meetup guides.
                 </FooterItem>
               </FooterLink>
-            <FooterLink
+            {/* <FooterLink
               href="/"
               target="_blank"
               rel="noopener noreferrer"
@@ -245,7 +245,7 @@ const Meetups = () => {
                 ></Label>
                 Learn why this program is closed.
               </FooterItem>
-            </FooterLink>
+            </FooterLink> */}
       </FooterChildren>
     </Footer>
     </>
