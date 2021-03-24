@@ -61,8 +61,8 @@ const Meetups = () => {
         countries
       </IntroHeader>
       <IntroContent>
-        Started in February 2018, MakerDAO’s Community Development Initiative
-        supports virtual and physical meetups to help anyone interested learn
+        Started by the Maker Foundation's Community Development Team, this grant program
+        supported virtual and physical meetups that helped individuals around the world learn
         about Ethereum, DeFi, and MakerDAO.
       </IntroContent>
 
@@ -128,34 +128,9 @@ const Meetups = () => {
                   We've compiled some resources to help you get started.
                 </FooterCardDesc>
               </FooterCardListHeader>
-              <FooterLink
-                href="https://community-development.makerdao.com/meetups"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FooterCardListItemLeft noBackground>
-                  <Label
-                    colorMakerBlue="true"
-                    labelContent="What is Maker's meetups program?"
-                  ></Label>
-                  Get started with the Meetups Guide.
-                </FooterCardListItemLeft>
               </FooterLink>
               <FooterLink
-                href="https://community-development.makerdao.com/meetups/faq"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FooterCardListItemLeft noBackground>
-                  <Label
-                    colorMakerBlue="true"
-                    labelContent="Questions about the meetup grants program?"
-                  ></Label>
-                  Visit the Meetup Grants FAQ
-                </FooterCardListItemLeft>
-              </FooterLink>
-              <FooterLink
-                href="https://awesome.makerdao.com"
+                href="https://community-development.makerdao.com/en/learn/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -200,45 +175,12 @@ const Meetups = () => {
         <FooterColumn>
           <FooterCard hero>
             <FooterCardListHeader>
-              <FooterCardTitle>APPLY FOR A MEETUP GRANT</FooterCardTitle>
+              <FooterCardTitle>MEETUP GRANTS ARE CLOSED</FooterCardTitle>
               <FooterCardDesc>
-                Maker offers financial support for eligible meetups. Complete
-                the application form if you're interested.
+                As of April 19th we are no longer accepting applications for meetup grants.
               </FooterCardDesc>
-              <FooterCardDesc>Some questions we'll ask you are:</FooterCardDesc>
             </FooterCardListHeader>
-            <FooterCardListItem>
-              → What are your goals for the event?
-            </FooterCardListItem>
-            <FooterCardListItem>
-              → How does it align with the MakerDAO principles?
-            </FooterCardListItem>
-            <FooterCardListItem>
-              → What's your meetup agenda?
-            </FooterCardListItem>
-            <FooterCardListItem>
-              → Do you plan to monetize the event?
-            </FooterCardListItem>
-            <FooterCardListFooter applyCardFooter>
-              ↗ Start the Maker Meetups
-              <FooterLink
-                inlineLink
-                href="https://airtable.com/shr4HOtcZ8o3VZmek"
-                target="_blank"
-              >
-                application form.
-              </FooterLink>
-            </FooterCardListFooter>
           </FooterCard>
-
-          <FooterCard>
-            <FooterCardListContainer>
-              <FooterCardListItem noBackground>
-                <Label labelContent="Due to the large number of submissions, please expect a response within 2-3 weeks."></Label>
-              </FooterCardListItem>
-            </FooterCardListContainer>
-          </FooterCard>
-        </FooterColumn>
       </SectionWrapperFooter> */}
       <Footer>
       <div>
@@ -253,7 +195,7 @@ const Meetups = () => {
       </div>
       <FooterChildren>
       <FooterLink
-              href="https://github.com/makerdao/awesome-makerdao"
+              href="https://community-development.makerdao.com/en/learn/"
               target="_blank"
               rel="noopener noreferrer"
             >
