@@ -55,7 +55,7 @@ const StatNumberLastCompiled = styled(Stat.Number)`
 
 export default () => (
   <>
-    <Title>MakerDAO Community - Development Grants</Title>
+    <Title>Maker Foundation Community Development Grants</Title>
     {/* Header Content related to the Grants Page */}
     <IntroHeader>
       We've awarded{" "}
@@ -124,20 +124,20 @@ export default () => (
       </div>
       <FooterChildren>
       <FooterLink
-              href="https://community-development.makerdao.com/grants"
+              href="https://blog.makerdao.com/maker-development-grants-program-sunsets/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FooterItem noBackground>
                 <Label
                   colorMakerBlue="true"
-                  labelContent="Questions about the grants program?"
+                  labelContent="Read more about our grant recipients’ success and what we’ve learned."
                 ></Label>
                 Visit the Maker Grants Program FAQ
               </FooterItem>
             </FooterLink>
             <FooterLink
-              href="https://github.com/makerdao/awesome-makerdao"
+              href="https://community-development.makerdao.com/en/learn/"
               target="_blank"
               rel="noopener noreferrer"
             >
