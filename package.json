@@ -12,7 +12,7 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "test": "node src/tests/validJson.js",
-    "deploy": "gatsby build --prefix-paths && cp CNAME public && gh-pages -d public -b master"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b master"
   },
   "dependencies": {
     "@quickbaseoss/babel-plugin-styled-components-css-namespace": "^1.0.1",
