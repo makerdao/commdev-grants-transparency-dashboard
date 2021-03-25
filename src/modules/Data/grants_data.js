@@ -81,7 +81,6 @@ for (let reg of Object.values(region)) {
 }
 
 // activate this to debug data flows
-
 export const pieData = (field, value) => {
   let nOfValue = getNofProjectField(field, value)
   let data
@@ -116,7 +115,6 @@ export const doughnutData = {
     },
   ],
 }
-
 
 export const grantsData = {
   acceptedProjects: getAcceptedProjects(),
