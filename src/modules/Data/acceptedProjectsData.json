@@ -281,8 +281,8 @@
   },
    {
     "name": "Gauntlet",
-    "description": "A trustless decentralized way of onboarding new users that don’t have ETH to pay for gas fees",
-    "learnMoreLink": "https://gauntlet.network/",
+    "description": "An liquidation analysis/stress test comparing the effectiveness of Liquidations 2.0 with Liquidations 1.2.",
+    "learnMoreLink": "https://maker-report.gauntlet.network/",
     "github": "",
     "twitter": "https://twitter.com/gauntletnetwork",
     "medium": "https://medium.com/gauntlet-networks",

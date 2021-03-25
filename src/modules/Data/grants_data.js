@@ -133,6 +133,7 @@ export const grantsData = {
   NofProjectStatus: statusDistributionList.reduce(mergeObjects),
   milestones: {
     total: publicGrantsData.totalMilestones,
+    proposed: publicGrantsData.milestonesCompleted,
     last30days: publicGrantsData.milestonesLast30Days,
   },
   currentlyActive: getNofActiveProjects(),

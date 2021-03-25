@@ -104,7 +104,7 @@ export default () => (
           description="Total Milestones Completed"
         />
         <Stat
-          number={grantsData.milestones.last30days}
+          number={grantsData.milestones.proposed}
           description="Milestones Proposed"
         />
       </Stat.Row>
