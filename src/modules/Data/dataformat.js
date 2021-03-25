@@ -5,6 +5,7 @@ const pStatus = {
   beta: "Beta",
   live: "Live",
   inactive: "Inactive",
+  abandoned: "Abandoned"
 }
 
 const pType = {
