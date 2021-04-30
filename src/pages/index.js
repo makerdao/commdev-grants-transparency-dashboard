@@ -55,7 +55,7 @@ const StatNumberLastCompiled = styled(Stat.Number)`
 
 export default () => (
   <>
-    <Title>MakerDAO Community - Development Grants</Title>
+    <Title>Maker Foundation Community Development Grants</Title>
     {/* Header Content related to the Grants Page */}
     <IntroHeader>
       We've awarded{" "}
@@ -68,9 +68,9 @@ export default () => (
       </IntroHeaderHighlight>{" "}
     </IntroHeader>
     <IntroContent>
-      Started in February 2018, MakerDAO’s Community Development Initiative
-      funds teams creating infrastructure and applications within the Maker
-      ecosystem.
+      Started by the Maker Foundation's Community Development team, 
+      the Grants Program supported individuals’ and teams’ independent 
+      creation of infrastructures and applications for the Maker ecosystem.
     </IntroContent>
     {/* Primary Stats Section */}
     <Stat.Section>
@@ -115,7 +115,7 @@ export default () => (
       <div>
       <FooterCardListHeader columnLeft>
               <FooterCardTitle columnLeft>
-                How can I get a grant?
+                How can I contribute to MakerDAO?
               </FooterCardTitle>
               <FooterCardDesc>
                 Get up to speed on the Maker project & Dai stablecoin:
@@ -124,20 +124,20 @@ export default () => (
       </div>
       <FooterChildren>
       <FooterLink
-              href="https://community-development.makerdao.com/grants"
+              href="https://blog.makerdao.com/maker-development-grants-program-sunsets/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FooterItem noBackground>
                 <Label
                   colorMakerBlue="true"
-                  labelContent="Questions about the grants program?"
+                  labelContent="Read more about our grant recipients’ success and what we’ve learned."
                 ></Label>
                 Visit the Maker Grants Program FAQ
               </FooterItem>
             </FooterLink>
             <FooterLink
-              href="https://github.com/makerdao/awesome-makerdao"
+              href="https://community-development.makerdao.com/en/learn/"
               target="_blank"
               rel="noopener noreferrer"
             >
