@@ -1,13 +1,13 @@
 {
   "grants": [
     {
-      "totalMoneyAwarded": 1092581,
+      "totalMoneyAwarded": 1096681,
       "whatIsTotalMoneyAwarded": "The total amount of Dai awarded to date to successful grant applicants",
-      "totalMoneyDispersed": 1019677,
+      "totalMoneyDispersed": 1060231,
       "whatIsTotalMoneyDispersed": "Of the total amount of Dai awarded, how much has actually been dispersed to date?",
       "totalMilestones": 161,
       "whatIsTotalMilestones": "The total milestones across all funded projects to date",
-      "milestonesCompleted": 138,
+      "milestonesCompleted": 142,
       "whatAreMilestonesCompleted": "The total number of milestones completed by all the projects funded by the grants program",
       "milestonesLast30Days": 0,
       "whatIsMilestonesLast30Days": "The total number of milestones completed within the last 30 days?",
