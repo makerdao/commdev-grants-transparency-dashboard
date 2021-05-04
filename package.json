@@ -11,8 +11,7 @@
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "test": "node src/tests/validJson.js",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b r2d"
+    "test": "node src/tests/validJson.js"
   },
   "dependencies": {
     "@quickbaseoss/babel-plugin-styled-components-css-namespace": "^1.0.1",
@@ -32,7 +31,6 @@
   "devDependencies": {
     "ajv": "^6.12.6",
     "babel-preset-gatsby": "^0.2.36",
-    "gh-pages": "^2.1.1",
     "prettier": "^1.19.1"
   },
   "repository": {
